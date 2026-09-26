@@ -279,20 +279,41 @@ footer strong {
     color: white;
 }
 
+/* Cat music button */
 #musicToggle {
     position: fixed;
     right: 18px;
     bottom: 18px;
-    width: 52px;
-    height: 52px;
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
     border: none;
-    background: rgba(0,0,0,.65);
-    color: white;
-    font-size: 22px;
+    background: rgba(255,255,255,.95);
+    font-size: 30px;
     z-index: 9999;
     cursor: pointer;
     box-shadow: 0 6px 18px rgba(0,0,0,.22);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+#musicToggle:hover {
+    transform: scale(1.08);
+}
+
+#musicToggle.playing {
+    animation: catPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes catPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 6px 18px rgba(0,0,0,.22);
+    }
+
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 8px 24px rgba(0,0,0,.30);
+    }
 }
 
 @media (max-width: 800px) {
@@ -509,7 +530,7 @@ footer strong {
     <source src="Atlas Baku.mp3" type="audio/mpeg">
 </audio>
 
-<button id="musicToggle" type="button" aria-label="Toggle background music">🔇</button>
+<button id="musicToggle" type="button" aria-label="Play background music">🐱</button>
 
 <script>
 const music = document.getElementById('bgMusic');
@@ -519,14 +540,27 @@ music.volume = 0.35;
 
 let started = false;
 
+function showPlaying() {
+    toggle.textContent = '😺';
+    toggle.classList.add('playing');
+    toggle.setAttribute('aria-label', 'Pause background music');
+}
+
+function showPaused() {
+    toggle.textContent = '🐱';
+    toggle.classList.remove('playing');
+    toggle.setAttribute('aria-label', 'Play background music');
+}
+
 async function startMusic() {
     if (started) return;
 
     try {
         await music.play();
         started = true;
-        toggle.textContent = '🔊';
+        showPlaying();
     } catch (error) {
+        showPaused();
     }
 }
 
@@ -540,15 +574,18 @@ toggle.addEventListener('click', async function(event) {
         try {
             await music.play();
             started = true;
-            toggle.textContent = '🔊';
+            showPlaying();
         } catch (error) {
-            toggle.textContent = '🔇';
+            showPaused();
         }
     } else {
         music.pause();
-        toggle.textContent = '🔇';
+        showPaused();
     }
 });
+
+music.addEventListener('play', showPlaying);
+music.addEventListener('pause', showPaused);
 </script>
 
 </body>
