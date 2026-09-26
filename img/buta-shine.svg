@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 74">
+  <!-- Бута, по которой пробегает золотой блик -->
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9C6B1C"/>
+      <stop offset=".35" stop-color="#E7B94A"/>
+      <stop offset=".5" stop-color="#FFF4CF"/>
+      <stop offset=".65" stop-color="#E7B94A"/>
+      <stop offset="1" stop-color="#9C6B1C"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="-1 -1; 1 1; -1 -1" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="goldEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFF4CF"/>
+      <stop offset="1" stop-color="#9C6B1C"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(2 2)">
+    <path fill="url(#gold)" stroke="url(#goldEdge)" stroke-width="1.2" d="M34 3C58 12 62 46 42 62C27 73 6 64 7 44C8 27 27 22 33 35C37 44 28 51 21 46C26 45 28 39 24 36C18 33 13 39 14 46C16 57 30 60 38 51C50 38 44 16 34 3Z"/>
+    <circle cx="21.5" cy="41" r="2.2" fill="#A3243A"/>
+    <path d="M40 24c3 5 3 12 0 17" fill="none" stroke="#A3243A" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+  </g>
+</svg>

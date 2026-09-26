@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <!-- Поле ковра: ромбовая сетка, бута, восьмиконечные звёзды. Для светлого фона. -->
+  <g fill="none" stroke="#8A6A3A" stroke-opacity=".13" stroke-width="1">
+    <path d="M60 0L120 60L60 120L0 60Z"/>
+    <path d="M60 12L108 60L60 108L12 60Z" stroke-dasharray="2 4"/>
+  </g>
+  <g transform="translate(50 43) scale(.22)" fill="#A3243A" fill-opacity=".12">
+    <path d="M34 3C58 12 62 46 42 62C27 73 6 64 7 44C8 27 27 22 33 35C37 44 28 51 21 46C26 45 28 39 24 36C18 33 13 39 14 46C16 57 30 60 38 51C50 38 44 16 34 3Z"/>
+  </g>
+  <g fill="#D9981E" fill-opacity=".28">
+    <path d="M0 -6L1.7 -1.7L6 0L1.7 1.7L0 6L-1.7 1.7L-6 0L-1.7 -1.7Z"/>
+    <path d="M0 -6L1.7 -1.7L6 0L1.7 1.7L0 6L-1.7 1.7L-6 0L-1.7 -1.7Z" transform="translate(120 0)"/>
+    <path d="M0 -6L1.7 -1.7L6 0L1.7 1.7L0 6L-1.7 1.7L-6 0L-1.7 -1.7Z" transform="translate(0 120)"/>
+    <path d="M0 -6L1.7 -1.7L6 0L1.7 1.7L0 6L-1.7 1.7L-6 0L-1.7 -1.7Z" transform="translate(120 120)"/>
+  </g>
+</svg>
