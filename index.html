@@ -4,9 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cats Baku — Purrs, Paws & Love</title>
+<title>CatsBaku — Baku Cat Community</title>
+
+<meta name="description" content="CatsBaku — cats, adoption, feeding spots and cat lovers across Baku.">
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
 
 <style>
+
+:root {
+    --stone: #d6b98c;
+    --stone-light: #f4ede2;
+    --sand: #eee1cf;
+    --caspi: #1e6672;
+    --caspi-dark: #174b54;
+    --pomegranate: #8c2f39;
+    --night: #171715;
+    --cream: #fffaf2;
+    --muted: #766f66;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,482 +39,1548 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #faf8f5;
-    color: #252525;
+    background: var(--cream);
+    color: var(--night);
 }
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+/* ---------------- HERO ---------------- */
 
 .hero {
     min-height: 100vh;
+
     background:
-        linear-gradient(rgba(0,0,0,.34), rgba(0,0,0,.50)),
+        linear-gradient(
+            rgba(10, 18, 18, .30),
+            rgba(10, 18, 18, .60)
+        ),
         url("cat-hero-final.jpg")
-        center/cover;
+        center / cover;
+
     color: white;
+
     display: flex;
     flex-direction: column;
+
+    position: relative;
 }
 
 .nav {
+    padding: 25px 6%;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 28px 7%;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 3;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 4px;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 5px;
 }
 
-.nav a {
+.logo small {
+    display: block;
+    margin-top: 3px;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 500;
+
+    opacity: .8;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
     color: white;
     text-decoration: none;
-    margin-left: 25px;
-    font-size: 15px;
+
+    font-size: 14px;
+
+    opacity: .92;
+}
+
+.nav-links a:hover {
+    opacity: 1;
 }
 
 .hero-content {
     flex: 1;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
-    padding: 40px 20px;
+
+    padding: 40px 20px 90px;
 }
 
-.hero-content h1 {
+.hero-inner {
+    max-width: 850px;
+}
+
+.baku-label {
+    display: inline-block;
+
+    border: 1px solid rgba(255,255,255,.55);
+
+    padding: 9px 17px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+
+    backdrop-filter: blur(8px);
+}
+
+.hero h1 {
     font-family: Georgia, serif;
-    font-size: clamp(50px, 9vw, 105px);
+
+    font-size: clamp(58px, 10vw, 120px);
     font-weight: 400;
-    line-height: 1;
+
+    line-height: .95;
+
     margin-bottom: 25px;
 }
 
-.hero-content p {
-    font-size: 20px;
-    letter-spacing: 2px;
+.hero-subtitle {
+    font-size: 18px;
+    letter-spacing: 3px;
+
+    line-height: 1.7;
+
     margin-bottom: 35px;
 }
 
-.buttons {
+.hero-buttons {
     display: flex;
-    gap: 14px;
+
     justify-content: center;
+
+    gap: 12px;
+
     flex-wrap: wrap;
 }
 
 .btn {
-    display: inline-block;
-    padding: 15px 28px;
-    border-radius: 40px;
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 27px;
+
+    border-radius: 999px;
+
     text-decoration: none;
-    font-weight: 600;
-    transition: .25s;
-}
 
-.btn-primary {
-    background: #fff;
-    color: #222;
-}
+    font-weight: 700;
 
-.btn-secondary {
-    border: 1px solid white;
-    color: white;
+    border: none;
+
+    cursor: pointer;
+
+    transition: .2s;
 }
 
 .btn:hover {
     transform: translateY(-2px);
 }
 
+.btn-light {
+    background: white;
+    color: var(--night);
+}
+
+.btn-outline {
+    color: white;
+
+    border: 1px solid rgba(255,255,255,.75);
+
+    background: rgba(255,255,255,.08);
+}
+
+.hero-pattern {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 20px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            var(--stone) 0 10px,
+            var(--caspi) 10px 20px,
+            var(--pomegranate) 20px 30px
+        );
+}
+
+/* ---------------- GENERAL ---------------- */
+
 .section {
-    padding: 90px 7%;
+    padding: 90px 6%;
+}
+
+.section-kicker {
+    text-align: center;
+
+    color: var(--pomegranate);
+
+    font-weight: 800;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
 }
 
 .section-title {
-    text-align: center;
     font-family: Georgia, serif;
-    font-size: 48px;
+
+    text-align: center;
+
+    font-size: clamp(40px, 6vw, 64px);
+
     font-weight: 400;
-    margin-bottom: 15px;
+
+    margin-bottom: 18px;
 }
 
 .section-subtitle {
+    max-width: 720px;
+
+    margin: 0 auto 45px;
+
     text-align: center;
-    color: #777;
-    max-width: 600px;
-    margin: 0 auto 50px;
-    line-height: 1.7;
+
+    color: var(--muted);
+
+    line-height: 1.8;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+/* ---------------- CAT FILTERS ---------------- */
+
+.cat-section {
+    background: var(--cream);
 }
 
-.card {
+.cat-filters {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    border: 1px solid #d6c7b4;
+
     background: white;
-    border-radius: 20px;
+
+    padding: 11px 18px;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition: .2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: white;
+
+    border-color: var(--caspi);
+
+    background: var(--caspi);
+}
+
+/* ---------------- CAT CARDS ---------------- */
+
+.cat-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+.cat-card {
+    background: white;
+
+    border-radius: 24px;
+
     overflow: hidden;
-    box-shadow: 0 10px 35px rgba(0,0,0,.07);
+
+    box-shadow:
+        0 15px 40px rgba(50,40,25,.08);
+
     transition: .25s;
 }
 
-.card:hover {
+.cat-card:hover {
     transform: translateY(-5px);
 }
 
-.card img {
+.cat-photo {
+    position: relative;
+}
+
+.cat-photo img {
+    display: block;
+
     width: 100%;
-    height: 260px;
+    height: 310px;
+
     object-fit: cover;
 }
 
-.card-content {
-    padding: 25px;
+.cat-type {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    padding: 8px 13px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.92);
+
+    backdrop-filter: blur(8px);
+
+    font-size: 12px;
+
+    font-weight: 800;
 }
 
-.card h3 {
+.cat-info {
+    padding: 23px;
+}
+
+.cat-info h3 {
     font-family: Georgia, serif;
-    font-size: 25px;
-    margin-bottom: 10px;
-}
 
-.card p {
-    color: #777;
-    line-height: 1.6;
-}
+    font-size: 27px;
 
-.categories {
-    background: #171717;
-    color: white;
-}
-
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    margin-top: 45px;
-}
-
-.category {
-    border: 1px solid #444;
-    border-radius: 18px;
-    padding: 30px 20px;
-    text-align: center;
-    transition: .25s;
-}
-
-.category:hover {
-    background: #252525;
-}
-
-.category-icon {
-    font-size: 38px;
-    margin-bottom: 15px;
-}
-
-.category h3 {
-    font-size: 18px;
     margin-bottom: 8px;
 }
 
-.category p {
+.cat-meta {
+    color: var(--caspi);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+.cat-info p {
+    color: var(--muted);
+
+    line-height: 1.7;
+
+    font-size: 15px;
+}
+
+/* ---------------- BAKU STRIP ---------------- */
+
+.baku-strip {
+    background: var(--caspi);
+
+    color: white;
+
+    padding: 23px 5%;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    letter-spacing: 2px;
+
+    font-size: 13px;
+}
+
+/* ---------------- MAP ---------------- */
+
+.map-section {
+    background: var(--stone-light);
+}
+
+.map-shell {
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 340px 1fr;
+
+    gap: 25px;
+}
+
+.map-panel {
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 12px 35px rgba(50,40,25,.08);
+}
+
+.map-panel h3 {
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.map-panel p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 22px;
+}
+
+.map-actions {
+    display: grid;
+
+    gap: 12px;
+}
+
+.map-type-btn {
+    border: 1px solid #ddd0bd;
+
+    background: #fffaf3;
+
+    border-radius: 14px;
+
+    padding: 13px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.map-type-btn:hover,
+.map-type-btn.active {
+    background: var(--caspi);
+    color: white;
+
+    border-color: var(--caspi);
+}
+
+.map-help {
+    margin-top: 22px;
+
+    background: var(--sand);
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    color: #655c50;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+#map {
+    height: 590px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px rgba(50,40,25,.10);
+}
+
+/* ---------------- BAKU CAT SPOTS ---------------- */
+
+.spots-section {
+    background: var(--night);
+
+    color: white;
+}
+
+.spots-section .section-subtitle {
+    color: #b6b1aa;
+}
+
+.spot-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.spot {
+    border:
+        1px solid rgba(255,255,255,.14);
+
+    padding: 28px;
+
+    border-radius: 20px;
+}
+
+.spot-icon {
+    font-size: 33px;
+
+    margin-bottom: 15px;
+}
+
+.spot h3 {
+    font-family: Georgia, serif;
+
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+.spot p {
     color: #aaa;
+
+    line-height: 1.65;
+
     font-size: 14px;
 }
 
-.about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+/* ---------------- ADD CAT ---------------- */
+
+.add-section {
+    background:
+        linear-gradient(
+            135deg,
+            #f1dfc4,
+            #fff8ee
+        );
 }
 
-.about img {
-    width: 100%;
-    border-radius: 25px;
-}
+.add-box {
+    max-width: 750px;
 
-.about-text h2 {
-    font-family: Georgia, serif;
-    font-size: 52px;
-    font-weight: 400;
-    margin-bottom: 25px;
-}
+    margin: auto;
 
-.about-text p {
-    color: #666;
-    line-height: 1.9;
-    margin-bottom: 25px;
-}
-
-.contact {
-    background: #eee8df;
-    text-align: center;
-}
-
-.contact-box {
-    max-width: 650px;
-    margin: 40px auto 0;
-}
-
-.contact-box input,
-.contact-box textarea {
-    width: 100%;
-    border: none;
     background: white;
-    padding: 18px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    font-size: 16px;
-    font-family: inherit;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 45px rgba(50,40,25,.09);
 }
 
-.contact-box textarea {
-    min-height: 140px;
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+}
+
+.field {
+    margin-bottom: 15px;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    margin-bottom: 7px;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #ddd2c3;
+
+    border-radius: 12px;
+
+    background: #fffdf9;
+}
+
+.field textarea {
+    min-height: 120px;
+
     resize: vertical;
 }
 
-.submit {
-    border: none;
-    cursor: pointer;
-    background: #171717;
+.save-cat {
+    background: var(--pomegranate);
+
     color: white;
-    padding: 16px 35px;
-    border-radius: 30px;
-    font-size: 16px;
+
+    width: 100%;
 }
 
-footer {
-    background: #111;
-    color: #999;
+.demo-note {
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    color: #857a6b;
+
     text-align: center;
-    padding: 35px 20px;
-    font-size: 14px;
 }
 
-footer strong {
+/* ---------------- ABOUT ---------------- */
+
+.about-section {
+    background: white;
+}
+
+.about-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.about-photo {
+    width: 100%;
+
+    border-radius: 25px;
+}
+
+.about-copy h2 {
+    font-family: Georgia, serif;
+
+    font-size: 50px;
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+.about-copy p {
+    color: var(--muted);
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.footer {
+    background: #111;
+
+    color: #aaa;
+
+    padding: 45px 6%;
+
+    text-align: center;
+}
+
+.footer strong {
     color: white;
 }
+
+.footer-baku {
+    color: var(--stone);
+
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+/* ---------------- MUSIC BUTTON ---------------- */
 
 #musicToggle {
     position: fixed;
+
     right: 18px;
     bottom: 18px;
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
+
+    width: 60px;
+    height: 60px;
+
     border: none;
-    background: rgba(255,255,255,.95);
-    font-size: 30px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.96);
+
+    font-size: 31px;
+
     z-index: 9999;
+
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(0,0,0,.22);
-    transition: transform .2s ease, box-shadow .2s ease;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.25);
+
+    transition: .2s;
 }
 
 #musicToggle:hover {
-    transform: scale(1.08);
+    transform: scale(1.07);
 }
 
 #musicToggle.playing {
-    animation: catPulse 1.8s infinite ease-in-out;
+    animation:
+        catPulse 1.8s ease-in-out infinite;
 }
 
 @keyframes catPulse {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
-        box-shadow: 0 6px 18px rgba(0,0,0,.22);
     }
 
     50% {
-        transform: scale(1.08);
-        box-shadow: 0 8px 24px rgba(0,0,0,.30);
+        transform: scale(1.10);
     }
 }
 
-@media (max-width: 800px) {
-    .nav {
-        padding: 22px 5%;
-    }
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 950px) {
 
     .nav-links {
         display: none;
     }
 
-    .hero {
-        min-height: 90vh;
-        background-position: center 35%;
+    .cat-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .hero-content h1 {
-        font-size: 58px;
-    }
-
-    .cards {
+    .map-shell {
         grid-template-columns: 1fr;
     }
 
-    .category-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .about {
+    .spot-grid {
         grid-template-columns: 1fr;
     }
 
-    .about-text h2 {
-        font-size: 42px;
+    .about-grid {
+        grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 600px) {
 
     .section {
-        padding: 70px 5%;
+        padding:
+            70px 5%;
+    }
+
+    .hero {
+        min-height: 92vh;
+
+        background-position:
+            center 35%;
+    }
+
+    .hero h1 {
+        font-size: 57px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+
+    .cat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cat-photo img {
+        height: 350px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field.full {
+        grid-column: auto;
+    }
+
+    #map {
+        height: 520px;
+    }
+
+    .map-panel {
+        padding: 22px;
     }
 
     .section-title {
-        font-size: 40px;
+        font-size: 42px;
     }
 }
 
-@media (max-width: 450px) {
-    .category-grid {
-        grid-template-columns: 1fr;
-    }
-}
 </style>
 </head>
 
 <body>
 
-<section class="hero" id="home">
+<!-- HERO -->
+
+<header class="hero" id="home">
 
     <nav class="nav">
-        <div class="logo">CATS BAKU</div>
+
+        <div class="logo">
+            CATS BAKU
+            <small>BAKI PİŞİKLƏRİ</small>
+        </div>
 
         <div class="nav-links">
-            <a href="#cats">Cats</a>
-            <a href="#services">Services</a>
+
+            <a href="#cats">Pişiklər</a>
+
+            <a href="#mapSection">Cat Map</a>
+
+            <a href="#spots">Baku Spots</a>
+
+            <a href="#add">Add a Cat</a>
+
             <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+
         </div>
+
     </nav>
 
     <div class="hero-content">
-        <div>
-            <h1>Purrs, Paws<br>& Love</h1>
-            <p>THE CAT COMMUNITY OF BAKU</p>
 
-            <div class="buttons">
-                <a href="#cats" class="btn btn-primary">Find a Cat</a>
-                <a href="#contact" class="btn btn-secondary">Get Involved</a>
+        <div class="hero-inner">
+
+            <div class="baku-label">
+                BAKU • AZERBAIJAN
             </div>
+
+            <h1>
+                Purrs,
+                Paws
+                & Baku
+            </h1>
+
+            <p class="hero-subtitle">
+                THE CAT COMMUNITY OF OUR CITY
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#cats"
+                    class="btn btn-light"
+                >
+                    🐾 Meet the Cats
+                </a>
+
+                <a
+                    href="#mapSection"
+                    class="btn btn-outline"
+                >
+                    📍 Open Cat Map
+                </a>
+
+            </div>
+
         </div>
+
     </div>
 
-</section>
+    <div class="hero-pattern"></div>
 
-<section class="section" id="cats">
+</header>
 
-    <h2 class="section-title">Meet Our Cats</h2>
+<!-- CATS -->
+
+<section
+    class="section cat-section"
+    id="cats"
+>
+
+    <div class="section-kicker">
+        BAKI PİŞİKLƏRİ
+    </div>
+
+    <h2 class="section-title">
+        Meet Our Cats
+    </h2>
 
     <p class="section-subtitle">
-        Discover cats looking for a loving home and connect with the
-        people who care about them across Baku.
+        Discover the cats of Baku.
+        Filter the gallery by colour
+        and meet the personalities
+        living across our city.
     </p>
 
-    <div class="cards">
+    <div class="cat-filters">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=900&q=80" alt="Leo">
-            <div class="card-content">
-                <h3>Leo</h3>
-                <p>Friendly, calm and looking for his forever home.</p>
-            </div>
-        </div>
+        <button
+            class="filter-btn active"
+            data-filter="all"
+        >
+            All 🐾
+        </button>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=80" alt="Mia">
-            <div class="card-content">
-                <h3>Mia</h3>
-                <p>Playful and affectionate. Loves people and attention.</p>
-            </div>
-        </div>
+        <button
+            class="filter-btn"
+            data-filter="qara"
+        >
+            Qara 🖤
+        </button>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=900&q=80" alt="Oliver">
-            <div class="card-content">
-                <h3>Oliver</h3>
-                <p>A beautiful companion waiting for a new family.</p>
+        <button
+            class="filter-btn"
+            data-filter="rijik"
+        >
+            Rıjik 🧡
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="ag"
+        >
+            Ağ 🤍
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="zolaqli"
+        >
+            Zolaqlı 🐯
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="bala"
+        >
+            Balalar 🐾
+        </button>
+
+    </div>
+
+    <div class="cat-grid">
+
+        <article
+            class="cat-card"
+            data-category="rijik"
+        >
+
+            <div class="cat-photo">
+
+                <img
+                    src="cat-hero-final.jpg"
+                    alt="Orange cat in Baku"
+                >
+
+                <span class="cat-type">
+                    Rıjik 🧡
+                </span>
+
             </div>
-        </div>
+
+            <div class="cat-info">
+
+                <h3>
+                    Baku Ginger
+                </h3>
+
+                <div class="cat-meta">
+                    📍 Baku
+                </div>
+
+                <p>
+                    A sunny ginger cat enjoying
+                    the warm Baku afternoon.
+                </p>
+
+            </div>
+
+        </article>
+
+        <article
+            class="cat-card"
+            data-category="qara"
+        >
+
+            <div class="cat-photo">
+
+                <img
+                    src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=85"
+                    alt="Black cat"
+                >
+
+                <span class="cat-type">
+                    Qara 🖤
+                </span>
+
+            </div>
+
+            <div class="cat-info">
+
+                <h3>
+                    Qara
+                </h3>
+
+                <div class="cat-meta">
+                    📍 İçərişəhər
+                </div>
+
+                <p>
+                    Quiet, elegant and always
+                    watching the old city streets.
+                </p>
+
+            </div>
+
+        </article>
+
+        <article
+            class="cat-card"
+            data-category="zolaqli"
+        >
+
+            <div class="cat-photo">
+
+                <img
+                    src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=900&q=85"
+                    alt="Striped cat"
+                >
+
+                <span class="cat-type">
+                    Zolaqlı 🐯
+                </span>
+
+            </div>
+
+            <div class="cat-info">
+
+                <h3>
+                    Leo
+                </h3>
+
+                <div class="cat-meta">
+                    📍 Yasamal
+                </div>
+
+                <p>
+                    Curious and friendly.
+                    Usually waiting near the courtyard.
+                </p>
+
+            </div>
+
+        </article>
+
+        <article
+            class="cat-card"
+            data-category="ag"
+        >
+
+            <div class="cat-photo">
+
+                <img
+                    src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=900&q=85"
+                    alt="White cat"
+                >
+
+                <span class="cat-type">
+                    Ağ 🤍
+                </span>
+
+            </div>
+
+            <div class="cat-info">
+
+                <h3>
+                    Bulud
+                </h3>
+
+                <div class="cat-meta">
+                    📍 Nərimanov
+                </div>
+
+                <p>
+                    Soft, calm and always
+                    looking for a sunny place.
+                </p>
+
+            </div>
+
+        </article>
+
+        <article
+            class="cat-card"
+            data-category="bala"
+        >
+
+            <div class="cat-photo">
+
+                <img
+                    src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=900&q=85"
+                    alt="Kitten"
+                >
+
+                <span class="cat-type">
+                    Bala 🐾
+                </span>
+
+            </div>
+
+            <div class="cat-info">
+
+                <h3>
+                    Mini
+                </h3>
+
+                <div class="cat-meta">
+                    📍 White City
+                </div>
+
+                <p>
+                    Tiny, playful and
+                    discovering everything around her.
+                </p>
+
+            </div>
+
+        </article>
+
+        <article
+            class="cat-card"
+            data-category="rijik"
+        >
+
+            <div class="cat-photo">
+
+                <img
+                    src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=900&q=85"
+                    alt="Orange cat"
+                >
+
+                <span class="cat-type">
+                    Rıjik 🧡
+                </span>
+
+            </div>
+
+            <div class="cat-info">
+
+                <h3>
+                    Günəş
+                </h3>
+
+                <div class="cat-meta">
+                    📍 Boulevard
+                </div>
+
+                <p>
+                    Loves attention,
+                    people and the Caspian breeze.
+                </p>
+
+            </div>
+
+        </article>
 
     </div>
 
 </section>
 
-<section class="section categories" id="services">
+<div class="baku-strip">
+    🐾 BAKU • PİŞİKLƏR • COMMUNITY • CARE • LOVE • BAKI 🐾
+</div>
 
-    <h2 class="section-title">CatsBaku Community</h2>
+<!-- MAP -->
+
+<section
+    class="section map-section"
+    id="mapSection"
+>
+
+    <div class="section-kicker">
+        BAKU CAT MAP
+    </div>
+
+    <h2 class="section-title">
+        Where did you help a cat?
+    </h2>
 
     <p class="section-subtitle">
-        Everything cat lovers in Baku need — in one place.
+        Mark places around Baku where
+        cats were fed, given water,
+        seen living together or need help.
     </p>
 
-    <div class="category-grid">
+    <div class="map-shell">
 
-        <div class="category">
-            <div class="category-icon">🏠</div>
-            <h3>Adoption</h3>
-            <p>Find cats looking for a home.</p>
-        </div>
+        <aside class="map-panel">
 
-        <div class="category">
-            <div class="category-icon">🔎</div>
-            <h3>Lost & Found</h3>
-            <p>Help reunite cats with their families.</p>
-        </div>
-
-        <div class="category">
-            <div class="category-icon">🩺</div>
-            <h3>Veterinarians</h3>
-            <p>Discover veterinary services in Baku.</p>
-        </div>
-
-        <div class="category">
-            <div class="category-icon">❤️</div>
-            <h3>Volunteers</h3>
-            <p>Join people helping cats in our city.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="section" id="about">
-
-    <div class="about">
-
-        <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=1200&q=80" alt="Cat">
-
-        <div class="about-text">
-
-            <h2>Made for cats.<br>Made for Baku.</h2>
+            <h3>
+                Add a place
+            </h3>
 
             <p>
-                CatsBaku is a community created for people who love cats
-                and want to make life better for them.
+                Choose what happened,
+                then tap anywhere on the map.
+            </p>
+
+            <div class="map-actions">
+
+                <button
+                    class="map-type-btn active"
+                    data-map-type="food"
+                >
+                    🥣 Fed cats
+                </button>
+
+                <button
+                    class="map-type-btn"
+                    data-map-type="water"
+                >
+                    💧 Left water
+                </button>
+
+                <button
+                    class="map-type-btn"
+                    data-map-type="colony"
+                >
+                    🐈 Cat colony
+                </button>
+
+                <button
+                    class="map-type-btn"
+                    data-map-type="help"
+                >
+                    ❤️ Needs help
+                </button>
+
+            </div>
+
+            <div class="map-help">
+
+                Tap on the map to add
+                your selected marker.
+
+                <br><br>
+
+                For now, your markers are
+                saved on this device.
+
+            </div>
+
+        </aside>
+
+        <div id="map"></div>
+
+    </div>
+
+</section>
+
+<!-- SPOTS -->
+
+<section
+    class="section spots-section"
+    id="spots"
+>
+
+    <div class="section-kicker">
+        BAKU CAT LIFE
+    </div>
+
+    <h2 class="section-title">
+        Cat Spots of Baku
+    </h2>
+
+    <p class="section-subtitle">
+        Places where city life and
+        Baku's cats meet.
+    </p>
+
+    <div class="spot-grid">
+
+        <div class="spot">
+
+            <div class="spot-icon">
+                🏰
+            </div>
+
+            <h3>
+                İçərişəhər
+            </h3>
+
+            <p>
+                Stone streets, courtyards
+                and many local cats
+                living around the Old City.
+            </p>
+
+        </div>
+
+        <div class="spot">
+
+            <div class="spot-icon">
+                🌊
+            </div>
+
+            <h3>
+                Baku Boulevard
+            </h3>
+
+            <p>
+                Cats enjoying the breeze
+                near the Caspian Sea
+                and green spaces.
+            </p>
+
+        </div>
+
+        <div class="spot">
+
+            <div class="spot-icon">
+                🌳
+            </div>
+
+            <h3>
+                Neighbourhood Yards
+            </h3>
+
+            <p>
+                The courtyards of Baku
+                are home to countless
+                familiar community cats.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ADD CAT -->
+
+<section
+    class="section add-section"
+    id="add"
+>
+
+    <div class="section-kicker">
+        CATSBAKU COMMUNITY
+    </div>
+
+    <h2 class="section-title">
+        Add a Cat
+    </h2>
+
+    <p class="section-subtitle">
+        Found a beautiful Baku cat?
+        Add its name, colour and neighbourhood.
+    </p>
+
+    <div class="add-box">
+
+        <div class="form-grid">
+
+            <div class="field">
+
+                <label>
+                    Cat name
+                </label>
+
+                <input
+                    id="catName"
+                    type="text"
+                    placeholder="Example: Simba"
+                >
+
+            </div>
+
+            <div class="field">
+
+                <label>
+                    Category
+                </label>
+
+                <select id="catCategory">
+
+                    <option value="qara">
+                        Qara 🖤
+                    </option>
+
+                    <option value="rijik">
+                        Rıjik 🧡
+                    </option>
+
+                    <option value="ag">
+                        Ağ 🤍
+                    </option>
+
+                    <option value="zolaqli">
+                        Zolaqlı 🐯
+                    </option>
+
+                    <option value="bala">
+                        Bala 🐾
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="field full">
+
+                <label>
+                    Area of Baku
+                </label>
+
+                <input
+                    id="catArea"
+                    type="text"
+                    placeholder="Example: Yasamal"
+                >
+
+            </div>
+
+            <div class="field full">
+
+                <label>
+                    About the cat
+                </label>
+
+                <textarea
+                    id="catDescription"
+                    placeholder="Tell the CatsBaku community about this cat..."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+        <button
+            class="btn save-cat"
+            id="demoAddCat"
+        >
+            🐾 Add Cat
+        </button>
+
+        <div
+            class="demo-note"
+            id="formMessage"
+        >
+            Photo uploads and shared community submissions
+            will be connected in the next version.
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section
+    class="section about-section"
+    id="about"
+>
+
+    <div class="about-grid">
+
+        <img
+            class="about-photo"
+            src="cat-hero-final.jpg"
+            alt="CatsBaku cat"
+        >
+
+        <div class="about-copy">
+
+            <div
+                class="section-kicker"
+                style="text-align:left;"
+            >
+                MADE IN BAKU
+            </div>
+
+            <h2>
+                A city for people.
+                A city for cats.
+            </h2>
+
+            <p>
+                CatsBaku is a community
+                for people who care about
+                Baku's cats.
             </p>
 
             <p>
-                Our goal is simple: connect cats, owners, rescuers,
-                veterinarians, shelters and volunteers in one place.
+                We want to connect
+                residents, volunteers,
+                adopters, veterinarians
+                and everyone who simply
+                leaves a bowl of water
+                outside on a hot Baku day.
             </p>
-
-            <a href="#contact" class="btn" style="background:#171717;color:white;">
-                Contact Us
-            </a>
 
         </div>
 
@@ -502,90 +1588,551 @@ footer strong {
 
 </section>
 
-<section class="section contact" id="contact">
+<!-- FOOTER -->
 
-    <h2 class="section-title">Contact CatsBaku</h2>
+<footer class="footer">
 
-    <p class="section-subtitle">
-        Have a question, want to help, or want to tell us about a cat?
-        Send us a message.
-    </p>
-
-    <div class="contact-box">
-        <input type="text" placeholder="Your name">
-        <input type="email" placeholder="Your email">
-        <textarea placeholder="Your message"></textarea>
-        <button class="submit">Send Message</button>
-    </div>
-
-</section>
-
-<footer>
     <p>
-        © 2026 <strong>CatsBaku</strong> — Baku, Azerbaijan
+        © 2026
+        <strong>
+            CatsBaku
+        </strong>
     </p>
+
+    <div class="footer-baku">
+        BAKU • AZERBAIJAN 🇦🇿
+    </div>
+
 </footer>
 
-<audio id="bgMusic" loop preload="auto">
-    <source src="Atlas Baku.mp3" type="audio/mpeg">
+<!-- MUSIC -->
+
+<audio
+    id="bgMusic"
+    loop
+    preload="auto"
+>
+
+    <source
+        src="Atlas Baku.mp3"
+        type="audio/mpeg"
+    >
+
 </audio>
 
-<button id="musicToggle" type="button" aria-label="Play background music">🐱</button>
+<button
+    id="musicToggle"
+    type="button"
+    aria-label="Play background music"
+>
+    🐱
+</button>
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
 
 <script>
-const music = document.getElementById('bgMusic');
-const toggle = document.getElementById('musicToggle');
 
-music.volume = 0.35;
+/* --------------------------------
+   CAT FILTER
+-------------------------------- */
 
-let started = false;
+const filterButtons =
+    document.querySelectorAll(
+        '.filter-btn'
+    );
 
-function showPlaying() {
-    toggle.textContent = '😺';
-    toggle.classList.add('playing');
-    toggle.setAttribute('aria-label', 'Pause background music');
-}
+const catCards =
+    document.querySelectorAll(
+        '.cat-card'
+    );
 
-function showPaused() {
-    toggle.textContent = '🐱';
-    toggle.classList.remove('playing');
-    toggle.setAttribute('aria-label', 'Play background music');
-}
+filterButtons.forEach(button => {
 
-async function startMusic() {
-    if (started) return;
+    button.addEventListener(
+        'click',
+        () => {
 
-    try {
-        await music.play();
-        started = true;
-        showPlaying();
-    } catch (error) {
-        showPaused();
-    }
-}
+            filterButtons.forEach(
+                b =>
+                    b.classList.remove(
+                        'active'
+                    )
+            );
 
-document.addEventListener('click', startMusic, { once: true });
-document.addEventListener('touchstart', startMusic, { once: true });
+            button.classList.add(
+                'active'
+            );
 
-toggle.addEventListener('click', async function(event) {
-    event.stopPropagation();
+            const filter =
+                button.dataset.filter;
 
-    if (music.paused) {
-        try {
-            await music.play();
-            started = true;
-            showPlaying();
-        } catch (error) {
-            showPaused();
+            catCards.forEach(card => {
+
+                const show =
+                    filter === 'all'
+                    ||
+                    card.dataset.category
+                        === filter;
+
+                card.style.display =
+                    show
+                    ? 'block'
+                    : 'none';
+
+            });
+
         }
-    } else {
-        music.pause();
-        showPaused();
-    }
+    );
+
 });
 
-music.addEventListener('play', showPlaying);
-music.addEventListener('pause', showPaused);
+
+/* --------------------------------
+   MAP
+-------------------------------- */
+
+const map =
+    L.map(
+        'map'
+    ).setView(
+        [40.4093, 49.8671],
+        12
+    );
+
+L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+        maxZoom: 19,
+
+        attribution:
+            '&copy; OpenStreetMap contributors'
+    }
+).addTo(map);
+
+
+const markerTypes = {
+
+    food: {
+        emoji: '🥣',
+        text: 'Cats were fed'
+    },
+
+    water: {
+        emoji: '💧',
+        text: 'Water was left'
+    },
+
+    colony: {
+        emoji: '🐈',
+        text: 'Cat colony'
+    },
+
+    help: {
+        emoji: '❤️',
+        text: 'Cat needs help'
+    }
+
+};
+
+
+let selectedMapType =
+    'food';
+
+
+const mapTypeButtons =
+    document.querySelectorAll(
+        '.map-type-btn'
+    );
+
+
+mapTypeButtons.forEach(button => {
+
+    button.addEventListener(
+        'click',
+        () => {
+
+            mapTypeButtons.forEach(
+                b =>
+                    b.classList.remove(
+                        'active'
+                    )
+            );
+
+            button.classList.add(
+                'active'
+            );
+
+            selectedMapType =
+                button.dataset.mapType;
+
+        }
+    );
+
+});
+
+
+function createCatIcon(type) {
+
+    const info =
+        markerTypes[type];
+
+    return L.divIcon({
+
+        className: '',
+
+        html: `
+            <div style="
+                width:42px;
+                height:42px;
+                border-radius:50%;
+                background:white;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-size:23px;
+                box-shadow:
+                    0 5px 16px rgba(0,0,0,.28);
+                border:
+                    2px solid #1e6672;
+            ">
+                ${info.emoji}
+            </div>
+        `,
+
+        iconSize:
+            [42,42],
+
+        iconAnchor:
+            [21,21]
+
+    });
+
+}
+
+
+function addMarkerToMap(
+    lat,
+    lng,
+    type,
+    save = true
+) {
+
+    const info =
+        markerTypes[type];
+
+    L.marker(
+        [lat, lng],
+        {
+            icon:
+                createCatIcon(type)
+        }
+    )
+    .addTo(map)
+    .bindPopup(
+        `
+        <strong>
+            ${info.emoji}
+            ${info.text}
+        </strong>
+
+        <br>
+
+        CatsBaku community
+        `
+    );
+
+
+    if (save) {
+
+        const saved =
+            JSON.parse(
+                localStorage.getItem(
+                    'catsBakuMarkers'
+                )
+                ||
+                '[]'
+            );
+
+        saved.push({
+            lat,
+            lng,
+            type
+        });
+
+        localStorage.setItem(
+            'catsBakuMarkers',
+            JSON.stringify(saved)
+        );
+
+    }
+
+}
+
+
+map.on(
+    'click',
+    event => {
+
+        addMarkerToMap(
+            event.latlng.lat,
+            event.latlng.lng,
+            selectedMapType,
+            true
+        );
+
+    }
+);
+
+
+/* demo Baku markers */
+
+addMarkerToMap(
+    40.3667,
+    49.8352,
+    'colony',
+    false
+);
+
+addMarkerToMap(
+    40.3777,
+    49.8920,
+    'food',
+    false
+);
+
+addMarkerToMap(
+    40.4024,
+    49.8475,
+    'water',
+    false
+);
+
+
+/* load saved markers */
+
+const savedMarkers =
+    JSON.parse(
+        localStorage.getItem(
+            'catsBakuMarkers'
+        )
+        ||
+        '[]'
+    );
+
+
+savedMarkers.forEach(marker => {
+
+    addMarkerToMap(
+        marker.lat,
+        marker.lng,
+        marker.type,
+        false
+    );
+
+});
+
+
+/* --------------------------------
+   ADD CAT DEMO
+-------------------------------- */
+
+const demoAddCat =
+    document.getElementById(
+        'demoAddCat'
+    );
+
+const formMessage =
+    document.getElementById(
+        'formMessage'
+    );
+
+
+demoAddCat.addEventListener(
+    'click',
+    () => {
+
+        const name =
+            document
+                .getElementById(
+                    'catName'
+                )
+                .value
+                .trim();
+
+        const area =
+            document
+                .getElementById(
+                    'catArea'
+                )
+                .value
+                .trim();
+
+        if (!name || !area) {
+
+            formMessage.textContent =
+                'Please enter the cat name and area.';
+
+            return;
+
+        }
+
+        formMessage.textContent =
+            `🐾 ${name} from ${area} is ready for the future CatsBaku database!`;
+
+    }
+);
+
+
+/* --------------------------------
+   MUSIC
+-------------------------------- */
+
+const music =
+    document.getElementById(
+        'bgMusic'
+    );
+
+const toggle =
+    document.getElementById(
+        'musicToggle'
+    );
+
+
+music.volume =
+    0.35;
+
+
+let musicStarted =
+    false;
+
+
+function showPlaying() {
+
+    toggle.textContent =
+        '😺';
+
+    toggle.classList.add(
+        'playing'
+    );
+
+    toggle.setAttribute(
+        'aria-label',
+        'Pause background music'
+    );
+
+}
+
+
+function showPaused() {
+
+    toggle.textContent =
+        '🐱';
+
+    toggle.classList.remove(
+        'playing'
+    );
+
+    toggle.setAttribute(
+        'aria-label',
+        'Play background music'
+    );
+
+}
+
+
+async function startMusic() {
+
+    if (musicStarted) {
+        return;
+    }
+
+    try {
+
+        await music.play();
+
+        musicStarted =
+            true;
+
+        showPlaying();
+
+    }
+    catch (error) {
+
+        showPaused();
+
+    }
+
+}
+
+
+document.addEventListener(
+    'click',
+    startMusic,
+    {
+        once: true
+    }
+);
+
+
+document.addEventListener(
+    'touchstart',
+    startMusic,
+    {
+        once: true
+    }
+);
+
+
+toggle.addEventListener(
+    'click',
+    async event => {
+
+        event.stopPropagation();
+
+        if (music.paused) {
+
+            try {
+
+                await music.play();
+
+                musicStarted =
+                    true;
+
+                showPlaying();
+
+            }
+            catch (error) {
+
+                showPaused();
+
+            }
+
+        }
+        else {
+
+            music.pause();
+
+            showPaused();
+
+        }
+
+    }
+);
+
+
+music.addEventListener(
+    'play',
+    showPlaying
+);
+
+
+music.addEventListener(
+    'pause',
+    showPaused
+);
+
 </script>
 
 </body>
