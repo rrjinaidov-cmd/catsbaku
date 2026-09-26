@@ -3,154 +3,962 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
   <title>CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku</title>
-  <meta name="description" content="CatsBaku — a community site about the cats of Baku.">
+
+  <meta
+    name="description"
+    content="CatsBaku — a community site about the cats of Baku."
+  >
+
   <meta name="theme-color" content="#F3EBDD">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CatsBaku">
   <meta property="og:title" content="CatsBaku — Cats of Baku">
-  <meta property="og:description" content="Meet the cats of Baku, discover neighbourhoods and explore the cat map.">
+
+  <meta
+    property="og:description"
+    content="Meet the cats of Baku, discover neighbourhoods and explore the cat map."
+  >
+
   <meta property="og:url" content="https://catsbaku.com/">
-  <meta property="og:image" content="https://catsbaku.com/img/og-cover.jpg">
+
+  <meta
+    property="og:image"
+    content="https://catsbaku.com/img/og-cover.jpg"
+  >
+
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Manrope:wght@500;600;700;800&family=Marck+Script&display=swap">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link
+    rel="icon"
+    href="img/favicon.svg"
+    type="image/svg+xml"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Manrope:wght@500;600;700;800&family=Marck+Script&display=swap"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
 </head>
+
 <body>
 
 <header class="topbar">
+
   <div class="wrap topbar__in">
-    <a class="logo" href="#top"><img src="img/logo.svg" alt="" width="26" height="31">Cats<b>Baku</b></a>
-    <nav class="topnav" aria-label="Menu">
-      <a href="#cats" data-i18n="nav.cats">Pişiklər</a>
-      <a href="#month" data-i18n="month.eyebrow">Ayın pişiyi</a>
-      <a href="#map" data-i18n="nav.map">Xəritə</a>
-      <a href="#shop" data-i18n="nav.shop">Mağaza</a>
-      <button class="btn btn--pom" type="button" data-demo-add>+ <span data-i18n="nav.add">Əlavə et</span></button>
+
+    <a class="logo" href="#top">
+
+      <img
+        src="img/logo.svg"
+        alt=""
+        width="26"
+        height="31"
+      >
+
+      Cats<b>Baku</b>
+
+    </a>
+
+    <nav
+      class="topnav"
+      aria-label="Menu"
+    >
+
+      <a
+        href="#cats"
+        data-i18n="nav.cats"
+      >
+        Pişiklər
+      </a>
+
+      <a
+        href="#month"
+        data-i18n="month.eyebrow"
+      >
+        Ayın pişiyi
+      </a>
+
+      <a
+        href="#map"
+        data-i18n="nav.map"
+      >
+        Xəritə
+      </a>
+
+      <a
+        href="#shop"
+        data-i18n="nav.shop"
+      >
+        Mağaza
+      </a>
+
+      <button
+        class="btn btn--pom"
+        type="button"
+        data-demo-add
+      >
+        +
+        <span data-i18n="nav.add">
+          Əlavə et
+        </span>
+      </button>
+
     </nav>
-    <div class="langs" role="group" aria-label="Language">
-      <button type="button" data-lang="az">AZ</button><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button>
+
+    <div
+      class="langs"
+      role="group"
+      aria-label="Language"
+    >
+
+      <button
+        type="button"
+        data-lang="az"
+      >
+        AZ
+      </button>
+
+      <button
+        type="button"
+        data-lang="ru"
+      >
+        RU
+      </button>
+
+      <button
+        type="button"
+        data-lang="en"
+      >
+        EN
+      </button>
+
     </div>
+
   </div>
+
 </header>
 
 <main>
-  <section class="hero" id="top" aria-label="CatsBaku hero">
-    <img class="hero__img" src="img/hero-cat.jpg" alt="Ginger cat in Baku">
+
+  <!-- HERO -->
+
+  <section
+    class="hero"
+    id="top"
+    aria-label="CatsBaku hero"
+  >
+
+    <img
+      class="hero__img"
+      src="img/hero-cat.jpg"
+      alt="Ginger cat in Baku"
+    >
+
     <div class="hero__top">
-      <span class="badge" data-i18n="hero.today">Günün pişiyi</span>
-      <span class="badge">BAKU · AZERBAIJAN</span>
+
+      <span
+        class="badge"
+        data-i18n="hero.today"
+      >
+        Günün pişiyi
+      </span>
+
+      <span class="badge">
+        BAKU · AZERBAIJAN
+      </span>
+
     </div>
+
     <div class="hero__body">
-      <div class="hero__district">📍 Baku</div>
-      <h1 class="hero__name">Rijik</h1>
-      <p class="hero__quote" data-static-i18n="heroQuote">«Bakının hər küçəsində bir dost var.»</p>
+
+      <div class="hero__district">
+        📍 Baku
+      </div>
+
+      <h1 class="hero__name">
+        Rijik
+      </h1>
+
+      <p
+        class="hero__quote"
+        data-static-i18n="heroQuote"
+      >
+        «Bakının hər küçəsində bir dost var.»
+      </p>
+
       <div class="hero__actions">
-        <a class="btn btn--light" href="#cats" data-i18n="hero.more">Bütün pişiklər</a>
-        <button class="like" type="button" data-like-id="rijik" aria-label="Like">♡ <span>24</span></button>
+
+        <a
+          class="btn btn--light"
+          href="#cats"
+          data-i18n="hero.more"
+        >
+          Bütün pişiklər
+        </a>
+
+        <button
+          class="like"
+          type="button"
+          data-like-id="rijik"
+          aria-label="Like"
+        >
+          ♡
+          <span>
+            24
+          </span>
+        </button>
+
       </div>
+
     </div>
+
   </section>
 
-  <div class="carpet" aria-hidden="true"></div>
+  <div
+    class="carpet"
+    aria-hidden="true"
+  ></div>
 
-  <nav class="stories" id="stories" aria-label="Districts"></nav>
+  <nav
+    class="stories"
+    id="stories"
+    aria-label="Districts"
+  ></nav>
 
-  <section class="section" id="cats" style="padding-top:18px">
+  <!-- CATS -->
+
+  <section
+    class="section"
+    id="cats"
+    style="padding-top:18px"
+  >
+
     <div class="wrap">
+
       <div class="head">
+
         <div>
-          <div class="eyebrow">CatsBaku</div>
-          <h2 class="h2" data-i18n="cats.title">Bakı pişikləri</h2>
+
+          <div class="eyebrow">
+            CatsBaku
+          </div>
+
+          <h2
+            class="h2"
+            data-i18n="cats.title"
+          >
+            Bakı pişikləri
+          </h2>
+
         </div>
-        <span class="count" id="catsCount"></span>
+
+        <span
+          class="count"
+          id="catsCount"
+        ></span>
+
       </div>
-      <div class="chips" id="filters" role="group" aria-label="Filter"></div>
-      <div class="grid" id="grid"></div>
+
+      <div
+        class="chips"
+        id="filters"
+        role="group"
+        aria-label="Filter"
+      ></div>
+
+      <div
+        class="grid"
+        id="grid"
+      ></div>
+
     </div>
+
   </section>
 
-  <section class="section" id="month" style="padding-top:0">
+  <!-- CAT OF THE MONTH -->
+
+  <section
+    class="section"
+    id="month"
+    style="padding-top:0"
+  >
+
     <div class="wrap month-wrap">
+
       <div class="month">
-        <div class="eyebrow" data-i18n="month.eyebrow">Ayın pişiyi</div>
-        <h2 class="h2" data-i18n="month.title">Ürəklə səs ver</h2>
-        <p class="sub" data-i18n="month.sub"></p>
-        <div class="podium" id="podium"></div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="map" style="padding-top:0">
-    <div class="wrap">
-      <div class="head">
-        <div>
-          <div class="eyebrow">CatsBaku</div>
-          <h2 class="h2" data-i18n="map.title">Yanınızdakı pişiklər</h2>
-          <p class="sub" data-i18n="map.sub"></p>
+        <div
+          class="eyebrow"
+          data-i18n="month.eyebrow"
+        >
+          Ayın pişiyi
         </div>
+
+        <h2
+          class="h2"
+          data-i18n="month.title"
+        >
+          Ürəklə səs ver
+        </h2>
+
+        <p
+          class="sub"
+          data-i18n="month.sub"
+        ></p>
+
+        <div
+          class="podium"
+          id="podium"
+        ></div>
+
       </div>
-      <div class="map-box">
-        <div class="map" id="catMap" role="region" aria-label="Map"></div>
-        <button class="btn" type="button" id="locate">📍 <span data-i18n="map.locate">Mənim yerim</span></button>
-      </div>
+
     </div>
+
   </section>
 
-  <section class="section shop" id="shop">
+  <!-- MAP -->
+
+  <section
+    class="section"
+    id="map"
+    style="padding-top:0"
+  >
+
     <div class="wrap">
-      <div class="eyebrow" data-i18n="shop.eyebrow">Tezliklə</div>
-      <h2 class="h2" data-i18n="shop.title">Sevimli pişiyiniz futbolkada</h2>
-      <p class="sub" data-i18n="shop.sub"></p>
-      <div class="products" id="products"></div>
+
+      <div class="head">
+
+        <div>
+
+          <div class="eyebrow">
+            CatsBaku
+          </div>
+
+          <h2
+            class="h2"
+            data-i18n="map.title"
+          >
+            Yanınızdakı pişiklər
+          </h2>
+
+          <p
+            class="sub"
+            data-i18n="map.sub"
+          ></p>
+
+        </div>
+
+      </div>
+
+      <div class="map-box">
+
+        <div
+          class="map"
+          id="catMap"
+          role="region"
+          aria-label="Map"
+        ></div>
+
+        <button
+          class="btn"
+          type="button"
+          id="locate"
+        >
+          📍
+          <span data-i18n="map.locate">
+            Mənim yerim
+          </span>
+        </button>
+
+      </div>
+
     </div>
+
   </section>
 
-  <div class="carpet" aria-hidden="true"></div>
+  <!-- SHOP -->
+
+  <section
+    class="section shop"
+    id="shop"
+  >
+
+    <div class="wrap">
+
+      <div
+        class="eyebrow"
+        data-i18n="shop.eyebrow"
+      >
+        Tezliklə
+      </div>
+
+      <h2
+        class="h2"
+        data-i18n="shop.title"
+      >
+        Sevimli pişiyiniz futbolkada
+      </h2>
+
+      <p
+        class="sub"
+        data-i18n="shop.sub"
+      ></p>
+
+      <div
+        class="products"
+        id="products"
+      ></div>
+
+    </div>
+
+  </section>
+
+  <div
+    class="carpet"
+    aria-hidden="true"
+  ></div>
+
+  <!-- ABOUT -->
 
   <section class="wrap about">
-    <img src="img/logo.svg" alt="CatsBaku">
-    <h2 class="h2" data-i18n="about.title">İnsanlar üçün şəhər. Pişiklər üçün şəhər.</h2>
-    <p class="sub" data-i18n="about.text"></p>
+
+    <img
+      src="img/logo.svg"
+      alt="CatsBaku"
+    >
+
+    <h2
+      class="h2"
+      data-i18n="about.title"
+    >
+      İnsanlar üçün şəhər. Pişiklər üçün şəhər.
+    </h2>
+
+    <p
+      class="sub"
+      data-i18n="about.text"
+    ></p>
+
   </section>
+
 </main>
 
+<!-- FOOTER -->
+
 <footer class="footer">
-  <b>CatsBaku</b> · © <span id="year">2026</span> · <span data-i18n="footer.city">BAKI · AZƏRBAYCAN</span>
+
+  <b>
+    CatsBaku
+  </b>
+
+  · ©
+
+  <span id="year">
+    2026
+  </span>
+
+  ·
+
+  <span data-i18n="footer.city">
+    BAKI · AZƏRBAYCAN
+  </span>
+
 </footer>
 
-<nav class="bottomnav" aria-label="Menu">
+<!-- MOBILE MENU -->
+
+<nav
+  class="bottomnav"
+  aria-label="Menu"
+>
+
   <ul>
-    <li><a href="#top" class="is-active"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span data-i18n="nav.home">Əsas</span></a></li>
-    <li><a href="#map"><svg viewBox="0 0 24 24"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg><span data-i18n="nav.map">Xəritə</span></a></li>
-    <li><button type="button" class="add" data-demo-add><span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span data-i18n="nav.add">Əlavə et</span></button></li>
-    <li><a href="#cats"><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.4 2.9 4.5 6.6 4.5c2.1 0 3.7 1.2 5.4 3.2 1.7-2 3.3-3.2 5.4-3.2 3.7 0 5.7 3.9 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg><span data-i18n="nav.fav">Sevimlilər</span></a></li>
-    <li><a href="#shop"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span data-i18n="nav.shop">Mağaza</span></a></li>
+
+    <li>
+
+      <a
+        href="#top"
+        class="is-active"
+      >
+
+        <svg viewBox="0 0 24 24">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>
+        </svg>
+
+        <span data-i18n="nav.home">
+          Əsas
+        </span>
+
+      </a>
+
+    </li>
+
+    <li>
+
+      <a href="#map">
+
+        <svg viewBox="0 0 24 24">
+          <path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/>
+          <path d="M9 4v14M15 6v14"/>
+        </svg>
+
+        <span data-i18n="nav.map">
+          Xəritə
+        </span>
+
+      </a>
+
+    </li>
+
+    <li>
+
+      <button
+        type="button"
+        class="add"
+        data-demo-add
+      >
+
+        <span class="plus">
+
+          <svg viewBox="0 0 24 24">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+
+        </span>
+
+        <span data-i18n="nav.add">
+          Əlavə et
+        </span>
+
+      </button>
+
+    </li>
+
+    <li>
+
+      <a href="#cats">
+
+        <svg viewBox="0 0 24 24">
+          <path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.4 2.9 4.5 6.6 4.5c2.1 0 3.7 1.2 5.4 3.2 1.7-2 3.3-3.2 5.4-3.2 3.7 0 5.7 3.9 4.2 7.2C19.5 16.4 12 21 12 21z"/>
+        </svg>
+
+        <span data-i18n="nav.fav">
+          Sevimlilər
+        </span>
+
+      </a>
+
+    </li>
+
+    <li>
+
+      <a href="#shop">
+
+        <svg viewBox="0 0 24 24">
+          <path d="M5 8h14l-1 12H6z"/>
+          <path d="M9 8a3 3 0 0 1 6 0"/>
+        </svg>
+
+        <span data-i18n="nav.shop">
+          Mağaza
+        </span>
+
+      </a>
+
+    </li>
+
   </ul>
+
 </nav>
 
-<dialog class="sheet" id="demoSheet" aria-labelledby="demoTitle">
+<!-- ADD CAT DEMO -->
+
+<dialog
+  class="sheet"
+  id="demoSheet"
+  aria-labelledby="demoTitle"
+>
+
   <div class="sheet__in">
+
     <div class="sheet__grip"></div>
-    <div class="sheet__head"><h2 id="demoTitle">Add a cat</h2><button class="sheet__close" type="button" data-close aria-label="Close">×</button></div>
-    <div class="sheet__body">
-      <div class="empty">
-        <div style="font-size:52px">🐾</div>
-        <h3 id="demoHeading" style="font-size:30px">Coming soon</h3>
-        <p id="demoText" class="sub">The site is currently running without a database. Cat submissions will be enabled after the design is approved.</p>
-        <button class="btn btn--pom" type="button" data-close>OK</button>
-      </div>
+
+    <div class="sheet__head">
+
+      <h2 id="demoTitle">
+        Add a cat
+      </h2>
+
+      <button
+        class="sheet__close"
+        type="button"
+        data-close
+        aria-label="Close"
+      >
+        ×
+      </button>
+
     </div>
+
+    <div class="sheet__body">
+
+      <div class="empty">
+
+        <div style="font-size:52px">
+          🐾
+        </div>
+
+        <h3
+          id="demoHeading"
+          style="font-size:30px"
+        >
+          Coming soon
+        </h3>
+
+        <p
+          id="demoText"
+          class="sub"
+        >
+          The site is currently running without a database.
+          Cat submissions will be enabled after the design is approved.
+        </p>
+
+        <button
+          class="btn btn--pom"
+          type="button"
+          data-close
+        >
+          OK
+        </button>
+
+      </div>
+
+    </div>
+
   </div>
+
 </dialog>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="js/i18n.js"></script>
-<script src="js/static.js"></script>
+<!-- MUSIC -->
+
+<audio
+  id="bgMusic"
+  loop
+  preload="auto"
+>
+
+  <source
+    src="Atlas Baku.mp3"
+    type="audio/mpeg"
+  >
+
+</audio>
+
+<button
+  id="musicToggle"
+  type="button"
+  aria-label="Play background music"
+  title="Music"
+>
+  🐱
+</button>
+
+<style>
+
+#musicToggle {
+
+  position:
+    fixed;
+
+  right:
+    18px;
+
+  bottom:
+    86px;
+
+  width:
+    58px;
+
+  height:
+    58px;
+
+  border:
+    0;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(255,255,255,.96);
+
+  font-size:
+    28px;
+
+  line-height:
+    1;
+
+  cursor:
+    pointer;
+
+  z-index:
+    10000;
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.22);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+
+}
+
+#musicToggle:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.28);
+
+}
+
+#musicToggle.is-playing {
+
+  animation:
+    musicCatPulse
+    1.8s
+    ease-in-out
+    infinite;
+
+}
+
+@keyframes musicCatPulse {
+
+  0%,
+  100% {
+
+    transform:
+      scale(1);
+
+  }
+
+  50% {
+
+    transform:
+      scale(1.08);
+
+  }
+
+}
+
+@media
+(min-width:760px) {
+
+  #musicToggle {
+
+    bottom:
+      22px;
+
+  }
+
+}
+
+@media
+(prefers-reduced-motion:reduce) {
+
+  #musicToggle.is-playing {
+
+    animation:
+      none;
+
+  }
+
+}
+
+</style>
+
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+<script
+  src="js/i18n.js"
+></script>
+
+<script
+  src="js/static.js"
+></script>
+
+<script>
+
+(function () {
+
+  const music =
+    document.getElementById(
+      "bgMusic"
+    );
+
+  const toggle =
+    document.getElementById(
+      "musicToggle"
+    );
+
+  if (
+    !music
+    ||
+    !toggle
+  ) {
+
+    return;
+
+  }
+
+  music.volume =
+    0.35;
+
+  function showPlaying() {
+
+    toggle.textContent =
+      "😺";
+
+    toggle.classList.add(
+      "is-playing"
+    );
+
+    toggle.setAttribute(
+      "aria-label",
+      "Pause background music"
+    );
+
+  }
+
+  function showPaused() {
+
+    toggle.textContent =
+      "🐱";
+
+    toggle.classList.remove(
+      "is-playing"
+    );
+
+    toggle.setAttribute(
+      "aria-label",
+      "Play background music"
+    );
+
+  }
+
+  async function playMusic() {
+
+    try {
+
+      await music.play();
+
+      showPlaying();
+
+    }
+    catch (error) {
+
+      showPaused();
+
+    }
+
+  }
+
+  function startOnFirstInteraction() {
+
+    if (
+      music.paused
+    ) {
+
+      playMusic();
+
+    }
+
+  }
+
+  document.addEventListener(
+    "click",
+    startOnFirstInteraction,
+    {
+      once:
+        true
+    }
+  );
+
+  document.addEventListener(
+    "touchstart",
+    startOnFirstInteraction,
+    {
+      once:
+        true,
+      passive:
+        true
+    }
+  );
+
+  toggle.addEventListener(
+    "click",
+    async function (event) {
+
+      event.stopPropagation();
+
+      if (
+        music.paused
+      ) {
+
+        await playMusic();
+
+      }
+      else {
+
+        music.pause();
+
+        showPaused();
+
+      }
+
+    }
+  );
+
+  music.addEventListener(
+    "play",
+    showPlaying
+  );
+
+  music.addEventListener(
+    "pause",
+    showPaused
+  );
+
+})();
+
+</script>
+
 </body>
 </html>
