@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CatsBaku — Baku Cat Community</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    CatsBaku — Baku Cat Community
+</title>
 
 <meta
     name="description"
@@ -14,9 +22,11 @@
 <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-/>
+>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
 
 <style>
 
@@ -43,24 +53,36 @@ html {
 }
 
 body {
+
     font-family:
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
 
-    background: var(--cream);
-    color: var(--night);
+    background:
+        var(--cream);
+
+    color:
+        var(--night);
+
 }
 
 button,
 input,
 textarea,
 select {
+
     font: inherit;
+
 }
 
+/* =========================
+   BAKU ORNAMENT
+========================= */
+
 .baku-ornament {
+
     height: 14px;
 
     background:
@@ -71,13 +93,19 @@ select {
             var(--caspian) 24px 36px,
             var(--gold) 36px 48px
         );
+
 }
 
 .baku-divider {
+
     width: 120px;
     height: 4px;
-    margin: 24px auto 0;
-    border-radius: 999px;
+
+    margin:
+        24px auto 0;
+
+    border-radius:
+        999px;
 
     background:
         linear-gradient(
@@ -86,107 +114,198 @@ select {
             var(--gold),
             var(--caspian)
         );
+
 }
 
+/* =========================
+   HERO
+========================= */
+
 .hero {
-    min-height: 100vh;
+
+    min-height:
+        100vh;
 
     background:
+
         linear-gradient(
-            rgba(5,10,10,.22),
-            rgba(5,10,10,.65)
+            rgba(5,10,10,.18),
+            rgba(5,10,10,.68)
         ),
-        url("cat-rijik-02.jpg")
+
+        url("cat-hero-winter.jpg")
         center / cover;
 
-    color: white;
+    color:
+        white;
 
-    display: flex;
-    flex-direction: column;
+    display:
+        flex;
 
-    position: relative;
+    flex-direction:
+        column;
+
+    position:
+        relative;
+
 }
 
 .nav {
-    padding: 24px 6%;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding:
+        24px 6%;
 
-    position: relative;
-    z-index: 3;
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
 }
 
 .logo {
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: 5px;
+
+    font-size:
+        25px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        5px;
+
 }
 
 .logo small {
-    display: block;
-    margin-top: 4px;
-    color: #ead6b5;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 3px;
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+
+    color:
+        #ead6b5;
+
+    font-size:
+        10px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        3px;
+
 }
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 24px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        24px;
+
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: .2s;
+
+    color:
+        white;
+
+    text-decoration:
+        none;
+
+    font-size:
+        14px;
+
+    transition:
+        .2s;
+
 }
 
 .nav-links a:hover {
-    color: #f1d3a1;
+
+    color:
+        #f1d3a1;
+
 }
 
 .hero-content {
-    flex: 1;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex:
+        1;
 
-    text-align: center;
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
 
     padding:
-        40px 20px
-        100px;
+        40px 20px 100px;
+
 }
 
 .hero-inner {
-    max-width: 900px;
+
+    max-width:
+        900px;
+
 }
 
 .baku-label {
-    display: inline-block;
-    padding: 9px 18px;
-    margin-bottom: 24px;
+
+    display:
+        inline-block;
+
+    padding:
+        9px 18px;
+
+    margin-bottom:
+        24px;
 
     border:
         1px solid
         rgba(255,255,255,.55);
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
-    font-size: 12px;
-    letter-spacing: 3px;
+    font-size:
+        12px;
 
-    backdrop-filter: blur(8px);
+    letter-spacing:
+        3px;
+
+    backdrop-filter:
+        blur(8px);
+
 }
 
 .hero h1 {
-    font-family: Georgia, serif;
+
+    font-family:
+        Georgia,
+        serif;
 
     font-size:
         clamp(
@@ -195,61 +314,117 @@ select {
             118px
         );
 
-    font-weight: 400;
-    line-height: .95;
+    font-weight:
+        400;
 
-    margin-bottom: 25px;
+    line-height:
+        .95;
+
+    margin-bottom:
+        25px;
+
 }
 
 .hero-subtitle {
-    font-size: 18px;
-    letter-spacing: 3px;
-    margin-bottom: 35px;
+
+    font-size:
+        18px;
+
+    letter-spacing:
+        3px;
+
+    margin-bottom:
+        35px;
+
 }
 
 .hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    flex-wrap:
+        wrap;
+
 }
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 
-    min-height: 52px;
-    padding: 0 27px;
+    display:
+        inline-flex;
 
-    border-radius: 999px;
-    border: none;
+    align-items:
+        center;
 
-    cursor: pointer;
+    justify-content:
+        center;
 
-    text-decoration: none;
-    font-weight: 700;
+    min-height:
+        52px;
 
-    transition: .2s;
+    padding:
+        0 27px;
+
+    border-radius:
+        999px;
+
+    border:
+        none;
+
+    cursor:
+        pointer;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        700;
+
+    transition:
+        .2s;
+
 }
 
 .btn:hover {
-    transform: translateY(-2px);
+
+    transform:
+        translateY(-2px);
+
 }
 
 .btn:disabled {
-    opacity: .65;
-    cursor: not-allowed;
-    transform: none;
+
+    opacity:
+        .65;
+
+    cursor:
+        not-allowed;
+
+    transform:
+        none;
+
 }
 
 .btn-light {
-    background: white;
-    color: var(--night);
+
+    background:
+        white;
+
+    color:
+        var(--night);
+
 }
 
 .btn-outline {
-    color: white;
+
+    color:
+        white;
 
     border:
         1px solid
@@ -257,41 +432,77 @@ select {
 
     background:
         rgba(255,255,255,.08);
+
 }
 
 .hero-cityline {
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
 
-    transform: translateX(-50%);
+    position:
+        absolute;
 
-    width: 90%;
+    bottom:
+        24px;
 
-    text-align: center;
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        90%;
+
+    text-align:
+        center;
 
     color:
         rgba(255,255,255,.76);
 
-    font-size: 12px;
-    letter-spacing: 2px;
+    font-size:
+        12px;
+
+    letter-spacing:
+        2px;
+
 }
 
+/* =========================
+   SECTIONS
+========================= */
+
 .section {
-    padding: 90px 6%;
+
+    padding:
+        90px 6%;
+
 }
 
 .section-kicker {
-    text-align: center;
-    color: var(--pomegranate);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 4px;
-    margin-bottom: 12px;
+
+    text-align:
+        center;
+
+    color:
+        var(--pomegranate);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        4px;
+
+    margin-bottom:
+        12px;
+
 }
 
 .section-title {
-    text-align: center;
+
+    text-align:
+        center;
 
     font-family:
         Georgia,
@@ -304,117 +515,195 @@ select {
             64px
         );
 
-    font-weight: 400;
+    font-weight:
+        400;
 
-    margin-bottom: 18px;
+    margin-bottom:
+        18px;
+
 }
 
 .section-subtitle {
-    max-width: 720px;
+
+    max-width:
+        720px;
 
     margin:
         0 auto 45px;
 
-    text-align: center;
+    text-align:
+        center;
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    line-height: 1.8;
+    line-height:
+        1.8;
+
 }
 
+/* =========================
+   INTRO
+========================= */
+
 .baku-intro {
+
     background:
         linear-gradient(
             180deg,
             #f3e6d3,
             #fffaf2
         );
+
 }
 
 .baku-intro-grid {
-    max-width: 1100px;
-    margin: auto;
 
-    display: grid;
+    max-width:
+        1100px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
-    gap: 20px;
+    gap:
+        20px;
+
 }
 
 .baku-feature {
-    padding: 30px;
+
+    padding:
+        30px;
 
     border:
         1px solid
         #e5d5bf;
 
-    border-radius: 22px;
+    border-radius:
+        22px;
 
     background:
         rgba(255,255,255,.78);
 
-    text-align: center;
+    text-align:
+        center;
+
 }
 
 .baku-feature-icon {
-    font-size: 34px;
-    margin-bottom: 14px;
+
+    font-size:
+        34px;
+
+    margin-bottom:
+        14px;
+
 }
 
 .baku-feature h3 {
+
     font-family:
         Georgia,
         serif;
 
-    font-size: 24px;
+    font-size:
+        24px;
 
-    margin-bottom: 10px;
+    margin-bottom:
+        10px;
+
 }
 
 .baku-feature p {
-    color: var(--muted);
-    line-height: 1.7;
-    font-size: 14px;
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.7;
+
+    font-size:
+        14px;
+
 }
 
-.cat-filters {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+/* =========================
+   CAT FILTERS
+========================= */
 
-    margin-bottom: 40px;
+.cat-filters {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    flex-wrap:
+        wrap;
+
+    margin-bottom:
+        40px;
+
 }
 
 .filter-btn {
-    padding: 11px 18px;
+
+    padding:
+        11px 18px;
 
     border:
         1px solid
         #d8c8b4;
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
-    background: white;
+    background:
+        white;
 
-    font-weight: 700;
+    font-weight:
+        700;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    transition: .2s;
+    transition:
+        .2s;
+
 }
 
 .filter-btn.active,
 .filter-btn:hover {
-    background: var(--caspian);
-    color: white;
-    border-color: var(--caspian);
+
+    background:
+        var(--caspian);
+
+    color:
+        white;
+
+    border-color:
+        var(--caspian);
+
 }
 
+/* =========================
+   CAT GRID
+========================= */
+
 .cat-grid {
-    display: grid;
+
+    display:
+        grid;
 
     grid-template-columns:
         repeat(
@@ -422,15 +711,21 @@ select {
             minmax(0,1fr)
         );
 
-    gap: 24px;
+    gap:
+        24px;
+
 }
 
 .cat-card {
-    overflow: hidden;
 
-    border-radius: 24px;
+    overflow:
+        hidden;
 
-    background: white;
+    border-radius:
+        24px;
+
+    background:
+        white;
 
     border:
         1px solid
@@ -440,84 +735,158 @@ select {
         0 14px 38px
         rgba(45,35,20,.08);
 
-    transition: .25s;
+    transition:
+        .25s;
+
 }
 
 .cat-card:hover {
-    transform: translateY(-5px);
+
+    transform:
+        translateY(-5px);
+
 }
 
 .cat-photo {
-    position: relative;
+
+    position:
+        relative;
+
 }
 
 .cat-photo img {
-    display: block;
 
-    width: 100%;
-    height: 310px;
+    display:
+        block;
 
-    object-fit: cover;
+    width:
+        100%;
+
+    height:
+        310px;
+
+    object-fit:
+        cover;
+
 }
 
 .cat-type {
-    position: absolute;
 
-    top: 15px;
-    left: 15px;
+    position:
+        absolute;
 
-    padding: 8px 13px;
+    top:
+        15px;
 
-    border-radius: 999px;
+    left:
+        15px;
+
+    padding:
+        8px 13px;
+
+    border-radius:
+        999px;
 
     background:
         rgba(255,255,255,.94);
 
-    font-size: 12px;
-    font-weight: 800;
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
 }
 
 .cat-info {
-    padding: 23px;
+
+    padding:
+        23px;
+
 }
 
 .cat-info h3 {
+
     font-family:
         Georgia,
         serif;
 
-    font-size: 27px;
+    font-size:
+        27px;
 
-    margin-bottom: 8px;
+    margin-bottom:
+        8px;
+
 }
 
 .cat-meta {
-    color: var(--caspian);
 
-    font-size: 13px;
-    font-weight: 700;
+    color:
+        var(--caspian);
 
-    margin-bottom: 12px;
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        12px;
+
 }
 
 .cat-info p {
-    color: var(--muted);
-    line-height: 1.7;
-    font-size: 15px;
+
+    color:
+        var(--muted);
+
+    line-height:
+        1.7;
+
+    font-size:
+        15px;
+
 }
 
+.empty-cats {
+
+    grid-column:
+        1 / -1;
+
+    text-align:
+        center;
+
+    padding:
+        60px 20px;
+
+    color:
+        var(--muted);
+
+}
+
+/* =========================
+   STRIP
+========================= */
+
 .baku-strip {
-    padding: 23px 5%;
+
+    padding:
+        23px 5%;
 
     background:
         var(--caspian-dark);
 
-    color: white;
+    color:
+        white;
 
-    text-align: center;
+    text-align:
+        center;
 
-    font-size: 13px;
-    letter-spacing: 2px;
+    font-size:
+        13px;
+
+    letter-spacing:
+        2px;
 
     border-top:
         5px solid
@@ -526,31 +895,49 @@ select {
     border-bottom:
         5px solid
         var(--pomegranate);
+
 }
 
+/* =========================
+   MAP
+========================= */
+
 .map-section {
+
     background:
         var(--stone-light);
+
 }
 
 .map-shell {
-    max-width: 1250px;
-    margin: auto;
 
-    display: grid;
+    max-width:
+        1250px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
 
     grid-template-columns:
         340px 1fr;
 
-    gap: 25px;
+    gap:
+        25px;
+
 }
 
 .map-panel {
-    padding: 28px;
 
-    border-radius: 24px;
+    padding:
+        28px;
 
-    background: white;
+    border-radius:
+        24px;
+
+    background:
+        white;
 
     border:
         1px solid
@@ -559,63 +946,96 @@ select {
     box-shadow:
         0 12px 35px
         rgba(45,35,20,.08);
+
 }
 
 .map-panel h3 {
+
     font-family:
         Georgia,
         serif;
 
-    font-size: 30px;
+    font-size:
+        30px;
 
-    margin-bottom: 12px;
+    margin-bottom:
+        12px;
+
 }
 
 .map-panel p {
-    color: var(--muted);
 
-    font-size: 14px;
+    color:
+        var(--muted);
 
-    line-height: 1.7;
+    font-size:
+        14px;
 
-    margin-bottom: 22px;
+    line-height:
+        1.7;
+
+    margin-bottom:
+        22px;
+
 }
 
 .map-actions {
-    display: grid;
-    gap: 12px;
+
+    display:
+        grid;
+
+    gap:
+        12px;
+
 }
 
 .map-type-btn {
-    padding: 13px;
+
+    padding:
+        13px;
 
     border:
         1px solid
         #ddd0bd;
 
-    border-radius: 14px;
+    border-radius:
+        14px;
 
     background:
         #fffaf3;
 
-    text-align: left;
+    text-align:
+        left;
 
-    cursor: pointer;
+    cursor:
+        pointer;
+
 }
 
 .map-type-btn.active,
 .map-type-btn:hover {
-    background: var(--caspian);
-    color: white;
-    border-color: var(--caspian);
+
+    background:
+        var(--caspian);
+
+    color:
+        white;
+
+    border-color:
+        var(--caspian);
+
 }
 
 .map-help {
-    margin-top: 22px;
 
-    padding: 15px;
+    margin-top:
+        22px;
 
-    border-radius: 15px;
+    padding:
+        15px;
+
+    border-radius:
+        15px;
 
     background:
         #ead9c2;
@@ -623,17 +1043,24 @@ select {
     color:
         #655c50;
 
-    font-size: 13px;
+    font-size:
+        13px;
 
-    line-height: 1.6;
+    line-height:
+        1.6;
+
 }
 
 #map {
-    height: 590px;
 
-    overflow: hidden;
+    height:
+        590px;
 
-    border-radius: 24px;
+    overflow:
+        hidden;
+
+    border-radius:
+        24px;
 
     border:
         4px solid
@@ -642,31 +1069,51 @@ select {
     box-shadow:
         0 12px 35px
         rgba(45,35,20,.10);
+
 }
 
+/* =========================
+   BAKU SPOTS
+========================= */
+
 .spots-section {
-    background: var(--night);
-    color: white;
+
+    background:
+        var(--night);
+
+    color:
+        white;
+
 }
 
 .spots-section
 .section-subtitle {
-    color: #b6b1aa;
+
+    color:
+        #b6b1aa;
+
 }
 
 .spot-grid {
-    display: grid;
+
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
-    gap: 20px;
+    gap:
+        20px;
+
 }
 
 .spot {
-    padding: 28px;
 
-    border-radius: 20px;
+    padding:
+        28px;
+
+    border-radius:
+        20px;
 
     border:
         1px solid
@@ -674,47 +1121,74 @@ select {
 
     background:
         rgba(255,255,255,.025);
+
 }
 
 .spot-icon {
-    font-size: 34px;
-    margin-bottom: 15px;
+
+    font-size:
+        34px;
+
+    margin-bottom:
+        15px;
+
 }
 
 .spot h3 {
+
     font-family:
         Georgia,
         serif;
 
-    font-size: 24px;
+    font-size:
+        24px;
 
-    margin-bottom: 8px;
+    margin-bottom:
+        8px;
+
 }
 
 .spot p {
-    color: #aaa;
 
-    line-height: 1.7;
+    color:
+        #aaa;
 
-    font-size: 14px;
+    line-height:
+        1.7;
+
+    font-size:
+        14px;
+
 }
 
+/* =========================
+   ADD CAT
+========================= */
+
 .add-section {
+
     background:
         linear-gradient(
             135deg,
             #e4cca7,
             #fff7eb
         );
+
 }
 
 .add-box {
-    max-width: 800px;
-    margin: auto;
 
-    padding: 36px;
+    max-width:
+        800px;
 
-    border-radius: 28px;
+    margin:
+        auto;
+
+    padding:
+        36px;
+
+    border-radius:
+        28px;
 
     background:
         rgba(255,255,255,.95);
@@ -726,275 +1200,435 @@ select {
     box-shadow:
         0 15px 45px
         rgba(45,35,20,.09);
+
 }
 
 .form-grid {
-    display: grid;
+
+    display:
+        grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    gap: 15px;
+    gap:
+        15px;
+
 }
 
 .field {
-    margin-bottom: 15px;
+
+    margin-bottom:
+        15px;
+
 }
 
 .field.full {
+
     grid-column:
         1 / -1;
+
 }
 
 .field label {
-    display: block;
 
-    margin-bottom: 7px;
+    display:
+        block;
 
-    font-size: 13px;
+    margin-bottom:
+        7px;
 
-    font-weight: 800;
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+
 }
 
 .field input,
 .field select,
 .field textarea {
-    width: 100%;
 
-    padding: 15px;
+    width:
+        100%;
+
+    padding:
+        15px;
 
     border:
         1px solid
         #ddd2c3;
 
-    border-radius: 12px;
+    border-radius:
+        12px;
 
     background:
         #fffdf9;
+
 }
 
 .field textarea {
-    min-height: 120px;
 
-    resize: vertical;
+    min-height:
+        120px;
+
+    resize:
+        vertical;
+
 }
 
 .photo-upload-box {
-    padding: 25px;
+
+    padding:
+        25px;
 
     border:
         2px dashed
         #c9b89b;
 
-    border-radius: 20px;
+    border-radius:
+        20px;
 
     background:
         #fffaf2;
 
-    text-align: center;
+    text-align:
+        center;
+
 }
 
 .photo-upload-icon {
-    font-size: 40px;
-    margin-bottom: 10px;
+
+    font-size:
+        40px;
+
+    margin-bottom:
+        10px;
+
 }
 
 .photo-upload-title {
-    font-weight: 800;
-    margin-bottom: 8px;
+
+    font-weight:
+        800;
+
+    margin-bottom:
+        8px;
+
 }
 
 .photo-upload-text {
-    color: var(--muted);
 
-    font-size: 13px;
+    color:
+        var(--muted);
 
-    margin-bottom: 16px;
+    font-size:
+        13px;
+
+    margin-bottom:
+        16px;
+
 }
 
 #catPhoto {
-    display: block;
 
-    width: 100%;
+    display:
+        block;
 
-    border: none;
+    width:
+        100%;
 
-    background: transparent;
+    border:
+        none;
 
-    padding: 5px;
+    background:
+        transparent;
+
+    padding:
+        5px;
+
 }
 
 .photo-preview-box {
-    display: none;
 
-    margin-top: 18px;
+    display:
+        none;
+
+    margin-top:
+        18px;
+
 }
 
 .photo-preview-box img {
-    display: block;
 
-    width: 100%;
+    display:
+        block;
 
-    max-height: 420px;
+    width:
+        100%;
 
-    object-fit: cover;
+    max-height:
+        420px;
 
-    border-radius: 20px;
+    object-fit:
+        cover;
+
+    border-radius:
+        20px;
 
     box-shadow:
         0 8px 28px
         rgba(0,0,0,.14);
+
 }
 
 .save-cat {
-    width: 100%;
+
+    width:
+        100%;
 
     background:
         var(--pomegranate);
 
-    color: white;
+    color:
+        white;
+
 }
 
-.demo-note {
-    margin-top: 15px;
+.form-note {
 
-    text-align: center;
+    margin-top:
+        15px;
+
+    text-align:
+        center;
 
     color:
         #857a6b;
 
-    font-size: 12px;
+    font-size:
+        13px;
+
+    min-height:
+        20px;
+
 }
 
+/* =========================
+   ABOUT
+========================= */
+
 .about-section {
-    background: white;
+
+    background:
+        white;
+
 }
 
 .about-grid {
-    max-width: 1100px;
 
-    margin: auto;
+    max-width:
+        1100px;
 
-    display: grid;
+    margin:
+        auto;
+
+    display:
+        grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    gap: 60px;
+    gap:
+        60px;
 
-    align-items: center;
+    align-items:
+        center;
+
 }
 
 .about-photo {
-    width: 100%;
 
-    border-radius: 25px;
+    width:
+        100%;
+
+    max-height:
+        650px;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        25px;
 
     box-shadow:
         0 15px 40px
         rgba(0,0,0,.10);
+
 }
 
 .about-copy h2 {
+
     font-family:
         Georgia,
         serif;
 
-    font-size: 50px;
+    font-size:
+        50px;
 
-    font-weight: 400;
+    font-weight:
+        400;
 
-    margin-bottom: 20px;
+    margin-bottom:
+        20px;
+
 }
 
 .about-copy p {
-    color: var(--muted);
 
-    line-height: 1.9;
+    color:
+        var(--muted);
 
-    margin-bottom: 18px;
+    line-height:
+        1.9;
+
+    margin-bottom:
+        18px;
+
 }
 
+/* =========================
+   FOOTER
+========================= */
+
 .footer {
-    padding: 45px 6%;
 
-    background: #111;
+    padding:
+        45px 6%;
 
-    color: #aaa;
+    background:
+        #111;
 
-    text-align: center;
+    color:
+        #aaa;
+
+    text-align:
+        center;
+
 }
 
 .footer strong {
-    color: white;
+
+    color:
+        white;
+
 }
 
 .footer-baku {
-    margin-top: 8px;
 
-    color: var(--stone);
+    margin-top:
+        8px;
 
-    font-size: 13px;
+    color:
+        var(--stone);
 
-    letter-spacing: 2px;
+    font-size:
+        13px;
+
+    letter-spacing:
+        2px;
+
 }
 
+/* =========================
+   MUSIC BUTTON
+========================= */
+
 #musicToggle {
-    position: fixed;
 
-    right: 18px;
-    bottom: 18px;
+    position:
+        fixed;
 
-    width: 60px;
-    height: 60px;
+    right:
+        18px;
 
-    border: none;
-    border-radius: 50%;
+    bottom:
+        18px;
+
+    width:
+        60px;
+
+    height:
+        60px;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
 
     background:
         rgba(255,255,255,.96);
 
-    font-size: 31px;
+    font-size:
+        31px;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    z-index: 9999;
+    z-index:
+        9999;
 
     box-shadow:
         0 8px 25px
         rgba(0,0,0,.25);
 
-    transition: .2s;
+    transition:
+        .2s;
+
 }
 
 #musicToggle.playing {
+
     animation:
         catPulse
         1.8s
         infinite
         ease-in-out;
+
 }
 
 @keyframes catPulse {
+
     0%,
     100% {
-        transform: scale(1);
+        transform:
+            scale(1);
     }
 
     50% {
-        transform: scale(1.10);
+        transform:
+            scale(1.10);
     }
+
 }
+
+/* =========================
+   MOBILE
+========================= */
 
 @media
 (max-width: 950px) {
 
     .nav-links {
-        display: none;
+        display:
+            none;
     }
 
     .baku-intro-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .cat-grid {
@@ -1003,15 +1637,18 @@ select {
     }
 
     .map-shell {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .spot-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .about-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 }
@@ -1025,69 +1662,131 @@ select {
     }
 
     .hero {
+
         min-height:
             92vh;
 
         background-position:
-            58% 35%;
+            63% center;
+
     }
 
     .hero h1 {
-        font-size: 57px;
+
+        font-size:
+            57px;
+
     }
 
     .hero-subtitle {
-        font-size: 14px;
+
+        font-size:
+            14px;
+
     }
 
     .cat-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
 
     .cat-photo img {
-        height: 350px;
+
+        height:
+            350px;
+
     }
 
     .form-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
 
     .field.full {
-        grid-column: auto;
+
+        grid-column:
+            auto;
+
     }
 
     #map {
-        height: 520px;
+
+        height:
+            520px;
+
     }
 
     .section-title {
-        font-size: 42px;
+
+        font-size:
+            42px;
+
+    }
+
+    .add-box {
+
+        padding:
+            24px;
+
     }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="baku-ornament"></div>
 
-<header class="hero" id="home">
+<!-- =========================
+     HERO
+========================= -->
+
+<header
+    class="hero"
+    id="home"
+>
 
 <nav class="nav">
 
     <div class="logo">
+
         CATS BAKU
-        <small>BAKI PİŞİKLƏRİ</small>
+
+        <small>
+            BAKI PİŞİKLƏRİ
+        </small>
+
     </div>
 
     <div class="nav-links">
-        <a href="#cats">Pişiklər</a>
-        <a href="#mapSection">Cat Map</a>
-        <a href="#spots">Baku Spots</a>
-        <a href="#add">Add a Cat</a>
-        <a href="#about">About</a>
+
+        <a href="#cats">
+            Pişiklər
+        </a>
+
+        <a href="#mapSection">
+            Cat Map
+        </a>
+
+        <a href="#spots">
+            Baku Spots
+        </a>
+
+        <a href="#add">
+            Add a Cat
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
     </div>
 
 </nav>
@@ -1101,8 +1800,8 @@ select {
         </div>
 
         <h1>
-            Purrs,
-            Paws
+            Purrs,<br>
+            Paws<br>
             & Baku
         </h1>
 
@@ -1133,14 +1832,22 @@ select {
 </div>
 
 <div class="hero-cityline">
+
     İÇƏRİŞƏHƏR • BULVAR • YASAMAL • NƏRİMANOV • WHITE CITY • BAKU
+
 </div>
 
 </header>
 
 <div class="baku-ornament"></div>
 
-<section class="section baku-intro">
+<!-- =========================
+     INTRO
+========================= -->
+
+<section
+    class="section baku-intro"
+>
 
     <div class="section-kicker">
         BAKU CAT CULTURE
@@ -1151,9 +1858,11 @@ select {
     </h2>
 
     <p class="section-subtitle">
+
         From the stone streets of İçərişəhər
         to quiet neighbourhood courtyards,
         cats are part of everyday Baku life.
+
     </p>
 
     <div class="baku-divider"></div>
@@ -1163,37 +1872,74 @@ select {
     <div class="baku-intro-grid">
 
         <div class="baku-feature">
-            <div class="baku-feature-icon">🏰</div>
-            <h3>Old City Cats</h3>
+
+            <div class="baku-feature-icon">
+                🏰
+            </div>
+
+            <h3>
+                Old City Cats
+            </h3>
+
             <p>
+
                 Cats resting between sandstone walls,
                 balconies and ancient courtyards.
+
             </p>
+
         </div>
 
         <div class="baku-feature">
-            <div class="baku-feature-icon">🌊</div>
-            <h3>Caspian Cats</h3>
+
+            <div class="baku-feature-icon">
+                🌊
+            </div>
+
+            <h3>
+                Caspian Cats
+            </h3>
+
             <p>
+
                 Cats enjoying the breeze
                 and green spaces around Baku Boulevard.
+
             </p>
+
         </div>
 
         <div class="baku-feature">
-            <div class="baku-feature-icon">🥣</div>
-            <h3>Neighbourhood Care</h3>
+
+            <div class="baku-feature-icon">
+                🥣
+            </div>
+
+            <h3>
+                Neighbourhood Care
+            </h3>
+
             <p>
+
                 Residents leaving food and water
                 for familiar courtyard cats.
+
             </p>
+
         </div>
 
     </div>
 
 </section>
 
-<section class="section" id="cats">
+<!-- =========================
+     CATS
+========================= -->
+
+<section
+    class="section"
+    id="cats"
+>
 
     <div class="section-kicker">
         BAKI PİŞİKLƏRİ
@@ -1204,80 +1950,89 @@ select {
     </h2>
 
     <p class="section-subtitle">
+
         Discover cats around Baku.
         Filter the gallery by colour.
+
     </p>
 
     <div class="cat-filters">
 
-        <button class="filter-btn active" data-filter="all">
+        <button
+            class="filter-btn active"
+            data-filter="all"
+        >
             All 🐾
         </button>
 
-        <button class="filter-btn" data-filter="qara">
+        <button
+            class="filter-btn"
+            data-filter="qara"
+        >
             Qara 🖤
         </button>
 
-        <button class="filter-btn" data-filter="rijik">
+        <button
+            class="filter-btn"
+            data-filter="rijik"
+        >
             Rıjik 🧡
         </button>
 
-        <button class="filter-btn" data-filter="ag">
+        <button
+            class="filter-btn"
+            data-filter="ag"
+        >
             Ağ 🤍
         </button>
 
-        <button class="filter-btn" data-filter="zolaqli">
+        <button
+            class="filter-btn"
+            data-filter="zolaqli"
+        >
             Zolaqlı 🐯
         </button>
 
-        <button class="filter-btn" data-filter="bala">
+        <button
+            class="filter-btn"
+            data-filter="bala"
+        >
             Balalar 🐾
         </button>
 
     </div>
 
-    <div class="cat-grid" id="catGrid">
+    <!--
+        IMPORTANT:
+        No manually written cat card here.
+        Cats are loaded only from Supabase.
+    -->
 
-        <article class="cat-card" data-category="rijik">
+    <div
+        class="cat-grid"
+        id="catGrid"
+    >
 
-            <div class="cat-photo">
-
-                <img
-                    src="cat-rijik-02.jpg"
-                    alt="Ginger cat from Baku"
-                >
-
-                <span class="cat-type">
-                    Rıjik 🧡
-                </span>
-
-            </div>
-
-            <div class="cat-info">
-
-                <h3>Rıjik</h3>
-
-                <div class="cat-meta">
-                    📍 Baku
-                </div>
-
-                <p>
-                    Serious face,
-                    warm colour
-                    and pure Baku character.
-                </p>
-
-            </div>
-
-        </article>
+        <div
+            class="empty-cats"
+            id="loadingCats"
+        >
+            Loading Baku cats... 🐾
+        </div>
 
     </div>
 
 </section>
 
 <div class="baku-strip">
+
     🐾 BAKU • PİŞİKLƏR • COMMUNITY • CARE • LOVE • CASPIAN SEA • BAKI 🐾
+
 </div>
+
+<!-- =========================
+     MAP
+========================= -->
 
 <section
     class="section map-section"
@@ -1293,20 +2048,26 @@ select {
     </h2>
 
     <p class="section-subtitle">
+
         Mark places around Baku where cats
         were fed, given water,
         live together or need help.
+
     </p>
 
     <div class="map-shell">
 
         <aside class="map-panel">
 
-            <h3>Add a place</h3>
+            <h3>
+                Add a place
+            </h3>
 
             <p>
+
                 Choose a marker type
                 and then tap the map.
+
             </p>
 
             <div class="map-actions">
@@ -1342,9 +2103,14 @@ select {
             </div>
 
             <div class="map-help">
+
                 Tap the map to add a marker.
+
                 <br><br>
-                For now, markers are saved on this device only.
+
+                Map points are currently
+                saved on this device.
+
             </div>
 
         </aside>
@@ -1354,6 +2120,10 @@ select {
     </div>
 
 </section>
+
+<!-- =========================
+     BAKU SPOTS
+========================= -->
 
 <section
     class="section spots-section"
@@ -1369,44 +2139,80 @@ select {
     </h2>
 
     <p class="section-subtitle">
+
         Places where city life
         and Baku cats meet.
+
     </p>
 
     <div class="spot-grid">
 
         <div class="spot">
-            <div class="spot-icon">🏰</div>
-            <h3>İçərişəhər</h3>
+
+            <div class="spot-icon">
+                🏰
+            </div>
+
+            <h3>
+                İçərişəhər
+            </h3>
+
             <p>
+
                 Stone streets,
                 balconies and local cats
                 around the Old City.
+
             </p>
+
         </div>
 
         <div class="spot">
-            <div class="spot-icon">🌊</div>
-            <h3>Baku Boulevard</h3>
+
+            <div class="spot-icon">
+                🌊
+            </div>
+
+            <h3>
+                Baku Boulevard
+            </h3>
+
             <p>
+
                 Cats enjoying
                 the Caspian breeze
                 and green spaces.
+
             </p>
+
         </div>
 
         <div class="spot">
-            <div class="spot-icon">🌳</div>
-            <h3>Baku Courtyards</h3>
+
+            <div class="spot-icon">
+                🌳
+            </div>
+
+            <h3>
+                Baku Courtyards
+            </h3>
+
             <p>
+
                 Familiar community cats
                 living in neighbourhood yards.
+
             </p>
+
         </div>
 
     </div>
 
 </section>
+
+<!-- =========================
+     ADD CAT
+========================= -->
 
 <section
     class="section add-section"
@@ -1422,9 +2228,11 @@ select {
     </h2>
 
     <p class="section-subtitle">
+
         Found a Baku cat?
         Add its photo, name,
         category and neighbourhood.
+
     </p>
 
     <div class="add-box">
@@ -1433,13 +2241,14 @@ select {
 
             <div class="field">
 
-                <label>
+                <label for="catName">
                     Cat name
                 </label>
 
                 <input
                     id="catName"
                     type="text"
+                    maxlength="60"
                     placeholder="Example: Simba"
                 >
 
@@ -1447,11 +2256,13 @@ select {
 
             <div class="field">
 
-                <label>
+                <label for="catCategory">
                     Category
                 </label>
 
-                <select id="catCategory">
+                <select
+                    id="catCategory"
+                >
 
                     <option value="qara">
                         Qara 🖤
@@ -1479,13 +2290,14 @@ select {
 
             <div class="field full">
 
-                <label>
+                <label for="catArea">
                     Area of Baku
                 </label>
 
                 <input
                     id="catArea"
                     type="text"
+                    maxlength="100"
                     placeholder="Example: Yasamal"
                 >
 
@@ -1493,7 +2305,7 @@ select {
 
             <div class="field full">
 
-                <label>
+                <label for="catPhoto">
                     Cat photo
                 </label>
 
@@ -1508,7 +2320,10 @@ select {
                     </div>
 
                     <div class="photo-upload-text">
-                        Choose a photo from your phone or computer
+
+                        JPG, PNG or WebP.
+                        Maximum size 5 MB.
+
                     </div>
 
                     <input
@@ -1535,12 +2350,13 @@ select {
 
             <div class="field full">
 
-                <label>
+                <label for="catDescription">
                     About the cat
                 </label>
 
                 <textarea
                     id="catDescription"
+                    maxlength="600"
                     placeholder="Tell the CatsBaku community about this cat..."
                 ></textarea>
 
@@ -1550,21 +2366,28 @@ select {
 
         <button
             class="btn save-cat"
-            id="demoAddCat"
+            id="addCatButton"
+            type="button"
         >
             🐾 Add Cat
         </button>
 
         <div
-            class="demo-note"
+            class="form-note"
             id="formMessage"
         >
+
             Add a photo and the cat will be saved to CatsBaku.
+
         </div>
 
     </div>
 
 </section>
+
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section
     class="section about-section"
@@ -1575,8 +2398,8 @@ select {
 
         <img
             class="about-photo"
-            src="cat-hero-final.jpg"
-            alt="CatsBaku cat"
+            src="cat-hero-winter.jpg"
+            alt="CatsBaku ginger cat"
         >
 
         <div class="about-copy">
@@ -1589,23 +2412,28 @@ select {
             </div>
 
             <h2>
+
                 A city for people.
                 A city for cats.
+
             </h2>
 
             <p>
+
                 CatsBaku is a community
                 for people who care
                 about Baku's cats.
+
             </p>
 
             <p>
-                We want to connect
-                residents, volunteers,
-                adopters, veterinarians
-                and people who simply
-                leave food or water
-                for a street cat.
+
+                We want to connect residents,
+                volunteers, adopters,
+                veterinarians and people
+                who simply leave food
+                or water for a street cat.
+
             </p>
 
         </div>
@@ -1616,18 +2444,32 @@ select {
 
 <div class="baku-ornament"></div>
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer class="footer">
 
     <p>
+
         © 2026
-        <strong>CatsBaku</strong>
+        <strong>
+            CatsBaku
+        </strong>
+
     </p>
 
     <div class="footer-baku">
+
         BAKU • AZERBAIJAN 🇦🇿
+
     </div>
 
 </footer>
+
+<!-- =========================
+     MUSIC
+========================= -->
 
 <audio
     id="bgMusic"
@@ -1673,7 +2515,7 @@ const supabaseClient =
     );
 
 /* ==============================
-   SECURITY HELPER
+   HELPERS
 ============================== */
 
 function escapeHtml(value) {
@@ -1683,38 +2525,103 @@ function escapeHtml(value) {
         ||
         value === undefined
     ) {
+
         return "";
+
     }
 
     return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
+
+        .replaceAll(
+            "&",
+            "&amp;"
+        )
+
+        .replaceAll(
+            "<",
+            "&lt;"
+        )
+
+        .replaceAll(
+            ">",
+            "&gt;"
+        )
+
+        .replaceAll(
+            '"',
+            "&quot;"
+        )
+
+        .replaceAll(
+            "'",
+            "&#039;"
+        );
 
 }
-
-/* ==============================
-   CATEGORY LABELS
-============================== */
 
 function categoryLabel(category) {
 
     const labels = {
-        qara: "Qara 🖤",
-        rijik: "Rıjik 🧡",
-        ag: "Ağ 🤍",
-        zolaqli: "Zolaqlı 🐯",
-        bala: "Bala 🐾"
+
+        qara:
+            "Qara 🖤",
+
+        rijik:
+            "Rıjik 🧡",
+
+        ag:
+            "Ağ 🤍",
+
+        zolaqli:
+            "Zolaqlı 🐯",
+
+        bala:
+            "Bala 🐾"
+
     };
 
-    return labels[category] || category;
+    return (
+        labels[category]
+        ||
+        category
+    );
 
 }
 
 /* ==============================
-   CAT CARDS
+   CURRENT CAT FILTER
+============================== */
+
+let activeCatFilter =
+    "all";
+
+function applyCurrentFilter() {
+
+    document
+        .querySelectorAll(
+            ".cat-card"
+        )
+        .forEach(
+            card => {
+
+                const visible =
+                    activeCatFilter === "all"
+                    ||
+                    card.dataset.category
+                    === activeCatFilter;
+
+                card.style.display =
+                    visible
+                    ? "block"
+                    : "none";
+
+            }
+        );
+
+}
+
+/* ==============================
+   CAT CARD
 ============================== */
 
 function addCatCard(
@@ -1739,6 +2646,7 @@ function addCatCard(
         cat.category;
 
     article.innerHTML = `
+
         <div class="cat-photo">
 
             <img
@@ -1748,11 +2656,13 @@ function addCatCard(
             >
 
             <span class="cat-type">
+
                 ${escapeHtml(
                     categoryLabel(
                         cat.category
                     )
                 )}
+
             </span>
 
         </div>
@@ -1768,44 +2678,81 @@ function addCatCard(
             </div>
 
             <p>
+
                 ${escapeHtml(
                     cat.description
                     ||
                     "A Baku cat from our community."
                 )}
+
             </p>
 
         </div>
+
     `;
 
     if (prepend) {
-        grid.prepend(article);
+
+        grid.prepend(
+            article
+        );
+
     }
     else {
-        grid.appendChild(article);
+
+        grid.appendChild(
+            article
+        );
+
     }
+
+    applyCurrentFilter();
 
 }
 
 /* ==============================
-   LOAD CATS FROM DATABASE
+   LOAD CATS
 ============================== */
 
 async function loadCats() {
+
+    const grid =
+        document.getElementById(
+            "catGrid"
+        );
+
+    const loading =
+        document.getElementById(
+            "loadingCats"
+        );
 
     const {
         data,
         error
     } =
         await supabaseClient
-            .from("cats")
-            .select("*")
+
+            .from(
+                "cats"
+            )
+
+            .select(
+                "*"
+            )
+
             .order(
                 "created_at",
                 {
-                    ascending: false
+                    ascending:
+                        false
                 }
             );
+
+    if (loading) {
+
+        loading.remove();
+
+    }
 
     if (error) {
 
@@ -1814,12 +2761,61 @@ async function loadCats() {
             error
         );
 
+        const message =
+            document.createElement(
+                "div"
+            );
+
+        message.className =
+            "empty-cats";
+
+        message.textContent =
+            "Could not load cats right now.";
+
+        grid.appendChild(
+            message
+        );
+
         return;
+
+    }
+
+    if (
+        !data
+        ||
+        data.length === 0
+    ) {
+
+        const message =
+            document.createElement(
+                "div"
+            );
+
+        message.className =
+            "empty-cats";
+
+        message.textContent =
+            "No cats added yet. Be the first! 🐾";
+
+        message.id =
+            "emptyCatMessage";
+
+        grid.appendChild(
+            message
+        );
+
+        return;
+
     }
 
     data.forEach(
-        cat =>
-            addCatCard(cat)
+        cat => {
+
+            addCatCard(
+                cat
+            );
+
+        }
     );
 
 }
@@ -1827,7 +2823,7 @@ async function loadCats() {
 loadCats();
 
 /* ==============================
-   CAT FILTERS
+   FILTERS
 ============================== */
 
 const filterButtons =
@@ -1842,40 +2838,25 @@ filterButtons.forEach(
             "click",
             () => {
 
-                filterButtons.forEach(
-                    b =>
-                        b.classList.remove(
-                            "active"
-                        )
-                );
+                filterButtons
+                    .forEach(
+                        other => {
+
+                            other.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
 
                 button.classList.add(
                     "active"
                 );
 
-                const filter =
+                activeCatFilter =
                     button.dataset.filter;
 
-                document
-                    .querySelectorAll(
-                        ".cat-card"
-                    )
-                    .forEach(
-                        card => {
-
-                            const visible =
-                                filter === "all"
-                                ||
-                                card.dataset.category
-                                === filter;
-
-                            card.style.display =
-                                visible
-                                ? "block"
-                                : "none";
-
-                        }
-                    );
+                applyCurrentFilter();
 
             }
         );
@@ -1922,14 +2903,22 @@ catPhoto.addEventListener(
 
         }
 
+        const validTypes = [
+
+            "image/jpeg",
+            "image/png",
+            "image/webp"
+
+        ];
+
         if (
-            !file.type.startsWith(
-                "image/"
+            !validTypes.includes(
+                file.type
             )
         ) {
 
             alert(
-                "Please choose an image file."
+                "Please choose a JPG, PNG or WebP image."
             );
 
             this.value =
@@ -1959,7 +2948,7 @@ catPhoto.addEventListener(
             new FileReader();
 
         reader.onload =
-            function (event) {
+            event => {
 
                 photoPreview.src =
                     event.target.result;
@@ -1982,7 +2971,7 @@ catPhoto.addEventListener(
 
 const addCatButton =
     document.getElementById(
-        "demoAddCat"
+        "addCatButton"
     );
 
 const formMessage =
@@ -2062,14 +3051,22 @@ addCatButton.addEventListener(
         try {
 
             const extension =
-                photo.name
-                    .split(".")
-                    .pop()
-                    .toLowerCase();
+                (
+                    photo.name
+                        .split(".")
+                        .pop()
+                    ||
+                    "jpg"
+                )
+                .toLowerCase();
 
             const randomId =
+                window.crypto
+                &&
                 crypto.randomUUID
+
                 ? crypto.randomUUID()
+
                 : Math.random()
                     .toString(36)
                     .slice(2);
@@ -2077,19 +3074,25 @@ addCatButton.addEventListener(
             const fileName =
                 `${Date.now()}-${randomId}.${extension}`;
 
+            /* UPLOAD PHOTO */
+
             const {
                 data: uploadData,
                 error: uploadError
             } =
                 await supabaseClient
+
                     .storage
+
                     .from(
                         "cat-photos"
                     )
+
                     .upload(
                         fileName,
                         photo,
                         {
+
                             cacheControl:
                                 "3600",
 
@@ -2098,21 +3101,29 @@ addCatButton.addEventListener(
 
                             contentType:
                                 photo.type
+
                         }
                     );
 
             if (uploadError) {
+
                 throw uploadError;
+
             }
+
+            /* PUBLIC PHOTO URL */
 
             const {
                 data: publicUrlData
             } =
                 supabaseClient
+
                     .storage
+
                     .from(
                         "cat-photos"
                     )
+
                     .getPublicUrl(
                         uploadData.path
                     );
@@ -2120,38 +3131,65 @@ addCatButton.addEventListener(
             const photoUrl =
                 publicUrlData.publicUrl;
 
+            formMessage.textContent =
+                "Saving cat...";
+
+            /* DATABASE INSERT */
+
             const {
                 data: insertedCats,
                 error: insertError
             } =
                 await supabaseClient
-                    .from("cats")
-                    .insert([
-                        {
-                            name:
-                                name,
 
-                            category:
-                                category,
+                    .from(
+                        "cats"
+                    )
 
-                            area:
-                                area,
+                    .insert(
+                        [
+                            {
 
-                            description:
-                                description,
+                                name:
+                                    name,
 
-                            photo_url:
-                                photoUrl
-                        }
-                    ])
+                                category:
+                                    category,
+
+                                area:
+                                    area,
+
+                                description:
+                                    description,
+
+                                photo_url:
+                                    photoUrl
+
+                            }
+                        ]
+                    )
+
                     .select();
 
             if (insertError) {
+
                 throw insertError;
+
             }
 
             const catData =
                 insertedCats[0];
+
+            const emptyMessage =
+                document.getElementById(
+                    "emptyCatMessage"
+                );
+
+            if (emptyMessage) {
+
+                emptyMessage.remove();
+
+            }
 
             addCatCard(
                 catData,
@@ -2160,6 +3198,8 @@ addCatButton.addEventListener(
 
             formMessage.textContent =
                 `🐾 ${name} successfully added to CatsBaku!`;
+
+            /* RESET FORM */
 
             document
                 .getElementById(
@@ -2229,7 +3269,8 @@ addCatButton.addEventListener(
 const map =
     L.map(
         "map"
-    ).setView(
+    )
+    .setView(
         [
             40.4093,
             49.8671
@@ -2238,36 +3279,64 @@ const map =
     );
 
 L.tileLayer(
+
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+
     {
-        maxZoom: 19,
+
+        maxZoom:
+            19,
+
         attribution:
             "&copy; OpenStreetMap contributors"
+
     }
-).addTo(
+
+)
+.addTo(
     map
 );
 
 const markerTypes = {
 
     food: {
-        emoji: "🥣",
-        text: "Cats were fed"
+
+        emoji:
+            "🥣",
+
+        text:
+            "Cats were fed"
+
     },
 
     water: {
-        emoji: "💧",
-        text: "Water was left"
+
+        emoji:
+            "💧",
+
+        text:
+            "Water was left"
+
     },
 
     colony: {
-        emoji: "🐈",
-        text: "Cat colony"
+
+        emoji:
+            "🐈",
+
+        text:
+            "Cat colony"
+
     },
 
     help: {
-        emoji: "❤️",
-        text: "Cat needs help"
+
+        emoji:
+            "❤️",
+
+        text:
+            "Cat needs help"
+
     }
 
 };
@@ -2287,12 +3356,16 @@ mapButtons.forEach(
             "click",
             () => {
 
-                mapButtons.forEach(
-                    b =>
-                        b.classList.remove(
-                            "active"
-                        )
-                );
+                mapButtons
+                    .forEach(
+                        other => {
+
+                            other.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
 
                 button.classList.add(
                     "active"
@@ -2314,37 +3387,40 @@ function createMarkerIcon(
     const info =
         markerTypes[type];
 
-    return L.divIcon({
+    return L.divIcon(
+        {
 
-        className: "",
+            className:
+                "",
 
-        html:
-            `
-            <div
-                style="
-                    width:42px;
-                    height:42px;
-                    border-radius:50%;
-                    background:white;
-                    display:flex;
-                    align-items:center;
-                    justify-content:center;
-                    font-size:23px;
-                    border:2px solid #1f6975;
-                    box-shadow:0 5px 16px rgba(0,0,0,.28);
-                "
-            >
-                ${info.emoji}
-            </div>
-            `,
+            html:
+                `
+                <div
+                    style="
+                        width:42px;
+                        height:42px;
+                        border-radius:50%;
+                        background:white;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        font-size:23px;
+                        border:2px solid #1f6975;
+                        box-shadow:0 5px 16px rgba(0,0,0,.28);
+                    "
+                >
+                    ${info.emoji}
+                </div>
+                `,
 
-        iconSize:
-            [42,42],
+            iconSize:
+                [42,42],
 
-        iconAnchor:
-            [21,21]
+            iconAnchor:
+                [21,21]
 
-    });
+        }
+    );
 
 }
 
@@ -2364,22 +3440,28 @@ function addMarker(
             lng
         ],
         {
+
             icon:
                 createMarkerIcon(
                     type
                 )
+
         }
     )
+
     .addTo(
         map
     )
+
     .bindPopup(
         `
         <strong>
             ${info.emoji}
             ${info.text}
         </strong>
+
         <br>
+
         CatsBaku community
         `
     );
@@ -2397,9 +3479,16 @@ function addMarker(
 
         stored.push(
             {
-                lat,
-                lng,
-                type
+
+                lat:
+                    lat,
+
+                lng:
+                    lng,
+
+                type:
+                    type
+
             }
         );
 
@@ -2428,6 +3517,8 @@ map.on(
     }
 );
 
+/* Default Baku points */
+
 addMarker(
     40.3667,
     49.8352,
@@ -2448,6 +3539,8 @@ addMarker(
     "water",
     false
 );
+
+/* User's saved local markers */
 
 const storedMarkers =
     JSON.parse(
@@ -2500,6 +3593,11 @@ function showPlaying() {
         "playing"
     );
 
+    toggle.setAttribute(
+        "aria-label",
+        "Pause background music"
+    );
+
 }
 
 function showPaused() {
@@ -2511,12 +3609,21 @@ function showPaused() {
         "playing"
     );
 
+    toggle.setAttribute(
+        "aria-label",
+        "Play background music"
+    );
+
 }
 
 async function startMusic() {
 
-    if (musicStarted) {
+    if (
+        musicStarted
+    ) {
+
         return;
+
     }
 
     try {
@@ -2541,7 +3648,8 @@ document.addEventListener(
     "click",
     startMusic,
     {
-        once: true
+        once:
+            true
     }
 );
 
@@ -2549,7 +3657,8 @@ document.addEventListener(
     "touchstart",
     startMusic,
     {
-        once: true
+        once:
+            true
     }
 );
 
@@ -2559,7 +3668,9 @@ toggle.addEventListener(
 
         event.stopPropagation();
 
-        if (music.paused) {
+        if (
+            music.paused
+        ) {
 
             try {
 
@@ -2602,4 +3713,5 @@ music.addEventListener(
 </script>
 
 </body>
+
 </html>
