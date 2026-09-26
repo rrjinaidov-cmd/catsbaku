@@ -16,6 +16,8 @@
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
 />
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <style>
 
 :root {
@@ -58,8 +60,6 @@ select {
     font: inherit;
 }
 
-/* BAKU DECORATION */
-
 .baku-ornament {
     height: 14px;
 
@@ -87,8 +87,6 @@ select {
             var(--caspian)
         );
 }
-
-/* HERO */
 
 .hero {
     min-height: 100vh;
@@ -239,6 +237,12 @@ select {
     transform: translateY(-2px);
 }
 
+.btn:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+    transform: none;
+}
+
 .btn-light {
     background: white;
     color: var(--night);
@@ -272,8 +276,6 @@ select {
     font-size: 12px;
     letter-spacing: 2px;
 }
-
-/* GENERAL */
 
 .section {
     padding: 90px 6%;
@@ -319,8 +321,6 @@ select {
 
     line-height: 1.8;
 }
-
-/* BAKU INTRO */
 
 .baku-intro {
     background:
@@ -379,8 +379,6 @@ select {
     font-size: 14px;
 }
 
-/* CAT FILTERS */
-
 .cat-filters {
     display: flex;
     justify-content: center;
@@ -414,8 +412,6 @@ select {
     color: white;
     border-color: var(--caspian);
 }
-
-/* CAT CARDS */
 
 .cat-grid {
     display: grid;
@@ -510,8 +506,6 @@ select {
     font-size: 15px;
 }
 
-/* BAKU STRIP */
-
 .baku-strip {
     padding: 23px 5%;
 
@@ -533,8 +527,6 @@ select {
         5px solid
         var(--pomegranate);
 }
-
-/* MAP */
 
 .map-section {
     background:
@@ -652,8 +644,6 @@ select {
         rgba(45,35,20,.10);
 }
 
-/* BAKU SPOTS */
-
 .spots-section {
     background: var(--night);
     color: white;
@@ -708,8 +698,6 @@ select {
 
     font-size: 14px;
 }
-
-/* ADD CAT */
 
 .add-section {
     background:
@@ -790,8 +778,6 @@ select {
 
     resize: vertical;
 }
-
-/* PHOTO UPLOAD */
 
 .photo-upload-box {
     padding: 25px;
@@ -880,8 +866,6 @@ select {
     font-size: 12px;
 }
 
-/* ABOUT */
-
 .about-section {
     background: white;
 }
@@ -931,8 +915,6 @@ select {
     margin-bottom: 18px;
 }
 
-/* FOOTER */
-
 .footer {
     padding: 45px 6%;
 
@@ -956,8 +938,6 @@ select {
 
     letter-spacing: 2px;
 }
-
-/* MUSIC BUTTON */
 
 #musicToggle {
     position: fixed;
@@ -996,21 +976,15 @@ select {
 }
 
 @keyframes catPulse {
-
     0%,
     100% {
-        transform:
-            scale(1);
+        transform: scale(1);
     }
 
     50% {
-        transform:
-            scale(1.10);
+        transform: scale(1.10);
     }
-
 }
-
-/* MOBILE */
 
 @media
 (max-width: 950px) {
@@ -1020,8 +994,7 @@ select {
     }
 
     .baku-intro-grid {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .cat-grid {
@@ -1030,18 +1003,15 @@ select {
     }
 
     .map-shell {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .spot-grid {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .about-grid {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
 }
@@ -1063,43 +1033,35 @@ select {
     }
 
     .hero h1 {
-        font-size:
-            57px;
+        font-size: 57px;
     }
 
     .hero-subtitle {
-        font-size:
-            14px;
+        font-size: 14px;
     }
 
     .cat-grid {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .cat-photo img {
-        height:
-            350px;
+        height: 350px;
     }
 
     .form-grid {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .field.full {
-        grid-column:
-            auto;
+        grid-column: auto;
     }
 
     #map {
-        height:
-            520px;
+        height: 520px;
     }
 
     .section-title {
-        font-size:
-            42px;
+        font-size: 42px;
     }
 
 }
@@ -1111,45 +1073,21 @@ select {
 
 <div class="baku-ornament"></div>
 
-<header
-    class="hero"
-    id="home"
->
+<header class="hero" id="home">
 
 <nav class="nav">
 
     <div class="logo">
-
         CATS BAKU
-
-        <small>
-            BAKI PİŞİKLƏRİ
-        </small>
-
+        <small>BAKI PİŞİKLƏRİ</small>
     </div>
 
     <div class="nav-links">
-
-        <a href="#cats">
-            Pişiklər
-        </a>
-
-        <a href="#mapSection">
-            Cat Map
-        </a>
-
-        <a href="#spots">
-            Baku Spots
-        </a>
-
-        <a href="#add">
-            Add a Cat
-        </a>
-
-        <a href="#about">
-            About
-        </a>
-
+        <a href="#cats">Pişiklər</a>
+        <a href="#mapSection">Cat Map</a>
+        <a href="#spots">Baku Spots</a>
+        <a href="#add">Add a Cat</a>
+        <a href="#about">About</a>
     </div>
 
 </nav>
@@ -1225,64 +1163,37 @@ select {
     <div class="baku-intro-grid">
 
         <div class="baku-feature">
-
-            <div class="baku-feature-icon">
-                🏰
-            </div>
-
-            <h3>
-                Old City Cats
-            </h3>
-
+            <div class="baku-feature-icon">🏰</div>
+            <h3>Old City Cats</h3>
             <p>
                 Cats resting between sandstone walls,
                 balconies and ancient courtyards.
             </p>
-
         </div>
 
         <div class="baku-feature">
-
-            <div class="baku-feature-icon">
-                🌊
-            </div>
-
-            <h3>
-                Caspian Cats
-            </h3>
-
+            <div class="baku-feature-icon">🌊</div>
+            <h3>Caspian Cats</h3>
             <p>
                 Cats enjoying the breeze
                 and green spaces around Baku Boulevard.
             </p>
-
         </div>
 
         <div class="baku-feature">
-
-            <div class="baku-feature-icon">
-                🥣
-            </div>
-
-            <h3>
-                Neighbourhood Care
-            </h3>
-
+            <div class="baku-feature-icon">🥣</div>
+            <h3>Neighbourhood Care</h3>
             <p>
                 Residents leaving food and water
                 for familiar courtyard cats.
             </p>
-
         </div>
 
     </div>
 
 </section>
 
-<section
-    class="section"
-    id="cats"
->
+<section class="section" id="cats">
 
     <div class="section-kicker">
         BAKI PİŞİKLƏRİ
@@ -1299,56 +1210,35 @@ select {
 
     <div class="cat-filters">
 
-        <button
-            class="filter-btn active"
-            data-filter="all"
-        >
+        <button class="filter-btn active" data-filter="all">
             All 🐾
         </button>
 
-        <button
-            class="filter-btn"
-            data-filter="qara"
-        >
+        <button class="filter-btn" data-filter="qara">
             Qara 🖤
         </button>
 
-        <button
-            class="filter-btn"
-            data-filter="rijik"
-        >
+        <button class="filter-btn" data-filter="rijik">
             Rıjik 🧡
         </button>
 
-        <button
-            class="filter-btn"
-            data-filter="ag"
-        >
+        <button class="filter-btn" data-filter="ag">
             Ağ 🤍
         </button>
 
-        <button
-            class="filter-btn"
-            data-filter="zolaqli"
-        >
+        <button class="filter-btn" data-filter="zolaqli">
             Zolaqlı 🐯
         </button>
 
-        <button
-            class="filter-btn"
-            data-filter="bala"
-        >
+        <button class="filter-btn" data-filter="bala">
             Balalar 🐾
         </button>
 
     </div>
 
-    <div class="cat-grid">
+    <div class="cat-grid" id="catGrid">
 
-        <article
-            class="cat-card"
-            data-category="rijik"
-        >
+        <article class="cat-card" data-category="rijik">
 
             <div class="cat-photo">
 
@@ -1365,9 +1255,7 @@ select {
 
             <div class="cat-info">
 
-                <h3>
-                    Rıjik
-                </h3>
+                <h3>Rıjik</h3>
 
                 <div class="cat-meta">
                     📍 Baku
@@ -1377,154 +1265,6 @@ select {
                     Serious face,
                     warm colour
                     and pure Baku character.
-                </p>
-
-            </div>
-
-        </article>
-
-        <article
-            class="cat-card"
-            data-category="qara"
-        >
-
-            <div class="cat-photo">
-
-                <img
-                    src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=85"
-                    alt="Black cat"
-                >
-
-                <span class="cat-type">
-                    Qara 🖤
-                </span>
-
-            </div>
-
-            <div class="cat-info">
-
-                <h3>
-                    Qara
-                </h3>
-
-                <div class="cat-meta">
-                    📍 İçərişəhər
-                </div>
-
-                <p>
-                    Quiet and elegant.
-                    Watching the old city streets.
-                </p>
-
-            </div>
-
-        </article>
-
-        <article
-            class="cat-card"
-            data-category="zolaqli"
-        >
-
-            <div class="cat-photo">
-
-                <img
-                    src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=900&q=85"
-                    alt="Striped cat"
-                >
-
-                <span class="cat-type">
-                    Zolaqlı 🐯
-                </span>
-
-            </div>
-
-            <div class="cat-info">
-
-                <h3>
-                    Leo
-                </h3>
-
-                <div class="cat-meta">
-                    📍 Yasamal
-                </div>
-
-                <p>
-                    Curious and friendly.
-                    Usually waiting near the courtyard.
-                </p>
-
-            </div>
-
-        </article>
-
-        <article
-            class="cat-card"
-            data-category="ag"
-        >
-
-            <div class="cat-photo">
-
-                <img
-                    src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=900&q=85"
-                    alt="White cat"
-                >
-
-                <span class="cat-type">
-                    Ağ 🤍
-                </span>
-
-            </div>
-
-            <div class="cat-info">
-
-                <h3>
-                    Bulud
-                </h3>
-
-                <div class="cat-meta">
-                    📍 Nərimanov
-                </div>
-
-                <p>
-                    Calm and always looking
-                    for a sunny place.
-                </p>
-
-            </div>
-
-        </article>
-
-        <article
-            class="cat-card"
-            data-category="bala"
-        >
-
-            <div class="cat-photo">
-
-                <img
-                    src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=900&q=85"
-                    alt="Kitten"
-                >
-
-                <span class="cat-type">
-                    Bala 🐾
-                </span>
-
-            </div>
-
-            <div class="cat-info">
-
-                <h3>
-                    Mini
-                </h3>
-
-                <div class="cat-meta">
-                    📍 White City
-                </div>
-
-                <p>
-                    Tiny, playful
-                    and discovering everything.
                 </p>
 
             </div>
@@ -1562,9 +1302,7 @@ select {
 
         <aside class="map-panel">
 
-            <h3>
-                Add a place
-            </h3>
+            <h3>Add a place</h3>
 
             <p>
                 Choose a marker type
@@ -1604,15 +1342,9 @@ select {
             </div>
 
             <div class="map-help">
-
                 Tap the map to add a marker.
-
                 <br><br>
-
-                For now,
-                markers are saved
-                on this device only.
-
+                For now, markers are saved on this device only.
             </div>
 
         </aside>
@@ -1644,56 +1376,32 @@ select {
     <div class="spot-grid">
 
         <div class="spot">
-
-            <div class="spot-icon">
-                🏰
-            </div>
-
-            <h3>
-                İçərişəhər
-            </h3>
-
+            <div class="spot-icon">🏰</div>
+            <h3>İçərişəhər</h3>
             <p>
                 Stone streets,
                 balconies and local cats
                 around the Old City.
             </p>
-
         </div>
 
         <div class="spot">
-
-            <div class="spot-icon">
-                🌊
-            </div>
-
-            <h3>
-                Baku Boulevard
-            </h3>
-
+            <div class="spot-icon">🌊</div>
+            <h3>Baku Boulevard</h3>
             <p>
                 Cats enjoying
                 the Caspian breeze
                 and green spaces.
             </p>
-
         </div>
 
         <div class="spot">
-
-            <div class="spot-icon">
-                🌳
-            </div>
-
-            <h3>
-                Baku Courtyards
-            </h3>
-
+            <div class="spot-icon">🌳</div>
+            <h3>Baku Courtyards</h3>
             <p>
                 Familiar community cats
                 living in neighbourhood yards.
             </p>
-
         </div>
 
     </div>
@@ -1806,7 +1514,7 @@ select {
                     <input
                         id="catPhoto"
                         type="file"
-                        accept="image/*"
+                        accept="image/jpeg,image/png,image/webp"
                     >
 
                 </div>
@@ -1851,7 +1559,7 @@ select {
             class="demo-note"
             id="formMessage"
         >
-            Choose a photo and it will appear above as a preview.
+            Add a photo and the cat will be saved to CatsBaku.
         </div>
 
     </div>
@@ -1912,9 +1620,7 @@ select {
 
     <p>
         © 2026
-        <strong>
-            CatsBaku
-        </strong>
+        <strong>CatsBaku</strong>
     </p>
 
     <div class="footer-baku">
@@ -1950,55 +1656,226 @@ select {
 
 <script>
 
-/* CAT FILTERS */
+/* ==============================
+   SUPABASE
+============================== */
+
+const SUPABASE_URL =
+    "https://lmtjmuldretsqcusayqa.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_TuYGmDx1Xgq85GY6yCwezQ_zq-lh_uA";
+
+const supabaseClient =
+    supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+/* ==============================
+   SECURITY HELPER
+============================== */
+
+function escapeHtml(value) {
+
+    if (
+        value === null
+        ||
+        value === undefined
+    ) {
+        return "";
+    }
+
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+}
+
+/* ==============================
+   CATEGORY LABELS
+============================== */
+
+function categoryLabel(category) {
+
+    const labels = {
+        qara: "Qara 🖤",
+        rijik: "Rıjik 🧡",
+        ag: "Ağ 🤍",
+        zolaqli: "Zolaqlı 🐯",
+        bala: "Bala 🐾"
+    };
+
+    return labels[category] || category;
+
+}
+
+/* ==============================
+   CAT CARDS
+============================== */
+
+function addCatCard(
+    cat,
+    prepend = false
+) {
+
+    const grid =
+        document.getElementById(
+            "catGrid"
+        );
+
+    const article =
+        document.createElement(
+            "article"
+        );
+
+    article.className =
+        "cat-card";
+
+    article.dataset.category =
+        cat.category;
+
+    article.innerHTML = `
+        <div class="cat-photo">
+
+            <img
+                src="${escapeHtml(cat.photo_url)}"
+                alt="${escapeHtml(cat.name)}"
+                loading="lazy"
+            >
+
+            <span class="cat-type">
+                ${escapeHtml(
+                    categoryLabel(
+                        cat.category
+                    )
+                )}
+            </span>
+
+        </div>
+
+        <div class="cat-info">
+
+            <h3>
+                ${escapeHtml(cat.name)}
+            </h3>
+
+            <div class="cat-meta">
+                📍 ${escapeHtml(cat.area)}
+            </div>
+
+            <p>
+                ${escapeHtml(
+                    cat.description
+                    ||
+                    "A Baku cat from our community."
+                )}
+            </p>
+
+        </div>
+    `;
+
+    if (prepend) {
+        grid.prepend(article);
+    }
+    else {
+        grid.appendChild(article);
+    }
+
+}
+
+/* ==============================
+   LOAD CATS FROM DATABASE
+============================== */
+
+async function loadCats() {
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+            .from("cats")
+            .select("*")
+            .order(
+                "created_at",
+                {
+                    ascending: false
+                }
+            );
+
+    if (error) {
+
+        console.error(
+            "Could not load cats:",
+            error
+        );
+
+        return;
+    }
+
+    data.forEach(
+        cat =>
+            addCatCard(cat)
+    );
+
+}
+
+loadCats();
+
+/* ==============================
+   CAT FILTERS
+============================== */
 
 const filterButtons =
     document.querySelectorAll(
-        '.filter-btn'
-    );
-
-const catCards =
-    document.querySelectorAll(
-        '.cat-card'
+        ".filter-btn"
     );
 
 filterButtons.forEach(
     button => {
 
         button.addEventListener(
-            'click',
+            "click",
             () => {
 
                 filterButtons.forEach(
                     b =>
                         b.classList.remove(
-                            'active'
+                            "active"
                         )
                 );
 
                 button.classList.add(
-                    'active'
+                    "active"
                 );
 
                 const filter =
                     button.dataset.filter;
 
-                catCards.forEach(
-                    card => {
+                document
+                    .querySelectorAll(
+                        ".cat-card"
+                    )
+                    .forEach(
+                        card => {
 
-                        const visible =
-                            filter === 'all'
-                            ||
-                            card.dataset.category
-                            === filter;
+                            const visible =
+                                filter === "all"
+                                ||
+                                card.dataset.category
+                                === filter;
 
-                        card.style.display =
-                            visible
-                            ? 'block'
-                            : 'none';
+                            card.style.display =
+                                visible
+                                ? "block"
+                                : "none";
 
-                    }
-                );
+                        }
+                    );
 
             }
         );
@@ -2006,11 +1883,352 @@ filterButtons.forEach(
     }
 );
 
-/* MAP */
+/* ==============================
+   PHOTO PREVIEW
+============================== */
+
+const catPhoto =
+    document.getElementById(
+        "catPhoto"
+    );
+
+const photoPreview =
+    document.getElementById(
+        "photoPreview"
+    );
+
+const photoPreviewBox =
+    document.getElementById(
+        "photoPreviewBox"
+    );
+
+catPhoto.addEventListener(
+    "change",
+    function () {
+
+        const file =
+            this.files[0];
+
+        if (!file) {
+
+            photoPreviewBox.style.display =
+                "none";
+
+            photoPreview.removeAttribute(
+                "src"
+            );
+
+            return;
+
+        }
+
+        if (
+            !file.type.startsWith(
+                "image/"
+            )
+        ) {
+
+            alert(
+                "Please choose an image file."
+            );
+
+            this.value =
+                "";
+
+            return;
+
+        }
+
+        if (
+            file.size >
+            5 * 1024 * 1024
+        ) {
+
+            alert(
+                "Photo must be smaller than 5 MB."
+            );
+
+            this.value =
+                "";
+
+            return;
+
+        }
+
+        const reader =
+            new FileReader();
+
+        reader.onload =
+            function (event) {
+
+                photoPreview.src =
+                    event.target.result;
+
+                photoPreviewBox.style.display =
+                    "block";
+
+            };
+
+        reader.readAsDataURL(
+            file
+        );
+
+    }
+);
+
+/* ==============================
+   ADD CAT
+============================== */
+
+const addCatButton =
+    document.getElementById(
+        "demoAddCat"
+    );
+
+const formMessage =
+    document.getElementById(
+        "formMessage"
+    );
+
+addCatButton.addEventListener(
+    "click",
+    async () => {
+
+        const name =
+            document
+                .getElementById(
+                    "catName"
+                )
+                .value
+                .trim();
+
+        const category =
+            document
+                .getElementById(
+                    "catCategory"
+                )
+                .value;
+
+        const area =
+            document
+                .getElementById(
+                    "catArea"
+                )
+                .value
+                .trim();
+
+        const description =
+            document
+                .getElementById(
+                    "catDescription"
+                )
+                .value
+                .trim();
+
+        const photo =
+            catPhoto.files[0];
+
+        if (
+            !name
+            ||
+            !area
+        ) {
+
+            formMessage.textContent =
+                "Please enter the cat name and area.";
+
+            return;
+
+        }
+
+        if (!photo) {
+
+            formMessage.textContent =
+                "Please choose a cat photo.";
+
+            return;
+
+        }
+
+        addCatButton.disabled =
+            true;
+
+        addCatButton.textContent =
+            "Uploading... 🐾";
+
+        formMessage.textContent =
+            "Uploading photo...";
+
+        try {
+
+            const extension =
+                photo.name
+                    .split(".")
+                    .pop()
+                    .toLowerCase();
+
+            const randomId =
+                crypto.randomUUID
+                ? crypto.randomUUID()
+                : Math.random()
+                    .toString(36)
+                    .slice(2);
+
+            const fileName =
+                `${Date.now()}-${randomId}.${extension}`;
+
+            const {
+                data: uploadData,
+                error: uploadError
+            } =
+                await supabaseClient
+                    .storage
+                    .from(
+                        "cat-photos"
+                    )
+                    .upload(
+                        fileName,
+                        photo,
+                        {
+                            cacheControl:
+                                "3600",
+
+                            upsert:
+                                false,
+
+                            contentType:
+                                photo.type
+                        }
+                    );
+
+            if (uploadError) {
+                throw uploadError;
+            }
+
+            const {
+                data: publicUrlData
+            } =
+                supabaseClient
+                    .storage
+                    .from(
+                        "cat-photos"
+                    )
+                    .getPublicUrl(
+                        uploadData.path
+                    );
+
+            const photoUrl =
+                publicUrlData.publicUrl;
+
+            const {
+                data: insertedCats,
+                error: insertError
+            } =
+                await supabaseClient
+                    .from("cats")
+                    .insert([
+                        {
+                            name:
+                                name,
+
+                            category:
+                                category,
+
+                            area:
+                                area,
+
+                            description:
+                                description,
+
+                            photo_url:
+                                photoUrl
+                        }
+                    ])
+                    .select();
+
+            if (insertError) {
+                throw insertError;
+            }
+
+            const catData =
+                insertedCats[0];
+
+            addCatCard(
+                catData,
+                true
+            );
+
+            formMessage.textContent =
+                `🐾 ${name} successfully added to CatsBaku!`;
+
+            document
+                .getElementById(
+                    "catName"
+                )
+                .value =
+                "";
+
+            document
+                .getElementById(
+                    "catArea"
+                )
+                .value =
+                "";
+
+            document
+                .getElementById(
+                    "catDescription"
+                )
+                .value =
+                "";
+
+            catPhoto.value =
+                "";
+
+            photoPreviewBox.style.display =
+                "none";
+
+            photoPreview.removeAttribute(
+                "src"
+            );
+
+        }
+        catch (error) {
+
+            console.error(
+                error
+            );
+
+            formMessage.textContent =
+                "Error: "
+                +
+                (
+                    error.message
+                    ||
+                    "Could not add cat."
+                );
+
+        }
+        finally {
+
+            addCatButton.disabled =
+                false;
+
+            addCatButton.textContent =
+                "🐾 Add Cat";
+
+        }
+
+    }
+);
+
+/* ==============================
+   MAP
+============================== */
 
 const map =
     L.map(
-        'map'
+        "map"
     ).setView(
         [
             40.4093,
@@ -2020,14 +2238,11 @@ const map =
     );
 
 L.tileLayer(
-    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
-
         maxZoom: 19,
-
         attribution:
-            '&copy; OpenStreetMap contributors'
-
+            "&copy; OpenStreetMap contributors"
     }
 ).addTo(
     map
@@ -2036,51 +2251,51 @@ L.tileLayer(
 const markerTypes = {
 
     food: {
-        emoji: '🥣',
-        text: 'Cats were fed'
+        emoji: "🥣",
+        text: "Cats were fed"
     },
 
     water: {
-        emoji: '💧',
-        text: 'Water was left'
+        emoji: "💧",
+        text: "Water was left"
     },
 
     colony: {
-        emoji: '🐈',
-        text: 'Cat colony'
+        emoji: "🐈",
+        text: "Cat colony"
     },
 
     help: {
-        emoji: '❤️',
-        text: 'Cat needs help'
+        emoji: "❤️",
+        text: "Cat needs help"
     }
 
 };
 
 let selectedMapType =
-    'food';
+    "food";
 
 const mapButtons =
     document.querySelectorAll(
-        '.map-type-btn'
+        ".map-type-btn"
     );
 
 mapButtons.forEach(
     button => {
 
         button.addEventListener(
-            'click',
+            "click",
             () => {
 
                 mapButtons.forEach(
                     b =>
                         b.classList.remove(
-                            'active'
+                            "active"
                         )
                 );
 
                 button.classList.add(
-                    'active'
+                    "active"
                 );
 
                 selectedMapType =
@@ -2101,7 +2316,7 @@ function createMarkerIcon(
 
     return L.divIcon({
 
-        className: '',
+        className: "",
 
         html:
             `
@@ -2164,24 +2379,20 @@ function addMarker(
             ${info.emoji}
             ${info.text}
         </strong>
-
         <br>
-
         CatsBaku community
         `
     );
 
-    if (
-        save
-    ) {
+    if (save) {
 
         const stored =
             JSON.parse(
                 localStorage.getItem(
-                    'catsBakuMarkers'
+                    "catsBakuMarkers"
                 )
                 ||
-                '[]'
+                "[]"
             );
 
         stored.push(
@@ -2193,7 +2404,7 @@ function addMarker(
         );
 
         localStorage.setItem(
-            'catsBakuMarkers',
+            "catsBakuMarkers",
             JSON.stringify(
                 stored
             )
@@ -2204,7 +2415,7 @@ function addMarker(
 }
 
 map.on(
-    'click',
+    "click",
     event => {
 
         addMarker(
@@ -2220,31 +2431,31 @@ map.on(
 addMarker(
     40.3667,
     49.8352,
-    'colony',
+    "colony",
     false
 );
 
 addMarker(
     40.3777,
     49.8920,
-    'food',
+    "food",
     false
 );
 
 addMarker(
     40.4024,
     49.8475,
-    'water',
+    "water",
     false
 );
 
 const storedMarkers =
     JSON.parse(
         localStorage.getItem(
-            'catsBakuMarkers'
+            "catsBakuMarkers"
         )
         ||
-        '[]'
+        "[]"
     );
 
 storedMarkers.forEach(
@@ -2260,160 +2471,18 @@ storedMarkers.forEach(
     }
 );
 
-/* PHOTO PREVIEW */
-
-const catPhoto =
-    document.getElementById(
-        'catPhoto'
-    );
-
-const photoPreview =
-    document.getElementById(
-        'photoPreview'
-    );
-
-const photoPreviewBox =
-    document.getElementById(
-        'photoPreviewBox'
-    );
-
-catPhoto.addEventListener(
-    'change',
-    function() {
-
-        const file =
-            this.files[0];
-
-        if (
-            !file
-        ) {
-
-            photoPreviewBox.style.display =
-                'none';
-
-            photoPreview.removeAttribute(
-                'src'
-            );
-
-            return;
-
-        }
-
-        if (
-            !file.type.startsWith(
-                'image/'
-            )
-        ) {
-
-            alert(
-                'Please choose an image file.'
-            );
-
-            this.value =
-                '';
-
-            return;
-
-        }
-
-        const reader =
-            new FileReader();
-
-        reader.onload =
-            function(
-                event
-            ) {
-
-                photoPreview.src =
-                    event.target.result;
-
-                photoPreviewBox.style.display =
-                    'block';
-
-            };
-
-        reader.readAsDataURL(
-            file
-        );
-
-    }
-);
-
-/* ADD CAT DEMO */
-
-const addCatButton =
-    document.getElementById(
-        'demoAddCat'
-    );
-
-const formMessage =
-    document.getElementById(
-        'formMessage'
-    );
-
-addCatButton.addEventListener(
-    'click',
-    () => {
-
-        const name =
-            document
-                .getElementById(
-                    'catName'
-                )
-                .value
-                .trim();
-
-        const area =
-            document
-                .getElementById(
-                    'catArea'
-                )
-                .value
-                .trim();
-
-        const photo =
-            catPhoto.files[0];
-
-        if (
-            !name
-            ||
-            !area
-        ) {
-
-            formMessage.textContent =
-                'Please enter the cat name and area.';
-
-            return;
-
-        }
-
-        if (
-            !photo
-        ) {
-
-            formMessage.textContent =
-                'Please choose a photo of the cat.';
-
-            return;
-
-        }
-
-        formMessage.textContent =
-            `🐾 ${name} from ${area} is ready to be added to CatsBaku!`;
-
-    }
-);
-
-/* MUSIC */
+/* ==============================
+   MUSIC
+============================== */
 
 const music =
     document.getElementById(
-        'bgMusic'
+        "bgMusic"
     );
 
 const toggle =
     document.getElementById(
-        'musicToggle'
+        "musicToggle"
     );
 
 music.volume =
@@ -2425,10 +2494,10 @@ let musicStarted =
 function showPlaying() {
 
     toggle.textContent =
-        '😺';
+        "😺";
 
     toggle.classList.add(
-        'playing'
+        "playing"
     );
 
 }
@@ -2436,19 +2505,17 @@ function showPlaying() {
 function showPaused() {
 
     toggle.textContent =
-        '🐱';
+        "🐱";
 
     toggle.classList.remove(
-        'playing'
+        "playing"
     );
 
 }
 
 async function startMusic() {
 
-    if (
-        musicStarted
-    ) {
+    if (musicStarted) {
         return;
     }
 
@@ -2462,9 +2529,7 @@ async function startMusic() {
         showPlaying();
 
     }
-    catch (
-        error
-    ) {
+    catch (error) {
 
         showPaused();
 
@@ -2473,7 +2538,7 @@ async function startMusic() {
 }
 
 document.addEventListener(
-    'click',
+    "click",
     startMusic,
     {
         once: true
@@ -2481,7 +2546,7 @@ document.addEventListener(
 );
 
 document.addEventListener(
-    'touchstart',
+    "touchstart",
     startMusic,
     {
         once: true
@@ -2489,14 +2554,12 @@ document.addEventListener(
 );
 
 toggle.addEventListener(
-    'click',
+    "click",
     async event => {
 
         event.stopPropagation();
 
-        if (
-            music.paused
-        ) {
+        if (music.paused) {
 
             try {
 
@@ -2508,9 +2571,7 @@ toggle.addEventListener(
                 showPlaying();
 
             }
-            catch (
-                error
-            ) {
+            catch (error) {
 
                 showPaused();
 
@@ -2529,12 +2590,12 @@ toggle.addEventListener(
 );
 
 music.addEventListener(
-    'play',
+    "play",
     showPlaying
 );
 
 music.addEventListener(
-    'pause',
+    "pause",
     showPaused
 );
 
