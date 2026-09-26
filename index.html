@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cats Baku — Purrs, Paws & Love</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #faf8f5;
+    color: #252525;
+}
+
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.45)),
+        url("https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 7%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(50px, 9vw, 105px);
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.buttons {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .25s;
+}
+
+.btn-primary {
+    background: #ffffff;
+    color: #222;
+}
+
+.btn-secondary {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.section {
+    padding: 90px 7%;
+}
+
+.section-title {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #777;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    line-height: 1.7;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,.07);
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card h3 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #777;
+    line-height: 1.6;
+}
+
+.categories {
+    background: #171717;
+    color: white;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 45px;
+}
+
+.category {
+    border: 1px solid #444;
+    border-radius: 18px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: .25s;
+}
+
+.category:hover {
+    background: #252525;
+}
+
+.category-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.category h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.category p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+.about-text h2 {
+    font-family: Georgia, serif;
+    font-size: 52px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.contact {
+    background: #eee8df;
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 650px;
+    margin: 40px auto 0;
+}
+
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    border: none;
+    background: white;
+    padding: 18px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.contact-box textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.submit {
+    border: none;
+    cursor: pointer;
+    background: #171717;
+    color: white;
+    padding: 16px 35px;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+footer {
+    background: #111;
+    color: #999;
+    text-align: center;
+    padding: 35px 20px;
+    font-size: 14px;
+}
+
+footer strong {
+    color: white;
+}
+
+@media (max-width: 800px) {
+
+    .nav {
+        padding: 22px 5%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 90vh;
+    }
+
+    .hero-content h1 {
+        font-size: 58px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text h2 {
+        font-size: 42px;
+    }
+
+    .section {
+        padding: 70px 5%;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 450px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero" id="home">
+
+    <nav class="nav">
+        <div class="logo">CATS BAKU</div>
+
+        <div class="nav-links">
+            <a href="#cats">Cats</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="hero-content">
+        <div>
+            <h1>Purrs, Paws<br>& Love</h1>
+
+            <p>THE CAT COMMUNITY OF BAKU</p>
+
+            <div class="buttons">
+                <a href="#cats" class="btn btn-primary">Find a Cat</a>
+                <a href="#contact" class="btn btn-secondary">Get Involved</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="section" id="cats">
+
+    <h2 class="section-title">Meet Our Cats</h2>
+
+    <p class="section-subtitle">
+        Discover cats looking for a loving home and connect with the
+        people who care about them across Baku.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=900&q=80">
+            <div class="card-content">
+                <h3>Leo</h3>
+                <p>Friendly, calm and looking for his forever home.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=80">
+            <div class="card-content">
+                <h3>Mia</h3>
+                <p>Playful and affectionate. Loves people and attention.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=900&q=80">
+            <div class="card-content">
+                <h3>Oliver</h3>
+                <p>A beautiful companion waiting for a new family.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section categories" id="services">
+
+    <h2 class="section-title">CatsBaku Community</h2>
+
+    <p class="section-subtitle">
+        Everything cat lovers in Baku need — in one place.
+    </p>
+
+    <div class="category-grid">
+
+        <div class="category">
+            <div class="category-icon">🏠</div>
+            <h3>Adoption</h3>
+            <p>Find cats looking for a home.</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">🔎</div>
+            <h3>Lost & Found</h3>
+            <p>Help reunite cats with their families.</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">🩺</div>
+            <h3>Veterinarians</h3>
+            <p>Discover veterinary services in Baku.</p>
+        </div>
+
+        <div class="category">
+            <div class="category-icon">❤️</div>
+            <h3>Volunteers</h3>
+            <p>Join people helping cats in our city.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="about">
+
+    <div class="about">
+
+        <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=1200&q=80">
+
+        <div class="about-text">
+
+            <h2>Made for cats.<br>Made for Baku.</h2>
+
+            <p>
+                CatsBaku is a community created for people who love cats
+                and want to make life better for them.
+            </p>
+
+            <p>
+                Our goal is simple: connect cats, owners, rescuers,
+                veterinarians, shelters and volunteers in one place.
+            </p>
+
+            <a href="#contact" class="btn" style="background:#171717;color:white;">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section contact" id="contact">
+
+    <h2 class="section-title">Contact CatsBaku</h2>
+
+    <p class="section-subtitle">
+        Have a question, want to help, or want to tell us about a cat?
+        Send us a message.
+    </p>
+
+    <div class="contact-box">
+
+        <input type="text" placeholder="Your name">
+
+        <input type="email" placeholder="Your email">
+
+        <textarea placeholder="Your message"></textarea>
+
+        <button class="submit">Send Message</button>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>CatsBaku</strong> — Baku, Azerbaijan
+    </p>
+
+</footer>
+
+</body>
+</html>
