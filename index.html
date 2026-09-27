@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku</title>
+  <title>CatsBaku — Bakı pişikləri</title>
 
   <meta
     name="description"
-    content="CatsBaku — a community site about the cats of Baku."
+    content="CatsBaku — cats, adoption, help, lost & found, feeding points and stories from Baku."
   >
 
   <meta name="theme-color" content="#F3EBDD">
@@ -16,37 +16,13 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CatsBaku">
   <meta property="og:title" content="CatsBaku — Cats of Baku">
-
-  <meta
-    property="og:description"
-    content="Meet the cats of Baku, discover neighbourhoods and explore the cat map."
-  >
-
   <meta property="og:url" content="https://catsbaku.com/">
+  <meta property="og:image" content="https://catsbaku.com/img/og-cover.jpg">
 
-  <meta
-    property="og:image"
-    content="https://catsbaku.com/img/og-cover.jpg"
-  >
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link
-    rel="icon"
-    href="img/favicon.svg"
-    type="image/svg+xml"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     rel="stylesheet"
@@ -58,101 +34,239 @@
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   >
 
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+    /* ===== NEW CATSBAKU SECTIONS ===== */
+
+    .explore {
+      padding: 70px 0;
+    }
+
+    .explore__head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 34px;
+    }
+
+    .explore__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .explore-card {
+      display: block;
+      padding: 26px;
+      border-radius: 24px;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      border: 1px solid rgba(50,40,30,.08);
+      box-shadow: 0 12px 35px rgba(40,30,20,.07);
+      transition: .22s ease;
+    }
+
+    .explore-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 42px rgba(40,30,20,.12);
+    }
+
+    .explore-card__icon {
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      margin-bottom: 18px;
+      font-size: 30px;
+      background: #f3ebdd;
+    }
+
+    .explore-card h3 {
+      margin: 0 0 8px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+    }
+
+    .explore-card p {
+      margin: 0;
+      line-height: 1.65;
+      opacity: .7;
+      font-size: 14px;
+    }
+
+    .feature-section {
+      padding: 75px 0;
+      scroll-margin-top: 90px;
+    }
+
+    .feature-section--soft {
+      background: #f8f1e6;
+    }
+
+    .feature-section--dark {
+      background: #20201d;
+      color: white;
+    }
+
+    .feature-head {
+      max-width: 760px;
+      margin-bottom: 32px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-box {
+      background: white;
+      color: #222;
+      padding: 25px;
+      border-radius: 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.06);
+    }
+
+    .feature-box__emoji {
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    .feature-box h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      margin: 0 0 8px;
+    }
+
+    .feature-box p {
+      margin: 0;
+      line-height: 1.65;
+      opacity: .72;
+      font-size: 14px;
+    }
+
+    .soon {
+      display: inline-flex;
+      margin-top: 15px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #f3ebdd;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    #musicToggle {
+      position: fixed;
+      right: 18px;
+      bottom: 86px;
+      width: 58px;
+      height: 58px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,.97);
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 10000;
+      box-shadow: 0 8px 24px rgba(0,0,0,.22);
+    }
+
+    #musicToggle.is-playing {
+      animation: catPulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes catPulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    @media (max-width: 900px) {
+      .explore__grid,
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .explore__grid,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .explore,
+      .feature-section {
+        padding: 55px 0;
+      }
+    }
+
+    @media (min-width: 760px) {
+      #musicToggle {
+        bottom: 22px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header class="topbar">
 
   <div class="wrap topbar__in">
 
     <a class="logo" href="#top">
-
-      <img
-        src="img/logo.svg"
-        alt=""
-        width="26"
-        height="31"
-      >
-
+      <img src="img/logo.svg" alt="" width="26" height="31">
       Cats<b>Baku</b>
-
     </a>
 
-    <nav
-      class="topnav"
-      aria-label="Menu"
-    >
+    <nav class="topnav" aria-label="Menu">
 
-      <a
-        href="#cats"
-        data-i18n="nav.cats"
-      >
+      <a href="#cats">
         Pişiklər
       </a>
 
-      <a
-        href="#month"
-        data-i18n="month.eyebrow"
-      >
-        Ayın pişiyi
+      <a href="#adoption">
+        Adoption
       </a>
 
-      <a
-        href="#map"
-        data-i18n="nav.map"
-      >
+      <a href="#help">
+        Help
+      </a>
+
+      <a href="#map">
         Xəritə
       </a>
 
-      <a
-        href="#shop"
-        data-i18n="nav.shop"
-      >
+      <a href="#shop">
         Mağaza
       </a>
 
-      <button
-        class="btn btn--pom"
-        type="button"
-        data-demo-add
-      >
-        +
-        <span data-i18n="nav.add">
-          Əlavə et
-        </span>
+      <button class="btn btn--pom" type="button" data-demo-add>
+        + Əlavə et
       </button>
 
     </nav>
 
-    <div
-      class="langs"
-      role="group"
-      aria-label="Language"
-    >
+    <div class="langs">
 
-      <button
-        type="button"
-        data-lang="az"
-      >
+      <button type="button" data-lang="az">
         AZ
       </button>
 
-      <button
-        type="button"
-        data-lang="ru"
-      >
+      <button type="button" data-lang="ru">
         RU
       </button>
 
-      <button
-        type="button"
-        data-lang="en"
-      >
+      <button type="button" data-lang="en">
         EN
       </button>
 
@@ -164,311 +278,946 @@
 
 <main>
 
-  <!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
-  <section
-    class="hero"
-    id="top"
-    aria-label="CatsBaku hero"
+<section class="hero" id="top">
+
+  <img
+    class="hero__img"
+    src="img/hero-cat.jpg"
+    alt="CatsBaku cat"
   >
 
-    <img
-      class="hero__img"
-      src="img/hero-cat.jpg"
-      alt="Ginger cat in Baku"
-    >
+  <div class="hero__top">
 
-    <div class="hero__top">
+    <span class="badge">
+      Günün pişiyi
+    </span>
 
-      <span
-        class="badge"
-        data-i18n="hero.today"
-      >
-        Günün pişiyi
-      </span>
+    <span class="badge">
+      BAKU · AZERBAIJAN 🇦🇿
+    </span>
 
-      <span class="badge">
-        BAKU · AZERBAIJAN
-      </span>
+  </div>
+
+  <div class="hero__body">
+
+    <div class="hero__district">
+      📍 Baku
+    </div>
+
+    <h1 class="hero__name">
+      Rijik
+    </h1>
+
+    <p class="hero__quote">
+      «Bakının hər küçəsində bir dost var.»
+    </p>
+
+    <div class="hero__actions">
+
+      <a class="btn btn--light" href="#cats">
+        Bütün pişiklər
+      </a>
+
+      <button class="like" type="button">
+        ♡ <span>24</span>
+      </button>
 
     </div>
 
-    <div class="hero__body">
+  </div>
 
-      <div class="hero__district">
-        📍 Baku
-      </div>
+</section>
 
-      <h1 class="hero__name">
-        Rijik
-      </h1>
+<div class="carpet"></div>
 
-      <p
-        class="hero__quote"
-        data-static-i18n="heroQuote"
-      >
-        «Bakının hər küçəsində bir dost var.»
-      </p>
+<!-- =========================
+     DISTRICTS
+========================= -->
 
-      <div class="hero__actions">
+<nav
+  class="stories"
+  id="storiesNav"
+  aria-label="Baku districts"
+></nav>
 
-        <a
-          class="btn btn--light"
-          href="#cats"
-          data-i18n="hero.more"
-        >
-          Bütün pişiklər
-        </a>
+<!-- =========================
+     CATS
+========================= -->
 
-        <button
-          class="like"
-          type="button"
-          data-like-id="rijik"
-          aria-label="Like"
-        >
-          ♡
-          <span>
-            24
-          </span>
-        </button>
+<section
+  class="section"
+  id="cats"
+  style="padding-top:18px"
+>
 
-      </div>
+  <div class="wrap">
 
-    </div>
+    <div class="head">
 
-  </section>
+      <div>
 
-  <div
-    class="carpet"
-    aria-hidden="true"
-  ></div>
-
-  <nav
-    class="stories"
-    id="stories"
-    aria-label="Districts"
-  ></nav>
-
-  <!-- CATS -->
-
-  <section
-    class="section"
-    id="cats"
-    style="padding-top:18px"
-  >
-
-    <div class="wrap">
-
-      <div class="head">
-
-        <div>
-
-          <div class="eyebrow">
-            CatsBaku
-          </div>
-
-          <h2
-            class="h2"
-            data-i18n="cats.title"
-          >
-            Bakı pişikləri
-          </h2>
-
+        <div class="eyebrow">
+          CatsBaku
         </div>
 
-        <span
-          class="count"
-          id="catsCount"
-        ></span>
-
-      </div>
-
-      <div
-        class="chips"
-        id="filters"
-        role="group"
-        aria-label="Filter"
-      ></div>
-
-      <div
-        class="grid"
-        id="grid"
-      ></div>
-
-    </div>
-
-  </section>
-
-  <!-- CAT OF THE MONTH -->
-
-  <section
-    class="section"
-    id="month"
-    style="padding-top:0"
-  >
-
-    <div class="wrap month-wrap">
-
-      <div class="month">
-
-        <div
-          class="eyebrow"
-          data-i18n="month.eyebrow"
-        >
-          Ayın pişiyi
-        </div>
-
-        <h2
-          class="h2"
-          data-i18n="month.title"
-        >
-          Ürəklə səs ver
+        <h2 class="h2">
+          Bakı pişikləri
         </h2>
 
-        <p
-          class="sub"
-          data-i18n="month.sub"
-        ></p>
-
-        <div
-          class="podium"
-          id="podium"
-        ></div>
-
       </div>
+
+      <span
+        class="count"
+        id="catsCount"
+      ></span>
 
     </div>
 
-  </section>
+    <div
+      class="chips"
+      id="filters"
+    ></div>
 
-  <!-- MAP -->
+    <div
+      class="grid"
+      id="grid"
+    ></div>
 
-  <section
-    class="section"
-    id="map"
-    style="padding-top:0"
-  >
+  </div>
 
-    <div class="wrap">
+</section>
 
-      <div class="head">
+<!-- =========================
+     EXPLORE CATSBAKU
+========================= -->
 
-        <div>
+<section class="explore feature-section--soft">
 
-          <div class="eyebrow">
-            CatsBaku
-          </div>
+  <div class="wrap">
 
-          <h2
-            class="h2"
-            data-i18n="map.title"
-          >
-            Yanınızdakı pişiklər
-          </h2>
+    <div class="explore__head">
 
-          <p
-            class="sub"
-            data-i18n="map.sub"
-          ></p>
-
-        </div>
-
+      <div class="eyebrow">
+        CATSBAKU COMMUNITY
       </div>
 
-      <div class="map-box">
-
-        <div
-          class="map"
-          id="catMap"
-          role="region"
-          aria-label="Map"
-        ></div>
-
-        <button
-          class="btn"
-          type="button"
-          id="locate"
-        >
-          📍
-          <span data-i18n="map.locate">
-            Mənim yerim
-          </span>
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- SHOP -->
-
-  <section
-    class="section shop"
-    id="shop"
-  >
-
-    <div class="wrap">
-
-      <div
-        class="eyebrow"
-        data-i18n="shop.eyebrow"
-      >
-        Tezliklə
-      </div>
-
-      <h2
-        class="h2"
-        data-i18n="shop.title"
-      >
-        Sevimli pişiyiniz futbolkada
+      <h2 class="h2">
+        Explore CatsBaku
       </h2>
 
-      <p
-        class="sub"
-        data-i18n="shop.sub"
-      ></p>
+      <p class="sub">
+        CatsBaku is more than a gallery.
+        Find homes, help cats, report lost pets
+        and discover useful places around Baku.
+      </p>
+
+    </div>
+
+    <div class="explore__grid">
+
+      <a class="explore-card" href="#adoption">
+
+        <div class="explore-card__icon">
+          🏠
+        </div>
+
+        <h3>
+          Adoption
+        </h3>
+
+        <p>
+          Meet cats in Baku that are looking
+          for a permanent and loving home.
+        </p>
+
+      </a>
+
+      <a class="explore-card" href="#help">
+
+        <div class="explore-card__icon">
+          ❤️
+        </div>
+
+        <h3>
+          Help
+        </h3>
+
+        <p>
+          Cats needing treatment, food,
+          temporary shelter or urgent assistance.
+        </p>
+
+      </a>
+
+      <a class="explore-card" href="#lost">
+
+        <div class="explore-card__icon">
+          🔎
+        </div>
+
+        <h3>
+          Lost & Found
+        </h3>
+
+        <p>
+          Lost a cat or found one?
+          Share information with the community.
+        </p>
+
+      </a>
+
+      <a class="explore-card" href="#vets">
+
+        <div class="explore-card__icon">
+          🩺
+        </div>
+
+        <h3>
+          Vet Map
+        </h3>
+
+        <p>
+          Discover veterinary clinics
+          and animal care services around Baku.
+        </p>
+
+      </a>
+
+      <a class="explore-card" href="#feed">
+
+        <div class="explore-card__icon">
+          🥣
+        </div>
+
+        <h3>
+          Feed Points
+        </h3>
+
+        <p>
+          Community feeding and water points
+          for street cats around the city.
+        </p>
+
+      </a>
+
+      <a class="explore-card" href="#catstories">
+
+        <div class="explore-card__icon">
+          📖
+        </div>
+
+        <h3>
+          Stories
+        </h3>
+
+        <p>
+          Real stories about Baku cats,
+          their people and their neighbourhoods.
+        </p>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     ADOPTION
+========================= -->
+
+<section
+  class="feature-section"
+  id="adoption"
+>
+
+  <div class="wrap">
+
+    <div class="feature-head">
+
+      <div class="eyebrow">
+        SAHİBLƏNDİR
+      </div>
+
+      <h2 class="h2">
+        Cats looking for a home
+      </h2>
+
+      <p class="sub">
+        Help a Baku cat find a family.
+      </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🐱
+        </div>
+
+        <h3>
+          Adoption profiles
+        </h3>
+
+        <p>
+          Cats available for adoption
+          will appear here with photos,
+          age and information.
+        </p>
+
+        <span class="soon">
+          Coming soon
+        </span>
+
+      </div>
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🏡
+        </div>
+
+        <h3>
+          Find a family
+        </h3>
+
+        <p>
+          Share a cat with people
+          who want to adopt responsibly.
+        </p>
+
+        <span class="soon">
+          Coming soon
+        </span>
+
+      </div>
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🤝
+        </div>
+
+        <h3>
+          Responsible adoption
+        </h3>
+
+        <p>
+          CatsBaku will help connect
+          adopters and caretakers.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     HELP
+========================= -->
+
+<section
+  class="feature-section feature-section--soft"
+  id="help"
+>
+
+  <div class="wrap">
+
+    <div class="feature-head">
+
+      <div class="eyebrow">
+        KÖMƏK
+      </div>
+
+      <h2 class="h2">
+        Cats that need help
+      </h2>
+
+      <p class="sub">
+        Treatment, food, temporary shelter
+        and other urgent needs.
+      </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🏥
+        </div>
+
+        <h3>
+          Medical help
+        </h3>
+
+        <p>
+          Cats that may need veterinary
+          attention or treatment.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🥣
+        </div>
+
+        <h3>
+          Food
+        </h3>
+
+        <p>
+          Help local volunteers
+          provide food for street cats.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🏠
+        </div>
+
+        <h3>
+          Foster
+        </h3>
+
+        <p>
+          Temporary homes for cats
+          while they recover or wait for adoption.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     LOST & FOUND
+========================= -->
+
+<section
+  class="feature-section"
+  id="lost"
+>
+
+  <div class="wrap">
+
+    <div class="feature-head">
+
+      <div class="eyebrow">
+        LOST & FOUND
+      </div>
+
+      <h2 class="h2">
+        Lost or found a cat?
+      </h2>
+
+      <p class="sub">
+        A community board for missing
+        and found cats around Baku.
+      </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          😿
+        </div>
+
+        <h3>
+          Lost
+        </h3>
+
+        <p>
+          Post a photo and the area
+          where your cat disappeared.
+        </p>
+
+        <span class="soon">
+          Coming soon
+        </span>
+
+      </div>
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          👀
+        </div>
+
+        <h3>
+          Found
+        </h3>
+
+        <p>
+          Found a cat?
+          Help reconnect it with its owner.
+        </p>
+
+        <span class="soon">
+          Coming soon
+        </span>
+
+      </div>
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          📍
+        </div>
+
+        <h3>
+          Area search
+        </h3>
+
+        <p>
+          Reports will later be searchable
+          by district and map location.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     CAT OF MONTH
+========================= -->
+
+<section
+  class="section"
+  id="month"
+>
+
+  <div class="wrap month-wrap">
+
+    <div class="month">
+
+      <div class="eyebrow">
+        AYIN PİŞİYİ
+      </div>
+
+      <h2 class="h2">
+        Ürəklə səs ver
+      </h2>
+
+      <p class="sub">
+        Vote for your favourite CatsBaku cat.
+      </p>
 
       <div
-        class="products"
-        id="products"
+        class="podium"
+        id="podium"
       ></div>
 
     </div>
 
-  </section>
+  </div>
 
-  <div
-    class="carpet"
-    aria-hidden="true"
-  ></div>
+</section>
 
-  <!-- ABOUT -->
+<!-- =========================
+     MAIN CAT MAP
+========================= -->
 
-  <section class="wrap about">
+<section
+  class="section"
+  id="map"
+>
 
-    <img
-      src="img/logo.svg"
-      alt="CatsBaku"
-    >
+  <div class="wrap">
 
-    <h2
-      class="h2"
-      data-i18n="about.title"
-    >
-      İnsanlar üçün şəhər. Pişiklər üçün şəhər.
+    <div class="head">
+
+      <div>
+
+        <div class="eyebrow">
+          BAKU CAT MAP
+        </div>
+
+        <h2 class="h2">
+          Yanınızdakı pişiklər
+        </h2>
+
+        <p class="sub">
+          Discover CatsBaku locations around the city.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="map-box">
+
+      <div
+        class="map"
+        id="catMap"
+      ></div>
+
+      <button
+        class="btn"
+        type="button"
+        id="locate"
+      >
+        📍 Mənim yerim
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     VET MAP
+========================= -->
+
+<section
+  class="feature-section feature-section--soft"
+  id="vets"
+>
+
+  <div class="wrap">
+
+    <div class="feature-head">
+
+      <div class="eyebrow">
+        VET MAP
+      </div>
+
+      <h2 class="h2">
+        Veterinary care in Baku
+      </h2>
+
+      <p class="sub">
+        A future directory of veterinary
+        clinics and useful animal services.
+      </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🩺
+        </div>
+
+        <h3>
+          Vet clinics
+        </h3>
+
+        <p>
+          Find veterinary clinics
+          close to your neighbourhood.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🚑
+        </div>
+
+        <h3>
+          Emergency
+        </h3>
+
+        <p>
+          Quick access to clinics
+          providing urgent assistance.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          ⭐
+        </div>
+
+        <h3>
+          Community recommendations
+        </h3>
+
+        <p>
+          Later CatsBaku users
+          will be able to share recommendations.
+        </p>
+
+        <span class="soon">
+          Coming soon
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     FEED POINTS
+========================= -->
+
+<section
+  class="feature-section"
+  id="feed"
+>
+
+  <div class="wrap">
+
+    <div class="feature-head">
+
+      <div class="eyebrow">
+        FEED POINTS
+      </div>
+
+      <h2 class="h2">
+        Food & water for Baku cats
+      </h2>
+
+      <p class="sub">
+        Community locations where people
+        regularly care for street cats.
+      </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🥣
+        </div>
+
+        <h3>
+          Food points
+        </h3>
+
+        <p>
+          Places where local residents
+          regularly leave food.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          💧
+        </div>
+
+        <h3>
+          Water points
+        </h3>
+
+        <p>
+          Especially useful during
+          Baku's hot summer months.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🐈
+        </div>
+
+        <h3>
+          Cat colonies
+        </h3>
+
+        <p>
+          Locations where groups
+          of community cats live.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     STORIES
+========================= -->
+
+<section
+  class="feature-section feature-section--dark"
+  id="catstories"
+>
+
+  <div class="wrap">
+
+    <div class="feature-head">
+
+      <div class="eyebrow">
+        CATSBAKU STORIES
+      </div>
+
+      <h2 class="h2">
+        Stories from the city
+      </h2>
+
+      <p class="sub">
+        Every Baku cat has a story.
+      </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🏰
+        </div>
+
+        <h3>
+          Old City cats
+        </h3>
+
+        <p>
+          Stories from İçərişəhər,
+          its courtyards and stone streets.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🌊
+        </div>
+
+        <h3>
+          Caspian cats
+        </h3>
+
+        <p>
+          Cats living near the Boulevard
+          and the Caspian coast.
+        </p>
+
+      </div>
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          ❤️
+        </div>
+
+        <h3>
+          Rescue stories
+        </h3>
+
+        <p>
+          Stories about people
+          who helped Baku cats.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+     SHOP
+========================= -->
+
+<section
+  class="section shop"
+  id="shop"
+>
+
+  <div class="wrap">
+
+    <div class="eyebrow">
+      TEZLİKLƏ
+    </div>
+
+    <h2 class="h2">
+      Sevimli pişiyiniz futbolkada
     </h2>
 
-    <p
-      class="sub"
-      data-i18n="about.text"
-    ></p>
+    <p class="sub">
+      CatsBaku merchandise coming soon.
+    </p>
 
-  </section>
+    <div
+      class="products"
+      id="products"
+    ></div>
+
+  </div>
+
+</section>
+
+<div class="carpet"></div>
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="wrap about">
+
+  <img
+    src="img/logo.svg"
+    alt="CatsBaku"
+  >
+
+  <h2 class="h2">
+    İnsanlar üçün şəhər.
+    Pişiklər üçün şəhər.
+  </h2>
+
+  <p class="sub">
+    CatsBaku brings together the cats,
+    people and neighbourhoods of Baku.
+  </p>
+
+</section>
 
 </main>
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer class="footer">
 
@@ -484,33 +1233,27 @@
 
   ·
 
-  <span data-i18n="footer.city">
-    BAKI · AZƏRBAYCAN
-  </span>
+  BAKI · AZƏRBAYCAN 🇦🇿
 
 </footer>
 
-<!-- MOBILE MENU -->
+<!-- =========================
+     MOBILE NAV
+========================= -->
 
-<nav
-  class="bottomnav"
-  aria-label="Menu"
->
+<nav class="bottomnav">
 
   <ul>
 
     <li>
 
-      <a
-        href="#top"
-        class="is-active"
-      >
+      <a href="#top" class="is-active">
 
         <svg viewBox="0 0 24 24">
           <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>
         </svg>
 
-        <span data-i18n="nav.home">
+        <span>
           Əsas
         </span>
 
@@ -527,7 +1270,7 @@
           <path d="M9 4v14M15 6v14"/>
         </svg>
 
-        <span data-i18n="nav.map">
+        <span>
           Xəritə
         </span>
 
@@ -551,7 +1294,7 @@
 
         </span>
 
-        <span data-i18n="nav.add">
+        <span>
           Əlavə et
         </span>
 
@@ -561,14 +1304,14 @@
 
     <li>
 
-      <a href="#cats">
+      <a href="#adoption">
 
         <svg viewBox="0 0 24 24">
           <path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.4 2.9 4.5 6.6 4.5c2.1 0 3.7 1.2 5.4 3.2 1.7-2 3.3-3.2 5.4-3.2 3.7 0 5.7 3.9 4.2 7.2C19.5 16.4 12 21 12 21z"/>
         </svg>
 
-        <span data-i18n="nav.fav">
-          Sevimlilər
+        <span>
+          Adoption
         </span>
 
       </a>
@@ -584,7 +1327,7 @@
           <path d="M9 8a3 3 0 0 1 6 0"/>
         </svg>
 
-        <span data-i18n="nav.shop">
+        <span>
           Mağaza
         </span>
 
@@ -596,12 +1339,13 @@
 
 </nav>
 
-<!-- ADD CAT DEMO -->
+<!-- =========================
+     ADD CAT POPUP
+========================= -->
 
 <dialog
   class="sheet"
   id="demoSheet"
-  aria-labelledby="demoTitle"
 >
 
   <div class="sheet__in">
@@ -610,15 +1354,14 @@
 
     <div class="sheet__head">
 
-      <h2 id="demoTitle">
-        Add a cat
+      <h2>
+        Pişik əlavə et
       </h2>
 
       <button
         class="sheet__close"
         type="button"
         data-close
-        aria-label="Close"
       >
         ×
       </button>
@@ -633,19 +1376,13 @@
           🐾
         </div>
 
-        <h3
-          id="demoHeading"
-          style="font-size:30px"
-        >
-          Coming soon
+        <h3 style="font-size:30px">
+          Tezliklə
         </h3>
 
-        <p
-          id="demoText"
-          class="sub"
-        >
-          The site is currently running without a database.
-          Cat submissions will be enabled after the design is approved.
+        <p class="sub">
+          CatsBaku hazırda baza olmadan işləyir.
+          Pişik əlavə etmək funksiyasını daha sonra aktiv edəcəyik.
         </p>
 
         <button
@@ -664,7 +1401,9 @@
 
 </dialog>
 
-<!-- MUSIC -->
+<!-- =========================
+     MUSIC
+========================= -->
 
 <audio
   id="bgMusic"
@@ -682,221 +1421,64 @@
 <button
   id="musicToggle"
   type="button"
-  aria-label="Play background music"
-  title="Music"
+  aria-label="Play music"
 >
   🐱
 </button>
 
-<style>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-#musicToggle {
+<script src="js/i18n.js"></script>
 
-  position:
-    fixed;
-
-  right:
-    18px;
-
-  bottom:
-    86px;
-
-  width:
-    58px;
-
-  height:
-    58px;
-
-  border:
-    0;
-
-  border-radius:
-    50%;
-
-  background:
-    rgba(255,255,255,.96);
-
-  font-size:
-    28px;
-
-  line-height:
-    1;
-
-  cursor:
-    pointer;
-
-  z-index:
-    10000;
-
-  box-shadow:
-    0 8px 24px rgba(0,0,0,.22);
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
-
-}
-
-#musicToggle:hover {
-
-  transform:
-    translateY(-2px);
-
-  box-shadow:
-    0 10px 28px rgba(0,0,0,.28);
-
-}
-
-#musicToggle.is-playing {
-
-  animation:
-    musicCatPulse
-    1.8s
-    ease-in-out
-    infinite;
-
-}
-
-@keyframes musicCatPulse {
-
-  0%,
-  100% {
-
-    transform:
-      scale(1);
-
-  }
-
-  50% {
-
-    transform:
-      scale(1.08);
-
-  }
-
-}
-
-@media
-(min-width:760px) {
-
-  #musicToggle {
-
-    bottom:
-      22px;
-
-  }
-
-}
-
-@media
-(prefers-reduced-motion:reduce) {
-
-  #musicToggle.is-playing {
-
-    animation:
-      none;
-
-  }
-
-}
-
-</style>
-
-<script
-  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-></script>
-
-<script
-  src="js/i18n.js"
-></script>
-
-<script
-  src="js/static.js"
-></script>
+<script src="js/static.js"></script>
 
 <script>
 
 (function () {
 
   const music =
-    document.getElementById(
-      "bgMusic"
-    );
+    document.getElementById("bgMusic");
 
   const toggle =
-    document.getElementById(
-      "musicToggle"
-    );
+    document.getElementById("musicToggle");
 
-  if (
-    !music
-    ||
-    !toggle
-  ) {
-
+  if (!music || !toggle) {
     return;
-
   }
 
-  music.volume =
-    0.35;
+  music.volume = 0.35;
 
-  function showPlaying() {
+  function playing() {
 
-    toggle.textContent =
-      "😺";
+    toggle.textContent = "😺";
 
     toggle.classList.add(
       "is-playing"
     );
 
-    toggle.setAttribute(
-      "aria-label",
-      "Pause background music"
-    );
-
   }
 
-  function showPaused() {
+  function paused() {
 
-    toggle.textContent =
-      "🐱";
+    toggle.textContent = "🐱";
 
     toggle.classList.remove(
       "is-playing"
     );
 
-    toggle.setAttribute(
-      "aria-label",
-      "Play background music"
-    );
-
   }
 
-  async function playMusic() {
+  async function startMusic() {
 
     try {
 
       await music.play();
 
-      showPlaying();
+      playing();
 
-    }
-    catch (error) {
+    } catch (e) {
 
-      showPaused();
-
-    }
-
-  }
-
-  function startOnFirstInteraction() {
-
-    if (
-      music.paused
-    ) {
-
-      playMusic();
+      paused();
 
     }
 
@@ -904,21 +1486,15 @@
 
   document.addEventListener(
     "click",
-    startOnFirstInteraction,
-    {
-      once:
-        true
-    }
-  );
+    function firstStart() {
 
-  document.addEventListener(
-    "touchstart",
-    startOnFirstInteraction,
+      if (music.paused) {
+        startMusic();
+      }
+
+    },
     {
-      once:
-        true,
-      passive:
-        true
+      once: true
     }
   );
 
@@ -928,18 +1504,15 @@
 
       event.stopPropagation();
 
-      if (
-        music.paused
-      ) {
+      if (music.paused) {
 
-        await playMusic();
+        await startMusic();
 
-      }
-      else {
+      } else {
 
         music.pause();
 
-        showPaused();
+        paused();
 
       }
 
@@ -948,12 +1521,12 @@
 
   music.addEventListener(
     "play",
-    showPlaying
+    playing
   );
 
   music.addEventListener(
     "pause",
-    showPaused
+    paused
   );
 
 })();
