@@ -1,915 +1,495 @@
 <!DOCTYPE html>
 <html lang="az">
-
 <head>
+  <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, viewport-fit=cover"
->
+  <title>CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku</title>
 
-<title>
-  CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku
-</title>
+  <meta
+    name="description"
+    content="CatsBaku — cats, adoption, help, lost & found, feeding points and stories from Baku."
+  >
 
-<meta
-  name="description"
-  content="CatsBaku — cats, adoption, help, lost & found, feeding points and stories from Baku."
->
+  <meta name="theme-color" content="#F5EBDD">
 
-<meta
-  name="theme-color"
-  content="#F5EBDD"
->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CatsBaku">
+  <meta property="og:title" content="CatsBaku — Cats of Baku">
+  <meta property="og:url" content="https://catsbaku.com/">
+  <meta property="og:image" content="https://catsbaku.com/img/og-cover.jpg">
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="CatsBaku">
-<meta property="og:title" content="CatsBaku — Cats of Baku">
+  <link
+    rel="icon"
+    href="img/favicon.svg"
+    type="image/svg+xml"
+  >
 
-<meta
-  property="og:description"
-  content="Cats of Baku — from İçərişəhər to the Caspian coast."
->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
-<meta
-  property="og:url"
-  content="https://catsbaku.com/"
->
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-<meta
-  property="og:image"
-  content="https://catsbaku.com/img/og-cover.jpg"
->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Manrope:wght@500;600;700;800&family=Marck+Script&display=swap"
+  >
 
-<link
-  rel="icon"
-  href="img/favicon.svg"
-  type="image/svg+xml"
->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  >
 
-<link
-  rel="preconnect"
-  href="https://fonts.googleapis.com"
->
-
-<link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
-  crossorigin
->
-
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Manrope:wght@500;600;700;800&family=Marck+Script&display=swap"
->
-
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
->
-
-<link
-  rel="stylesheet"
-  href="css/style.css"
->
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
 
 <style>
 
-/* =========================================================
-   CATSBAKU — MODERN BAKU HERITAGE
-========================================================= */
-
-:root {
-
-  --baku-cream:
-    #f8f2e8;
-
-  --baku-sand:
-    #d8bf96;
-
-  --baku-stone:
-    #eadcc5;
-
-  --baku-caspian:
-    #276b78;
-
-  --baku-caspian-dark:
-    #174d58;
-
-  --baku-pomegranate:
-    #8f3040;
-
-  --baku-gold:
-    #c69a4d;
-
-  --baku-night:
-    #1b1b19;
-
+:root{
+  --baku-cream:#f8f2e8;
+  --baku-sand:#d8bf96;
+  --baku-stone:#eadcc5;
+  --baku-caspian:#276b78;
+  --baku-caspian-dark:#174d58;
+  --baku-pomegranate:#8f3040;
+  --baku-gold:#c69a4d;
+  --baku-night:#1b1b19;
 }
 
-html {
-
-  scroll-behavior:
-    smooth;
-
+html{
+  scroll-behavior:smooth;
 }
 
-body {
-
+body{
   background:
-
     linear-gradient(
       180deg,
       #fbf7ef,
       #f6efe3
     );
-
 }
 
+/* ===== TOP ===== */
 
-/* =========================
-   TOP BAR
-========================= */
+.topbar{
+  background:rgba(248,242,232,.95);
+  border-bottom:1px solid rgba(143,48,64,.12);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
 
-.topbar {
+.logo::after{
+  content:"BAKI";
+  margin-left:8px;
+  color:var(--baku-pomegranate);
+  font-size:9px;
+  letter-spacing:3px;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  min-height:78vh;
+  background:var(--baku-night);
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
 
   background:
-    rgba(248,242,232,.95);
-
-  border-bottom:
-    1px solid
-    rgba(143,48,64,.12);
-
-  backdrop-filter:
-    blur(16px);
-
-  -webkit-backdrop-filter:
-    blur(16px);
-
-}
-
-.logo {
-
-  position:
-    relative;
-
-}
-
-.logo::after {
-
-  content:
-    "BAKI";
-
-  margin-left:
-    8px;
-
-  font-size:
-    9px;
-
-  letter-spacing:
-    3px;
-
-  color:
-    var(--baku-pomegranate);
-
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-
-  position:
-    relative;
-
-  overflow:
-    hidden;
-
-  min-height:
-    78vh;
-
-  background:
-    var(--baku-night);
-
-}
-
-.hero::before {
-
-  content:
-    "";
-
-  position:
-    absolute;
-
-  inset:
-    0;
-
-  z-index:
-    2;
-
-  pointer-events:
-    none;
-
-  background:
-
     linear-gradient(
       180deg,
       rgba(12,18,17,.04),
-      rgba(20,33,34,.12) 35%,
+      rgba(20,33,34,.13) 35%,
       rgba(18,20,18,.82) 100%
     );
-
 }
 
-.hero::after {
+.hero::after{
+  content:"";
+  position:absolute;
 
-  content:
-    "";
+  width:650px;
+  height:650px;
 
-  position:
-    absolute;
+  right:-280px;
+  bottom:-350px;
 
-  width:
-    650px;
-
-  height:
-    650px;
-
-  right:
-    -280px;
-
-  bottom:
-    -350px;
-
-  z-index:
-    2;
-
-  border-radius:
-    50%;
-
-  pointer-events:
-    none;
+  z-index:2;
+  border-radius:50%;
+  pointer-events:none;
 
   background:
-
     radial-gradient(
       circle,
       rgba(39,107,120,.48),
       rgba(39,107,120,.13) 50%,
       transparent 70%
     );
-
 }
 
-.hero__img {
-
-  filter:
-    saturate(.94)
-    contrast(1.04)
-    sepia(.04);
-
+.hero__img{
+  filter:saturate(.94) contrast(1.04) sepia(.04);
 }
 
 .hero__top,
-.hero__body {
-
-  position:
-    relative;
-
-  z-index:
-    4;
-
+.hero__body{
+  position:relative;
+  z-index:4;
 }
 
-.hero__body::before {
-
-  content:
-    "";
-
-  display:
-    block;
-
-  width:
-    68px;
-
-  height:
-    68px;
-
-  margin-bottom:
-    12px;
+.hero__body::before{
+  content:"";
+  display:block;
+  width:68px;
+  height:68px;
+  margin-bottom:12px;
 
   background:
-
     url("img/buta-shine.svg")
     center / contain
     no-repeat;
-
-  opacity:
-    .95;
-
 }
 
-.hero__name {
-
-  text-shadow:
-
-    0 4px 26px
-    rgba(0,0,0,.42);
-
+.hero__name{
+  text-shadow:0 4px 26px rgba(0,0,0,.42);
 }
 
-.hero__quote {
-
-  max-width:
-    600px;
+.hero__quote{
+  max-width:600px;
 
   font-family:
     "Cormorant Garamond",
     Georgia,
     serif;
 
-  font-size:
-    clamp(
-      21px,
-      3vw,
-      30px
-    );
-
-  font-style:
-    italic;
-
+  font-size:clamp(21px,3vw,30px);
+  font-style:italic;
 }
 
-.badge {
+/* ===== CARPET ===== */
 
-  border:
-    1px solid
-    rgba(255,255,255,.36);
+.carpet{
+  height:23px;
 
   background:
-    rgba(18,20,19,.34);
+    linear-gradient(
+      rgba(143,48,64,.11),
+      rgba(143,48,64,.11)
+    ),
+    url("img/carpet.jpg") center / 360px auto;
 
-  backdrop-filter:
-    blur(12px);
-
+  border-top:3px solid var(--baku-gold);
+  border-bottom:3px solid var(--baku-pomegranate);
 }
 
+/* ===== BAKU INTRO ===== */
 
-/* =========================
-   BAKU INTRO
-========================= */
+.baku-intro{
+  position:relative;
+  overflow:hidden;
 
-.baku-intro {
-
-  position:
-    relative;
-
-  overflow:
-    hidden;
-
-  padding:
-    30px 20px;
-
-  text-align:
-    center;
+  padding:30px 20px;
+  text-align:center;
 
   background:
-
     linear-gradient(
       90deg,
       #f4e5cf,
       #faf5ec,
       #e7f0ef
     );
-
-  border-bottom:
-    1px solid
-    rgba(120,87,50,.12);
-
 }
 
-.baku-intro::before {
+.baku-intro::before{
+  content:"";
+  position:absolute;
 
-  content:
-    "";
+  width:160px;
+  height:160px;
 
-  position:
-    absolute;
+  left:-55px;
+  top:-55px;
 
-  width:
-    150px;
-
-  height:
-    150px;
-
-  left:
-    -55px;
-
-  top:
-    -50px;
-
-  opacity:
-    .055;
+  opacity:.055;
 
   background:
-
     url("img/buta-shine.svg")
     center / contain
     no-repeat;
-
 }
 
-.baku-intro__label {
+.baku-intro__label{
+  position:relative;
+  z-index:2;
 
-  position:
-    relative;
+  color:var(--baku-pomegranate);
 
-  z-index:
-    2;
-
-  margin-bottom:
-    7px;
-
-  color:
-    var(--baku-pomegranate);
-
-  font-size:
-    10px;
-
-  font-weight:
-    800;
-
-  letter-spacing:
-    .25em;
-
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.25em;
 }
 
-.baku-intro__title {
+.baku-intro__title{
+  position:relative;
+  z-index:2;
 
-  position:
-    relative;
+  margin-top:7px;
 
-  z-index:
-    2;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
+  font-size:clamp(27px,4vw,42px);
+  font-weight:700;
+}
+
+.baku-intro__districts{
+  position:relative;
+  z-index:2;
+
+  margin-top:8px;
+
+  color:var(--baku-caspian);
+  font-size:13px;
+}
+
+/* ===== HEADINGS ===== */
+
+.h2{
   font-family:
     "Cormorant Garamond",
     Georgia,
     serif;
-
-  font-size:
-    clamp(
-      26px,
-      4vw,
-      40px
-    );
-
-  font-weight:
-    700;
-
-  color:
-    #29251f;
-
 }
 
-.baku-intro__districts {
-
-  position:
-    relative;
-
-  z-index:
-    2;
-
-  margin-top:
-    8px;
-
-  color:
-    var(--baku-caspian);
-
-  font-size:
-    13px;
-
+.eyebrow{
+  color:var(--baku-pomegranate);
+  letter-spacing:.16em;
 }
 
+/* ===== ENSURE CAT IMAGES ===== */
 
-/* =========================
-   CARPET
-========================= */
+#grid .card__photo{
+  position:relative;
+  overflow:hidden;
+}
 
-.carpet {
+#grid .card__photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-  height:
-    23px;
+/* ===== EXPLORE ===== */
+
+.explore{
+  position:relative;
+  overflow:hidden;
+
+  padding:75px 0;
 
   background:
-
-    linear-gradient(
-      rgba(143,48,64,.11),
-      rgba(143,48,64,.11)
-    ),
-
-    url("img/carpet.jpg")
-    center / 360px auto;
-
-  border-top:
-    3px solid
-    var(--baku-gold);
-
-  border-bottom:
-    3px solid
-    var(--baku-pomegranate);
-
-}
-
-
-/* =========================
-   HEADINGS
-========================= */
-
-.h2 {
-
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-}
-
-.eyebrow {
-
-  color:
-    var(--baku-pomegranate);
-
-  letter-spacing:
-    .16em;
-
-}
-
-
-/* =========================
-   EXPLORE
-========================= */
-
-.explore {
-
-  position:
-    relative;
-
-  overflow:
-    hidden;
-
-  padding:
-    75px 0;
-
-  background:
-
     linear-gradient(
       180deg,
       #f5e7d2,
       #faf5ed
     );
-
 }
 
-.explore::before {
+.explore::before{
+  content:"";
+  position:absolute;
 
-  content:
-    "";
+  width:280px;
+  height:280px;
 
-  position:
-    absolute;
+  right:-100px;
+  top:-100px;
 
-  width:
-    280px;
-
-  height:
-    280px;
-
-  right:
-    -100px;
-
-  top:
-    -100px;
-
-  opacity:
-    .055;
-
-  transform:
-    rotate(18deg);
+  opacity:.055;
+  transform:rotate(18deg);
 
   background:
-
     url("img/buta-shine.svg")
     center / contain
     no-repeat;
-
 }
 
-.explore__head {
+.explore__head{
+  position:relative;
+  z-index:2;
 
-  position:
-    relative;
-
-  z-index:
-    2;
-
-  max-width:
-    760px;
-
-  margin:
-    0 auto 38px;
-
-  text-align:
-    center;
-
+  max-width:760px;
+  margin:0 auto 38px;
+  text-align:center;
 }
 
-.explore__head::after {
+.explore__head::after{
+  content:"";
+  display:block;
 
-  content:
-    "";
+  width:135px;
+  height:3px;
 
-  display:
-    block;
+  margin:24px auto 0;
 
-  width:
-    135px;
-
-  height:
-    3px;
-
-  margin:
-    24px auto 0;
-
-  border-radius:
-    999px;
+  border-radius:99px;
 
   background:
-
     linear-gradient(
       90deg,
       var(--baku-pomegranate),
       var(--baku-gold),
       var(--baku-caspian)
     );
-
 }
 
-.explore__grid {
+.explore__grid{
+  position:relative;
+  z-index:2;
 
-  position:
-    relative;
-
-  z-index:
-    2;
-
-  display:
-    grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:
-    18px;
-
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
 }
 
-.explore-card {
+.explore-card{
+  display:block;
 
-  display:
-    block;
+  padding:27px;
 
-  padding:
-    27px;
+  color:inherit;
+  text-decoration:none;
 
-  text-decoration:
-    none;
-
-  color:
-    inherit;
-
-  border:
-    1px solid
-    rgba(128,93,54,.13);
-
-  border-radius:
-    35px 35px 22px 22px;
+  border:1px solid rgba(128,93,54,.13);
+  border-radius:35px 35px 22px 22px;
 
   background:
-
     linear-gradient(
       145deg,
-      rgba(255,255,255,.99),
-      rgba(248,240,226,.95)
+      #fff,
+      #f8f0e2
     );
 
   box-shadow:
-
     0 14px 36px
     rgba(70,52,31,.075);
 
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease;
-
+  transition:.22s ease;
 }
 
-.explore-card:hover {
-
-  transform:
-    translateY(-5px);
+.explore-card:hover{
+  transform:translateY(-5px);
 
   box-shadow:
-
     0 20px 44px
     rgba(70,52,31,.13);
-
 }
 
-.explore-card__icon {
+.explore-card__icon{
+  width:60px;
+  height:60px;
 
-  width:
-    60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-  height:
-    60px;
+  margin-bottom:18px;
 
-  display:
-    flex;
+  border-radius:19px;
+  font-size:30px;
 
-  align-items:
-    center;
-
-  justify-content:
-    center;
-
-  margin-bottom:
-    18px;
-
-  border-radius:
-    19px;
-
-  font-size:
-    30px;
-
-  background:
-    #f3dfbf;
-
-  border:
-    1px solid
-    rgba(198,154,77,.25);
-
+  background:#f3dfbf;
 }
 
-.explore-card:nth-child(2)
-.explore-card__icon {
-
-  background:
-    #f4dfe2;
-
+.explore-card:nth-child(2) .explore-card__icon{
+  background:#f4dfe2;
 }
 
-.explore-card:nth-child(3)
-.explore-card__icon {
-
-  background:
-    #f5ead6;
-
+.explore-card:nth-child(3) .explore-card__icon{
+  background:#f5ead6;
 }
 
-.explore-card:nth-child(4)
-.explore-card__icon {
-
-  background:
-    #dcebed;
-
+.explore-card:nth-child(4) .explore-card__icon{
+  background:#dcebed;
 }
 
-.explore-card:nth-child(5)
-.explore-card__icon {
-
-  background:
-    #e0ece8;
-
+.explore-card:nth-child(5) .explore-card__icon{
+  background:#e0ece8;
 }
 
-.explore-card:nth-child(6)
-.explore-card__icon {
-
-  background:
-    #eee1ca;
-
+.explore-card:nth-child(6) .explore-card__icon{
+  background:#eee1ca;
 }
 
-.explore-card h3 {
-
-  margin:
-    0 0 8px;
+.explore-card h3{
+  margin:0 0 8px;
 
   font-family:
     "Cormorant Garamond",
-    Georgia,
     serif;
 
-  font-size:
-    30px;
-
+  font-size:30px;
 }
 
-.explore-card p {
-
-  margin:
-    0;
-
-  line-height:
-    1.65;
-
-  opacity:
-    .72;
-
-  font-size:
-    14px;
-
+.explore-card p{
+  margin:0;
+  line-height:1.65;
+  opacity:.72;
+  font-size:14px;
 }
 
+/* ===== SECTIONS ===== */
 
-/* =========================
-   FEATURE SECTIONS
-========================= */
+.feature-section{
+  position:relative;
+  overflow:hidden;
 
-.feature-section {
+  padding:76px 0;
 
-  position:
-    relative;
-
-  padding:
-    76px 0;
-
-  scroll-margin-top:
-    90px;
-
-  overflow:
-    hidden;
-
+  scroll-margin-top:90px;
 }
 
-.feature-section--soft {
+.feature-head{
+  max-width:760px;
+  margin-bottom:32px;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.feature-box{
+  padding:26px;
+
+  color:#222;
+
+  border:1px solid rgba(128,93,54,.12);
+  border-radius:28px 28px 20px 20px;
 
   background:
-    #f8f1e6;
-
-}
-
-.feature-head {
-
-  max-width:
-    760px;
-
-  margin-bottom:
-    32px;
-
-}
-
-.feature-grid {
-
-  display:
-    grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:
-    18px;
-
-}
-
-.feature-box {
-
-  position:
-    relative;
-
-  z-index:
-    2;
-
-  padding:
-    26px;
-
-  color:
-    #222;
-
-  border:
-    1px solid
-    rgba(128,93,54,.12);
-
-  border-radius:
-    28px 28px 20px 20px;
-
-  background:
-
     linear-gradient(
       145deg,
       #fff,
@@ -917,407 +497,198 @@ body {
     );
 
   box-shadow:
-
     0 13px 34px
     rgba(70,52,31,.07);
-
 }
 
-.feature-box__emoji {
-
-  margin-bottom:
-    14px;
-
-  font-size:
-    35px;
-
+.feature-box__emoji{
+  margin-bottom:14px;
+  font-size:35px;
 }
 
-.feature-box h3 {
-
-  margin:
-    0 0 8px;
+.feature-box h3{
+  margin:0 0 8px;
 
   font-family:
     "Cormorant Garamond",
-    Georgia,
     serif;
 
-  font-size:
-    29px;
-
+  font-size:29px;
 }
 
-.feature-box p {
-
-  margin:
-    0;
-
-  line-height:
-    1.65;
-
-  opacity:
-    .72;
-
-  font-size:
-    14px;
-
+.feature-box p{
+  margin:0;
+  line-height:1.65;
+  opacity:.72;
+  font-size:14px;
 }
 
-.soon {
+.soon{
+  display:inline-flex;
 
-  display:
-    inline-flex;
+  margin-top:16px;
+  padding:7px 12px;
 
-  margin-top:
-    16px;
+  border-radius:999px;
 
-  padding:
-    7px 12px;
+  background:#f1e2cb;
+  color:var(--baku-pomegranate);
 
-  border-radius:
-    999px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.1em;
+}
 
-  color:
-    var(--baku-pomegranate);
+/* ===== ADOPTION ===== */
+
+#adoption::before{
+  content:"";
+  position:absolute;
+
+  width:210px;
+  height:210px;
+
+  left:-80px;
+  top:65px;
+
+  opacity:.045;
 
   background:
-    #f1e2cb;
-
-  font-size:
-    10px;
-
-  font-weight:
-    800;
-
-  letter-spacing:
-    .1em;
-
-  text-transform:
-    uppercase;
-
-}
-
-
-/* =========================
-   ADOPTION BUTA
-========================= */
-
-#adoption::before {
-
-  content:
-    "";
-
-  position:
-    absolute;
-
-  width:
-    210px;
-
-  height:
-    210px;
-
-  left:
-    -80px;
-
-  top:
-    65px;
-
-  opacity:
-    .045;
-
-  transform:
-    rotate(-25deg);
-
-  background:
-
     url("img/buta-shine.svg")
     center / contain
     no-repeat;
-
 }
 
+/* ===== HELP ===== */
 
-/* =========================
-   HELP
-========================= */
-
-#help {
-
+#help{
   background:
-
     linear-gradient(
       180deg,
       #f1e2cd,
       #faf6ef
     );
-
 }
 
+/* ===== VETS ===== */
 
-/* =========================
-   VETS
-========================= */
-
-#vets {
-
+#vets{
   background:
-
     linear-gradient(
       180deg,
       #e8f0ee,
       #f8f3e9
     );
-
 }
 
+/* ===== CASPIAN ===== */
 
-/* =========================
-   CASPIAN FEED SECTION
-========================= */
-
-#feed {
-
-  position:
-    relative;
-
+#feed{
   background:
-
     linear-gradient(
       180deg,
       #faf6ee,
       #e6f0f0
     );
-
 }
 
-#feed::after {
+#feed::after{
+  content:"≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈";
 
-  content:
-    "≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈";
+  position:absolute;
 
-  position:
-    absolute;
+  left:0;
+  right:0;
+  bottom:-18px;
 
-  left:
-    0;
+  color:rgba(39,107,120,.12);
 
-  right:
-    0;
+  text-align:center;
+  font-size:70px;
+  letter-spacing:18px;
 
-  bottom:
-    -15px;
-
-  text-align:
-    center;
-
-  white-space:
-    nowrap;
-
-  color:
-    rgba(39,107,120,.12);
-
-  font-family:
-    Georgia,
-    serif;
-
-  font-size:
-    70px;
-
-  letter-spacing:
-    18px;
-
-  pointer-events:
-    none;
-
+  pointer-events:none;
 }
 
+/* ===== NIGHT BAKU ===== */
 
-/* =========================
-   STORIES / NIGHT BAKU
-========================= */
+#catstories{
+  color:#fff;
+  background:#191b1a;
+}
 
-#catstories {
+#catstories::before{
+  content:"";
 
-  position:
-    relative;
-
-  color:
-    #fff;
+  position:absolute;
+  inset:0;
 
   background:
-    #191b1a;
-
-}
-
-#catstories::before {
-
-  content:
-    "";
-
-  position:
-    absolute;
-
-  inset:
-    0;
-
-  background:
-
     linear-gradient(
       rgba(22,24,22,.87),
       rgba(17,20,19,.94)
     ),
-
     url("img/flame-towers.jpg")
     center / cover;
-
 }
 
-#catstories .wrap {
-
-  position:
-    relative;
-
-  z-index:
-    2;
-
+#catstories .wrap{
+  position:relative;
+  z-index:2;
 }
 
-#catstories .eyebrow {
-
-  color:
-    #dfba75;
-
+#catstories .eyebrow{
+  color:#dfba75;
 }
 
-#catstories .feature-box {
-
-  background:
-    rgba(255,250,242,.94);
-
-  backdrop-filter:
-    blur(10px);
-
+#catstories .feature-box{
+  color:#222;
+  background:rgba(255,250,242,.94);
 }
 
+/* ===== MAP ===== */
 
-/* =========================
-   MAP
-========================= */
-
-.map-box {
-
-  border:
-    5px solid
-    #fff;
-
-  border-radius:
-    28px;
+.map-box{
+  border:5px solid #fff;
+  border-radius:28px;
 
   box-shadow:
-
     0 18px 48px
     rgba(57,49,37,.13);
-
 }
 
-.map {
-
-  border-radius:
-    22px;
-
+.map{
+  border-radius:22px;
 }
 
+/* ===== FOOTER ===== */
 
-/* =========================
-   BUTTONS
-========================= */
+.footer{
+  position:relative;
 
-.btn--pom {
+  padding-top:65px;
+
+  color:#d9cdb9;
 
   background:
-    var(--baku-pomegranate);
-
-  box-shadow:
-
-    0 6px 20px
-    rgba(143,48,64,.20);
-
-}
-
-.btn--pom:hover {
-
-  background:
-    #782735;
-
-}
-
-
-/* =========================
-   STORIES BAR
-========================= */
-
-.stories {
-
-  background:
-
     linear-gradient(
-      90deg,
-      #f4e7d4,
-      #faf6ef,
-      #e7f0ee
-    );
-
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-
-  position:
-    relative;
-
-  padding-top:
-    65px;
-
-  color:
-    #d9cdb9;
-
-  background:
-
-    linear-gradient(
-      180deg,
       #20201d,
       #101210
     );
-
 }
 
-.footer::before {
+.footer::before{
+  content:"";
 
-  content:
-    "";
+  position:absolute;
 
-  position:
-    absolute;
+  left:0;
+  right:0;
+  top:0;
 
-  left:
-    0;
-
-  right:
-    0;
-
-  top:
-    0;
-
-  height:
-    11px;
+  height:11px;
 
   background:
-
     repeating-linear-gradient(
       45deg,
       var(--baku-pomegranate) 0 13px,
@@ -1325,169 +696,87 @@ body {
       var(--baku-caspian) 26px 39px,
       var(--baku-stone) 39px 52px
     );
-
 }
 
-.footer-baku {
+.footer-baku{
+  margin-top:14px;
 
-  margin-top:
-    14px;
+  color:#bea878;
 
-  color:
-    #bea878;
-
-  font-size:
-    10px;
-
-  font-weight:
-    700;
-
-  letter-spacing:
-    .22em;
-
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.22em;
 }
 
+/* ===== MUSIC ===== */
 
-/* =========================
-   MUSIC
-========================= */
+#musicToggle{
+  position:fixed;
 
-#musicToggle {
+  right:18px;
+  bottom:86px;
 
-  position:
-    fixed;
+  width:58px;
+  height:58px;
 
-  right:
-    18px;
+  border:2px solid var(--baku-gold);
+  border-radius:50%;
 
-  bottom:
-    86px;
+  background:#fffaf0;
 
-  width:
-    58px;
+  font-size:28px;
+  cursor:pointer;
 
-  height:
-    58px;
-
-  border:
-    2px solid
-    var(--baku-gold);
-
-  border-radius:
-    50%;
-
-  background:
-    #fffaf0;
-
-  font-size:
-    28px;
-
-  cursor:
-    pointer;
-
-  z-index:
-    10000;
+  z-index:10000;
 
   box-shadow:
-
     0 8px 24px
     rgba(0,0,0,.22);
-
 }
 
-#musicToggle.is-playing {
-
-  animation:
-    catPulse
-    1.8s
-    ease-in-out
-    infinite;
-
+#musicToggle.is-playing{
+  animation:catPulse 1.8s ease-in-out infinite;
 }
 
-@keyframes catPulse {
-
-  0%,
-  100% {
-
-    transform:
-      scale(1);
-
+@keyframes catPulse{
+  50%{
+    transform:scale(1.08);
   }
-
-  50% {
-
-    transform:
-      scale(1.08);
-
-  }
-
 }
 
+/* ===== RESPONSIVE ===== */
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media
-(max-width:900px) {
+@media(max-width:900px){
 
   .explore__grid,
-  .feature-grid {
-
-    grid-template-columns:
-      repeat(2,1fr);
-
+  .feature-grid{
+    grid-template-columns:repeat(2,1fr);
   }
 
 }
 
-@media
-(max-width:600px) {
+@media(max-width:600px){
 
-  .hero {
-
-    min-height:
-      72vh;
-
-  }
-
-  .hero__body::before {
-
-    width:
-      54px;
-
-    height:
-      54px;
-
+  .hero{
+    min-height:72vh;
   }
 
   .explore__grid,
-  .feature-grid {
-
-    grid-template-columns:
-      1fr;
-
+  .feature-grid{
+    grid-template-columns:1fr;
   }
 
   .explore,
-  .feature-section {
-
-    padding:
-      56px 0;
-
+  .feature-section{
+    padding:56px 0;
   }
 
 }
 
-@media
-(min-width:760px) {
+@media(min-width:760px){
 
-  #musicToggle {
-
-    bottom:
-      22px;
-
+  #musicToggle{
+    bottom:22px;
   }
 
 }
@@ -1500,118 +789,77 @@ body {
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <header class="topbar">
 
-<div class="wrap topbar__in">
+  <div class="wrap topbar__in">
 
-<a
-  class="logo"
-  href="#top"
->
+    <a class="logo" href="#top">
 
-<img
-  src="img/logo.svg"
-  alt=""
-  width="26"
-  height="31"
->
+      <img
+        src="img/logo.svg"
+        alt=""
+        width="26"
+        height="31"
+      >
 
-Cats<b>Baku</b>
+      Cats<b>Baku</b>
 
-</a>
+    </a>
 
 
-<nav
-  class="topnav"
-  aria-label="Menu"
->
+    <nav class="topnav">
 
-<a
-  href="#cats"
-  data-i18n="nav.cats"
->
-Pişiklər
-</a>
+      <a href="#cats" data-i18n="nav.cats">
+        Pişiklər
+      </a>
 
-<a
-  href="#adoption"
-  data-i18n="nav.adoption"
->
-Sahibləndir
-</a>
+      <a href="#adoption" data-i18n="nav.adoption">
+        Sahibləndir
+      </a>
 
-<a
-  href="#help"
-  data-i18n="nav.help"
->
-Kömək
-</a>
+      <a href="#help" data-i18n="nav.help">
+        Kömək
+      </a>
 
-<a
-  href="#map"
-  data-i18n="nav.map"
->
-Xəritə
-</a>
+      <a href="#map" data-i18n="nav.map">
+        Xəritə
+      </a>
 
-<a
-  href="#shop"
-  data-i18n="nav.shop"
->
-Mağaza
-</a>
+      <a href="#shop" data-i18n="nav.shop">
+        Mağaza
+      </a>
 
-<button
-  class="btn btn--pom"
-  type="button"
-  data-demo-add
->
+      <button
+        class="btn btn--pom"
+        type="button"
+        data-demo-add
+      >
+        +
+        <span data-i18n="nav.add">
+          Əlavə et
+        </span>
+      </button>
 
-+
-
-<span data-i18n="nav.add">
-Əlavə et
-</span>
-
-</button>
-
-</nav>
+    </nav>
 
 
-<div
-  class="langs"
-  role="group"
-  aria-label="Language"
->
+    <div class="langs">
 
-<button
-  type="button"
-  data-lang="az"
->
-AZ
-</button>
+      <button type="button" data-lang="az">
+        AZ
+      </button>
 
-<button
-  type="button"
-  data-lang="ru"
->
-RU
-</button>
+      <button type="button" data-lang="ru">
+        RU
+      </button>
 
-<button
-  type="button"
-  data-lang="en"
->
-EN
-</button>
+      <button type="button" data-lang="en">
+        EN
+      </button>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </header>
 
@@ -1619,78 +867,70 @@ EN
 <main>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
-<section
-  class="hero"
-  id="top"
->
+<section class="hero" id="top">
 
-<img
-  class="hero__img"
-  src="img/hero-cat.jpg"
-  alt="CatsBaku cat"
->
+  <img
+    class="hero__img"
+    src="img/hero-cat.jpg"
+    alt="Rijik"
+  >
 
 
-<div class="hero__top">
+  <div class="hero__top">
 
-<span
-  class="badge"
-  data-i18n="hero.today"
->
-Günün pişiyi
-</span>
+    <span class="badge" data-i18n="hero.today">
+      Günün pişiyi
+    </span>
 
-<span class="badge">
-BAKU · AZERBAIJAN 🇦🇿
-</span>
+    <span class="badge">
+      BAKU · AZERBAIJAN 🇦🇿
+    </span>
 
-</div>
+  </div>
 
 
-<div class="hero__body">
+  <div class="hero__body">
 
-<div class="hero__district">
-📍 Baku
-</div>
+    <div class="hero__district">
+      📍 Baku
+    </div>
 
-<h1 class="hero__name">
-Rijik
-</h1>
+    <h1 class="hero__name">
+      Rijik
+    </h1>
 
-<p
-  class="hero__quote"
-  data-i18n="hero.tagline"
->
-Bakının hər küçəsində bir dost var.
-</p>
+    <p
+      class="hero__quote"
+      data-static-i18n="heroQuote"
+    >
+      «Bakının hər küçəsində bir dost var.»
+    </p>
 
 
-<div class="hero__actions">
+    <div class="hero__actions">
 
-<a
-  class="btn btn--light"
-  href="#cats"
-  data-i18n="hero.more"
->
-Bütün pişiklər
-</a>
+      <a
+        class="btn btn--light"
+        href="#cats"
+        data-i18n="hero.more"
+      >
+        Bütün pişiklər
+      </a>
 
-<button
-  class="like"
-  type="button"
-  data-like-id="rijik"
->
-♡
-<span>24</span>
-</button>
+      <button
+        class="like"
+        type="button"
+        data-like-id="rijik"
+      >
+        ♡
+        <span>24</span>
+      </button>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
@@ -1698,33 +938,27 @@ Bütün pişiklər
 <div class="carpet"></div>
 
 
-<!-- =====================================================
-     BAKU INTRO
-===================================================== -->
+<!-- BAKU -->
 
 <section class="baku-intro">
 
-<div class="baku-intro__label">
-CATS OF BAKU
-</div>
+  <div class="baku-intro__label">
+    CATS OF BAKU
+  </div>
 
-<div
-  class="baku-intro__title"
-  data-i18n="baku.intro"
->
-İçərişəhərdən Xəzər sahilinə
-</div>
+  <div
+    class="baku-intro__title"
+    data-i18n="baku.intro"
+  >
+    İçərişəhərdən Xəzər sahilinə
+  </div>
 
-<div class="baku-intro__districts">
-İçərişəhər · Bulvar · Yasamal · Nərimanov · White City
-</div>
+  <div class="baku-intro__districts">
+    İçərişəhər · Bulvar · Yasamal · Nərimanov · White City
+  </div>
 
 </section>
 
-
-<!-- =====================================================
-     DISTRICTS
-===================================================== -->
 
 <nav
   class="stories"
@@ -1733,9 +967,9 @@ CATS OF BAKU
 ></nav>
 
 
-<!-- =====================================================
-     CATS
-===================================================== -->
+<!-- =============================================
+     CATS — FALLBACK CARDS ARE ALREADY HERE
+============================================= -->
 
 <section
   class="section"
@@ -1743,210 +977,429 @@ CATS OF BAKU
   style="padding-top:18px"
 >
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="head">
+    <div class="head">
 
-<div>
+      <div>
 
-<div class="eyebrow">
-CatsBaku
-</div>
+        <div class="eyebrow">
+          CatsBaku
+        </div>
 
-<h2
-  class="h2"
-  data-i18n="cats.title"
->
-Bakı pişikləri
-</h2>
+        <h2
+          class="h2"
+          data-i18n="cats.title"
+        >
+          Bakı pişikləri
+        </h2>
 
-</div>
+      </div>
 
-<span
-  class="count"
-  id="catsCount"
-></span>
+      <span
+        class="count"
+        id="catsCount"
+      >
+        5 pişik
+      </span>
 
-</div>
-
-
-<div
-  class="chips"
-  id="filters"
-></div>
+    </div>
 
 
-<div
-  class="grid"
-  id="grid"
-></div>
+    <div
+      class="chips"
+      id="filters"
+    ></div>
 
-</div>
+
+    <div
+      class="grid"
+      id="grid"
+    >
+
+
+      <!-- RIJIK -->
+
+      <article
+        class="card"
+        data-category="rijik"
+      >
+
+        <div class="card__photo">
+
+          <img
+            src="img/hero-cat.jpg"
+            alt="Rijik"
+            loading="lazy"
+          >
+
+        </div>
+
+        <span class="card__new">
+          CatsBaku
+        </span>
+
+        <button
+          type="button"
+          class="like"
+        >
+          ♡ 24
+        </button>
+
+        <div class="card__body">
+
+          <div class="card__name">
+            Rijik
+          </div>
+
+          <div class="card__district">
+            📍 Bakı
+          </div>
+
+          <p>
+            Sakit baxış, isti rəng və əsl Bakı xarakteri.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- SULTAN -->
+
+      <article
+        class="card"
+        data-category="rijik"
+      >
+
+        <div class="card__photo">
+
+          <img
+            src="img/rijik-01.jpg"
+            alt="Sultan"
+            loading="lazy"
+          >
+
+        </div>
+
+        <span class="card__new">
+          CatsBaku
+        </span>
+
+        <button
+          type="button"
+          class="like"
+        >
+          ♡ 18
+        </button>
+
+        <div class="card__body">
+
+          <div class="card__name">
+            Sultan
+          </div>
+
+          <div class="card__district">
+            📍 İçərişəhər
+          </div>
+
+          <p>
+            Daş küçələrin sakit sahibi.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- SUNNY -->
+
+      <article
+        class="card"
+        data-category="rijik"
+      >
+
+        <div class="card__photo">
+
+          <img
+            src="img/rijik-02.jpg"
+            alt="Sunny"
+            loading="lazy"
+          >
+
+        </div>
+
+        <span class="card__new">
+          CatsBaku
+        </span>
+
+        <button
+          type="button"
+          class="like"
+        >
+          ♡ 15
+        </button>
+
+        <div class="card__body">
+
+          <div class="card__name">
+            Sunny
+          </div>
+
+          <div class="card__district">
+            📍 Bulvar
+          </div>
+
+          <p>
+            Küləyi və günəşi sevir.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- MANGO -->
+
+      <article
+        class="card"
+        data-category="rijik"
+      >
+
+        <div class="card__photo">
+
+          <img
+            src="img/rijik-03.jpg"
+            alt="Mango"
+            loading="lazy"
+          >
+
+        </div>
+
+        <span class="card__new">
+          CatsBaku
+        </span>
+
+        <button
+          type="button"
+          class="like"
+        >
+          ♡ 11
+        </button>
+
+        <div class="card__body">
+
+          <div class="card__name">
+            Mango
+          </div>
+
+          <div class="card__district">
+            📍 Yasamal
+          </div>
+
+          <p>
+            Həyətlərin ən maraqlı sakini.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- BALA -->
+
+      <article
+        class="card"
+        data-category="bala"
+      >
+
+        <div class="card__photo">
+
+          <img
+            src="img/rijik-04.jpg"
+            alt="Bala"
+            loading="lazy"
+          >
+
+        </div>
+
+        <span class="card__new">
+          CatsBaku
+        </span>
+
+        <button
+          type="button"
+          class="like"
+        >
+          ♡ 9
+        </button>
+
+        <div class="card__body">
+
+          <div class="card__name">
+            Bala
+          </div>
+
+          <div class="card__district">
+            📍 Nərimanov
+          </div>
+
+          <p>
+            Balaca, enerjili və çox mehriban.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     EXPLORE
-===================================================== -->
+<!-- EXPLORE -->
 
 <section class="explore">
 
-<div class="wrap">
+  <div class="wrap">
+
+    <div class="explore__head">
+
+      <div
+        class="eyebrow"
+        data-i18n="explore.eyebrow"
+      >
+        CATSBAKU İCMASI
+      </div>
+
+      <h2
+        class="h2"
+        data-i18n="explore.title"
+      >
+        CatsBaku-nu kəşf et
+      </h2>
+
+      <p
+        class="sub"
+        data-i18n="explore.sub"
+      >
+        CatsBaku sadəcə pişik qalereyası deyil.
+      </p>
+
+    </div>
 
 
-<div class="explore__head">
-
-<div
-  class="eyebrow"
-  data-i18n="explore.eyebrow"
->
-CATSBAKU İCMASI
-</div>
-
-<h2
-  class="h2"
-  data-i18n="explore.title"
->
-CatsBaku-nu kəşf et
-</h2>
-
-<p
-  class="sub"
-  data-i18n="explore.sub"
->
-CatsBaku sadəcə pişik qalereyası deyil.
-</p>
-
-</div>
+    <div class="explore__grid">
 
 
-<div class="explore__grid">
+      <a class="explore-card" href="#adoption">
+
+        <div class="explore-card__icon">
+          🏠
+        </div>
+
+        <h3 data-i18n="explore.adoption">
+          Sahibləndir
+        </h3>
+
+        <p data-i18n="explore.adoptionText">
+          Bakıda ev axtaran pişiklərlə tanış olun.
+        </p>
+
+      </a>
 
 
-<a
-  class="explore-card"
-  href="#adoption"
->
+      <a class="explore-card" href="#help">
 
-<div class="explore-card__icon">
-🏠
-</div>
+        <div class="explore-card__icon">
+          ❤️
+        </div>
 
-<h3 data-i18n="explore.adoption">
-Sahibləndir
-</h3>
+        <h3 data-i18n="explore.help">
+          Kömək
+        </h3>
 
-<p data-i18n="explore.adoptionText">
-Bakıda ev axtaran pişiklərlə tanış olun.
-</p>
+        <p data-i18n="explore.helpText">
+          Yardıma ehtiyacı olan pişiklər.
+        </p>
 
-</a>
+      </a>
 
 
-<a
-  class="explore-card"
-  href="#help"
->
+      <a class="explore-card" href="#lost">
 
-<div class="explore-card__icon">
-❤️
-</div>
+        <div class="explore-card__icon">
+          🔎
+        </div>
 
-<h3 data-i18n="explore.help">
-Kömək
-</h3>
+        <h3 data-i18n="explore.lost">
+          İtmiş və tapılmış
+        </h3>
 
-<p data-i18n="explore.helpText">
-Yardıma ehtiyacı olan pişiklər.
-</p>
+        <p data-i18n="explore.lostText">
+          İtmiş və tapılmış pişiklər.
+        </p>
 
-</a>
+      </a>
 
 
-<a
-  class="explore-card"
-  href="#lost"
->
+      <a class="explore-card" href="#vets">
 
-<div class="explore-card__icon">
-🔎
-</div>
+        <div class="explore-card__icon">
+          🩺
+        </div>
 
-<h3 data-i18n="explore.lost">
-İtmiş və tapılmış
-</h3>
+        <h3 data-i18n="explore.vets">
+          Baytar xəritəsi
+        </h3>
 
-<p data-i18n="explore.lostText">
-İtmiş və tapılmış pişiklər haqqında məlumat.
-</p>
+        <p data-i18n="explore.vetsText">
+          Bakıdakı baytar klinikaları.
+        </p>
 
-</a>
+      </a>
 
 
-<a
-  class="explore-card"
-  href="#vets"
->
+      <a class="explore-card" href="#feed">
 
-<div class="explore-card__icon">
-🩺
-</div>
+        <div class="explore-card__icon">
+          🥣
+        </div>
 
-<h3 data-i18n="explore.vets">
-Baytar xəritəsi
-</h3>
+        <h3 data-i18n="explore.feed">
+          Yemləmə nöqtələri
+        </h3>
 
-<p data-i18n="explore.vetsText">
-Bakıdakı baytar klinikalarını tapın.
-</p>
+        <p data-i18n="explore.feedText">
+          Küçə pişikləri üçün yem və su.
+        </p>
 
-</a>
+      </a>
 
 
-<a
-  class="explore-card"
-  href="#feed"
->
+      <a class="explore-card" href="#catstories">
 
-<div class="explore-card__icon">
-🥣
-</div>
+        <div class="explore-card__icon">
+          📖
+        </div>
 
-<h3 data-i18n="explore.feed">
-Yemləmə nöqtələri
-</h3>
+        <h3 data-i18n="explore.stories">
+          Hekayələr
+        </h3>
 
-<p data-i18n="explore.feedText">
-Küçə pişikləri üçün yem və su yerləri.
-</p>
+        <p data-i18n="explore.storiesText">
+          Bakı pişikləri haqqında hekayələr.
+        </p>
 
-</a>
+      </a>
 
 
-<a
-  class="explore-card"
-  href="#catstories"
->
+    </div>
 
-<div class="explore-card__icon">
-📖
-</div>
-
-<h3 data-i18n="explore.stories">
-Hekayələr
-</h3>
-
-<p data-i18n="explore.storiesText">
-Bakı pişikləri haqqında real hekayələr.
-</p>
-
-</a>
-
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
@@ -1954,803 +1407,701 @@ Bakı pişikləri haqqında real hekayələr.
 <div class="carpet"></div>
 
 
-<!-- =====================================================
-     ADOPTION
-===================================================== -->
+<!-- ADOPTION -->
 
-<section
-  class="feature-section"
-  id="adoption"
->
+<section class="feature-section" id="adoption">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="feature-head">
+    <div class="feature-head">
 
-<div
-  class="eyebrow"
-  data-i18n="adoption.eyebrow"
->
-SAHİBLƏNDİR
-</div>
+      <div
+        class="eyebrow"
+        data-i18n="adoption.eyebrow"
+      >
+        SAHİBLƏNDİR
+      </div>
 
-<h2
-  class="h2"
-  data-i18n="adoption.title"
->
-Ev axtaran pişiklər
-</h2>
+      <h2
+        class="h2"
+        data-i18n="adoption.title"
+      >
+        Ev axtaran pişiklər
+      </h2>
 
-<p
-  class="sub"
-  data-i18n="adoption.sub"
->
-Bakı pişiyinin ailə tapmasına kömək edin.
-</p>
+      <p
+        class="sub"
+        data-i18n="adoption.sub"
+      >
+        Bakı pişiyinin ailə tapmasına kömək edin.
+      </p>
 
-</div>
+    </div>
 
 
-<div class="feature-grid">
+    <div class="feature-grid">
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🐱
+        </div>
+
+        <h3 data-i18n="adoption.profiles">
+          Sahibləndirmə profilləri
+        </h3>
+
+        <p data-i18n="adoption.profilesText">
+          Pişiklərin fotoları və məlumatları burada olacaq.
+        </p>
+
+        <span
+          class="soon"
+          data-i18n="common.soon"
+        >
+          Tezliklə
+        </span>
+
+      </div>
 
 
-<div class="feature-box">
+      <div class="feature-box">
 
-<div class="feature-box__emoji">
-🐱
-</div>
+        <div class="feature-box__emoji">
+          🏡
+        </div>
 
-<h3 data-i18n="adoption.profiles">
-Sahibləndirmə profilləri
-</h3>
+        <h3 data-i18n="adoption.family">
+          Ailə tap
+        </h3>
 
-<p data-i18n="adoption.profilesText">
-Pişiklərin fotoları və məlumatları burada olacaq.
-</p>
+        <p data-i18n="adoption.familyText">
+          Pişik üçün məsuliyyətli sahib tapın.
+        </p>
 
-<span
-  class="soon"
-  data-i18n="common.soon"
->
-Tezliklə
-</span>
-
-</div>
+      </div>
 
 
-<div class="feature-box">
+      <div class="feature-box">
 
-<div class="feature-box__emoji">
-🏡
-</div>
+        <div class="feature-box__emoji">
+          🤝
+        </div>
 
-<h3 data-i18n="adoption.family">
-Ailə tap
-</h3>
+        <h3 data-i18n="adoption.responsible">
+          Məsuliyyətli sahibləndirmə
+        </h3>
 
-<p data-i18n="adoption.familyText">
-Pişik üçün məsuliyyətli sahib tapmağa kömək edin.
-</p>
+        <p data-i18n="adoption.responsibleText">
+          CatsBaku insanları və pişikləri birləşdirəcək.
+        </p>
 
-<span
-  class="soon"
-  data-i18n="common.soon"
->
-Tezliklə
-</span>
+      </div>
 
-</div>
+    </div>
 
-
-<div class="feature-box">
-
-<div class="feature-box__emoji">
-🤝
-</div>
-
-<h3 data-i18n="adoption.responsible">
-Məsuliyyətli sahibləndirmə
-</h3>
-
-<p data-i18n="adoption.responsibleText">
-CatsBaku gələcək sahiblərlə könüllüləri birləşdirəcək.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     HELP
-===================================================== -->
+<!-- HELP -->
 
-<section
-  class="feature-section"
-  id="help"
->
+<section class="feature-section" id="help">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="feature-head">
+    <div class="feature-head">
 
-<div
-  class="eyebrow"
-  data-i18n="help.eyebrow"
->
-KÖMƏK
-</div>
+      <div class="eyebrow" data-i18n="help.eyebrow">
+        KÖMƏK
+      </div>
 
-<h2
-  class="h2"
-  data-i18n="help.title"
->
-Köməyə ehtiyacı olan pişiklər
-</h2>
+      <h2 class="h2" data-i18n="help.title">
+        Köməyə ehtiyacı olan pişiklər
+      </h2>
 
-<p
-  class="sub"
-  data-i18n="help.sub"
->
-Müalicə, yemək və müvəqqəti ev.
-</p>
+      <p class="sub" data-i18n="help.sub">
+        Müalicə, yemək və müvəqqəti ev.
+      </p>
 
-</div>
+    </div>
 
 
-<div class="feature-grid">
+    <div class="feature-grid">
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🏥
+        </div>
+
+        <h3 data-i18n="help.medical">
+          Tibbi yardım
+        </h3>
+
+        <p data-i18n="help.medicalText">
+          Müalicəyə ehtiyacı olan pişiklər.
+        </p>
+
+      </div>
 
 
-<div class="feature-box">
+      <div class="feature-box">
 
-<div class="feature-box__emoji">
-🏥
-</div>
+        <div class="feature-box__emoji">
+          🥣
+        </div>
 
-<h3 data-i18n="help.medical">
-Tibbi yardım
-</h3>
+        <h3 data-i18n="help.food">
+          Yemək
+        </h3>
 
-<p data-i18n="help.medicalText">
-Müalicəyə ehtiyacı olan pişiklər.
-</p>
+        <p data-i18n="help.foodText">
+          Küçə pişiklərini yemləyən insanlara dəstək.
+        </p>
 
-</div>
-
-
-<div class="feature-box">
-
-<div class="feature-box__emoji">
-🥣
-</div>
-
-<h3 data-i18n="help.food">
-Yemək
-</h3>
-
-<p data-i18n="help.foodText">
-Küçə pişiklərini yemləyən insanlara dəstək.
-</p>
-
-</div>
+      </div>
 
 
-<div class="feature-box">
+      <div class="feature-box">
 
-<div class="feature-box__emoji">
-🏠
-</div>
+        <div class="feature-box__emoji">
+          🏠
+        </div>
 
-<h3 data-i18n="help.foster">
-Müvəqqəti ev
-</h3>
+        <h3 data-i18n="help.foster">
+          Müvəqqəti ev
+        </h3>
 
-<p data-i18n="help.fosterText">
-Pişiklər üçün təhlükəsiz müvəqqəti ev.
-</p>
+        <p data-i18n="help.fosterText">
+          Pişiklər üçün təhlükəsiz müvəqqəti ev.
+        </p>
 
-</div>
+      </div>
 
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     LOST & FOUND
-===================================================== -->
+<!-- LOST -->
 
-<section
-  class="feature-section"
-  id="lost"
->
+<section class="feature-section" id="lost">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="feature-head">
+    <div class="feature-head">
 
-<div
-  class="eyebrow"
-  data-i18n="lost.eyebrow"
->
-İTMİŞ VƏ TAPILMIŞ
-</div>
+      <div
+        class="eyebrow"
+        data-i18n="lost.eyebrow"
+      >
+        İTMİŞ VƏ TAPILMIŞ
+      </div>
 
-<h2
-  class="h2"
-  data-i18n="lost.title"
->
-Pişik itirmisiniz və ya tapmısınız?
-</h2>
+      <h2
+        class="h2"
+        data-i18n="lost.title"
+      >
+        Pişik itirmisiniz və ya tapmısınız?
+      </h2>
 
-<p
-  class="sub"
-  data-i18n="lost.sub"
->
-Bakıda itmiş və tapılmış pişiklər.
-</p>
+      <p
+        class="sub"
+        data-i18n="lost.sub"
+      >
+        Bakıda itmiş və tapılmış pişiklər.
+      </p>
 
-</div>
+    </div>
 
 
-<div class="feature-grid">
+    <div class="feature-grid">
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          😿
+        </div>
+
+        <h3 data-i18n="lost.lost">
+          İtib
+        </h3>
+
+        <p data-i18n="lost.lostText">
+          Foto və itdiyi ərazini paylaşın.
+        </p>
+
+      </div>
 
 
-<div class="feature-box">
+      <div class="feature-box">
 
-<div class="feature-box__emoji">
-😿
-</div>
+        <div class="feature-box__emoji">
+          👀
+        </div>
 
-<h3 data-i18n="lost.lost">
-İtib
-</h3>
+        <h3 data-i18n="lost.found">
+          Tapılıb
+        </h3>
 
-<p data-i18n="lost.lostText">
-Foto və itdiyi ərazini paylaşın.
-</p>
+        <p data-i18n="lost.foundText">
+          Sahibini tapmağa kömək edin.
+        </p>
 
-<span
-  class="soon"
-  data-i18n="common.soon"
->
-Tezliklə
-</span>
-
-</div>
+      </div>
 
 
-<div class="feature-box">
+      <div class="feature-box">
 
-<div class="feature-box__emoji">
-👀
-</div>
+        <div class="feature-box__emoji">
+          📍
+        </div>
 
-<h3 data-i18n="lost.found">
-Tapılıb
-</h3>
+        <h3 data-i18n="lost.area">
+          Ərazi üzrə axtarış
+        </h3>
 
-<p data-i18n="lost.foundText">
-Tapılmış pişiyin sahibini tapmağa kömək edin.
-</p>
+        <p data-i18n="lost.areaText">
+          Rayon və xəritə üzrə axtarış.
+        </p>
 
-<span
-  class="soon"
-  data-i18n="common.soon"
->
-Tezliklə
-</span>
+      </div>
 
-</div>
+    </div>
 
-
-<div class="feature-box">
-
-<div class="feature-box__emoji">
-📍
-</div>
-
-<h3 data-i18n="lost.area">
-Ərazi üzrə axtarış
-</h3>
-
-<p data-i18n="lost.areaText">
-Rayon və xəritə üzrə axtarış.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     CAT OF MONTH
-===================================================== -->
+<!-- MONTH -->
 
-<section
-  class="section"
-  id="month"
->
+<section class="section" id="month">
 
-<div class="wrap month-wrap">
+  <div class="wrap month-wrap">
 
-<div class="month">
+    <div class="month">
 
-<div
-  class="eyebrow"
-  data-i18n="month.eyebrow"
->
-Ayın pişiyi
-</div>
+      <div
+        class="eyebrow"
+        data-i18n="month.eyebrow"
+      >
+        Ayın pişiyi
+      </div>
 
-<h2
-  class="h2"
-  data-i18n="month.title"
->
-Ürəklə səs ver
-</h2>
+      <h2
+        class="h2"
+        data-i18n="month.title"
+      >
+        Ürəklə səs ver
+      </h2>
 
-<p
-  class="sub"
-  data-i18n="month.sub"
-></p>
+      <p
+        class="sub"
+        data-i18n="month.sub"
+      ></p>
 
-<div
-  class="podium"
-  id="podium"
-></div>
+      <div
+        class="podium"
+        id="podium"
+      ></div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     MAP
-===================================================== -->
+<!-- MAP -->
 
-<section
-  class="section"
-  id="map"
->
+<section class="section" id="map">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="head">
+    <div class="head">
 
-<div>
+      <div>
 
-<div class="eyebrow">
-BAKU CAT MAP
-</div>
+        <div class="eyebrow">
+          BAKU CAT MAP
+        </div>
 
-<h2
-  class="h2"
-  data-i18n="map.title"
->
-Yanınızdakı pişiklər
-</h2>
+        <h2
+          class="h2"
+          data-i18n="map.title"
+        >
+          Yanınızdakı pişiklər
+        </h2>
 
-<p
-  class="sub"
-  data-i18n="map.sub"
-></p>
+        <p
+          class="sub"
+          data-i18n="map.sub"
+        ></p>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
 
-<div class="map-box">
+    <div class="map-box">
 
-<div
-  class="map"
-  id="catMap"
-></div>
+      <div
+        class="map"
+        id="catMap"
+      ></div>
 
-<button
-  class="btn"
-  type="button"
-  id="locate"
->
+      <button
+        class="btn"
+        type="button"
+        id="locate"
+      >
+        📍
+        <span data-i18n="map.locate">
+          Mənim yerim
+        </span>
+      </button>
 
-📍
+    </div>
 
-<span data-i18n="map.locate">
-Mənim yerim
-</span>
-
-</button>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     VETS
-===================================================== -->
+<!-- VETS -->
 
-<section
-  class="feature-section"
-  id="vets"
->
+<section class="feature-section" id="vets">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="feature-head">
+    <div class="feature-head">
 
-<div
-  class="eyebrow"
-  data-i18n="vets.eyebrow"
->
-BAYTAR XƏRİTƏSİ
-</div>
+      <div
+        class="eyebrow"
+        data-i18n="vets.eyebrow"
+      >
+        BAYTAR XƏRİTƏSİ
+      </div>
 
-<h2
-  class="h2"
-  data-i18n="vets.title"
->
-Bakıda baytar xidməti
-</h2>
+      <h2
+        class="h2"
+        data-i18n="vets.title"
+      >
+        Bakıda baytar xidməti
+      </h2>
 
-<p
-  class="sub"
-  data-i18n="vets.sub"
->
-Baytar klinikaları və xidmətlər.
-</p>
+      <p
+        class="sub"
+        data-i18n="vets.sub"
+      >
+        Baytar klinikaları və xidmətlər.
+      </p>
 
-</div>
+    </div>
 
 
-<div class="feature-grid">
+    <div class="feature-grid">
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🩺
+        </div>
+
+        <h3 data-i18n="vets.clinics">
+          Baytar klinikaları
+        </h3>
+
+        <p data-i18n="vets.clinicsText">
+          Sizə yaxın klinikaları tapın.
+        </p>
+
+      </div>
 
 
-<div class="feature-box">
+      <div class="feature-box">
 
-<div class="feature-box__emoji">
-🩺
-</div>
+        <div class="feature-box__emoji">
+          🚑
+        </div>
 
-<h3 data-i18n="vets.clinics">
-Baytar klinikaları
-</h3>
+        <h3 data-i18n="vets.emergency">
+          Təcili yardım
+        </h3>
 
-<p data-i18n="vets.clinicsText">
-Sizə yaxın klinikaları tapın.
-</p>
+        <p data-i18n="vets.emergencyText">
+          Təcili yardım göstərən klinikalar.
+        </p>
 
-</div>
-
-
-<div class="feature-box">
-
-<div class="feature-box__emoji">
-🚑
-</div>
-
-<h3 data-i18n="vets.emergency">
-Təcili yardım
-</h3>
-
-<p data-i18n="vets.emergencyText">
-Təcili yardım göstərən klinikalar.
-</p>
-
-</div>
+      </div>
 
 
-<div class="feature-box">
+      <div class="feature-box">
 
-<div class="feature-box__emoji">
-⭐
-</div>
+        <div class="feature-box__emoji">
+          ⭐
+        </div>
 
-<h3 data-i18n="vets.community">
-İcma tövsiyələri
-</h3>
+        <h3 data-i18n="vets.community">
+          İcma tövsiyələri
+        </h3>
 
-<p data-i18n="vets.communityText">
-CatsBaku istifadəçilərinin tövsiyələri.
-</p>
+        <p data-i18n="vets.communityText">
+          CatsBaku icmasının tövsiyələri.
+        </p>
 
-<span
-  class="soon"
-  data-i18n="common.soon"
->
-Tezliklə
-</span>
+      </div>
 
-</div>
+    </div>
 
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     FEED / CASPIAN
-===================================================== -->
+<!-- FEED -->
 
-<section
-  class="feature-section"
-  id="feed"
->
+<section class="feature-section" id="feed">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="feature-head">
+    <div class="feature-head">
 
-<div
-  class="eyebrow"
-  data-i18n="feed.eyebrow"
->
-YEMLƏMƏ NÖQTƏLƏRİ
-</div>
+      <div
+        class="eyebrow"
+        data-i18n="feed.eyebrow"
+      >
+        YEMLƏMƏ NÖQTƏLƏRİ
+      </div>
 
-<h2
-  class="h2"
-  data-i18n="feed.title"
->
-Bakı pişikləri üçün yem və su
-</h2>
+      <h2
+        class="h2"
+        data-i18n="feed.title"
+      >
+        Bakı pişikləri üçün yem və su
+      </h2>
 
-<p
-  class="sub"
-  data-i18n="feed.sub"
->
-Küçə pişiklərinə qulluq edilən yerlər.
-</p>
+      <p
+        class="sub"
+        data-i18n="feed.sub"
+      >
+        Küçə pişiklərinə qulluq edilən yerlər.
+      </p>
 
-</div>
+    </div>
 
 
-<div class="feature-grid">
+    <div class="feature-grid">
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🥣
+        </div>
+
+        <h3 data-i18n="feed.food">
+          Yem nöqtələri
+        </h3>
+
+        <p data-i18n="feed.foodText">
+          Mütəmadi yem qoyulan yerlər.
+        </p>
+
+      </div>
 
 
-<div class="feature-box">
+      <div class="feature-box">
 
-<div class="feature-box__emoji">
-🥣
-</div>
+        <div class="feature-box__emoji">
+          💧
+        </div>
 
-<h3 data-i18n="feed.food">
-Yem nöqtələri
-</h3>
+        <h3 data-i18n="feed.water">
+          Su nöqtələri
+        </h3>
 
-<p data-i18n="feed.foodText">
-Mütəmadi yem qoyulan yerlər.
-</p>
+        <p data-i18n="feed.waterText">
+          İsti yay aylarında xüsusilə vacibdir.
+        </p>
 
-</div>
-
-
-<div class="feature-box">
-
-<div class="feature-box__emoji">
-💧
-</div>
-
-<h3 data-i18n="feed.water">
-Su nöqtələri
-</h3>
-
-<p data-i18n="feed.waterText">
-Xüsusilə isti yay aylarında vacibdir.
-</p>
-
-</div>
+      </div>
 
 
-<div class="feature-box">
+      <div class="feature-box">
 
-<div class="feature-box__emoji">
-🐈
-</div>
+        <div class="feature-box__emoji">
+          🐈
+        </div>
 
-<h3 data-i18n="feed.colonies">
-Pişik koloniyaları
-</h3>
+        <h3 data-i18n="feed.colonies">
+          Pişik koloniyaları
+        </h3>
 
-<p data-i18n="feed.coloniesText">
-Bir neçə pişiyin birlikdə yaşadığı yerlər.
-</p>
+        <p data-i18n="feed.coloniesText">
+          Pişik qruplarının yaşadığı yerlər.
+        </p>
 
-</div>
+      </div>
 
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     STORIES
-===================================================== -->
+<!-- STORIES -->
 
-<section
-  class="feature-section"
-  id="catstories"
->
+<section class="feature-section" id="catstories">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div class="feature-head">
+    <div class="feature-head">
 
-<div
-  class="eyebrow"
-  data-i18n="stories.eyebrow"
->
-CATSBAKU HEKAYƏLƏRİ
-</div>
+      <div
+        class="eyebrow"
+        data-i18n="stories.eyebrow"
+      >
+        CATSBAKU HEKAYƏLƏRİ
+      </div>
 
-<h2
-  class="h2"
-  data-i18n="stories.title"
->
-Şəhərdən hekayələr
-</h2>
+      <h2
+        class="h2"
+        data-i18n="stories.title"
+      >
+        Şəhərdən hekayələr
+      </h2>
 
-<p
-  class="sub"
-  data-i18n="stories.sub"
->
-Hər Bakı pişiyinin öz hekayəsi var.
-</p>
+      <p
+        class="sub"
+        data-i18n="stories.sub"
+      >
+        Hər Bakı pişiyinin öz hekayəsi var.
+      </p>
 
-</div>
+    </div>
 
 
-<div class="feature-grid">
+    <div class="feature-grid">
+
+      <div class="feature-box">
+
+        <div class="feature-box__emoji">
+          🏰
+        </div>
+
+        <h3 data-i18n="stories.oldcity">
+          İçərişəhər pişikləri
+        </h3>
+
+        <p data-i18n="stories.oldcityText">
+          İçərişəhərin həyətləri və daş küçələri.
+        </p>
+
+      </div>
 
 
-<div class="feature-box">
+      <div class="feature-box">
 
-<div class="feature-box__emoji">
-🏰
-</div>
+        <div class="feature-box__emoji">
+          🌊
+        </div>
 
-<h3 data-i18n="stories.oldcity">
-İçərişəhər pişikləri
-</h3>
+        <h3 data-i18n="stories.caspian">
+          Xəzər pişikləri
+        </h3>
 
-<p data-i18n="stories.oldcityText">
-İçərişəhərdən hekayələr.
-</p>
+        <p data-i18n="stories.caspianText">
+          Bulvar və Xəzər sahilinin pişikləri.
+        </p>
 
-</div>
-
-
-<div class="feature-box">
-
-<div class="feature-box__emoji">
-🌊
-</div>
-
-<h3 data-i18n="stories.caspian">
-Xəzər pişikləri
-</h3>
-
-<p data-i18n="stories.caspianText">
-Bulvar və Xəzər sahilində yaşayan pişiklər.
-</p>
-
-</div>
+      </div>
 
 
-<div class="feature-box">
+      <div class="feature-box">
 
-<div class="feature-box__emoji">
-❤️
-</div>
+        <div class="feature-box__emoji">
+          ❤️
+        </div>
 
-<h3 data-i18n="stories.rescue">
-Xilasetmə hekayələri
-</h3>
+        <h3 data-i18n="stories.rescue">
+          Xilasetmə hekayələri
+        </h3>
 
-<p data-i18n="stories.rescueText">
-Bakı pişiklərinə kömək edən insanlar.
-</p>
+        <p data-i18n="stories.rescueText">
+          Bakı pişiklərinə kömək edən insanlar.
+        </p>
 
-</div>
+      </div>
 
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- =====================================================
-     SHOP
-===================================================== -->
+<!-- SHOP -->
 
-<section
-  class="section shop"
-  id="shop"
->
+<section class="section shop" id="shop">
 
-<div class="wrap">
+  <div class="wrap">
 
-<div
-  class="eyebrow"
-  data-i18n="shop.eyebrow"
->
-Tezliklə
-</div>
+    <div
+      class="eyebrow"
+      data-i18n="shop.eyebrow"
+    >
+      Tezliklə
+    </div>
 
-<h2
-  class="h2"
-  data-i18n="shop.title"
->
-Sevimli pişiyiniz futbolkada
-</h2>
+    <h2
+      class="h2"
+      data-i18n="shop.title"
+    >
+      Sevimli pişiyiniz futbolkada
+    </h2>
 
-<p
-  class="sub"
-  data-i18n="shop.sub"
-></p>
+    <p
+      class="sub"
+      data-i18n="shop.sub"
+    ></p>
 
-<div
-  class="products"
-  id="products"
-></div>
+    <div
+      class="products"
+      id="products"
+    ></div>
 
-</div>
+  </div>
 
 </section>
 
 
 <div class="carpet"></div>
 
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
 
 <section class="wrap about">
 
-<img
-  src="img/logo.svg"
-  alt="CatsBaku"
->
+  <img
+    src="img/logo.svg"
+    alt="CatsBaku"
+  >
 
-<h2
-  class="h2"
-  data-i18n="about.title"
->
-İnsanlar üçün şəhər.
-Pişiklər üçün şəhər.
-</h2>
+  <h2
+    class="h2"
+    data-i18n="about.title"
+  >
+    İnsanlar üçün şəhər. Pişiklər üçün şəhər.
+  </h2>
 
-<p
-  class="sub"
-  data-i18n="about.text"
-></p>
+  <p
+    class="sub"
+    data-i18n="about.text"
+  ></p>
 
 </section>
 
@@ -2758,223 +2109,204 @@ Pişiklər üçün şəhər.
 </main>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
 <footer class="footer">
 
-<b>
-CatsBaku
-</b>
+  <b>CatsBaku</b>
+  · ©
 
-· ©
+  <span id="year">
+    2026
+  </span>
 
-<span id="year">
-2026
-</span>
+  ·
 
-·
+  <span data-i18n="footer.city">
+    BAKI · AZƏRBAYCAN
+  </span>
 
-<span data-i18n="footer.city">
-BAKI · AZƏRBAYCAN
-</span>
-
-<div class="footer-baku">
-BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
-</div>
+  <div class="footer-baku">
+    BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
+  </div>
 
 </footer>
 
 
-<!-- =====================================================
-     MOBILE NAV
-===================================================== -->
+<!-- MOBILE MENU -->
 
-<nav
-  class="bottomnav"
-  aria-label="Menu"
->
+<nav class="bottomnav">
 
-<ul>
+  <ul>
 
+    <li>
 
-<li>
+      <a
+        href="#top"
+        class="is-active"
+      >
 
-<a
-  href="#top"
-  class="is-active"
->
+        <svg viewBox="0 0 24 24">
+          <path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>
+        </svg>
 
-<svg viewBox="0 0 24 24">
-<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>
-</svg>
+        <span data-i18n="nav.home">
+          Əsas
+        </span>
 
-<span data-i18n="nav.home">
-Əsas
-</span>
+      </a>
 
-</a>
-
-</li>
+    </li>
 
 
-<li>
+    <li>
 
-<a href="#map">
+      <a href="#map">
 
-<svg viewBox="0 0 24 24">
-<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/>
-<path d="M9 4v14M15 6v14"/>
-</svg>
+        <svg viewBox="0 0 24 24">
+          <path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/>
+          <path d="M9 4v14M15 6v14"/>
+        </svg>
 
-<span data-i18n="nav.map">
-Xəritə
-</span>
+        <span data-i18n="nav.map">
+          Xəritə
+        </span>
 
-</a>
+      </a>
 
-</li>
-
-
-<li>
-
-<button
-  type="button"
-  class="add"
-  data-demo-add
->
-
-<span class="plus">
-
-<svg viewBox="0 0 24 24">
-<path d="M12 5v14M5 12h14"/>
-</svg>
-
-</span>
-
-<span data-i18n="nav.add">
-Əlavə et
-</span>
-
-</button>
-
-</li>
+    </li>
 
 
-<li>
+    <li>
 
-<a href="#adoption">
+      <button
+        class="add"
+        type="button"
+        data-demo-add
+      >
 
-<svg viewBox="0 0 24 24">
-<path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.4 2.9 4.5 6.6 4.5c2.1 0 3.7 1.2 5.4 3.2 1.7-2 3.3-3.2 5.4-3.2 3.7 0 5.7 3.9 4.2 7.2C19.5 16.4 12 21 12 21z"/>
-</svg>
+        <span class="plus">
 
-<span data-i18n="nav.adoption">
-Sahibləndir
-</span>
+          <svg viewBox="0 0 24 24">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
 
-</a>
+        </span>
 
-</li>
+        <span data-i18n="nav.add">
+          Əlavə et
+        </span>
 
+      </button>
 
-<li>
-
-<a href="#shop">
-
-<svg viewBox="0 0 24 24">
-<path d="M5 8h14l-1 12H6z"/>
-<path d="M9 8a3 3 0 0 1 6 0"/>
-</svg>
-
-<span data-i18n="nav.shop">
-Mağaza
-</span>
-
-</a>
-
-</li>
+    </li>
 
 
-</ul>
+    <li>
+
+      <a href="#adoption">
+
+        <svg viewBox="0 0 24 24">
+          <path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.4 2.9 4.5 6.6 4.5c2.1 0 3.7 1.2 5.4 3.2 1.7-2 3.3-3.2 5.4-3.2 3.7 0 5.7 3.9 4.2 7.2C19.5 16.4 12 21 12 21z"/>
+        </svg>
+
+        <span data-i18n="nav.adoption">
+          Sahibləndir
+        </span>
+
+      </a>
+
+    </li>
+
+
+    <li>
+
+      <a href="#shop">
+
+        <svg viewBox="0 0 24 24">
+          <path d="M5 8h14l-1 12H6z"/>
+          <path d="M9 8a3 3 0 0 1 6 0"/>
+        </svg>
+
+        <span data-i18n="nav.shop">
+          Mağaza
+        </span>
+
+      </a>
+
+    </li>
+
+  </ul>
 
 </nav>
 
 
-<!-- =====================================================
-     ADD CAT DEMO
-===================================================== -->
+<!-- ADD DEMO -->
 
 <dialog
   class="sheet"
   id="demoSheet"
 >
 
-<div class="sheet__in">
+  <div class="sheet__in">
 
-<div class="sheet__grip"></div>
+    <div class="sheet__grip"></div>
+
+    <div class="sheet__head">
+
+      <h2 id="demoTitle">
+        Pişik əlavə et
+      </h2>
+
+      <button
+        class="sheet__close"
+        type="button"
+        data-close
+      >
+        ×
+      </button>
+
+    </div>
 
 
-<div class="sheet__head">
+    <div class="sheet__body">
 
-<h2 data-i18n="add.title">
-Pişik əlavə et
-</h2>
+      <div class="empty">
 
-<button
-  class="sheet__close"
-  type="button"
-  data-close
->
-×
-</button>
+        <div style="font-size:52px">
+          🐾
+        </div>
 
-</div>
+        <h3
+          id="demoHeading"
+          style="font-size:30px"
+        >
+          Tezliklə
+        </h3>
 
+        <p
+          id="demoText"
+          class="sub"
+        >
+          Sayt hazırda baza olmadan işləyir.
+        </p>
 
-<div class="sheet__body">
+        <button
+          class="btn btn--pom"
+          type="button"
+          data-close
+        >
+          OK
+        </button>
 
-<div class="empty">
+      </div>
 
-<div style="font-size:52px">
-🐾
-</div>
+    </div>
 
-<h3
-  style="font-size:30px"
-  data-i18n="common.soon"
->
-Tezliklə
-</h3>
-
-<p
-  class="sub"
-  data-i18n="static.addSoon"
->
-CatsBaku hazırda baza olmadan işləyir.
-</p>
-
-<button
-  class="btn btn--pom"
-  type="button"
-  data-close
->
-OK
-</button>
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </dialog>
 
 
-<!-- =====================================================
-     MUSIC
-===================================================== -->
+<!-- MUSIC -->
 
 <audio
   id="bgMusic"
@@ -2982,10 +2314,10 @@ OK
   preload="auto"
 >
 
-<source
-  src="Atlas Baku.mp3"
-  type="audio/mpeg"
->
+  <source
+    src="Atlas Baku.mp3"
+    type="audio/mpeg"
+  >
 
 </audio>
 
@@ -2995,879 +2327,417 @@ OK
   type="button"
   aria-label="Play music"
 >
-🐱
+  🐱
 </button>
 
 
-<script
-  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-></script>
-
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="js/i18n.js"></script>
 
 
-<!-- =====================================================
-     EXTRA TRANSLATIONS
-===================================================== -->
-
 <script>
 
-if (
-  window.CB_I18N
-  &&
-  window.CB_I18N.az
-  &&
-  window.CB_I18N.ru
-  &&
-  window.CB_I18N.en
-) {
-
-
-Object.assign(
-window.CB_I18N.az,
-{
-
-'nav.adoption':
-'Sahibləndir',
-
-'nav.help':
-'Kömək',
-
-'baku.intro':
-'İçərişəhərdən Xəzər sahilinə',
-
-'explore.eyebrow':
-'CATSBAKU İCMASI',
-
-'explore.title':
-'CatsBaku-nu kəşf et',
-
-'explore.sub':
-'CatsBaku sadəcə pişik qalereyası deyil. Ev axtaran pişiklərə kömək edin, itmiş heyvanları tapın və Bakıda faydalı yerləri kəşf edin.',
-
-'explore.adoption':
-'Sahibləndir',
-
-'explore.adoptionText':
-'Bakıda sevgi dolu və daimi ev axtaran pişiklərlə tanış olun.',
-
-'explore.help':
-'Kömək',
-
-'explore.helpText':
-'Müalicəyə, yeməyə, müvəqqəti evə və ya təcili yardıma ehtiyacı olan pişiklər.',
-
-'explore.lost':
-'İtmiş və tapılmış',
-
-'explore.lostText':
-'Pişik itirmisiniz və ya tapmısınız? Məlumatı CatsBaku icması ilə paylaşın.',
-
-'explore.vets':
-'Baytar xəritəsi',
-
-'explore.vetsText':
-'Bakıda baytar klinikalarını və heyvanlara qulluq xidmətlərini tapın.',
-
-'explore.feed':
-'Yemləmə nöqtələri',
-
-'explore.feedText':
-'Şəhərdə küçə pişikləri üçün yem və su qoyulan yerlər.',
-
-'explore.stories':
-'Hekayələr',
-
-'explore.storiesText':
-'Bakı pişikləri, insanlar və məhəllələr haqqında real hekayələr.',
-
-
-'adoption.eyebrow':
-'SAHİBLƏNDİR',
-
-'adoption.title':
-'Ev axtaran pişiklər',
-
-'adoption.sub':
-'Bakı pişiyinin öz ailəsini tapmasına kömək edin.',
-
-'adoption.profiles':
-'Sahibləndirmə profilləri',
-
-'adoption.profilesText':
-'Sahibləndirilən pişiklərin fotoları, yaşı və məlumatları burada görünəcək.',
-
-'adoption.family':
-'Ailə tap',
-
-'adoption.familyText':
-'Pişiyi məsuliyyətlə sahiblənmək istəyən insanlarla paylaşın.',
-
-'adoption.responsible':
-'Məsuliyyətli sahibləndirmə',
-
-'adoption.responsibleText':
-'CatsBaku sahiblənən insanlarla pişiyə baxan şəxsləri bir araya gətirəcək.',
-
-
-'help.eyebrow':
-'KÖMƏK',
-
-'help.title':
-'Köməyə ehtiyacı olan pişiklər',
-
-'help.sub':
-'Müalicə, yemək, müvəqqəti ev və digər təcili ehtiyaclar.',
-
-'help.medical':
-'Tibbi yardım',
-
-'help.medicalText':
-'Baytar müayinəsinə və ya müalicəyə ehtiyacı olan pişiklər.',
-
-'help.food':
-'Yemək',
-
-'help.foodText':
-'Küçə pişiklərini yemləyən yerli könüllülərə kömək edin.',
-
-'help.foster':
-'Müvəqqəti ev',
-
-'help.fosterText':
-'Sağalana və ya sahiblənənədək pişiklər üçün müvəqqəti ev.',
-
-
-'lost.eyebrow':
-'İTMİŞ VƏ TAPILMIŞ',
-
-'lost.title':
-'Pişik itirmisiniz və ya tapmısınız?',
-
-'lost.sub':
-'Bakıda itmiş və tapılmış pişiklər üçün icma lövhəsi.',
-
-'lost.lost':
-'İtib',
-
-'lost.lostText':
-'Pişiyinizin fotosunu və itdiyi ərazini paylaşın.',
-
-'lost.found':
-'Tapılıb',
-
-'lost.foundText':
-'Pişik tapmısınız? Onun sahibinə qayıtmasına kömək edin.',
-
-'lost.area':
-'Ərazi üzrə axtarış',
-
-'lost.areaText':
-'Elanlar rayon və xəritədəki yer üzrə axtarılacaq.',
-
-
-'vets.eyebrow':
-'BAYTAR XƏRİTƏSİ',
-
-'vets.title':
-'Bakıda baytar xidməti',
-
-'vets.sub':
-'Baytar klinikaları və heyvan xidmətləri üçün gələcək kataloq.',
-
-'vets.clinics':
-'Baytar klinikaları',
-
-'vets.clinicsText':
-'Yaşadığınız əraziyə yaxın baytar klinikalarını tapın.',
-
-'vets.emergency':
-'Təcili yardım',
-
-'vets.emergencyText':
-'Təcili yardım göstərən klinikalara sürətli çıxış.',
-
-'vets.community':
-'İcma tövsiyələri',
-
-'vets.communityText':
-'CatsBaku istifadəçiləri öz tövsiyələrini paylaşa biləcəklər.',
-
-
-'feed.eyebrow':
-'YEMLƏMƏ NÖQTƏLƏRİ',
-
-'feed.title':
-'Bakı pişikləri üçün yem və su',
-
-'feed.sub':
-'İnsanların küçə pişiklərinə mütəmadi qulluq etdiyi yerlər.',
-
-'feed.food':
-'Yem nöqtələri',
-
-'feed.foodText':
-'Sakinlərin mütəmadi yem qoyduğu yerlər.',
-
-'feed.water':
-'Su nöqtələri',
-
-'feed.waterText':
-'Xüsusilə Bakının isti yay aylarında vacibdir.',
-
-'feed.colonies':
-'Pişik koloniyaları',
-
-'feed.coloniesText':
-'Bir qrup küçə pişiyinin birlikdə yaşadığı yerlər.',
-
-
-'stories.eyebrow':
-'CATSBAKU HEKAYƏLƏRİ',
-
-'stories.title':
-'Şəhərdən hekayələr',
-
-'stories.sub':
-'Hər Bakı pişiyinin öz hekayəsi var.',
-
-'stories.oldcity':
-'İçərişəhər pişikləri',
-
-'stories.oldcityText':
-'İçərişəhərin həyətləri və daş küçələrindən hekayələr.',
-
-'stories.caspian':
-'Xəzər pişikləri',
-
-'stories.caspianText':
-'Bulvar və Xəzər sahilində yaşayan pişiklər.',
-
-'stories.rescue':
-'Xilasetmə hekayələri',
-
-'stories.rescueText':
-'Bakı pişiklərinə kömək edən insanlar haqqında hekayələr.',
-
-'common.soon':
-'Tezliklə',
-
-'static.addSoon':
-'CatsBaku hazırda baza olmadan işləyir. Pişik əlavə etmək funksiyasını daha sonra aktiv edəcəyik.'
-
-}
-);
-
-
-Object.assign(
-window.CB_I18N.ru,
-{
-
-'nav.adoption':
-'Пристройство',
-
-'nav.help':
-'Помощь',
-
-'baku.intro':
-'От Ичеришехер до берега Каспия',
-
-'explore.eyebrow':
-'СООБЩЕСТВО CATSBAKU',
-
-'explore.title':
-'Возможности CatsBaku',
-
-'explore.sub':
-'CatsBaku — это больше, чем галерея котов. Помогайте искать дом, находить потерявшихся животных и полезные места в Баку.',
-
-'explore.adoption':
-'Пристройство',
-
-'explore.adoptionText':
-'Познакомьтесь с котами Баку, которые ищут постоянный и любящий дом.',
-
-'explore.help':
-'Помощь',
-
-'explore.helpText':
-'Коты, которым нужны лечение, корм, передержка или срочная помощь.',
-
-'explore.lost':
-'Потерялись / найдены',
-
-'explore.lostText':
-'Потеряли кота или нашли его? Поделитесь информацией с сообществом.',
-
-'explore.vets':
-'Карта ветеринаров',
-
-'explore.vetsText':
-'Ветеринарные клиники и услуги для животных в Баку.',
-
-'explore.feed':
-'Точки кормления',
-
-'explore.feedText':
-'Места с кормом и водой для уличных котов Баку.',
-
-'explore.stories':
-'Истории',
-
-'explore.storiesText':
-'Настоящие истории о бакинских котах, людях и районах города.',
-
-
-'adoption.eyebrow':
-'ПРИСТРОЙСТВО',
-
-'adoption.title':
-'Коты, которые ищут дом',
-
-'adoption.sub':
-'Помогите бакинскому коту найти свою семью.',
-
-'adoption.profiles':
-'Анкеты котов',
-
-'adoption.profilesText':
-'Здесь будут фотографии, возраст и информация о котах, ищущих дом.',
-
-'adoption.family':
-'Найти семью',
-
-'adoption.familyText':
-'Помогите показать кота людям, которые готовы ответственно его взять.',
-
-'adoption.responsible':
-'Ответственное пристройство',
-
-'adoption.responsibleText':
-'CatsBaku поможет связать будущих хозяев и людей, которые заботятся о котах.',
-
-
-'help.eyebrow':
-'ПОМОЩЬ',
-
-'help.title':
-'Коты, которым нужна помощь',
-
-'help.sub':
-'Лечение, корм, передержка и другие срочные потребности.',
-
-'help.medical':
-'Медицинская помощь',
-
-'help.medicalText':
-'Коты, которым может понадобиться осмотр ветеринара или лечение.',
-
-'help.food':
-'Корм',
-
-'help.foodText':
-'Помощь волонтёрам, которые кормят уличных котов.',
-
-'help.foster':
-'Передержка',
-
-'help.fosterText':
-'Временный дом на время лечения или ожидания постоянного хозяина.',
-
-
-'lost.eyebrow':
-'ПОТЕРЯЛИСЬ / НАЙДЕНЫ',
-
-'lost.title':
-'Потеряли или нашли кота?',
-
-'lost.sub':
-'Объявления о потерянных и найденных котах Баку.',
-
-'lost.lost':
-'Потерялся',
-
-'lost.lostText':
-'Разместите фотографию и район, где пропал кот.',
-
-'lost.found':
-'Найден',
-
-'lost.foundText':
-'Нашли кота? Помогите ему вернуться к хозяину.',
-
-'lost.area':
-'Поиск по району',
-
-'lost.areaText':
-'Позже объявления можно будет искать по району и точке на карте.',
-
-
-'vets.eyebrow':
-'КАРТА ВЕТЕРИНАРОВ',
-
-'vets.title':
-'Ветеринарная помощь в Баку',
-
-'vets.sub':
-'Каталог ветеринарных клиник и полезных услуг для животных.',
-
-'vets.clinics':
-'Ветеринарные клиники',
-
-'vets.clinicsText':
-'Находите ветеринарные клиники рядом со своим районом.',
-
-'vets.emergency':
-'Срочная помощь',
-
-'vets.emergencyText':
-'Быстрый доступ к клиникам, оказывающим неотложную помощь.',
-
-'vets.community':
-'Рекомендации сообщества',
-
-'vets.communityText':
-'Пользователи CatsBaku смогут делиться своими рекомендациями.',
-
-
-'feed.eyebrow':
-'ТОЧКИ КОРМЛЕНИЯ',
-
-'feed.title':
-'Корм и вода для котов Баку',
-
-'feed.sub':
-'Места, где жители регулярно заботятся об уличных котах.',
-
-'feed.food':
-'Точки кормления',
-
-'feed.foodText':
-'Места, где жители регулярно оставляют корм.',
-
-'feed.water':
-'Точки с водой',
-
-'feed.waterText':
-'Особенно важны в жаркие летние месяцы в Баку.',
-
-'feed.colonies':
-'Колонии котов',
-
-'feed.coloniesText':
-'Места, где живут группы уличных котов.',
-
-
-'stories.eyebrow':
-'ИСТОРИИ CATSBAKU',
-
-'stories.title':
-'Истории нашего города',
-
-'stories.sub':
-'У каждого бакинского кота есть своя история.',
-
-'stories.oldcity':
-'Коты Старого города',
-
-'stories.oldcityText':
-'Истории из дворов и каменных улиц Ичеришехер.',
-
-'stories.caspian':
-'Коты Каспия',
-
-'stories.caspianText':
-'Коты, живущие рядом с Бульваром и побережьем Каспия.',
-
-'stories.rescue':
-'Истории спасения',
-
-'stories.rescueText':
-'Истории людей, которые помогли бакинским котам.',
-
-'common.soon':
-'Скоро',
-
-'static.addSoon':
-'CatsBaku сейчас работает без базы данных. Возможность добавлять котов включим позже.'
-
-}
-);
-
-
-Object.assign(
-window.CB_I18N.en,
-{
-
-'nav.adoption':
-'Adoption',
-
-'nav.help':
-'Help',
-
-'baku.intro':
-'From the Old City to the Caspian shore',
-
-'explore.eyebrow':
-'CATSBAKU COMMUNITY',
-
-'explore.title':
-'Explore CatsBaku',
-
-'explore.sub':
-'CatsBaku is more than a cat gallery. Find homes, help cats, report lost pets and discover useful places around Baku.',
-
-'explore.adoption':
-'Adoption',
-
-'explore.adoptionText':
-'Meet cats in Baku that are looking for a permanent and loving home.',
-
-'explore.help':
-'Help',
-
-'explore.helpText':
-'Cats needing treatment, food, temporary shelter or urgent assistance.',
-
-'explore.lost':
-'Lost & Found',
-
-'explore.lostText':
-'Lost a cat or found one? Share information with the CatsBaku community.',
-
-'explore.vets':
-'Vet Map',
-
-'explore.vetsText':
-'Discover veterinary clinics and animal care services around Baku.',
-
-'explore.feed':
-'Feed Points',
-
-'explore.feedText':
-'Community food and water points for street cats around the city.',
-
-'explore.stories':
-'Stories',
-
-'explore.storiesText':
-'Real stories about Baku cats, their people and their neighbourhoods.',
-
-
-'adoption.eyebrow':
-'ADOPTION',
-
-'adoption.title':
-'Cats looking for a home',
-
-'adoption.sub':
-'Help a Baku cat find a family.',
-
-'adoption.profiles':
-'Adoption profiles',
-
-'adoption.profilesText':
-'Cats available for adoption will appear here with photos, age and information.',
-
-'adoption.family':
-'Find a family',
-
-'adoption.familyText':
-'Share a cat with people who want to adopt responsibly.',
-
-'adoption.responsible':
-'Responsible adoption',
-
-'adoption.responsibleText':
-'CatsBaku will help connect adopters and caretakers.',
-
-
-'help.eyebrow':
-'HELP',
-
-'help.title':
-'Cats that need help',
-
-'help.sub':
-'Treatment, food, temporary shelter and other urgent needs.',
-
-'help.medical':
-'Medical help',
-
-'help.medicalText':
-'Cats that may need veterinary attention or treatment.',
-
-'help.food':
-'Food',
-
-'help.foodText':
-'Help local volunteers provide food for street cats.',
-
-'help.foster':
-'Foster',
-
-'help.fosterText':
-'Temporary homes for cats while they recover or wait for adoption.',
-
-
-'lost.eyebrow':
-'LOST & FOUND',
-
-'lost.title':
-'Lost or found a cat?',
-
-'lost.sub':
-'A community board for missing and found cats around Baku.',
-
-'lost.lost':
-'Lost',
-
-'lost.lostText':
-'Post a photo and the area where your cat disappeared.',
-
-'lost.found':
-'Found',
-
-'lost.foundText':
-'Found a cat? Help reconnect it with its owner.',
-
-'lost.area':
-'Area search',
-
-'lost.areaText':
-'Reports will later be searchable by district and map location.',
-
-
-'vets.eyebrow':
-'VET MAP',
-
-'vets.title':
-'Veterinary care in Baku',
-
-'vets.sub':
-'A directory of veterinary clinics and useful animal services.',
-
-'vets.clinics':
-'Vet clinics',
-
-'vets.clinicsText':
-'Find veterinary clinics close to your neighbourhood.',
-
-'vets.emergency':
-'Emergency',
-
-'vets.emergencyText':
-'Quick access to clinics providing urgent assistance.',
-
-'vets.community':
-'Community recommendations',
-
-'vets.communityText':
-'CatsBaku users will be able to share recommendations.',
-
-
-'feed.eyebrow':
-'FEED POINTS',
-
-'feed.title':
-'Food & water for Baku cats',
-
-'feed.sub':
-'Community locations where people regularly care for street cats.',
-
-'feed.food':
-'Food points',
-
-'feed.foodText':
-'Places where local residents regularly leave food.',
-
-'feed.water':
-'Water points',
-
-'feed.waterText':
-'Especially useful during Baku’s hot summer months.',
-
-'feed.colonies':
-'Cat colonies',
-
-'feed.coloniesText':
-'Locations where groups of community cats live.',
-
-
-'stories.eyebrow':
-'CATSBAKU STORIES',
-
-'stories.title':
-'Stories from the city',
-
-'stories.sub':
-'Every Baku cat has a story.',
-
-'stories.oldcity':
-'Old City cats',
-
-'stories.oldcityText':
-'Stories from İçərişəhər, its courtyards and stone streets.',
-
-'stories.caspian':
-'Caspian cats',
-
-'stories.caspianText':
-'Cats living near the Boulevard and the Caspian coast.',
-
-'stories.rescue':
-'Rescue stories',
-
-'stories.rescueText':
-'Stories about people who helped Baku cats.',
-
-'common.soon':
-'Coming soon',
-
-'static.addSoon':
-'CatsBaku is currently running without a database. Cat submissions will be enabled later.'
-
-}
-);
+/* ADD TRANSLATIONS FOR NEW SECTIONS */
+
+if (window.CB_I18N) {
+
+Object.assign(window.CB_I18N.az, {
+
+  'nav.adoption':'Sahibləndir',
+  'nav.help':'Kömək',
+
+  'baku.intro':'İçərişəhərdən Xəzər sahilinə',
+
+  'explore.eyebrow':'CATSBAKU İCMASI',
+  'explore.title':'CatsBaku-nu kəşf et',
+  'explore.sub':'CatsBaku sadəcə pişik qalereyası deyil. Ev axtaran pişiklərə kömək edin, itmiş heyvanları tapın və Bakıda faydalı yerləri kəşf edin.',
+
+  'explore.adoption':'Sahibləndir',
+  'explore.adoptionText':'Bakıda sevgi dolu və daimi ev axtaran pişiklərlə tanış olun.',
+
+  'explore.help':'Kömək',
+  'explore.helpText':'Müalicəyə, yeməyə, müvəqqəti evə və ya təcili yardıma ehtiyacı olan pişiklər.',
+
+  'explore.lost':'İtmiş və tapılmış',
+  'explore.lostText':'Pişik itirmisiniz və ya tapmısınız? Məlumatı CatsBaku icması ilə paylaşın.',
+
+  'explore.vets':'Baytar xəritəsi',
+  'explore.vetsText':'Bakıda baytar klinikalarını və heyvanlara qulluq xidmətlərini tapın.',
+
+  'explore.feed':'Yemləmə nöqtələri',
+  'explore.feedText':'Şəhərdə küçə pişikləri üçün yem və su qoyulan yerlər.',
+
+  'explore.stories':'Hekayələr',
+  'explore.storiesText':'Bakı pişikləri, insanlar və məhəllələr haqqında real hekayələr.',
+
+  'adoption.eyebrow':'SAHİBLƏNDİR',
+  'adoption.title':'Ev axtaran pişiklər',
+  'adoption.sub':'Bakı pişiyinin öz ailəsini tapmasına kömək edin.',
+  'adoption.profiles':'Sahibləndirmə profilləri',
+  'adoption.profilesText':'Sahibləndirilən pişiklərin fotoları, yaşı və məlumatları burada görünəcək.',
+  'adoption.family':'Ailə tap',
+  'adoption.familyText':'Pişiyi məsuliyyətlə sahiblənmək istəyən insanlarla paylaşın.',
+  'adoption.responsible':'Məsuliyyətli sahibləndirmə',
+  'adoption.responsibleText':'CatsBaku sahiblənən insanlarla pişiyə baxan şəxsləri bir araya gətirəcək.',
+
+  'help.eyebrow':'KÖMƏK',
+  'help.title':'Köməyə ehtiyacı olan pişiklər',
+  'help.sub':'Müalicə, yemək, müvəqqəti ev və digər təcili ehtiyaclar.',
+  'help.medical':'Tibbi yardım',
+  'help.medicalText':'Baytar müayinəsinə və ya müalicəyə ehtiyacı olan pişiklər.',
+  'help.food':'Yemək',
+  'help.foodText':'Küçə pişiklərini yemləyən yerli könüllülərə kömək edin.',
+  'help.foster':'Müvəqqəti ev',
+  'help.fosterText':'Sağalana və ya sahiblənənədək pişiklər üçün müvəqqəti ev.',
+
+  'lost.eyebrow':'İTMİŞ VƏ TAPILMIŞ',
+  'lost.title':'Pişik itirmisiniz və ya tapmısınız?',
+  'lost.sub':'Bakıda itmiş və tapılmış pişiklər üçün icma lövhəsi.',
+  'lost.lost':'İtib',
+  'lost.lostText':'Pişiyinizin fotosunu və itdiyi ərazini paylaşın.',
+  'lost.found':'Tapılıb',
+  'lost.foundText':'Pişik tapmısınız? Onun sahibinə qayıtmasına kömək edin.',
+  'lost.area':'Ərazi üzrə axtarış',
+  'lost.areaText':'Elanları rayon və xəritədəki yer üzrə axtarmaq mümkün olacaq.',
+
+  'vets.eyebrow':'BAYTAR XƏRİTƏSİ',
+  'vets.title':'Bakıda baytar xidməti',
+  'vets.sub':'Baytar klinikaları və heyvan xidmətləri kataloqu.',
+  'vets.clinics':'Baytar klinikaları',
+  'vets.clinicsText':'Yaşadığınız əraziyə yaxın baytar klinikalarını tapın.',
+  'vets.emergency':'Təcili yardım',
+  'vets.emergencyText':'Təcili yardım göstərən klinikalara sürətli çıxış.',
+  'vets.community':'İcma tövsiyələri',
+  'vets.communityText':'CatsBaku istifadəçilərinin tövsiyələri.',
+
+  'feed.eyebrow':'YEMLƏMƏ NÖQTƏLƏRİ',
+  'feed.title':'Bakı pişikləri üçün yem və su',
+  'feed.sub':'İnsanların küçə pişiklərinə mütəmadi qulluq etdiyi yerlər.',
+  'feed.food':'Yem nöqtələri',
+  'feed.foodText':'Sakinlərin mütəmadi yem qoyduğu yerlər.',
+  'feed.water':'Su nöqtələri',
+  'feed.waterText':'Xüsusilə Bakının isti yay aylarında vacibdir.',
+  'feed.colonies':'Pişik koloniyaları',
+  'feed.coloniesText':'Bir qrup küçə pişiyinin birlikdə yaşadığı yerlər.',
+
+  'stories.eyebrow':'CATSBAKU HEKAYƏLƏRİ',
+  'stories.title':'Şəhərdən hekayələr',
+  'stories.sub':'Hər Bakı pişiyinin öz hekayəsi var.',
+  'stories.oldcity':'İçərişəhər pişikləri',
+  'stories.oldcityText':'İçərişəhərin həyətləri və daş küçələrindən hekayələr.',
+  'stories.caspian':'Xəzər pişikləri',
+  'stories.caspianText':'Bulvar və Xəzər sahilində yaşayan pişiklər.',
+  'stories.rescue':'Xilasetmə hekayələri',
+  'stories.rescueText':'Bakı pişiklərinə kömək edən insanlar haqqında hekayələr.',
+
+  'common.soon':'Tezliklə'
+
+});
+
+
+Object.assign(window.CB_I18N.ru, {
+
+  'nav.adoption':'Пристройство',
+  'nav.help':'Помощь',
+
+  'baku.intro':'От Ичеришехер до берега Каспия',
+
+  'explore.eyebrow':'СООБЩЕСТВО CATSBAKU',
+  'explore.title':'Возможности CatsBaku',
+  'explore.sub':'CatsBaku — это больше, чем галерея котов. Помогайте искать дом, находить потерявшихся животных и полезные места в Баку.',
+
+  'explore.adoption':'Пристройство',
+  'explore.adoptionText':'Познакомьтесь с котами Баку, которые ищут постоянный и любящий дом.',
+
+  'explore.help':'Помощь',
+  'explore.helpText':'Коты, которым нужны лечение, корм, передержка или срочная помощь.',
+
+  'explore.lost':'Потерялись / найдены',
+  'explore.lostText':'Потеряли кота или нашли его? Поделитесь информацией с сообществом.',
+
+  'explore.vets':'Карта ветеринаров',
+  'explore.vetsText':'Ветеринарные клиники и услуги для животных в Баку.',
+
+  'explore.feed':'Точки кормления',
+  'explore.feedText':'Места с кормом и водой для уличных котов Баку.',
+
+  'explore.stories':'Истории',
+  'explore.storiesText':'Настоящие истории о бакинских котах, людях и районах города.',
+
+  'adoption.eyebrow':'ПРИСТРОЙСТВО',
+  'adoption.title':'Коты, которые ищут дом',
+  'adoption.sub':'Помогите бакинскому коту найти свою семью.',
+  'adoption.profiles':'Анкеты котов',
+  'adoption.profilesText':'Здесь будут фотографии, возраст и информация о котах, ищущих дом.',
+  'adoption.family':'Найти семью',
+  'adoption.familyText':'Помогите показать кота людям, которые готовы ответственно его взять.',
+  'adoption.responsible':'Ответственное пристройство',
+  'adoption.responsibleText':'CatsBaku поможет связать будущих хозяев и людей, которые заботятся о котах.',
+
+  'help.eyebrow':'ПОМОЩЬ',
+  'help.title':'Коты, которым нужна помощь',
+  'help.sub':'Лечение, корм, передержка и другие срочные потребности.',
+  'help.medical':'Медицинская помощь',
+  'help.medicalText':'Коты, которым может понадобиться ветеринар или лечение.',
+  'help.food':'Корм',
+  'help.foodText':'Помощь людям, которые кормят уличных котов.',
+  'help.foster':'Передержка',
+  'help.fosterText':'Временный дом на время лечения или ожидания хозяина.',
+
+  'lost.eyebrow':'ПОТЕРЯЛИСЬ / НАЙДЕНЫ',
+  'lost.title':'Потеряли или нашли кота?',
+  'lost.sub':'Объявления о потерянных и найденных котах Баку.',
+  'lost.lost':'Потерялся',
+  'lost.lostText':'Разместите фотографию и район, где пропал кот.',
+  'lost.found':'Найден',
+  'lost.foundText':'Нашли кота? Помогите ему вернуться к хозяину.',
+  'lost.area':'Поиск по району',
+  'lost.areaText':'Поиск объявлений по району и точке на карте.',
+
+  'vets.eyebrow':'КАРТА ВЕТЕРИНАРОВ',
+  'vets.title':'Ветеринарная помощь в Баку',
+  'vets.sub':'Каталог ветеринарных клиник и услуг для животных.',
+  'vets.clinics':'Ветеринарные клиники',
+  'vets.clinicsText':'Находите ветеринарные клиники рядом со своим районом.',
+  'vets.emergency':'Срочная помощь',
+  'vets.emergencyText':'Быстрый доступ к клиникам с неотложной помощью.',
+  'vets.community':'Рекомендации сообщества',
+  'vets.communityText':'Рекомендации пользователей CatsBaku.',
+
+  'feed.eyebrow':'ТОЧКИ КОРМЛЕНИЯ',
+  'feed.title':'Корм и вода для котов Баку',
+  'feed.sub':'Места, где жители регулярно заботятся об уличных котах.',
+  'feed.food':'Точки кормления',
+  'feed.foodText':'Места, где жители регулярно оставляют корм.',
+  'feed.water':'Точки с водой',
+  'feed.waterText':'Особенно важны в жаркие летние месяцы.',
+  'feed.colonies':'Колонии котов',
+  'feed.coloniesText':'Места, где живут группы уличных котов.',
+
+  'stories.eyebrow':'ИСТОРИИ CATSBAKU',
+  'stories.title':'Истории нашего города',
+  'stories.sub':'У каждого бакинского кота есть своя история.',
+  'stories.oldcity':'Коты Старого города',
+  'stories.oldcityText':'Истории из дворов и каменных улиц Ичеришехер.',
+  'stories.caspian':'Коты Каспия',
+  'stories.caspianText':'Коты, живущие рядом с Бульваром и Каспием.',
+  'stories.rescue':'Истории спасения',
+  'stories.rescueText':'Истории людей, которые помогли бакинским котам.',
+
+  'common.soon':'Скоро'
+
+});
+
+
+Object.assign(window.CB_I18N.en, {
+
+  'nav.adoption':'Adoption',
+  'nav.help':'Help',
+
+  'baku.intro':'From the Old City to the Caspian shore',
+
+  'explore.eyebrow':'CATSBAKU COMMUNITY',
+  'explore.title':'Explore CatsBaku',
+  'explore.sub':'CatsBaku is more than a cat gallery. Find homes, help cats, report lost pets and discover useful places around Baku.',
+
+  'explore.adoption':'Adoption',
+  'explore.adoptionText':'Meet cats in Baku that are looking for a permanent and loving home.',
+
+  'explore.help':'Help',
+  'explore.helpText':'Cats needing treatment, food, temporary shelter or urgent assistance.',
+
+  'explore.lost':'Lost & Found',
+  'explore.lostText':'Lost a cat or found one? Share information with the CatsBaku community.',
+
+  'explore.vets':'Vet Map',
+  'explore.vetsText':'Discover veterinary clinics and animal care services around Baku.',
+
+  'explore.feed':'Feed Points',
+  'explore.feedText':'Community food and water points for street cats around the city.',
+
+  'explore.stories':'Stories',
+  'explore.storiesText':'Real stories about Baku cats, their people and neighbourhoods.',
+
+  'adoption.eyebrow':'ADOPTION',
+  'adoption.title':'Cats looking for a home',
+  'adoption.sub':'Help a Baku cat find a family.',
+  'adoption.profiles':'Adoption profiles',
+  'adoption.profilesText':'Cats available for adoption will appear here with photos, age and information.',
+  'adoption.family':'Find a family',
+  'adoption.familyText':'Share a cat with people who want to adopt responsibly.',
+  'adoption.responsible':'Responsible adoption',
+  'adoption.responsibleText':'CatsBaku will help connect adopters and caretakers.',
+
+  'help.eyebrow':'HELP',
+  'help.title':'Cats that need help',
+  'help.sub':'Treatment, food, temporary shelter and other urgent needs.',
+  'help.medical':'Medical help',
+  'help.medicalText':'Cats that may need veterinary attention or treatment.',
+  'help.food':'Food',
+  'help.foodText':'Help local volunteers provide food for street cats.',
+  'help.foster':'Foster',
+  'help.fosterText':'Temporary homes for cats while they recover or wait for adoption.',
+
+  'lost.eyebrow':'LOST & FOUND',
+  'lost.title':'Lost or found a cat?',
+  'lost.sub':'A community board for missing and found cats around Baku.',
+  'lost.lost':'Lost',
+  'lost.lostText':'Post a photo and the area where your cat disappeared.',
+  'lost.found':'Found',
+  'lost.foundText':'Found a cat? Help reconnect it with its owner.',
+  'lost.area':'Area search',
+  'lost.areaText':'Search reports by district and map location.',
+
+  'vets.eyebrow':'VET MAP',
+  'vets.title':'Veterinary care in Baku',
+  'vets.sub':'A directory of veterinary clinics and animal services.',
+  'vets.clinics':'Vet clinics',
+  'vets.clinicsText':'Find veterinary clinics close to your neighbourhood.',
+  'vets.emergency':'Emergency',
+  'vets.emergencyText':'Quick access to clinics providing urgent assistance.',
+  'vets.community':'Community recommendations',
+  'vets.communityText':'Recommendations from the CatsBaku community.',
+
+  'feed.eyebrow':'FEED POINTS',
+  'feed.title':'Food & water for Baku cats',
+  'feed.sub':'Locations where people regularly care for street cats.',
+  'feed.food':'Food points',
+  'feed.foodText':'Places where local residents regularly leave food.',
+  'feed.water':'Water points',
+  'feed.waterText':'Especially useful during Baku’s hot summer months.',
+  'feed.colonies':'Cat colonies',
+  'feed.coloniesText':'Locations where groups of community cats live.',
+
+  'stories.eyebrow':'CATSBAKU STORIES',
+  'stories.title':'Stories from the city',
+  'stories.sub':'Every Baku cat has a story.',
+  'stories.oldcity':'Old City cats',
+  'stories.oldcityText':'Stories from İçərişəhər, its courtyards and stone streets.',
+  'stories.caspian':'Caspian cats',
+  'stories.caspianText':'Cats living near the Boulevard and Caspian coast.',
+  'stories.rescue':'Rescue stories',
+  'stories.rescueText':'Stories about people who helped Baku cats.',
+
+  'common.soon':'Coming soon'
+
+});
 
 }
 
 </script>
 
 
+<!-- IMPORTANT: THIS SCRIPT RESTORES ALL 5 CATS -->
 <script src="js/static.js"></script>
 
 
-<!-- =====================================================
-     MUSIC
-===================================================== -->
-
 <script>
 
-(function () {
+/* MUSIC */
 
-const music =
-document.getElementById(
-"bgMusic"
-);
+(function(){
 
-const toggle =
-document.getElementById(
-"musicToggle"
-);
+  const music =
+    document.getElementById("bgMusic");
 
-if (
-!music
-||
-!toggle
-) {
+  const toggle =
+    document.getElementById("musicToggle");
 
-return;
+  if(!music || !toggle){
+    return;
+  }
 
-}
-
-music.volume =
-0.35;
+  music.volume = 0.35;
 
 
-function playing() {
+  function playing(){
 
-toggle.textContent =
-"😺";
+    toggle.textContent = "😺";
 
-toggle.classList.add(
-"is-playing"
-);
+    toggle.classList.add(
+      "is-playing"
+    );
 
-}
-
-
-function paused() {
-
-toggle.textContent =
-"🐱";
-
-toggle.classList.remove(
-"is-playing"
-);
-
-}
+  }
 
 
-async function startMusic() {
+  function paused(){
 
-try {
+    toggle.textContent = "🐱";
 
-await music.play();
+    toggle.classList.remove(
+      "is-playing"
+    );
 
-playing();
-
-}
-
-catch (error) {
-
-paused();
-
-}
-
-}
+  }
 
 
-document.addEventListener(
-"click",
-function () {
+  async function startMusic(){
 
-if (
-music.paused
-) {
+    try{
 
-startMusic();
+      await music.play();
 
-}
+      playing();
 
-},
-{
-once:true
-}
-);
+    }
+    catch(e){
 
+      paused();
 
-toggle.addEventListener(
-"click",
-async function (event) {
+    }
 
-event.stopPropagation();
-
-if (
-music.paused
-) {
-
-await startMusic();
-
-}
-
-else {
-
-music.pause();
-
-paused();
-
-}
-
-}
-);
+  }
 
 
-music.addEventListener(
-"play",
-playing
-);
+  document.addEventListener(
+    "click",
+    function(){
 
-music.addEventListener(
-"pause",
-paused
-);
+      if(music.paused){
+        startMusic();
+      }
+
+    },
+    {
+      once:true
+    }
+  );
+
+
+  toggle.addEventListener(
+    "click",
+    async function(event){
+
+      event.stopPropagation();
+
+      if(music.paused){
+
+        await startMusic();
+
+      }
+      else{
+
+        music.pause();
+
+        paused();
+
+      }
+
+    }
+  );
+
+
+  music.addEventListener(
+    "play",
+    playing
+  );
+
+  music.addEventListener(
+    "pause",
+    paused
+  );
 
 })();
 
