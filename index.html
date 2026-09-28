@@ -16,7 +16,7 @@ CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku
 
 <meta
   name="description"
-  content="CatsBaku — cats, adoption, lost & found, veterinary clinics and help requests in Baku."
+  content="CatsBaku — cats, adoption, lost & found, veterinary clinics, help requests and feed points in Baku."
 >
 
 <meta name="theme-color" content="#F5EBDD">
@@ -205,14 +205,16 @@ body{
 #grid .card__photo,
 #adoptionGrid .card__photo,
 #lostFoundGrid .card__photo,
-#helpGrid .card__photo{
+#helpGrid .card__photo,
+#feedGrid .card__photo{
   overflow:hidden;
 }
 
 #grid .card__photo img,
 #adoptionGrid .card__photo img,
 #lostFoundGrid .card__photo img,
-#helpGrid .card__photo img{
+#helpGrid .card__photo img,
+#feedGrid .card__photo img{
   width:100%;
   height:100%;
   display:block;
@@ -1034,10 +1036,7 @@ CATS OF BAKU
 CatsBaku
 </div>
 
-<h2
-  class="h2"
-  data-i18n="cats.title"
->
+<h2 class="h2" data-i18n="cats.title">
 Bakı pişikləri
 </h2>
 
@@ -1179,6 +1178,8 @@ CatsBaku sadəcə pişik qalereyası deyil.
 
 <div class="carpet"></div>
 
+
+<!-- ADOPTION -->
 
 <section class="feature-section" id="adoption">
 
@@ -1534,6 +1535,8 @@ Mənim yerim
 </section>
 
 
+<!-- VETS -->
+
 <section class="feature-section" id="vets">
 
 <div class="wrap">
@@ -1574,6 +1577,8 @@ Klinikalar yüklənir...
 </section>
 
 
+<!-- FEED POINTS -->
+
 <section class="feature-section" id="feed">
 
 <div class="wrap">
@@ -1588,23 +1593,125 @@ YEMLƏMƏ NÖQTƏLƏRİ
 Bakı pişikləri üçün yem və su
 </h2>
 
+<p class="sub" data-i18n="feed.sub">
+Bakıda yem, su və pişik koloniyası nöqtələri.
+</p>
+
+<div class="action-row">
+
+<button
+  class="big-action-btn big-action-btn--caspian"
+  type="button"
+  id="openFeedForm"
+>
+🥣
+<span data-i18n="feed.add">
+Nöqtə əlavə et
+</span>
+</button>
+
 </div>
+
+</div>
+
 
 <div class="feature-grid">
 
 <div class="feature-box">
-<div class="feature-box__emoji">🥣</div>
-<h3 data-i18n="feed.food">Yem nöqtələri</h3>
+
+<div class="feature-box__emoji">
+🥣
 </div>
 
-<div class="feature-box">
-<div class="feature-box__emoji">💧</div>
-<h3 data-i18n="feed.water">Su nöqtələri</h3>
+<h3 data-i18n="feed.food">
+Yem nöqtələri
+</h3>
+
+<p data-i18n="feed.foodText">
+Pişiklər üçün müntəzəm yem qoyulan yerlər.
+</p>
+
 </div>
 
+
 <div class="feature-box">
-<div class="feature-box__emoji">🐈</div>
-<h3 data-i18n="feed.colonies">Pişik koloniyaları</h3>
+
+<div class="feature-box__emoji">
+💧
+</div>
+
+<h3 data-i18n="feed.water">
+Su nöqtələri
+</h3>
+
+<p data-i18n="feed.waterText">
+Su qablarının olduğu yerlər.
+</p>
+
+</div>
+
+
+<div class="feature-box">
+
+<div class="feature-box__emoji">
+🐈
+</div>
+
+<h3 data-i18n="feed.colonies">
+Pişik koloniyaları
+</h3>
+
+<p data-i18n="feed.coloniesText">
+Bir neçə pişiyin daimi yaşadığı ərazilər.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="data-list">
+
+<div class="head">
+
+<div>
+
+<div class="eyebrow">
+FEED POINTS
+</div>
+
+<h2
+  class="h2"
+  data-i18n="feed.activeTitle"
+>
+Aktiv nöqtələr
+</h2>
+
+</div>
+
+<span
+  class="count"
+  id="feedCount"
+></span>
+
+</div>
+
+
+<div
+  class="grid"
+  id="feedGrid"
+>
+
+<div class="data-empty">
+
+<div class="data-empty__icon">
+🥣
+</div>
+
+Nöqtələr yüklənir...
+
+</div>
+
 </div>
 
 </div>
@@ -2026,33 +2133,13 @@ Yardım növü
 
 <select id="helpType" required>
 
-<option value="">
-—
-</option>
-
-<option value="medical">
-Medical
-</option>
-
-<option value="food">
-Food
-</option>
-
-<option value="foster">
-Foster
-</option>
-
-<option value="transport">
-Transport
-</option>
-
-<option value="sterilization">
-Sterilization
-</option>
-
-<option value="urgent">
-Urgent
-</option>
+<option value="">—</option>
+<option value="medical">Medical</option>
+<option value="food">Food</option>
+<option value="foster">Foster</option>
+<option value="transport">Transport</option>
+<option value="sterilization">Sterilization</option>
+<option value="urgent">Urgent</option>
 
 </select>
 
@@ -2067,17 +2154,9 @@ Təcililik
 
 <select id="helpUrgency" required>
 
-<option value="normal">
-Normal
-</option>
-
-<option value="high">
-High
-</option>
-
-<option value="critical">
-Critical
-</option>
+<option value="normal">Normal</option>
+<option value="high">High</option>
+<option value="critical">Critical</option>
 
 </select>
 
@@ -2382,15 +2461,237 @@ Elanı göndər
 </dialog>
 
 
+<!-- FEED MODAL -->
+
+<dialog
+  class="form-modal"
+  id="feedDialog"
+>
+
+<div class="form-modal__inner">
+
+<div class="form-modal__head">
+
+<div>
+
+<div class="eyebrow">
+CATSBAKU · FEED POINT
+</div>
+
+<h2 data-i18n="feed.formTitle">
+Yeni nöqtə əlavə et
+</h2>
+
+</div>
+
+<button
+  class="form-close"
+  type="button"
+  id="closeFeedForm"
+>
+×
+</button>
+
+</div>
+
+
+<form
+  class="data-form"
+  id="feedForm"
+>
+
+
+<div class="form-field">
+
+<label data-i18n="feed.formType">
+Nöqtə növü
+</label>
+
+<select
+  id="feedType"
+  required
+>
+
+<option value="">
+—
+</option>
+
+<option value="food">
+Food
+</option>
+
+<option value="water">
+Water
+</option>
+
+<option value="colony">
+Colony
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="feed.formStatus">
+Status
+</label>
+
+<select
+  id="feedStatus"
+  required
+>
+
+<option value="active">
+Active
+</option>
+
+<option value="needs_refill">
+Needs refill
+</option>
+
+<option value="inactive">
+Inactive
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="feed.formTitleField">
+Başlıq
+</label>
+
+<input
+  id="feedTitle"
+  type="text"
+  maxlength="100"
+>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="feed.formArea">
+Rayon / ərazi
+</label>
+
+<input
+  id="feedArea"
+  type="text"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label data-i18n="feed.formDescription">
+Təsvir
+</label>
+
+<textarea
+  id="feedDescription"
+></textarea>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="feed.formContact">
+Əlaqə üçün ad
+</label>
+
+<input
+  id="feedContact"
+  type="text"
+>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="feed.formPhone">
+Telefon / WhatsApp
+</label>
+
+<input
+  id="feedPhone"
+  type="tel"
+  placeholder="+994..."
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<div class="photo-box">
+
+<label data-i18n="feed.formPhoto">
+📷 Foto seçin
+</label>
+
+<input
+  id="feedPhoto"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+  required
+>
+
+<img
+  id="feedPreview"
+  class="photo-preview"
+  alt=""
+>
+
+</div>
+
+</div>
+
+
+<div
+  id="feedMessage"
+  class="form-message"
+></div>
+
+
+<button
+  type="submit"
+  class="form-submit"
+  id="feedSubmit"
+  data-i18n="feed.formSubmit"
+>
+Göndər
+</button>
+
+</form>
+
+</div>
+
+</dialog>
+
+
 <audio
   id="bgMusic"
   loop
   preload="auto"
 >
+
 <source
   src="Atlas Baku.mp3"
   type="audio/mpeg"
 >
+
 </audio>
 
 <button
@@ -2512,9 +2813,25 @@ Object.assign(window.CB_I18N.az,{
 
 'feed.eyebrow':'YEMLƏMƏ NÖQTƏLƏRİ',
 'feed.title':'Bakı pişikləri üçün yem və su',
+'feed.sub':'Bakıda yem, su və pişik koloniyası nöqtələri.',
+'feed.add':'Nöqtə əlavə et',
 'feed.food':'Yem nöqtələri',
 'feed.water':'Su nöqtələri',
 'feed.colonies':'Pişik koloniyaları',
+'feed.foodText':'Pişiklər üçün müntəzəm yem qoyulan yerlər.',
+'feed.waterText':'Su qablarının olduğu yerlər.',
+'feed.coloniesText':'Bir neçə pişiyin daimi yaşadığı ərazilər.',
+'feed.activeTitle':'Aktiv nöqtələr',
+'feed.formTitle':'Yeni nöqtə əlavə et',
+'feed.formType':'Nöqtə növü',
+'feed.formStatus':'Status',
+'feed.formTitleField':'Başlıq',
+'feed.formArea':'Rayon / ərazi',
+'feed.formDescription':'Təsvir',
+'feed.formContact':'Əlaqə üçün ad',
+'feed.formPhone':'Telefon / WhatsApp',
+'feed.formPhoto':'📷 Foto seçin',
+'feed.formSubmit':'Göndər',
 
 'stories.eyebrow':'CATSBAKU HEKAYƏLƏRİ',
 'stories.title':'Şəhərdən hekayələr',
@@ -2625,9 +2942,25 @@ Object.assign(window.CB_I18N.ru,{
 
 'feed.eyebrow':'ТОЧКИ КОРМЛЕНИЯ',
 'feed.title':'Корм и вода для котов Баку',
+'feed.sub':'Точки с кормом, водой и колонии котов в Баку.',
+'feed.add':'Добавить точку',
 'feed.food':'Точки кормления',
 'feed.water':'Точки с водой',
 'feed.colonies':'Колонии котов',
+'feed.foodText':'Места, где регулярно оставляют корм для котов.',
+'feed.waterText':'Места, где есть вода для котов.',
+'feed.coloniesText':'Места, где постоянно живёт группа котов.',
+'feed.activeTitle':'Активные точки',
+'feed.formTitle':'Добавить новую точку',
+'feed.formType':'Тип точки',
+'feed.formStatus':'Статус',
+'feed.formTitleField':'Название',
+'feed.formArea':'Район / местоположение',
+'feed.formDescription':'Описание',
+'feed.formContact':'Контактное лицо',
+'feed.formPhone':'Телефон / WhatsApp',
+'feed.formPhoto':'📷 Выберите фото',
+'feed.formSubmit':'Отправить',
 
 'stories.eyebrow':'ИСТОРИИ CATSBAKU',
 'stories.title':'Истории нашего города',
@@ -2738,9 +3071,25 @@ Object.assign(window.CB_I18N.en,{
 
 'feed.eyebrow':'FEED POINTS',
 'feed.title':'Food & water for Baku cats',
+'feed.sub':'Food, water and cat colony points around Baku.',
+'feed.add':'Add a point',
 'feed.food':'Food points',
 'feed.water':'Water points',
 'feed.colonies':'Cat colonies',
+'feed.foodText':'Places where food is regularly left for cats.',
+'feed.waterText':'Places where water is available for cats.',
+'feed.coloniesText':'Places where groups of cats regularly live.',
+'feed.activeTitle':'Active points',
+'feed.formTitle':'Add a new point',
+'feed.formType':'Point type',
+'feed.formStatus':'Status',
+'feed.formTitleField':'Title',
+'feed.formArea':'Area / location',
+'feed.formDescription':'Description',
+'feed.formContact':'Contact name',
+'feed.formPhone':'Phone / WhatsApp',
+'feed.formPhoto':'📷 Choose a photo',
+'feed.formSubmit':'Submit',
 
 'stories.eyebrow':'CATSBAKU STORIES',
 'stories.title':'Stories from the city',
@@ -2907,7 +3256,6 @@ async function(event){
     return;
   }
 
-
   if(file.size > 5 * 1024 * 1024){
 
     adoptionMessage.textContent =
@@ -2920,13 +3268,11 @@ async function(event){
 
   }
 
-
   adoptionSubmit.disabled =
     true;
 
 
   try{
-
 
     const ext =
       file.name
@@ -3493,8 +3839,6 @@ async function(event){
 );
 
 
-/* HELP LABELS */
-
 function helpTypeLabel(type){
 
   const current =
@@ -3637,10 +3981,6 @@ function statusLabel(value){
 }
 
 
-/* =====================================================
-   LOAD HELP REQUESTS
-===================================================== */
-
 async function loadHelpRequests(){
 
   const grid =
@@ -3766,6 +4106,7 @@ async function loadHelpRequests(){
 
 
           <div class="status-badge ${urgencyClass}">
+
           ${
             item.urgency === 'critical'
             ?
@@ -4209,10 +4550,6 @@ async function(event){
 }
 );
 
-
-/* =====================================================
-   LOAD LOST FOUND
-===================================================== */
 
 async function loadLostFound(){
 
@@ -4672,6 +5009,595 @@ async function loadVets(){
 
 
 /* =====================================================
+   FEED POINTS
+===================================================== */
+
+const feedDialog =
+document.getElementById('feedDialog');
+
+const feedForm =
+document.getElementById('feedForm');
+
+const feedMessage =
+document.getElementById('feedMessage');
+
+const feedSubmit =
+document.getElementById('feedSubmit');
+
+const feedPhoto =
+document.getElementById('feedPhoto');
+
+const feedPreview =
+document.getElementById('feedPreview');
+
+
+document
+.getElementById('openFeedForm')
+.addEventListener(
+  'click',
+  ()=>feedDialog.showModal()
+);
+
+
+document
+.getElementById('closeFeedForm')
+.addEventListener(
+  'click',
+  ()=>feedDialog.close()
+);
+
+
+photoPreview(
+  feedPhoto,
+  feedPreview
+);
+
+
+feedForm.addEventListener(
+'submit',
+async function(event){
+
+  event.preventDefault();
+
+
+  const file =
+    feedPhoto.files[0];
+
+
+  if(!file){
+    return;
+  }
+
+
+  if(file.size > 5 * 1024 * 1024){
+
+    feedMessage.textContent =
+      lang() === 'ru'
+      ?
+      'Фото должно быть меньше 5 MB.'
+      :
+      lang() === 'en'
+      ?
+      'The photo must be smaller than 5 MB.'
+      :
+      'Foto 5 MB-dan kiçik olmalıdır.';
+
+    feedMessage.className =
+      'form-message error';
+
+    return;
+
+  }
+
+
+  feedSubmit.disabled =
+    true;
+
+
+  try{
+
+
+    const ext =
+      file.name
+        .split('.')
+        .pop()
+        .toLowerCase();
+
+
+    const path =
+      'feed/'
+      +
+      Date.now()
+      +
+      '-'
+      +
+      crypto.randomUUID()
+      +
+      '.'
+      +
+      ext;
+
+
+    const upload =
+      await db.storage
+        .from('cat-photos')
+        .upload(
+          path,
+          file,
+          {
+            upsert:false,
+            contentType:file.type
+          }
+        );
+
+
+    if(upload.error){
+      throw upload.error;
+    }
+
+
+    const publicUrl =
+      db.storage
+        .from('cat-photos')
+        .getPublicUrl(path)
+        .data
+        .publicUrl;
+
+
+    const result =
+      await db
+        .from('feed_points')
+        .insert({
+
+          point_type:
+          document
+            .getElementById('feedType')
+            .value,
+
+          title:
+          document
+            .getElementById('feedTitle')
+            .value
+            .trim()
+            ||
+            null,
+
+          area:
+          document
+            .getElementById('feedArea')
+            .value
+            .trim(),
+
+          description:
+          document
+            .getElementById('feedDescription')
+            .value
+            .trim()
+            ||
+            null,
+
+          contact_name:
+          document
+            .getElementById('feedContact')
+            .value
+            .trim()
+            ||
+            null,
+
+          contact_phone:
+          document
+            .getElementById('feedPhone')
+            .value
+            .trim()
+            ||
+            null,
+
+          photo_url:
+          publicUrl,
+
+          status:
+          document
+            .getElementById('feedStatus')
+            .value,
+
+          last_confirmed_at:
+          new Date().toISOString(),
+
+          approved:
+          false
+
+        });
+
+
+    if(result.error){
+      throw result.error;
+    }
+
+
+    feedMessage.textContent =
+      lang() === 'ru'
+      ?
+      '✅ Спасибо! Точка отправлена на модерацию.'
+      :
+      lang() === 'en'
+      ?
+      '✅ Thank you! The point was sent for moderation.'
+      :
+      '✅ Təşəkkür edirik! Nöqtə moderasiyaya göndərildi.';
+
+
+    feedMessage.className =
+      'form-message success';
+
+
+    feedForm.reset();
+
+    feedPreview.style.display =
+      'none';
+
+  }
+
+  catch(error){
+
+    console.error(
+      'Feed point error:',
+      error
+    );
+
+
+    feedMessage.textContent =
+      lang() === 'ru'
+      ?
+      'Ошибка. Попробуйте ещё раз.'
+      :
+      lang() === 'en'
+      ?
+      'Something went wrong. Please try again.'
+      :
+      'Xəta baş verdi. Yenidən cəhd edin.';
+
+
+    feedMessage.className =
+      'form-message error';
+
+  }
+
+  finally{
+
+    feedSubmit.disabled =
+      false;
+
+  }
+
+}
+);
+
+
+function feedTypeLabel(type){
+
+  const labels = {
+
+    food:{
+      az:'Yem nöqtəsi',
+      ru:'Точка кормления',
+      en:'Food point'
+    },
+
+    water:{
+      az:'Su nöqtəsi',
+      ru:'Точка с водой',
+      en:'Water point'
+    },
+
+    colony:{
+      az:'Pişik koloniyası',
+      ru:'Колония котов',
+      en:'Cat colony'
+    }
+
+  };
+
+  return labels[type]?.[lang()]
+    ||
+    labels[type]?.az
+    ||
+    type;
+
+}
+
+
+function feedTypeIcon(type){
+
+  return {
+
+    food:'🥣',
+    water:'💧',
+    colony:'🐈'
+
+  }[type] || '📍';
+
+}
+
+
+function feedStatusLabel(status){
+
+  const labels = {
+
+    active:{
+      az:'Aktiv',
+      ru:'Активна',
+      en:'Active'
+    },
+
+    needs_refill:{
+      az:'Yem / su lazımdır',
+      ru:'Нужно пополнить',
+      en:'Needs refill'
+    },
+
+    inactive:{
+      az:'Aktiv deyil',
+      ru:'Неактивна',
+      en:'Inactive'
+    }
+
+  };
+
+  return labels[status]?.[lang()]
+    ||
+    labels[status]?.az
+    ||
+    status;
+
+}
+
+
+function feedStatusClass(status){
+
+  if(status === 'needs_refill'){
+    return 'status-badge--high';
+  }
+
+  if(status === 'inactive'){
+    return 'status-badge--normal';
+  }
+
+  return 'status-badge--resolved';
+
+}
+
+
+async function loadFeedPoints(){
+
+  const grid =
+    document.getElementById('feedGrid');
+
+  const count =
+    document.getElementById('feedCount');
+
+
+  const result =
+    await db
+      .from('feed_points')
+      .select('*')
+      .eq('approved',true)
+      .order(
+        'created_at',
+        {
+          ascending:false
+        }
+      );
+
+
+  if(result.error){
+
+    console.error(
+      'Feed points load error:',
+      result.error
+    );
+
+    return;
+
+  }
+
+
+  const rows =
+    result.data || [];
+
+
+  count.textContent =
+    rows.length;
+
+
+  if(!rows.length){
+
+    grid.innerHTML =
+      `
+      <div class="data-empty">
+
+        <div class="data-empty__icon">
+        🥣
+        </div>
+
+        ${
+          lang() === 'ru'
+          ?
+          'Пока нет добавленных точек.'
+          :
+          lang() === 'en'
+          ?
+          'No points added yet.'
+          :
+          'Hələ nöqtə əlavə edilməyib.'
+        }
+
+      </div>
+      `;
+
+    return;
+
+  }
+
+
+  grid.innerHTML =
+    rows
+      .map(
+        item => {
+
+
+          const phone =
+            safePhone(
+              item.contact_phone
+            );
+
+
+          return `
+          <article class="card">
+
+            <div class="card__photo">
+
+              <img
+                src="${esc(safePhoto(item.photo_url))}"
+                alt="${esc(item.title || feedTypeLabel(item.point_type))}"
+              >
+
+            </div>
+
+
+            <div class="card__body">
+
+
+              <div class="status-badge ${feedStatusClass(item.status)}">
+
+                ${feedTypeIcon(item.point_type)}
+
+                ${esc(feedTypeLabel(item.point_type))}
+
+              </div>
+
+
+              <div class="status-badge ${feedStatusClass(item.status)}">
+
+                ${
+                  item.status === 'active'
+                  ?
+                  '✅'
+                  :
+                  item.status === 'needs_refill'
+                  ?
+                  '⚠️'
+                  :
+                  '⏸️'
+                }
+
+                ${esc(feedStatusLabel(item.status))}
+
+              </div>
+
+
+              <div class="card__name">
+
+                ${
+                  esc(
+                    item.title
+                    ||
+                    feedTypeLabel(item.point_type)
+                  )
+                }
+
+              </div>
+
+
+              <div class="data-meta">
+
+                <span>
+                📍 ${esc(item.area || 'Baku')}
+                </span>
+
+              </div>
+
+
+              ${
+                item.description
+                ?
+                `
+                <p class="data-description">
+                ${esc(item.description)}
+                </p>
+                `
+                :
+                ''
+              }
+
+
+              ${
+                item.last_confirmed_at
+                ?
+                `
+                <div
+                  style="
+                    margin-top:10px;
+                    font-size:12px;
+                    opacity:.65;
+                  "
+                >
+                ✅ ${
+                  lang() === 'ru'
+                  ?
+                  'Подтверждено'
+                  :
+                  lang() === 'en'
+                  ?
+                  'Confirmed'
+                  :
+                  'Təsdiqlənib'
+                }:
+                ${new Date(item.last_confirmed_at).toLocaleDateString()}
+                </div>
+                `
+                :
+                ''
+              }
+
+
+              ${
+                phone
+                ?
+                `
+                <a
+                  class="data-contact data-contact--caspian"
+                  href="tel:${phone}"
+                >
+                📞 ${
+                  lang() === 'ru'
+                  ?
+                  'Связаться'
+                  :
+                  lang() === 'en'
+                  ?
+                  'Contact'
+                  :
+                  'Əlaqə saxla'
+                }
+                </a>
+                `
+                :
+                ''
+              }
+
+            </div>
+
+          </article>
+          `;
+
+        }
+      )
+      .join('');
+
+}
+
+
+/* =====================================================
    INITIAL LOAD
 ===================================================== */
 
@@ -4682,6 +5608,8 @@ loadHelpRequests();
 loadLostFound();
 
 loadVets();
+
+loadFeedPoints();
 
 
 document
@@ -4705,6 +5633,8 @@ document
             loadLostFound();
 
             loadVets();
+
+            loadFeedPoints();
 
           },
           100
