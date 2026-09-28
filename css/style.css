@@ -2865,3 +2865,50 @@ img,svg,video,canvas{max-width:100%;}
   .rank img,.rank .ph{width:48px!important;height:48px!important;}
   .rank .rank__name{font-size:20px!important;}
 }
+
+/* =========================================================
+   V3.9 FIX — restore red Adoption section after V3.8 override
+========================================================= */
+body.baku-v3 #adoption{
+  position:relative!important;
+  color:#fff!important;
+  background:
+    radial-gradient(circle at 12% 45%,rgba(255,255,255,.055) 0 2px,transparent 3px) 0 0/44px 44px,
+    linear-gradient(135deg,#a9151d 0%,#c32027 55%,#8f1118 100%)!important;
+}
+
+body.baku-v3 #adoption .eyebrow{
+  color:#f7d7b1!important;
+}
+
+body.baku-v3 #adoption .h2,
+body.baku-v3 #adoption .feature-head .h2,
+body.baku-v3 #adoption .data-list .h2{
+  color:#fff!important;
+}
+
+body.baku-v3 #adoption .sub,
+body.baku-v3 #adoption .count{
+  color:#fff4ea!important;
+}
+
+body.baku-v3 #adoption .data-list{
+  border-top-color:rgba(255,255,255,.24)!important;
+}
+
+body.baku-v3 #adoption .data-empty{
+  background:rgba(255,255,255,.10)!important;
+  color:#fff!important;
+  border-color:rgba(255,255,255,.28)!important;
+  box-shadow:none!important;
+}
+
+body.baku-v3 #adoption .data-empty__icon{
+  color:#fff!important;
+  opacity:1!important;
+}
+
+body.baku-v3 #adoption .big-action-btn{
+  color:#fff!important;
+  border-color:rgba(255,255,255,.72)!important;
+}
