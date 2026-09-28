@@ -16,7 +16,7 @@ CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku
 
 <meta
   name="description"
-  content="CatsBaku — cats, adoption, lost & found, veterinary clinics and stories from Baku."
+  content="CatsBaku — cats, adoption, lost & found, veterinary clinics and help requests in Baku."
 >
 
 <meta name="theme-color" content="#F5EBDD">
@@ -27,11 +27,7 @@ CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku
 <meta property="og:url" content="https://catsbaku.com/">
 <meta property="og:image" content="https://catsbaku.com/img/og-cover.jpg">
 
-<link
-  rel="icon"
-  href="img/favicon.svg"
-  type="image/svg+xml"
->
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -83,11 +79,6 @@ body{
   letter-spacing:.16em;
 }
 
-
-/* =========================
-   TOP
-========================= */
-
 .topbar{
   background:rgba(248,242,232,.95);
   backdrop-filter:blur(16px);
@@ -102,11 +93,6 @@ body{
   color:var(--pom);
 }
 
-
-/* =========================
-   HERO
-========================= */
-
 .hero{
   position:relative;
   overflow:hidden;
@@ -120,7 +106,6 @@ body{
   inset:0;
   z-index:2;
   pointer-events:none;
-
   background:
     linear-gradient(
       180deg,
@@ -134,15 +119,11 @@ body{
   content:"";
   position:absolute;
   z-index:2;
-
   width:650px;
   height:650px;
-
   right:-300px;
   bottom:-370px;
-
   border-radius:50%;
-
   background:
     radial-gradient(
       circle,
@@ -160,14 +141,10 @@ body{
 
 .hero__body::before{
   content:"";
-
   display:block;
-
   width:65px;
   height:65px;
-
   margin-bottom:10px;
-
   background:
     url("img/buta-shine.svg")
     center / contain
@@ -180,14 +157,8 @@ body{
   font-style:italic;
 }
 
-
-/* =========================
-   CARPET
-========================= */
-
 .carpet{
   height:23px;
-
   background:
     linear-gradient(
       rgba(143,48,64,.10),
@@ -195,20 +166,13 @@ body{
     ),
     url("img/carpet.jpg")
     center / 360px auto;
-
   border-top:3px solid var(--gold);
   border-bottom:3px solid var(--pom);
 }
 
-
-/* =========================
-   BAKU INTRO
-========================= */
-
 .baku-intro{
   text-align:center;
   padding:30px 20px;
-
   background:
     linear-gradient(
       90deg,
@@ -227,7 +191,6 @@ body{
 
 .baku-intro__title{
   margin-top:7px;
-
   font-family:"Cormorant Garamond",serif;
   font-size:clamp(27px,4vw,42px);
   font-weight:700;
@@ -239,34 +202,25 @@ body{
   font-size:13px;
 }
 
-
-/* =========================
-   PHOTOS
-========================= */
-
 #grid .card__photo,
 #adoptionGrid .card__photo,
-#lostFoundGrid .card__photo{
+#lostFoundGrid .card__photo,
+#helpGrid .card__photo{
   overflow:hidden;
 }
 
 #grid .card__photo img,
 #adoptionGrid .card__photo img,
-#lostFoundGrid .card__photo img{
+#lostFoundGrid .card__photo img,
+#helpGrid .card__photo img{
   width:100%;
   height:100%;
-  object-fit:cover;
   display:block;
+  object-fit:cover;
 }
-
-
-/* =========================
-   EXPLORE
-========================= */
 
 .explore{
   padding:75px 0;
-
   background:
     linear-gradient(
       180deg,
@@ -289,39 +243,28 @@ body{
 
 .explore-card{
   display:block;
-
   padding:27px;
-
   color:inherit;
   text-decoration:none;
-
   border:1px solid rgba(128,93,54,.13);
   border-radius:35px 35px 22px 22px;
-
   background:
     linear-gradient(
       145deg,
       #fff,
       #f8f0e2
     );
-
-  box-shadow:
-    0 14px 36px
-    rgba(70,52,31,.075);
+  box-shadow:0 14px 36px rgba(70,52,31,.075);
 }
 
 .explore-card__icon{
   width:60px;
   height:60px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   margin-bottom:18px;
-
   border-radius:19px;
-
   background:#f3dfbf;
   font-size:30px;
 }
@@ -338,11 +281,6 @@ body{
   opacity:.72;
   font-size:14px;
 }
-
-
-/* =========================
-   FEATURES
-========================= */
 
 .feature-section{
   position:relative;
@@ -364,22 +302,16 @@ body{
 
 .feature-box{
   padding:26px;
-
   color:#222;
-
   border:1px solid rgba(128,93,54,.12);
   border-radius:28px 28px 20px 20px;
-
   background:
     linear-gradient(
       145deg,
       #fff,
       #faf3e8
     );
-
-  box-shadow:
-    0 13px 34px
-    rgba(70,52,31,.07);
+  box-shadow:0 13px 34px rgba(70,52,31,.07);
 }
 
 .feature-box__emoji{
@@ -389,7 +321,6 @@ body{
 
 .feature-box h3{
   margin:0 0 8px;
-
   font-family:"Cormorant Garamond",serif;
   font-size:29px;
 }
@@ -398,11 +329,6 @@ body{
   line-height:1.65;
   opacity:.72;
 }
-
-
-/* =========================
-   ACTIONS
-========================= */
 
 .action-row{
   display:flex;
@@ -415,46 +341,33 @@ body{
   display:inline-flex;
   align-items:center;
   gap:9px;
-
   padding:15px 22px;
-
   border:0;
   border-radius:999px;
-
   background:var(--pom);
   color:#fff;
-
   font:inherit;
   font-weight:800;
-
   cursor:pointer;
+  box-shadow:0 10px 30px rgba(143,48,64,.22);
 }
 
 .big-action-btn--caspian{
   background:var(--caspian);
+  box-shadow:0 10px 30px rgba(39,107,120,.22);
 }
-
-
-/* =========================
-   DATA LISTS
-========================= */
 
 .data-list{
   margin-top:55px;
   padding-top:45px;
-
-  border-top:
-    1px solid
-    rgba(128,93,54,.14);
+  border-top:1px solid rgba(128,93,54,.14);
 }
 
 .data-meta{
   display:flex;
   flex-wrap:wrap;
   gap:7px 13px;
-
   margin-top:8px;
-
   color:#75695d;
   font-size:13px;
 }
@@ -468,19 +381,13 @@ body{
   display:inline-flex;
   align-items:center;
   gap:7px;
-
   margin-top:14px;
-
   padding:10px 16px;
-
   border-radius:999px;
-
   background:var(--pom);
   color:#fff;
-
   font-size:13px;
   font-weight:800;
-
   text-decoration:none;
 }
 
@@ -490,17 +397,10 @@ body{
 
 .data-empty{
   grid-column:1/-1;
-
   padding:42px;
-
   text-align:center;
-
-  border:
-    1px dashed
-    rgba(198,154,77,.45);
-
+  border:1px dashed rgba(198,154,77,.45);
   border-radius:24px;
-
   background:#fffaf2;
 }
 
@@ -509,22 +409,13 @@ body{
   font-size:45px;
 }
 
-
-/* =========================
-   STATUS
-========================= */
-
 .status-badge{
   display:inline-flex;
   align-items:center;
   gap:6px;
-
   margin-bottom:10px;
-
   padding:7px 10px;
-
   border-radius:999px;
-
   font-size:10px;
   font-weight:800;
   letter-spacing:.06em;
@@ -546,10 +437,69 @@ body{
   color:#28643d;
 }
 
+.status-badge--normal{
+  background:#ece8df;
+  color:#6e6356;
+}
 
-/* =========================
-   VETS
-========================= */
+.status-badge--high{
+  background:#f4e4c9;
+  color:#8b5a16;
+}
+
+.status-badge--critical{
+  background:#f6dddd;
+  color:#a22d38;
+}
+
+.status-badge--progress{
+  background:#dfeaec;
+  color:#245e67;
+}
+
+.status-badge--resolved{
+  background:#e2f0e4;
+  color:#2d6b3e;
+}
+
+#help{
+  background:
+    linear-gradient(
+      #f1e2cd,
+      #faf6ef
+    );
+}
+
+.help-types{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.help-type-card{
+  padding:24px;
+  border:1px solid rgba(143,48,64,.12);
+  border-radius:26px;
+  background:#fffaf3;
+}
+
+.help-type-card__icon{
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+.help-type-card h3{
+  margin:0 0 6px;
+  font-family:"Cormorant Garamond",serif;
+  font-size:27px;
+}
+
+.help-type-card p{
+  margin:0;
+  opacity:.7;
+  line-height:1.6;
+  font-size:14px;
+}
 
 #vets{
   background:
@@ -569,19 +519,10 @@ body{
 
 .vet-card{
   padding:25px;
-
-  border:
-    1px solid
-    rgba(39,107,120,.14);
-
-  border-radius:
-    28px 28px 20px 20px;
-
+  border:1px solid rgba(39,107,120,.14);
+  border-radius:28px 28px 20px 20px;
   background:#fff;
-
-  box-shadow:
-    0 13px 34px
-    rgba(39,107,120,.08);
+  box-shadow:0 13px 34px rgba(39,107,120,.08);
 }
 
 .vet-card__icon{
@@ -600,9 +541,7 @@ body{
   display:flex;
   flex-direction:column;
   gap:8px;
-
   margin-top:15px;
-
   color:#665e55;
   font-size:13px;
   line-height:1.5;
@@ -612,7 +551,6 @@ body{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
-
   margin-top:16px;
 }
 
@@ -620,16 +558,11 @@ body{
   display:inline-flex;
   align-items:center;
   gap:6px;
-
   padding:9px 13px;
-
   border-radius:999px;
-
   background:var(--caspian);
   color:#fff;
-
   text-decoration:none;
-
   font-size:12px;
   font-weight:800;
 }
@@ -639,24 +572,14 @@ body{
   color:var(--caspian-dark);
 }
 
-
-/* =========================
-   MODALS
-========================= */
-
 .form-modal{
   width:min(680px,calc(100% - 24px));
   max-height:90vh;
-
   padding:0;
-
   border:0;
   border-radius:28px;
-
   overflow:auto;
-
   background:#fffaf2;
-
   box-shadow:0 30px 100px rgba(0,0,0,.30);
 }
 
@@ -674,13 +597,11 @@ body{
   justify-content:space-between;
   gap:20px;
   align-items:flex-start;
-
   margin-bottom:25px;
 }
 
 .form-modal__head h2{
   margin:3px 0 0;
-
   font-family:"Cormorant Garamond",serif;
   font-size:38px;
 }
@@ -688,12 +609,9 @@ body{
 .form-close{
   width:42px;
   height:42px;
-
   border:0;
   border-radius:50%;
-
   background:#eee5d7;
-
   font-size:25px;
   cursor:pointer;
 }
@@ -725,15 +643,11 @@ body{
 .form-field textarea{
   width:100%;
   box-sizing:border-box;
-
   padding:13px 14px;
-
   border:1px solid #d9cbb8;
   border-radius:14px;
-
   background:#fff;
   color:#222;
-
   font:inherit;
 }
 
@@ -744,10 +658,8 @@ body{
 
 .photo-box{
   padding:20px;
-
   border:1px dashed var(--gold);
   border-radius:18px;
-
   background:#f7ecdc;
 }
 
@@ -759,31 +671,22 @@ body{
 
 .photo-preview{
   display:none;
-
   width:100%;
   max-height:330px;
-
   margin-top:15px;
-
   object-fit:cover;
-
   border-radius:18px;
 }
 
 .form-submit{
   grid-column:1/-1;
-
   padding:16px 22px;
-
   border:0;
   border-radius:999px;
-
   background:var(--pom);
   color:#fff;
-
   font:inherit;
   font-weight:800;
-
   cursor:pointer;
 }
 
@@ -794,9 +697,7 @@ body{
 .form-message{
   grid-column:1/-1;
   display:none;
-
   padding:14px 16px;
-
   border-radius:15px;
   line-height:1.55;
 }
@@ -811,19 +712,6 @@ body{
   display:block;
   background:#f8e6e6;
   color:#8d2d37;
-}
-
-
-/* =========================
-   OTHER
-========================= */
-
-#help{
-  background:
-    linear-gradient(
-      #f1e2cd,
-      #faf6ef
-    );
 }
 
 #feed{
@@ -843,7 +731,6 @@ body{
   content:"";
   position:absolute;
   inset:0;
-
   background:
     linear-gradient(
       rgba(22,24,22,.87),
@@ -863,36 +750,20 @@ body{
   background:rgba(255,250,242,.95);
 }
 
-
-/* =========================
-   MAP
-========================= */
-
 .map-box{
   border:5px solid #fff;
   border-radius:28px;
-
-  box-shadow:
-    0 18px 48px
-    rgba(57,49,37,.13);
+  box-shadow:0 18px 48px rgba(57,49,37,.13);
 }
 
 .map{
   border-radius:22px;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
 .footer{
   position:relative;
-
   padding-top:65px;
-
   color:#d9cdb9;
-
   background:
     linear-gradient(
       #20201d,
@@ -902,15 +773,11 @@ body{
 
 .footer::before{
   content:"";
-
   position:absolute;
-
   left:0;
   right:0;
   top:0;
-
   height:11px;
-
   background:
     repeating-linear-gradient(
       45deg,
@@ -923,52 +790,32 @@ body{
 
 .footer-baku{
   margin-top:14px;
-
   color:#bea878;
-
   font-size:10px;
   font-weight:700;
   letter-spacing:.22em;
 }
 
-
-/* =========================
-   MUSIC
-========================= */
-
 #musicToggle{
   position:fixed;
-
   right:18px;
   bottom:86px;
-
   width:58px;
   height:58px;
-
   border:2px solid var(--gold);
   border-radius:50%;
-
   background:#fffaf0;
-
   font-size:28px;
   cursor:pointer;
-
   z-index:10000;
-
-  box-shadow:
-    0 8px 24px
-    rgba(0,0,0,.22);
+  box-shadow:0 8px 24px rgba(0,0,0,.22);
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media(max-width:900px){
 
   .explore__grid,
   .feature-grid,
+  .help-types,
   .vet-grid{
     grid-template-columns:repeat(2,1fr);
   }
@@ -979,6 +826,7 @@ body{
 
   .explore__grid,
   .feature-grid,
+  .help-types,
   .vet-grid{
     grid-template-columns:1fr;
   }
@@ -1071,17 +919,9 @@ Mağaza
 
 <div class="langs">
 
-<button type="button" data-lang="az">
-AZ
-</button>
-
-<button type="button" data-lang="ru">
-RU
-</button>
-
-<button type="button" data-lang="en">
-EN
-</button>
+<button type="button" data-lang="az">AZ</button>
+<button type="button" data-lang="ru">RU</button>
+<button type="button" data-lang="en">EN</button>
 
 </div>
 
@@ -1092,8 +932,6 @@ EN
 
 <main>
 
-
-<!-- HERO -->
 
 <section class="hero" id="top">
 
@@ -1184,8 +1022,6 @@ CATS OF BAKU
 ></nav>
 
 
-<!-- CATS -->
-
 <section class="section" id="cats">
 
 <div class="wrap">
@@ -1207,128 +1043,65 @@ Bakı pişikləri
 
 </div>
 
-<span
-  class="count"
-  id="catsCount"
->
+<span class="count" id="catsCount">
 5 pişik
 </span>
 
 </div>
 
-<div
-  class="chips"
-  id="filters"
-></div>
+<div class="chips" id="filters"></div>
 
 
-<div
-  class="grid"
-  id="grid"
->
+<div class="grid" id="grid">
 
 <article class="card">
-
 <div class="card__photo">
 <img src="img/hero-cat.jpg" alt="Rijik">
 </div>
-
 <div class="card__body">
-
-<div class="card__name">
-Rijik
+<div class="card__name">Rijik</div>
+<div class="card__district">📍 Bakı</div>
 </div>
-
-<div class="card__district">
-📍 Bakı
-</div>
-
-</div>
-
 </article>
 
-
 <article class="card">
-
 <div class="card__photo">
 <img src="img/rijik-01.jpg" alt="Sultan">
 </div>
-
 <div class="card__body">
-
-<div class="card__name">
-Sultan
+<div class="card__name">Sultan</div>
+<div class="card__district">📍 İçərişəhər</div>
 </div>
-
-<div class="card__district">
-📍 İçərişəhər
-</div>
-
-</div>
-
 </article>
 
-
 <article class="card">
-
 <div class="card__photo">
 <img src="img/rijik-02.jpg" alt="Sunny">
 </div>
-
 <div class="card__body">
-
-<div class="card__name">
-Sunny
+<div class="card__name">Sunny</div>
+<div class="card__district">📍 Bulvar</div>
 </div>
-
-<div class="card__district">
-📍 Bulvar
-</div>
-
-</div>
-
 </article>
 
-
 <article class="card">
-
 <div class="card__photo">
 <img src="img/rijik-03.jpg" alt="Mango">
 </div>
-
 <div class="card__body">
-
-<div class="card__name">
-Mango
+<div class="card__name">Mango</div>
+<div class="card__district">📍 Yasamal</div>
 </div>
-
-<div class="card__district">
-📍 Yasamal
-</div>
-
-</div>
-
 </article>
 
-
 <article class="card">
-
 <div class="card__photo">
 <img src="img/rijik-04.jpg" alt="Bala">
 </div>
-
 <div class="card__body">
-
-<div class="card__name">
-Bala
+<div class="card__name">Bala</div>
+<div class="card__district">📍 Nərimanov</div>
 </div>
-
-<div class="card__district">
-📍 Nərimanov
-</div>
-
-</div>
-
 </article>
 
 </div>
@@ -1338,32 +1111,21 @@ Bala
 </section>
 
 
-<!-- EXPLORE -->
-
 <section class="explore">
 
 <div class="wrap">
 
 <div class="explore__head">
 
-<div
-  class="eyebrow"
-  data-i18n="explore.eyebrow"
->
+<div class="eyebrow" data-i18n="explore.eyebrow">
 CATSBAKU İCMASI
 </div>
 
-<h2
-  class="h2"
-  data-i18n="explore.title"
->
+<h2 class="h2" data-i18n="explore.title">
 CatsBaku-nu kəşf et
 </h2>
 
-<p
-  class="sub"
-  data-i18n="explore.sub"
->
+<p class="sub" data-i18n="explore.sub">
 CatsBaku sadəcə pişik qalereyası deyil.
 </p>
 
@@ -1418,35 +1180,21 @@ CatsBaku sadəcə pişik qalereyası deyil.
 <div class="carpet"></div>
 
 
-<!-- ADOPTION -->
-
-<section
-  class="feature-section"
-  id="adoption"
->
+<section class="feature-section" id="adoption">
 
 <div class="wrap">
 
 <div class="feature-head">
 
-<div
-  class="eyebrow"
-  data-i18n="adoption.eyebrow"
->
+<div class="eyebrow" data-i18n="adoption.eyebrow">
 SAHİBLƏNDİR
 </div>
 
-<h2
-  class="h2"
-  data-i18n="adoption.title"
->
+<h2 class="h2" data-i18n="adoption.title">
 Ev axtaran pişiklər
 </h2>
 
-<p
-  class="sub"
-  data-i18n="adoption.sub"
->
+<p class="sub" data-i18n="adoption.sub">
 Bakı pişiyinin ailə tapmasına kömək edin.
 </p>
 
@@ -1457,13 +1205,10 @@ Bakı pişiyinin ailə tapmasına kömək edin.
   type="button"
   id="openAdoptionForm"
 >
-
 🐱
-
 <span data-i18n="adoption.add">
 Pişik yerləşdir
 </span>
-
 </button>
 
 </div>
@@ -1481,27 +1226,18 @@ Pişik yerləşdir
 CATSBAKU
 </div>
 
-<h2
-  class="h2"
-  data-i18n="adoption.availableTitle"
->
+<h2 class="h2" data-i18n="adoption.availableTitle">
 Ev axtaran pişiklər
 </h2>
 
 </div>
 
-<span
-  class="count"
-  id="adoptionCount"
-></span>
+<span class="count" id="adoptionCount"></span>
 
 </div>
 
 
-<div
-  class="grid"
-  id="adoptionGrid"
->
+<div class="grid" id="adoptionGrid">
 
 <div class="data-empty">
 <div class="data-empty__icon">🐾</div>
@@ -1519,50 +1255,117 @@ Elanlar yüklənir...
 
 <!-- HELP -->
 
-<section
-  class="feature-section"
-  id="help"
->
+<section class="feature-section" id="help">
 
 <div class="wrap">
 
 <div class="feature-head">
 
-<div
-  class="eyebrow"
-  data-i18n="help.eyebrow"
->
+<div class="eyebrow" data-i18n="help.eyebrow">
 KÖMƏK
 </div>
 
-<h2
-  class="h2"
-  data-i18n="help.title"
->
+<h2 class="h2" data-i18n="help.title">
 Köməyə ehtiyacı olan pişiklər
+</h2>
+
+<p class="sub" data-i18n="help.sub">
+Müalicə, yemək, müvəqqəti ev və digər yardım.
+</p>
+
+
+<div class="action-row">
+
+<button
+  class="big-action-btn"
+  type="button"
+  id="openHelpForm"
+>
+❤️
+<span data-i18n="help.add">
+Pişiyə kömək lazımdır
+</span>
+</button>
+
+</div>
+
+</div>
+
+
+<div class="help-types">
+
+<div class="help-type-card">
+<div class="help-type-card__icon">🏥</div>
+<h3 data-i18n="help.medical">Tibbi yardım</h3>
+<p data-i18n="help.medicalText">Müalicə, əməliyyat və dərmanlar.</p>
+</div>
+
+<div class="help-type-card">
+<div class="help-type-card__icon">🥣</div>
+<h3 data-i18n="help.food">Yemək</h3>
+<p data-i18n="help.foodText">Yemək və su dəstəyi.</p>
+</div>
+
+<div class="help-type-card">
+<div class="help-type-card__icon">🏠</div>
+<h3 data-i18n="help.foster">Müvəqqəti ev</h3>
+<p data-i18n="help.fosterText">Pişik üçün təhlükəsiz müvəqqəti ev.</p>
+</div>
+
+<div class="help-type-card">
+<div class="help-type-card__icon">🚗</div>
+<h3 data-i18n="help.transport">Nəqliyyat</h3>
+<p data-i18n="help.transportText">Klinikaya və ya evə çatdırılma.</p>
+</div>
+
+<div class="help-type-card">
+<div class="help-type-card__icon">✂️</div>
+<h3 data-i18n="help.sterilization">Sterilizasiya</h3>
+<p data-i18n="help.sterilizationText">Sterilizasiya və kastrasiya üçün yardım.</p>
+</div>
+
+<div class="help-type-card">
+<div class="help-type-card__icon">🆘</div>
+<h3 data-i18n="help.urgent">Təcili yardım</h3>
+<p data-i18n="help.urgentText">Təcili müdaxilə tələb edən hallar.</p>
+</div>
+
+</div>
+
+
+<div class="data-list">
+
+<div class="head">
+
+<div>
+
+<div class="eyebrow">
+HELP REQUESTS
+</div>
+
+<h2 class="h2" data-i18n="help.activeTitle">
+Aktiv yardım elanları
 </h2>
 
 </div>
 
+<span class="count" id="helpCount"></span>
 
-<div class="feature-grid">
-
-<div class="feature-box">
-<div class="feature-box__emoji">🏥</div>
-<h3 data-i18n="help.medical">Tibbi yardım</h3>
-<p data-i18n="help.medicalText">Müalicəyə ehtiyacı olan pişiklər.</p>
 </div>
 
-<div class="feature-box">
-<div class="feature-box__emoji">🥣</div>
-<h3 data-i18n="help.food">Yemək</h3>
-<p data-i18n="help.foodText">Küçə pişiklərinə yem dəstəyi.</p>
+
+<div class="grid" id="helpGrid">
+
+<div class="data-empty">
+
+<div class="data-empty__icon">
+❤️
 </div>
 
-<div class="feature-box">
-<div class="feature-box__emoji">🏠</div>
-<h3 data-i18n="help.foster">Müvəqqəti ev</h3>
-<p data-i18n="help.fosterText">Müvəqqəti təhlükəsiz ev.</p>
+Elanlar yüklənir...
+
+</div>
+
 </div>
 
 </div>
@@ -1574,33 +1377,21 @@ Köməyə ehtiyacı olan pişiklər
 
 <!-- LOST FOUND -->
 
-<section
-  class="feature-section"
-  id="lost"
->
+<section class="feature-section" id="lost">
 
 <div class="wrap">
 
 <div class="feature-head">
 
-<div
-  class="eyebrow"
-  data-i18n="lost.eyebrow"
->
+<div class="eyebrow" data-i18n="lost.eyebrow">
 İTMİŞ VƏ TAPILMIŞ
 </div>
 
-<h2
-  class="h2"
-  data-i18n="lost.title"
->
+<h2 class="h2" data-i18n="lost.title">
 Pişik itirmisiniz və ya tapmısınız?
 </h2>
 
-<p
-  class="sub"
-  data-i18n="lost.sub"
->
+<p class="sub" data-i18n="lost.sub">
 Bakıda itmiş və tapılmış pişik elanları.
 </p>
 
@@ -1645,31 +1436,27 @@ Pişik tapmışam
 LOST & FOUND
 </div>
 
-<h2
-  class="h2"
-  data-i18n="lost.activeTitle"
->
+<h2 class="h2" data-i18n="lost.activeTitle">
 Aktiv elanlar
 </h2>
 
 </div>
 
-<span
-  class="count"
-  id="lostFoundCount"
-></span>
+<span class="count" id="lostFoundCount"></span>
 
 </div>
 
 
-<div
-  class="grid"
-  id="lostFoundGrid"
->
+<div class="grid" id="lostFoundGrid">
 
 <div class="data-empty">
-<div class="data-empty__icon">🔎</div>
+
+<div class="data-empty__icon">
+🔎
+</div>
+
 Elanlar yüklənir...
+
 </div>
 
 </div>
@@ -1680,8 +1467,6 @@ Elanlar yüklənir...
 
 </section>
 
-
-<!-- MONTH -->
 
 <section class="section" id="month">
 
@@ -1689,29 +1474,17 @@ Elanlar yüklənir...
 
 <div class="month">
 
-<div
-  class="eyebrow"
-  data-i18n="month.eyebrow"
->
+<div class="eyebrow" data-i18n="month.eyebrow">
 Ayın pişiyi
 </div>
 
-<h2
-  class="h2"
-  data-i18n="month.title"
->
+<h2 class="h2" data-i18n="month.title">
 Ürəklə səs ver
 </h2>
 
-<p
-  class="sub"
-  data-i18n="month.sub"
-></p>
+<p class="sub" data-i18n="month.sub"></p>
 
-<div
-  class="podium"
-  id="podium"
-></div>
+<div class="podium" id="podium"></div>
 
 </div>
 
@@ -1719,8 +1492,6 @@ Ayın pişiyi
 
 </section>
 
-
-<!-- MAP -->
 
 <section class="section" id="map">
 
@@ -1734,17 +1505,11 @@ Ayın pişiyi
 BAKU CAT MAP
 </div>
 
-<h2
-  class="h2"
-  data-i18n="map.title"
->
+<h2 class="h2" data-i18n="map.title">
 Yanınızdakı pişiklər
 </h2>
 
-<p
-  class="sub"
-  data-i18n="map.sub"
-></p>
+<p class="sub" data-i18n="map.sub"></p>
 
 </div>
 
@@ -1753,16 +1518,9 @@ Yanınızdakı pişiklər
 
 <div class="map-box">
 
-<div
-  class="map"
-  id="catMap"
-></div>
+<div class="map" id="catMap"></div>
 
-<button
-  class="btn"
-  id="locate"
-  type="button"
->
+<button class="btn" id="locate" type="button">
 📍
 <span data-i18n="map.locate">
 Mənim yerim
@@ -1776,36 +1534,22 @@ Mənim yerim
 </section>
 
 
-<!-- VETS -->
-
-<section
-  class="feature-section"
-  id="vets"
->
+<section class="feature-section" id="vets">
 
 <div class="wrap">
 
 <div class="feature-head">
 
-<div
-  class="eyebrow"
-  data-i18n="vets.eyebrow"
->
+<div class="eyebrow" data-i18n="vets.eyebrow">
 BAYTAR XƏRİTƏSİ
 </div>
 
-<h2
-  class="h2"
-  data-i18n="vets.title"
->
+<h2 class="h2" data-i18n="vets.title">
 Bakıda baytar xidməti
 </h2>
 
-<p
-  class="sub"
-  data-i18n="vets.sub"
->
-Bakıda yoxlanılmış baytar klinikaları.
+<p class="sub" data-i18n="vets.sub">
+Bakıda baytar klinikaları.
 </p>
 
 </div>
@@ -1830,33 +1574,21 @@ Klinikalar yüklənir...
 </section>
 
 
-<!-- FEED -->
-
-<section
-  class="feature-section"
-  id="feed"
->
+<section class="feature-section" id="feed">
 
 <div class="wrap">
 
 <div class="feature-head">
 
-<div
-  class="eyebrow"
-  data-i18n="feed.eyebrow"
->
+<div class="eyebrow" data-i18n="feed.eyebrow">
 YEMLƏMƏ NÖQTƏLƏRİ
 </div>
 
-<h2
-  class="h2"
-  data-i18n="feed.title"
->
+<h2 class="h2" data-i18n="feed.title">
 Bakı pişikləri üçün yem və su
 </h2>
 
 </div>
-
 
 <div class="feature-grid">
 
@@ -1882,33 +1614,21 @@ Bakı pişikləri üçün yem və su
 </section>
 
 
-<!-- STORIES -->
-
-<section
-  class="feature-section"
-  id="catstories"
->
+<section class="feature-section" id="catstories">
 
 <div class="wrap">
 
 <div class="feature-head">
 
-<div
-  class="eyebrow"
-  data-i18n="stories.eyebrow"
->
+<div class="eyebrow" data-i18n="stories.eyebrow">
 CATSBAKU HEKAYƏLƏRİ
 </div>
 
-<h2
-  class="h2"
-  data-i18n="stories.title"
->
+<h2 class="h2" data-i18n="stories.title">
 Şəhərdən hekayələr
 </h2>
 
 </div>
-
 
 <div class="feature-grid">
 
@@ -1934,38 +1654,21 @@ CATSBAKU HEKAYƏLƏRİ
 </section>
 
 
-<!-- SHOP -->
-
-<section
-  class="section shop"
-  id="shop"
->
+<section class="section shop" id="shop">
 
 <div class="wrap">
 
-<div
-  class="eyebrow"
-  data-i18n="shop.eyebrow"
->
+<div class="eyebrow" data-i18n="shop.eyebrow">
 Tezliklə
 </div>
 
-<h2
-  class="h2"
-  data-i18n="shop.title"
->
+<h2 class="h2" data-i18n="shop.title">
 Sevimli pişiyiniz futbolkada
 </h2>
 
-<p
-  class="sub"
-  data-i18n="shop.sub"
-></p>
+<p class="sub" data-i18n="shop.sub"></p>
 
-<div
-  class="products"
-  id="products"
-></div>
+<div class="products" id="products"></div>
 
 </div>
 
@@ -1977,22 +1680,13 @@ Sevimli pişiyiniz futbolkada
 
 <section class="wrap about">
 
-<img
-  src="img/logo.svg"
-  alt="CatsBaku"
->
+<img src="img/logo.svg" alt="CatsBaku">
 
-<h2
-  class="h2"
-  data-i18n="about.title"
->
+<h2 class="h2" data-i18n="about.title">
 İnsanlar üçün şəhər. Pişiklər üçün şəhər.
 </h2>
 
-<p
-  class="sub"
-  data-i18n="about.text"
-></p>
+<p class="sub" data-i18n="about.text"></p>
 
 </section>
 
@@ -2018,8 +1712,6 @@ BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
 </footer>
 
 
-<!-- MOBILE NAV -->
-
 <nav class="bottomnav">
 
 <ul>
@@ -2044,11 +1736,7 @@ BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
 </li>
 
 <li>
-<button
-  type="button"
-  class="add"
-  data-demo-add
->
+<button type="button" class="add" data-demo-add>
 <span class="plus">
 <svg viewBox="0 0 24 24">
 <path d="M12 5v14M5 12h14"/>
@@ -2059,11 +1747,11 @@ BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
 </li>
 
 <li>
-<a href="#adoption">
+<a href="#help">
 <svg viewBox="0 0 24 24">
 <path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.4 2.9 4.5 6.6 4.5c2.1 0 3.7 1.2 5.4 3.2 1.7-2 3.3-3.2 5.4-3.2 3.7 0 5.7 3.9 4.2 7.2C19.5 16.4 12 21 12 21z"/>
 </svg>
-<span data-i18n="nav.adoption">Sahibləndir</span>
+<span data-i18n="nav.help">Kömək</span>
 </a>
 </li>
 
@@ -2082,12 +1770,7 @@ BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
 </nav>
 
 
-<!-- OLD DEMO -->
-
-<dialog
-  class="sheet"
-  id="demoSheet"
->
+<dialog class="sheet" id="demoSheet">
 
 <div class="sheet__in">
 
@@ -2099,11 +1782,7 @@ BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
 Pişik əlavə et
 </h2>
 
-<button
-  class="sheet__close"
-  type="button"
-  data-close
->
+<button class="sheet__close" type="button" data-close>
 ×
 </button>
 
@@ -2125,11 +1804,7 @@ Tezliklə
 CatsBaku
 </p>
 
-<button
-  class="btn btn--pom"
-  type="button"
-  data-close
->
+<button class="btn btn--pom" type="button" data-close>
 OK
 </button>
 
@@ -2142,12 +1817,9 @@ OK
 </dialog>
 
 
-<!-- ADOPTION DIALOG -->
+<!-- ADOPTION MODAL -->
 
-<dialog
-  class="form-modal"
-  id="adoptionDialog"
->
+<dialog class="form-modal" id="adoptionDialog">
 
 <div class="form-modal__inner">
 
@@ -2176,10 +1848,7 @@ Pişik üçün ailə tap
 </div>
 
 
-<form
-  class="data-form"
-  id="adoptionForm"
->
+<form class="data-form" id="adoptionForm">
 
 <div class="form-field">
 
@@ -2187,12 +1856,7 @@ Pişik üçün ailə tap
 Pişiyin adı
 </label>
 
-<input
-  id="adoptName"
-  type="text"
-  maxlength="80"
-  required
->
+<input id="adoptName" type="text" maxlength="80" required>
 
 </div>
 
@@ -2203,11 +1867,7 @@ Pişiyin adı
 Yaşı
 </label>
 
-<input
-  id="adoptAge"
-  type="text"
-  maxlength="50"
->
+<input id="adoptAge" type="text" maxlength="50">
 
 </div>
 
@@ -2221,18 +1881,9 @@ Cinsi
 <select id="adoptGender">
 
 <option value="">—</option>
-
-<option value="male">
-Male
-</option>
-
-<option value="female">
-Female
-</option>
-
-<option value="unknown">
-Unknown
-</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="unknown">Unknown</option>
 
 </select>
 
@@ -2245,11 +1896,7 @@ Unknown
 Rayon / ərazi
 </label>
 
-<input
-  id="adoptArea"
-  type="text"
-  required
->
+<input id="adoptArea" type="text" required>
 
 </div>
 
@@ -2260,10 +1907,7 @@ Rayon / ərazi
 Pişik haqqında
 </label>
 
-<textarea
-  id="adoptDescription"
-  required
-></textarea>
+<textarea id="adoptDescription" required></textarea>
 
 </div>
 
@@ -2274,10 +1918,7 @@ Pişik haqqında
 Əlaqə üçün ad
 </label>
 
-<input
-  id="adoptContact"
-  type="text"
->
+<input id="adoptContact" type="text">
 
 </div>
 
@@ -2324,10 +1965,7 @@ Telefon / WhatsApp
 </div>
 
 
-<div
-  id="adoptionMessage"
-  class="form-message"
-></div>
+<div id="adoptionMessage" class="form-message"></div>
 
 
 <button
@@ -2346,12 +1984,231 @@ Elanı göndər
 </dialog>
 
 
-<!-- LOST FOUND DIALOG -->
+<!-- HELP MODAL -->
 
-<dialog
-  class="form-modal"
-  id="lostFoundDialog"
+<dialog class="form-modal" id="helpDialog">
+
+<div class="form-modal__inner">
+
+<div class="form-modal__head">
+
+<div>
+
+<div class="eyebrow">
+CATSBAKU · HELP
+</div>
+
+<h2 data-i18n="help.formTitle">
+Pişiyə kömək lazımdır
+</h2>
+
+</div>
+
+<button
+  class="form-close"
+  type="button"
+  id="closeHelpForm"
 >
+×
+</button>
+
+</div>
+
+
+<form class="data-form" id="helpForm">
+
+
+<div class="form-field">
+
+<label data-i18n="help.formType">
+Yardım növü
+</label>
+
+<select id="helpType" required>
+
+<option value="">
+—
+</option>
+
+<option value="medical">
+Medical
+</option>
+
+<option value="food">
+Food
+</option>
+
+<option value="foster">
+Foster
+</option>
+
+<option value="transport">
+Transport
+</option>
+
+<option value="sterilization">
+Sterilization
+</option>
+
+<option value="urgent">
+Urgent
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="help.formUrgency">
+Təcililik
+</label>
+
+<select id="helpUrgency" required>
+
+<option value="normal">
+Normal
+</option>
+
+<option value="high">
+High
+</option>
+
+<option value="critical">
+Critical
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="help.formName">
+Pişiyin adı
+</label>
+
+<input
+  id="helpName"
+  type="text"
+  maxlength="80"
+>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="help.formArea">
+Rayon / ərazi
+</label>
+
+<input
+  id="helpArea"
+  type="text"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label data-i18n="help.formDescription">
+Nə baş verib?
+</label>
+
+<textarea
+  id="helpDescription"
+  required
+></textarea>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="help.formContact">
+Əlaqə üçün ad
+</label>
+
+<input
+  id="helpContact"
+  type="text"
+>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="help.formPhone">
+Telefon / WhatsApp
+</label>
+
+<input
+  id="helpPhone"
+  type="tel"
+  placeholder="+994..."
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<div class="photo-box">
+
+<label data-i18n="help.formPhoto">
+📷 Foto seçin
+</label>
+
+<input
+  id="helpPhoto"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+  required
+>
+
+<img
+  id="helpPreview"
+  class="photo-preview"
+  alt=""
+>
+
+</div>
+
+</div>
+
+
+<div
+  id="helpMessage"
+  class="form-message"
+></div>
+
+
+<button
+  type="submit"
+  class="form-submit"
+  id="helpSubmit"
+  data-i18n="help.formSubmit"
+>
+Elanı göndər
+</button>
+
+</form>
+
+</div>
+
+</dialog>
+
+
+<!-- LOST FOUND MODAL -->
+
+<dialog class="form-modal" id="lostFoundDialog">
 
 <div class="form-modal__inner">
 
@@ -2380,10 +2237,7 @@ Pişik itib
 </div>
 
 
-<form
-  class="data-form"
-  id="lostFoundForm"
->
+<form class="data-form" id="lostFoundForm">
 
 <input
   id="lostFoundType"
@@ -2528,19 +2382,15 @@ Elanı göndər
 </dialog>
 
 
-<!-- MUSIC -->
-
 <audio
   id="bgMusic"
   loop
   preload="auto"
 >
-
 <source
   src="Atlas Baku.mp3"
   type="audio/mpeg"
 >
-
 </audio>
 
 <button
@@ -2557,8 +2407,6 @@ Elanı göndər
 
 <script src="js/i18n.js"></script>
 
-
-<!-- EXTRA TRANSLATIONS -->
 
 <script>
 
@@ -2611,12 +2459,38 @@ Object.assign(window.CB_I18N.az,{
 
 'help.eyebrow':'KÖMƏK',
 'help.title':'Köməyə ehtiyacı olan pişiklər',
+'help.sub':'Müalicə, yemək, müvəqqəti ev və digər yardım.',
+'help.add':'Pişiyə kömək lazımdır',
+'help.activeTitle':'Aktiv yardım elanları',
+
 'help.medical':'Tibbi yardım',
-'help.medicalText':'Müalicəyə ehtiyacı olan pişiklər.',
+'help.medicalText':'Müalicə, əməliyyat və dərmanlar.',
+
 'help.food':'Yemək',
-'help.foodText':'Küçə pişiklərinə yem dəstəyi.',
+'help.foodText':'Yemək və su dəstəyi.',
+
 'help.foster':'Müvəqqəti ev',
-'help.fosterText':'Müvəqqəti təhlükəsiz ev.',
+'help.fosterText':'Pişik üçün təhlükəsiz müvəqqəti ev.',
+
+'help.transport':'Nəqliyyat',
+'help.transportText':'Klinikaya və ya evə çatdırılma.',
+
+'help.sterilization':'Sterilizasiya',
+'help.sterilizationText':'Sterilizasiya və kastrasiya üçün yardım.',
+
+'help.urgent':'Təcili yardım',
+'help.urgentText':'Təcili müdaxilə tələb edən hallar.',
+
+'help.formTitle':'Pişiyə kömək lazımdır',
+'help.formType':'Yardım növü',
+'help.formUrgency':'Təcililik',
+'help.formName':'Pişiyin adı',
+'help.formArea':'Rayon / ərazi',
+'help.formDescription':'Nə baş verib?',
+'help.formContact':'Əlaqə üçün ad',
+'help.formPhone':'Telefon / WhatsApp',
+'help.formPhoto':'📷 Foto seçin',
+'help.formSubmit':'Elanı göndər',
 
 'lost.eyebrow':'İTMİŞ VƏ TAPILMIŞ',
 'lost.title':'Pişik itirmisiniz və ya tapmısınız?',
@@ -2634,7 +2508,7 @@ Object.assign(window.CB_I18N.az,{
 
 'vets.eyebrow':'BAYTAR XƏRİTƏSİ',
 'vets.title':'Bakıda baytar xidməti',
-'vets.sub':'Bakıda yoxlanılmış baytar klinikaları.',
+'vets.sub':'Bakıda baytar klinikaları.',
 
 'feed.eyebrow':'YEMLƏMƏ NÖQTƏLƏRİ',
 'feed.title':'Bakı pişikləri üçün yem və su',
@@ -2698,12 +2572,38 @@ Object.assign(window.CB_I18N.ru,{
 
 'help.eyebrow':'ПОМОЩЬ',
 'help.title':'Коты, которым нужна помощь',
+'help.sub':'Лечение, корм, передержка и другая помощь.',
+'help.add':'Коту нужна помощь',
+'help.activeTitle':'Активные просьбы о помощи',
+
 'help.medical':'Медицинская помощь',
-'help.medicalText':'Коты, которым требуется лечение.',
+'help.medicalText':'Лечение, операция и лекарства.',
+
 'help.food':'Корм',
-'help.foodText':'Помощь в кормлении уличных котов.',
+'help.foodText':'Помощь с кормом и водой.',
+
 'help.foster':'Передержка',
 'help.fosterText':'Временный безопасный дом.',
+
+'help.transport':'Транспорт',
+'help.transportText':'Доставка кота в клинику или на передержку.',
+
+'help.sterilization':'Стерилизация',
+'help.sterilizationText':'Помощь со стерилизацией или кастрацией.',
+
+'help.urgent':'Срочная помощь',
+'help.urgentText':'Ситуации, требующие срочного вмешательства.',
+
+'help.formTitle':'Коту нужна помощь',
+'help.formType':'Вид помощи',
+'help.formUrgency':'Срочность',
+'help.formName':'Имя кота',
+'help.formArea':'Район / местоположение',
+'help.formDescription':'Что произошло?',
+'help.formContact':'Контактное лицо',
+'help.formPhone':'Телефон / WhatsApp',
+'help.formPhoto':'📷 Выберите фото',
+'help.formSubmit':'Отправить объявление',
 
 'lost.eyebrow':'ПОТЕРЯЛИСЬ / НАЙДЕНЫ',
 'lost.title':'Потеряли или нашли кота?',
@@ -2721,7 +2621,7 @@ Object.assign(window.CB_I18N.ru,{
 
 'vets.eyebrow':'КАРТА ВЕТЕРИНАРОВ',
 'vets.title':'Ветеринарная помощь в Баку',
-'vets.sub':'Проверенные ветеринарные клиники Баку.',
+'vets.sub':'Ветеринарные клиники Баку.',
 
 'feed.eyebrow':'ТОЧКИ КОРМЛЕНИЯ',
 'feed.title':'Корм и вода для котов Баку',
@@ -2785,12 +2685,38 @@ Object.assign(window.CB_I18N.en,{
 
 'help.eyebrow':'HELP',
 'help.title':'Cats that need help',
+'help.sub':'Medical care, food, foster care and other assistance.',
+'help.add':'A cat needs help',
+'help.activeTitle':'Active help requests',
+
 'help.medical':'Medical help',
-'help.medicalText':'Cats that need veterinary treatment.',
+'help.medicalText':'Treatment, surgery and medication.',
+
 'help.food':'Food',
-'help.foodText':'Help feed street cats.',
+'help.foodText':'Food and water support.',
+
 'help.foster':'Foster',
 'help.fosterText':'A temporary safe home.',
+
+'help.transport':'Transport',
+'help.transportText':'Transport to a clinic or foster home.',
+
+'help.sterilization':'Sterilization',
+'help.sterilizationText':'Help with sterilization or neutering.',
+
+'help.urgent':'Emergency help',
+'help.urgentText':'Cases requiring urgent intervention.',
+
+'help.formTitle':'A cat needs help',
+'help.formType':'Help type',
+'help.formUrgency':'Urgency',
+'help.formName':'Cat name',
+'help.formArea':'Area / location',
+'help.formDescription':'What happened?',
+'help.formContact':'Contact name',
+'help.formPhone':'Phone / WhatsApp',
+'help.formPhoto':'📷 Choose a photo',
+'help.formSubmit':'Submit request',
 
 'lost.eyebrow':'LOST & FOUND',
 'lost.title':'Lost or found a cat?',
@@ -2808,7 +2734,7 @@ Object.assign(window.CB_I18N.en,{
 
 'vets.eyebrow':'VET MAP',
 'vets.title':'Veterinary care in Baku',
-'vets.sub':'Verified veterinary clinics in Baku.',
+'vets.sub':'Veterinary clinics in Baku.',
 
 'feed.eyebrow':'FEED POINTS',
 'feed.title':'Food & water for Baku cats',
@@ -2831,8 +2757,6 @@ Object.assign(window.CB_I18N.en,{
 
 <script src="js/static.js"></script>
 
-
-<!-- SUPABASE -->
 
 <script>
 
@@ -2895,10 +2819,7 @@ function safePhoto(url){
 }
 
 
-function photoPreview(
-  input,
-  preview
-){
+function photoPreview(input, preview){
 
   input.addEventListener(
     'change',
@@ -2929,7 +2850,7 @@ function photoPreview(
 
 
 /* =====================================================
-   ADOPTION FORM
+   ADOPTION
 ===================================================== */
 
 const adoptionDialog =
@@ -2987,10 +2908,7 @@ async function(event){
   }
 
 
-  if(
-    file.size >
-    5 * 1024 * 1024
-  ){
+  if(file.size > 5 * 1024 * 1024){
 
     adoptionMessage.textContent =
       'Фото должно быть меньше 5 MB.';
@@ -3271,7 +3189,7 @@ async function loadAdoptions(){
           <div class="card__body">
 
           <div class="card__name">
-          ${esc(item.name || 'Без имени')}
+          ${esc(item.name || '')}
           </div>
 
           <div class="data-meta">
@@ -3318,6 +3236,668 @@ async function loadAdoptions(){
             :
             ''
           }
+
+          </div>
+
+          </article>
+          `;
+
+        }
+      )
+      .join('');
+
+}
+
+
+/* =====================================================
+   HELP REQUESTS
+===================================================== */
+
+const helpDialog =
+document.getElementById('helpDialog');
+
+const helpForm =
+document.getElementById('helpForm');
+
+const helpMessage =
+document.getElementById('helpMessage');
+
+const helpSubmit =
+document.getElementById('helpSubmit');
+
+const helpPhoto =
+document.getElementById('helpPhoto');
+
+const helpPreview =
+document.getElementById('helpPreview');
+
+
+document
+.getElementById('openHelpForm')
+.addEventListener(
+  'click',
+  ()=>helpDialog.showModal()
+);
+
+
+document
+.getElementById('closeHelpForm')
+.addEventListener(
+  'click',
+  ()=>helpDialog.close()
+);
+
+
+photoPreview(
+  helpPhoto,
+  helpPreview
+);
+
+
+helpForm.addEventListener(
+'submit',
+async function(event){
+
+  event.preventDefault();
+
+
+  const file =
+    helpPhoto.files[0];
+
+
+  if(!file){
+    return;
+  }
+
+
+  if(file.size > 5 * 1024 * 1024){
+
+    helpMessage.textContent =
+      'Фото должно быть меньше 5 MB.';
+
+    helpMessage.className =
+      'form-message error';
+
+    return;
+
+  }
+
+
+  helpSubmit.disabled =
+    true;
+
+
+  try{
+
+
+    const ext =
+      file.name
+        .split('.')
+        .pop()
+        .toLowerCase();
+
+
+    const path =
+      'help/'
+      +
+      Date.now()
+      +
+      '-'
+      +
+      crypto.randomUUID()
+      +
+      '.'
+      +
+      ext;
+
+
+    const upload =
+      await db.storage
+        .from('cat-photos')
+        .upload(
+          path,
+          file,
+          {
+            upsert:false,
+            contentType:file.type
+          }
+        );
+
+
+    if(upload.error){
+      throw upload.error;
+    }
+
+
+    const publicUrl =
+      db.storage
+        .from('cat-photos')
+        .getPublicUrl(path)
+        .data
+        .publicUrl;
+
+
+    const result =
+      await db
+        .from('help_requests')
+        .insert({
+
+          help_type:
+          document
+            .getElementById('helpType')
+            .value,
+
+          urgency:
+          document
+            .getElementById('helpUrgency')
+            .value,
+
+          name:
+          document
+            .getElementById('helpName')
+            .value
+            .trim()
+            ||
+            null,
+
+          area:
+          document
+            .getElementById('helpArea')
+            .value
+            .trim(),
+
+          description:
+          document
+            .getElementById('helpDescription')
+            .value
+            .trim(),
+
+          contact_name:
+          document
+            .getElementById('helpContact')
+            .value
+            .trim()
+            ||
+            null,
+
+          contact_phone:
+          document
+            .getElementById('helpPhone')
+            .value
+            .trim(),
+
+          photo_url:
+          publicUrl,
+
+          status:
+          'active',
+
+          approved:
+          false
+
+        });
+
+
+    if(result.error){
+      throw result.error;
+    }
+
+
+    helpMessage.textContent =
+      lang() === 'ru'
+      ?
+      '✅ Спасибо! Запрос на помощь отправлен на модерацию.'
+      :
+      lang() === 'en'
+      ?
+      '✅ Thank you! The help request was sent for moderation.'
+      :
+      '✅ Təşəkkür edirik! Yardım elanı moderasiyaya göndərildi.';
+
+
+    helpMessage.className =
+      'form-message success';
+
+
+    helpForm.reset();
+
+    helpPreview.style.display =
+      'none';
+
+  }
+
+  catch(error){
+
+    console.error(
+      'Help request error:',
+      error
+    );
+
+
+    helpMessage.textContent =
+      'Ошибка. Попробуйте ещё раз.';
+
+    helpMessage.className =
+      'form-message error';
+
+  }
+
+  finally{
+
+    helpSubmit.disabled =
+      false;
+
+  }
+
+}
+);
+
+
+/* HELP LABELS */
+
+function helpTypeLabel(type){
+
+  const current =
+    lang();
+
+  const labels = {
+
+    medical:{
+      az:'Tibbi yardım',
+      ru:'Медицинская помощь',
+      en:'Medical help'
+    },
+
+    food:{
+      az:'Yemək',
+      ru:'Корм',
+      en:'Food'
+    },
+
+    foster:{
+      az:'Müvəqqəti ev',
+      ru:'Передержка',
+      en:'Foster'
+    },
+
+    transport:{
+      az:'Nəqliyyat',
+      ru:'Транспорт',
+      en:'Transport'
+    },
+
+    sterilization:{
+      az:'Sterilizasiya',
+      ru:'Стерилизация',
+      en:'Sterilization'
+    },
+
+    urgent:{
+      az:'Təcili yardım',
+      ru:'Срочная помощь',
+      en:'Emergency'
+    }
+
+  };
+
+  return labels[type]?.[current]
+    ||
+    labels[type]?.az
+    ||
+    type;
+
+}
+
+
+function helpTypeIcon(type){
+
+  return {
+
+    medical:'🏥',
+    food:'🥣',
+    foster:'🏠',
+    transport:'🚗',
+    sterilization:'✂️',
+    urgent:'🆘'
+
+  }[type] || '❤️';
+
+}
+
+
+function urgencyLabel(value){
+
+  const current =
+    lang();
+
+  const labels = {
+
+    normal:{
+      az:'Normal',
+      ru:'Обычная',
+      en:'Normal'
+    },
+
+    high:{
+      az:'Vacib',
+      ru:'Высокая',
+      en:'High'
+    },
+
+    critical:{
+      az:'Təcili',
+      ru:'Критическая',
+      en:'Critical'
+    }
+
+  };
+
+  return labels[value]?.[current]
+    ||
+    labels[value]?.az
+    ||
+    value;
+
+}
+
+
+function statusLabel(value){
+
+  const current =
+    lang();
+
+  const labels = {
+
+    active:{
+      az:'Yardım lazımdır',
+      ru:'Нужна помощь',
+      en:'Help needed'
+    },
+
+    in_progress:{
+      az:'Yardım edilir',
+      ru:'Помощь оказывается',
+      en:'In progress'
+    },
+
+    resolved:{
+      az:'Həll olunub',
+      ru:'Помощь найдена',
+      en:'Resolved'
+    }
+
+  };
+
+  return labels[value]?.[current]
+    ||
+    labels[value]?.az
+    ||
+    value;
+
+}
+
+
+/* =====================================================
+   LOAD HELP REQUESTS
+===================================================== */
+
+async function loadHelpRequests(){
+
+  const grid =
+    document.getElementById('helpGrid');
+
+  const count =
+    document.getElementById('helpCount');
+
+
+  const result =
+    await db
+      .from('help_requests')
+      .select('*')
+      .eq('approved',true)
+      .order(
+        'created_at',
+        {
+          ascending:false
+        }
+      );
+
+
+  if(result.error){
+
+    console.error(
+      'Help load error:',
+      result.error
+    );
+
+    return;
+
+  }
+
+
+  const rows =
+    result.data || [];
+
+
+  count.textContent =
+    rows.length;
+
+
+  if(!rows.length){
+
+    grid.innerHTML =
+      `
+      <div class="data-empty">
+
+      <div class="data-empty__icon">
+      ❤️
+      </div>
+
+      ${
+        lang() === 'ru'
+        ?
+        'Пока нет активных просьб о помощи.'
+        :
+        lang() === 'en'
+        ?
+        'No help requests yet.'
+        :
+        'Hazırda yardım elanı yoxdur.'
+      }
+
+      </div>
+      `;
+
+    return;
+
+  }
+
+
+  grid.innerHTML =
+    rows
+      .map(
+        item => {
+
+
+          const phone =
+            safePhone(
+              item.contact_phone
+            );
+
+
+          const urgencyClass =
+            item.urgency === 'critical'
+            ?
+            'status-badge--critical'
+            :
+            item.urgency === 'high'
+            ?
+            'status-badge--high'
+            :
+            'status-badge--normal';
+
+
+          const statusClass =
+            item.status === 'resolved'
+            ?
+            'status-badge--resolved'
+            :
+            item.status === 'in_progress'
+            ?
+            'status-badge--progress'
+            :
+            '';
+
+
+          return `
+          <article class="card">
+
+          <div class="card__photo">
+
+          <img
+            src="${esc(safePhoto(item.photo_url))}"
+            alt="${esc(item.name || helpTypeLabel(item.help_type))}"
+          >
+
+          </div>
+
+
+          <div class="card__body">
+
+
+          <div class="status-badge ${urgencyClass}">
+          ${
+            item.urgency === 'critical'
+            ?
+            '🆘'
+            :
+            item.urgency === 'high'
+            ?
+            '⚠️'
+            :
+            '❤️'
+          }
+
+          ${esc(urgencyLabel(item.urgency))}
+          </div>
+
+
+          ${
+            item.status !== 'active'
+            ?
+            `
+            <div class="status-badge ${statusClass}">
+            ${
+              item.status === 'resolved'
+              ?
+              '✅'
+              :
+              '🤝'
+            }
+            ${esc(statusLabel(item.status))}
+            </div>
+            `
+            :
+            ''
+          }
+
+
+          <div class="card__name">
+
+          ${
+            esc(
+              item.name
+              ||
+              (
+                lang() === 'ru'
+                ?
+                'Кот'
+                :
+                lang() === 'en'
+                ?
+                'Cat'
+                :
+                'Pişik'
+              )
+            )
+          }
+
+          </div>
+
+
+          <div class="data-meta">
+
+          <span>
+          ${helpTypeIcon(item.help_type)}
+          ${esc(helpTypeLabel(item.help_type))}
+          </span>
+
+          ${
+            item.area
+            ?
+            `
+            <span>
+            📍 ${esc(item.area)}
+            </span>
+            `
+            :
+            ''
+          }
+
+          </div>
+
+
+          <p class="data-description">
+          ${esc(item.description || '')}
+          </p>
+
+
+          ${
+            item.contact_name
+            ?
+            `
+            <div
+              style="
+                margin-top:9px;
+                font-size:12px;
+                opacity:.7;
+              "
+            >
+            👤 ${esc(item.contact_name)}
+            </div>
+            `
+            :
+            ''
+          }
+
+
+          ${
+            phone
+            &&
+            item.status !== 'resolved'
+            ?
+            `
+            <a
+              class="data-contact"
+              href="tel:${phone}"
+            >
+            📞 ${
+              lang() === 'ru'
+              ?
+              'Помочь / связаться'
+              :
+              lang() === 'en'
+              ?
+              'Help / contact'
+              :
+              'Kömək et / əlaqə'
+            }
+            </a>
+            `
+            :
+            ''
+          }
+
 
           </div>
 
@@ -3453,10 +4033,7 @@ async function(event){
   }
 
 
-  if(
-    file.size >
-    5 * 1024 * 1024
-  ){
+  if(file.size > 5 * 1024 * 1024){
 
     lostFoundMessage.textContent =
       'Фото должно быть меньше 5 MB.';
@@ -3765,6 +4342,7 @@ async function loadLostFound(){
 
           </div>
 
+
           <div class="card__body">
 
 
@@ -3780,6 +4358,7 @@ async function loadLostFound(){
               }
             "
           >
+
           ${
             isLost
             ?
@@ -3858,11 +4437,8 @@ async function loadLostFound(){
 
 
 /* =====================================================
-   VET CLINICS
+   VETS
 ===================================================== */
-
-let vetRows = [];
-
 
 async function loadVets(){
 
@@ -3885,44 +4461,18 @@ async function loadVets(){
 
   if(result.error){
 
-    console.error(
-      'Vet clinics error:',
-      result.error
-    );
-
-    grid.innerHTML =
-      `
-      <div class="data-empty">
-
-      <div class="data-empty__icon">
-      ⚠️
-      </div>
-
-      ${
-        lang() === 'ru'
-        ?
-        'Не удалось загрузить клиники.'
-        :
-        lang() === 'en'
-        ?
-        'Could not load clinics.'
-        :
-        'Klinikaları yükləmək mümkün olmadı.'
-      }
-
-      </div>
-      `;
+    console.error(result.error);
 
     return;
 
   }
 
 
-  vetRows =
+  const rows =
     result.data || [];
 
 
-  if(!vetRows.length){
+  if(!rows.length){
 
     grid.innerHTML =
       `
@@ -3953,7 +4503,7 @@ async function loadVets(){
 
 
   grid.innerHTML =
-    vetRows
+    rows
       .map(
         clinic => {
 
@@ -3979,150 +4529,137 @@ async function loadVets(){
           return `
           <article class="vet-card">
 
-            <div class="vet-card__icon">
-            🩺
+          <div class="vet-card__icon">
+          🩺
+          </div>
+
+
+          ${
+            clinic.emergency_24h
+            ?
+            `
+            <div class="status-badge status-badge--24">
+            🕐 24/7
             </div>
+            `
+            :
+            ''
+          }
 
 
-            ${
-              clinic.emergency_24h
-              ?
-              `
-              <div class="status-badge status-badge--24">
-              🕐 24/7
-              </div>
-              `
-              :
-              ''
-            }
+          <div class="vet-card__name">
+          ${esc(clinic.name)}
+          </div>
 
 
-            <div class="vet-card__name">
-            ${esc(clinic.name)}
+          <div class="vet-card__info">
+
+
+          ${
+            clinic.address
+            ?
+            `
+            <div>
+            📍 ${esc(clinic.address)}
             </div>
+            `
+            :
+            ''
+          }
 
 
-            <div class="vet-card__info">
-
-
-              ${
-                clinic.address
-                ?
-                `
-                <div>
-                📍 ${esc(clinic.address)}
-                </div>
-                `
-                :
-                ''
-              }
-
-
-              ${
-                clinic.area
-                ?
-                `
-                <div>
-                🏙️ ${esc(clinic.area)}
-                </div>
-                `
-                :
-                ''
-              }
-
-
-              ${
-                clinic.opening_hours
-                ?
-                `
-                <div>
-                🕐 ${esc(clinic.opening_hours)}
-                </div>
-                `
-                :
-                ''
-              }
-
-
-              ${
-                clinic.phone
-                ?
-                `
-                <div>
-                ☎️ ${esc(clinic.phone)}
-                </div>
-                `
-                :
-                ''
-              }
-
-
-              ${
-                clinic.description
-                ?
-                `
-                <div>
-                ${esc(clinic.description)}
-                </div>
-                `
-                :
-                ''
-              }
-
-
+          ${
+            clinic.area
+            ?
+            `
+            <div>
+            🏙️ ${esc(clinic.area)}
             </div>
+            `
+            :
+            ''
+          }
 
 
-            <div class="vet-card__actions">
+          ${
+            clinic.opening_hours
+            ?
+            `
+            <div>
+            🕐 ${esc(clinic.opening_hours)}
+            </div>
+            `
+            :
+            ''
+          }
 
 
-            ${
-              phone
-              ?
-              `
-              <a
-                class="vet-link"
-                href="tel:${phone}"
-              >
-              📞 ${
-                lang() === 'ru'
-                ?
-                'Позвонить'
-                :
-                lang() === 'en'
-                ?
-                'Call'
-                :
-                'Zəng et'
-              }
-              </a>
-              `
-              :
-              ''
-            }
+          ${
+            clinic.phone
+            ?
+            `
+            <div>
+            ☎️ ${esc(clinic.phone)}
+            </div>
+            `
+            :
+            ''
+          }
 
 
+          </div>
+
+
+          <div class="vet-card__actions">
+
+
+          ${
+            phone
+            ?
+            `
             <a
-              class="vet-link vet-link--light"
-              href="https://www.google.com/maps/search/?api=1&query=${mapsQuery}"
-              target="_blank"
-              rel="noopener"
+              class="vet-link"
+              href="tel:${phone}"
             >
-            📍 ${
+            📞 ${
               lang() === 'ru'
               ?
-              'На карте'
+              'Позвонить'
               :
               lang() === 'en'
               ?
-              'Map'
+              'Call'
               :
-              'Xəritə'
+              'Zəng et'
             }
             </a>
+            `
+            :
+            ''
+          }
 
 
-            </div>
+          <a
+            class="vet-link vet-link--light"
+            href="https://www.google.com/maps/search/?api=1&query=${mapsQuery}"
+            target="_blank"
+            rel="noopener"
+          >
+          📍 ${
+            lang() === 'ru'
+            ?
+            'На карте'
+            :
+            lang() === 'en'
+            ?
+            'Map'
+            :
+            'Xəritə'
+          }
+          </a>
+
+
+          </div>
 
           </article>
           `;
@@ -4131,151 +4668,16 @@ async function loadVets(){
       )
       .join('');
 
-
-  addVetMarkers();
-
 }
 
 
 /* =====================================================
-   ADD VETS TO MAP WHEN LAT/LNG EXISTS
-===================================================== */
-
-function addVetMarkers(){
-
-  if(
-    !window.L
-    ||
-    !window.__catsBakuVetMapAttempted
-  ){
-
-    window.__catsBakuVetMapAttempted =
-      true;
-
-  }
-
-
-  const mapElement =
-    document.getElementById('catMap');
-
-
-  if(
-    !mapElement
-    ||
-    !mapElement._leaflet_id
-  ){
-
-    setTimeout(
-      addVetMarkers,
-      800
-    );
-
-    return;
-
-  }
-
-
-  let mapInstance = null;
-
-
-  for(
-    const key in window
-  ){
-
-    try{
-
-      const value =
-        window[key];
-
-      if(
-        value
-        &&
-        value instanceof L.Map
-      ){
-
-        mapInstance =
-          value;
-
-        break;
-
-      }
-
-    }
-    catch(e){}
-
-  }
-
-
-  if(!mapInstance){
-
-    return;
-
-  }
-
-
-  vetRows.forEach(
-    clinic => {
-
-      const lat =
-        Number(
-          clinic.lat
-        );
-
-      const lng =
-        Number(
-          clinic.lng
-        );
-
-
-      if(
-        !Number.isFinite(lat)
-        ||
-        !Number.isFinite(lng)
-      ){
-
-        return;
-
-      }
-
-
-      L.marker(
-        [
-          lat,
-          lng
-        ]
-      )
-      .addTo(
-        mapInstance
-      )
-      .bindPopup(
-        `
-        <strong>
-        ${esc(clinic.name)}
-        </strong>
-        <br>
-        ${esc(clinic.address || '')}
-        <br>
-        🩺 ${
-          clinic.emergency_24h
-          ?
-          '24/7'
-          :
-          esc(clinic.opening_hours || '')
-        }
-        `
-      );
-
-    }
-  );
-
-}
-
-
-/* =====================================================
-   LOAD
+   INITIAL LOAD
 ===================================================== */
 
 loadAdoptions();
+
+loadHelpRequests();
 
 loadLostFound();
 
@@ -4298,12 +4700,14 @@ document
 
             loadAdoptions();
 
+            loadHelpRequests();
+
             loadLostFound();
 
             loadVets();
 
           },
-          80
+          100
         );
 
       }
@@ -4315,8 +4719,6 @@ document
 </script>
 
 
-<!-- MUSIC -->
-
 <script>
 
 (function(){
@@ -4327,11 +4729,7 @@ document.getElementById('bgMusic');
 const toggle =
 document.getElementById('musicToggle');
 
-if(
-  !music
-  ||
-  !toggle
-){
+if(!music || !toggle){
   return;
 }
 
