@@ -2656,6 +2656,131 @@ body.baku-v3 .wrap{width:min(100% - 32px, 1400px);margin-inline:auto;}
 }
 </style>
 
+
+<style id="catsbaku-v37-responsive">
+/* ===== CatsBaku V3.7: true full-width responsive layout ===== */
+html{width:100%;max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;}
+body.baku-v3{width:100%;max-width:none!important;margin:0!important;overflow-x:hidden!important;background:#f8f1e6;}
+body.baku-v3 main,body.baku-v3 .topbar,body.baku-v3 .footer{width:100%!important;max-width:none!important;}
+body.baku-v3 .wrap{width:min(calc(100% - 48px),1600px)!important;max-width:1600px!important;margin-inline:auto!important;padding-inline:0!important;}
+body.baku-v3 .topbar__in{width:min(calc(100% - 48px),1600px)!important;max-width:1600px!important;margin-inline:auto!important;padding-inline:0!important;}
+body.baku-v3 .topbar{left:0;right:0;}
+body.baku-v3 .logo{flex:0 0 auto;}
+body.baku-v3 .topnav{min-width:0;}
+body.baku-v3 .topnav a{white-space:nowrap;}
+body.baku-v3 .langs{flex:0 0 auto;}
+
+/* HERO: no desktop crop. Image keeps its own aspect ratio. */
+body.baku-v3 .baku-hero{position:relative!important;width:100%!important;max-width:none!important;height:auto!important;min-height:0!important;aspect-ratio:auto!important;margin:0!important;overflow:hidden!important;background:#dfe9e8;}
+body.baku-v3 .baku-hero__art{position:relative!important;inset:auto!important;display:block!important;width:100%!important;height:auto!important;max-width:none!important;object-fit:contain!important;object-position:center!important;}
+body.baku-v3 .mobile-hero-copy{display:none;}
+
+/* service section scales without fixed page width */
+body.baku-v3 .baku-services{width:100%;}
+body.baku-v3 .baku-services .wrap{width:min(calc(100% - 48px),1600px)!important;max-width:1600px!important;}
+body.baku-v3 .baku-services__skyline{width:min(92%,1260px)!important;max-width:1260px!important;height:auto!important;}
+body.baku-v3 .explore__grid{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:14px!important;}
+body.baku-v3 .explore-card{min-width:0!important;height:100%;}
+body.baku-v3 .explore-card h3{overflow-wrap:anywhere;}
+
+/* all data grids stay inside viewport */
+body.baku-v3 .grid,body.baku-v3 .vet-grid,body.baku-v3 .shop-products,body.baku-v3 .help-types{min-width:0;}
+body.baku-v3 .card,body.baku-v3 .vet-card,body.baku-v3 .shop-product,body.baku-v3 .help-type-card{min-width:0;max-width:100%;}
+body.baku-v3 img,body.baku-v3 svg,body.baku-v3 video,body.baku-v3 canvas{max-width:100%;}
+body.baku-v3 .map-box,body.baku-v3 #catMap{max-width:100%;}
+
+/* language buttons always visible in header; map language mirrors them */
+body.baku-v3 .langs{display:flex!important;}
+body.baku-v3 .langs button{cursor:pointer;}
+body.baku-v3 .langs button[aria-pressed="true"]{background:#241c18!important;color:#fff!important;}
+
+/* Large screens */
+@media (min-width:1800px){
+  body.baku-v3 .wrap,body.baku-v3 .topbar__in,body.baku-v3 .baku-services .wrap{width:min(calc(100% - 80px),1720px)!important;max-width:1720px!important;}
+  body.baku-v3 .explore__grid{gap:18px!important;}
+}
+
+/* Desktop / small laptop */
+@media (min-width:1100px) and (max-width:1399px){
+  body.baku-v3 .wrap,body.baku-v3 .topbar__in,body.baku-v3 .baku-services .wrap{width:min(calc(100% - 32px),1320px)!important;}
+  body.baku-v3 .topnav{gap:14px!important;}
+  body.baku-v3 .topnav a{font-size:13px!important;}
+  body.baku-v3 .explore__grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}
+}
+
+/* Tablet */
+@media (min-width:768px) and (max-width:1099px){
+  body.baku-v3 .wrap,body.baku-v3 .topbar__in,body.baku-v3 .baku-services .wrap{width:min(calc(100% - 32px),1000px)!important;}
+  body.baku-v3 .topnav{display:none!important;}
+  body.baku-v3 .baku-hero{aspect-ratio:2.25/1!important;height:auto!important;}
+  body.baku-v3 .baku-hero__art{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;}
+  body.baku-v3 .explore__grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;}
+  body.baku-v3 #adoptionGrid,body.baku-v3 #helpGrid,body.baku-v3 #lostFoundGrid,body.baku-v3 #feedGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+  body.baku-v3 .vet-grid,body.baku-v3 .shop-products,body.baku-v3 .help-types{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+
+/* Mobile: use the same Baku art as a background and real HTML copy, so content does not get cut */
+@media (max-width:767px){
+  body.baku-v3{padding-bottom:calc(var(--bottom-nav,76px) + env(safe-area-inset-bottom,0px));}
+  body.baku-v3 .wrap,body.baku-v3 .topbar__in,body.baku-v3 .baku-services .wrap{width:min(calc(100% - 24px),720px)!important;}
+  body.baku-v3 .topbar__in{height:64px!important;gap:8px!important;}
+  body.baku-v3 .logo{font-size:22px!important;}
+  body.baku-v3 .logo::after{display:none!important;}
+  body.baku-v3 .topnav{display:none!important;}
+  body.baku-v3 .langs{margin-left:auto!important;padding:3px!important;}
+  body.baku-v3 .langs button{min-width:34px!important;height:31px!important;font-size:11px!important;}
+
+  body.baku-v3 .baku-hero{height:clamp(500px,122vw,720px)!important;min-height:500px!important;aspect-ratio:auto!important;background-image:linear-gradient(180deg,rgba(8,19,24,.02) 0%,rgba(8,19,24,.18) 48%,rgba(8,19,24,.60) 100%),url('img/baku-hero-v3.jpg')!important;background-size:auto 100%!important;background-position:62% center!important;background-repeat:no-repeat!important;}
+  body.baku-v3 .baku-hero__art{display:none!important;}
+  body.baku-v3 .hero-hotspot,body.baku-v3 .hero__compat{display:none!important;}
+  body.baku-v3 .mobile-hero-copy{display:block!important;position:absolute;z-index:5;left:22px;right:22px;bottom:34px;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35);}
+  body.baku-v3 .mobile-hero-copy__title{font-family:"Cormorant Garamond",serif;font-size:clamp(42px,13vw,66px);font-weight:700;line-height:.9;max-width:8ch;}
+  body.baku-v3 .mobile-hero-copy__sub{margin:14px 0 18px;max-width:27ch;font-size:15px;line-height:1.45;color:#fff;}
+  body.baku-v3 .mobile-hero-copy__actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+  body.baku-v3 .mobile-hero-copy .big-action-btn{padding:12px 16px;font-size:13px;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.20);}
+  body.baku-v3 .mobile-hero-more{display:inline-flex;align-items:center;justify-content:center;padding:11px 15px;border:1.5px solid rgba(255,255,255,.9);border-radius:999px;color:#fff;text-decoration:none;font-weight:800;font-size:13px;background:rgba(15,30,34,.18);backdrop-filter:blur(8px);}
+
+  body.baku-v3 .baku-services{padding-top:18px!important;padding-bottom:18px!important;}
+  body.baku-v3 .baku-services__skyline{width:100%!important;margin:0 auto 8px!important;}
+  body.baku-v3 .explore__grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;padding:0!important;}
+  body.baku-v3 .explore-card{padding:16px 12px!important;border-radius:20px!important;}
+  body.baku-v3 .explore-card__icon{width:48px!important;height:48px!important;margin-bottom:10px!important;font-size:25px!important;}
+  body.baku-v3 .explore-card h3{font-size:19px!important;line-height:1.05!important;}
+  body.baku-v3 .explore-card p{font-size:12px!important;line-height:1.45!important;}
+
+  body.baku-v3 .feature-section,body.baku-v3 .section{padding-block:46px!important;}
+  body.baku-v3 .h2{font-size:clamp(38px,11vw,54px)!important;line-height:.98!important;}
+  body.baku-v3 .feature-head{margin-bottom:24px!important;}
+  body.baku-v3 #adoptionGrid,body.baku-v3 #helpGrid,body.baku-v3 #lostFoundGrid,body.baku-v3 #feedGrid,body.baku-v3 .vet-grid,body.baku-v3 .shop-products,body.baku-v3 .help-types{grid-template-columns:1fr!important;gap:14px!important;}
+  body.baku-v3 .card__photo{min-height:0!important;}
+  body.baku-v3 .map-toolbar{align-items:stretch!important;}
+  body.baku-v3 .map-toolbar .map-actions,body.baku-v3 .map-toolbar .big-action-btn{width:100%!important;}
+  body.baku-v3 .map-language{width:100%!important;justify-content:space-between!important;}
+  body.baku-v3 .map-language.langs{width:auto!important;}
+  body.baku-v3 #catMap{height:58vh!important;min-height:360px!important;max-height:560px!important;}
+  body.baku-v3 .form-modal{width:calc(100% - 18px)!important;max-height:88dvh!important;border-radius:22px!important;}
+  body.baku-v3 .form-modal__inner{padding:20px!important;}
+  body.baku-v3 .data-form{grid-template-columns:1fr!important;}
+  body.baku-v3 .form-field--full,body.baku-v3 .form-submit,body.baku-v3 .form-message{grid-column:1!important;}
+  body.baku-v3 .bottomnav{display:block!important;}
+}
+
+@media (max-width:420px){
+  body.baku-v3 .wrap,body.baku-v3 .topbar__in,body.baku-v3 .baku-services .wrap{width:calc(100% - 16px)!important;}
+  body.baku-v3 .logo{font-size:20px!important;gap:6px!important;}
+  body.baku-v3 .logo img{width:24px!important;height:28px!important;}
+  body.baku-v3 .langs button{min-width:31px!important;}
+  body.baku-v3 .baku-hero{height:clamp(470px,135vw,610px)!important;background-position:60% center!important;}
+  body.baku-v3 .mobile-hero-copy{left:16px;right:16px;bottom:26px;}
+  body.baku-v3 .mobile-hero-copy__actions{align-items:stretch;}
+  body.baku-v3 .mobile-hero-copy .big-action-btn,body.baku-v3 .mobile-hero-more{font-size:12px;padding:11px 13px;}
+  body.baku-v3 .explore__grid{gap:8px!important;}
+  body.baku-v3 .explore-card{padding:14px 10px!important;}
+  body.baku-v3 .explore-card h3{font-size:17px!important;}
+  body.baku-v3 .explore-card p{font-size:11px!important;}
+}
+</style>
+
 </head>
 
 
@@ -2741,6 +2866,14 @@ EN
   <a class="hero-hotspot hero-hotspot--more" href="#explore" aria-label="Узнать больше"></a>
   <div class="hero__actions hero__compat" aria-hidden="true">
     <button class="like" type="button" data-like-id="rijik">♡ <span>24</span></button>
+  </div>
+  <div class="mobile-hero-copy" aria-label="CatsBaku intro">
+    <div class="mobile-hero-copy__title">Баку — тоже дом ♥</div>
+    <p class="mobile-hero-copy__sub">Коты, люди и добрые истории одного города.</p>
+    <div class="mobile-hero-copy__actions">
+      <a class="big-action-btn" href="#adoption">🐱 Разместить кота</a>
+      <a class="mobile-hero-more" href="#explore">Узнать больше</a>
+    </div>
   </div>
 </section>
 
@@ -8190,6 +8323,171 @@ toggle.addEventListener(
 
 </script>
 
+
+
+<script id="catsbaku-v37-i18n">
+(function(){
+  const translations = {
+    nav_cats:{ru:'Коты',az:'Pişiklər',en:'Cats'},
+    nav_adoption:{ru:'Пристройство',az:'Sahibləndirmə',en:'Adoption'},
+    nav_help:{ru:'Помощь',az:'Kömək',en:'Help'},
+    nav_map:{ru:'Карта',az:'Xəritə',en:'Map'},
+    nav_shop:{ru:'Магазин',az:'Mağaza',en:'Shop'},
+    nav_add:{ru:'Добавить',az:'Əlavə et',en:'Add'},
+    home:{ru:'Главная',az:'Ana səhifə',en:'Home'},
+    hero_title:{ru:'Баку — тоже дом ♥',az:'Bakı — həm də evdir ♥',en:'Baku is home too ♥'},
+    hero_sub:{ru:'Коты, люди и добрые истории одного города.',az:'Pişiklər, insanlar və bir şəhərin xoş hekayələri.',en:'Cats, people and kind stories from one city.'},
+    hero_adopt:{ru:'🐱 Разместить кота',az:'🐱 Pişik əlavə et',en:'🐱 Add a cat'},
+    hero_more:{ru:'Узнать больше',az:'Daha çox',en:'Learn more'},
+    adoption:{ru:'Пристройство',az:'Sahibləndirmə',en:'Adoption'},
+    adoption_sub:{ru:'Коты, которые ищут новый дом.',az:'Yeni ev axtaran pişiklər.',en:'Cats looking for a new home.'},
+    help:{ru:'Помощь',az:'Kömək',en:'Help'},
+    help_sub:{ru:'Коты, которым нужна помощь.',az:'Köməyə ehtiyacı olan pişiklər.',en:'Cats that need help.'},
+    lost_found:{ru:'Потерялись / найдены',az:'İtkin / tapılıb',en:'Lost / found'},
+    lost_found_sub:{ru:'Объявления по Баку.',az:'Bakı üzrə elanlar.',en:'Notices around Baku.'},
+    vets:{ru:'Ветеринары',az:'Baytarlar',en:'Vets'},
+    vets_sub:{ru:'Ветеринарные клиники Баку.',az:'Bakının baytarlıq klinikaları.',en:'Veterinary clinics in Baku.'},
+    feed_points:{ru:'Точки кормления',az:'Yemləmə nöqtələri',en:'Feeding points'},
+    feed_sub:{ru:'Корм и вода для уличных котов.',az:'Küçə pişikləri üçün yem və su.',en:'Food and water for street cats.'},
+    shop_sub:{ru:'Футболки, худи и носки с котами Баку.',az:'Bakı pişikləri ilə köynək, hudi və corablar.',en:'T-shirts, hoodies and socks with Baku cats.'},
+    adoption_title:{ru:'Коты, которые ищут дом',az:'Ev axtaran pişiklər',en:'Cats looking for a home'},
+    adoption_real:{ru:'Здесь появляются только реальные объявления, одобренные после модерации.',az:'Burada yalnız moderasiyadan keçmiş real elanlar görünür.',en:'Only real listings approved after moderation appear here.'},
+    looking_home:{ru:'Ищут дом',az:'Ev axtarırlar',en:'Looking for a home'},
+    loading:{ru:'Загрузка...',az:'Yüklənir...',en:'Loading...'},
+    cats_baku:{ru:'Коты Баку',az:'Bakı pişikləri',en:'Cats of Baku'},
+    help_title:{ru:'Коты, которым нужна помощь',az:'Köməyə ehtiyacı olan pişiklər',en:'Cats that need help'},
+    help_desc:{ru:'Лечение, корм, передержка и другая помощь.',az:'Müalicə, yem, müvəqqəti sığınacaq və digər kömək.',en:'Treatment, food, foster care and other help.'},
+    need_help_btn:{ru:'❤️ Коту нужна помощь',az:'❤️ Pişiyə kömək lazımdır',en:'❤️ A cat needs help'},
+    treatment:{ru:'Лечение',az:'Müalicə',en:'Treatment'},
+    medical_help:{ru:'Медицинская помощь.',az:'Tibbi yardım.',en:'Medical help.'},
+    food:{ru:'Корм',az:'Yem',en:'Food'},
+    food_water:{ru:'Корм и вода.',az:'Yem və su.',en:'Food and water.'},
+    foster:{ru:'Передержка',az:'Müvəqqəti sığınacaq',en:'Foster care'},
+    temporary_home:{ru:'Временный дом.',az:'Müvəqqəti ev.',en:'Temporary home.'},
+    active_help:{ru:'Активная помощь',az:'Aktiv kömək',en:'Active help'},
+    lost_question:{ru:'Потеряли или нашли кота?',az:'Pişiyi itirmisiniz və ya tapmısınız?',en:'Lost or found a cat?'},
+    lost_desc:{ru:'Объявления о потерянных и найденных котах Баку.',az:'Bakıda itkin və tapılmış pişik elanları.',en:'Lost and found cat notices in Baku.'},
+    lost_btn:{ru:'😿 Потерялся кот',az:'😿 Pişik itib',en:'😿 Lost cat'},
+    found_btn:{ru:'👀 Нашёл кота',az:'👀 Pişik tapmışam',en:'👀 Found a cat'},
+    active_listings:{ru:'Активные объявления',az:'Aktiv elanlar',en:'Active listings'},
+    cat_month:{ru:'Кот месяца',az:'Ayın pişiyi',en:'Cat of the month'},
+    vote_heart:{ru:'Голосуй сердцем',az:'Ürəyinlə səs ver',en:'Vote with your heart'},
+    map_title:{ru:'Коты рядом с вами',az:'Yanınızdakı pişiklər',en:'Cats near you'},
+    map_sub:{ru:'Добавляйте встреченных котов на карту Баку.',az:'Bakıda gördüyünüz pişikləri xəritəyə əlavə edin.',en:'Add cats you meet around Baku to the map.'},
+    map_add:{ru:'📍 Добавить кота на карту',az:'📍 Pişiyi xəritəyə əlavə et',en:'📍 Add a cat to the map'},
+    site_language:{ru:'Язык сайта',az:'Saytın dili',en:'Site language'},
+    marker_cat:{ru:'🐱 Обычный кот',az:'🐱 Adi pişik',en:'🐱 Regular cat'},
+    marker_help:{ru:'❤️ Нужна помощь',az:'❤️ Kömək lazımdır',en:'❤️ Needs help'},
+    marker_feed:{ru:'🥣 Точка кормления',az:'🥣 Yemləmə nöqtəsi',en:'🥣 Feeding point'},
+    my_location:{ru:'📍 Моё местоположение',az:'📍 Mənim yerim',en:'📍 My location'},
+    vet_title:{ru:'Ветеринарные клиники Баку',az:'Bakının baytarlıq klinikaları',en:'Veterinary clinics in Baku'},
+    feed_title:{ru:'Корм и вода для котов Баку',az:'Bakı pişikləri üçün yem və su',en:'Food and water for Baku cats'},
+    add_point:{ru:'🥣 Добавить точку',az:'🥣 Nöqtə əlavə et',en:'🥣 Add a point'},
+    stories:{ru:'Истории города',az:'Şəhər hekayələri',en:'City stories'},
+    old_city_cats:{ru:'Коты Старого города',az:'İçərişəhər pişikləri',en:'Old City cats'},
+    caspian_cats:{ru:'Коты Каспия',az:'Xəzər pişikləri',en:'Caspian cats'},
+    rescue_stories:{ru:'Истории спасения',az:'Xilasetmə hekayələri',en:'Rescue stories'},
+    shop_title:{ru:'Ваш любимый кот — на футболке',az:'Sevimli pişiyiniz — köynəkdə',en:'Your favorite cat — on a T-shirt'},
+    shop_desc:{ru:'Футболки, худи и носки с котами Баку. Выберите дизайн BakuCats или создайте принт со своим любимым котом 🐱',az:'Bakı pişikləri ilə köynək, hudi və corablar. BakuCats dizaynını seçin və ya sevimli pişiyinizlə öz printinizi yaradın 🐱',en:'T-shirts, hoodies and socks with Baku cats. Choose a BakuCats design or create a print with your own cat 🐱'},
+    tshirt:{ru:'Футболка',az:'Köynək',en:'T-shirt'}, hoodie:{ru:'Худи',az:'Hudi',en:'Hoodie'}, socks:{ru:'Носки',az:'Corablar',en:'Socks'}, order:{ru:'Заказать',az:'Sifariş et',en:'Order'},
+    city_people:{ru:'Город для людей. Город для котов.',az:'İnsanlar üçün şəhər. Pişiklər üçün şəhər.',en:'A city for people. A city for cats.'},
+    add_what:{ru:'Что вы хотите добавить?',az:'Nə əlavə etmək istəyirsiniz?',en:'What would you like to add?'},
+    baku_cat:{ru:'Кот Баку',az:'Bakı pişiyi',en:'Baku cat'}, gallery_add:{ru:'Добавить кота в галерею CatsBaku.',az:'Pişiyi CatsBaku qalereyasına əlavə edin.',en:'Add a cat to the CatsBaku gallery.'},
+    cat_new_family:{ru:'Кот ищет новую семью.',az:'Pişik yeni ailə axtarır.',en:'A cat is looking for a new family.'},
+    help_types:{ru:'Лечение, корм, передержка.',az:'Müalicə, yem, müvəqqəti sığınacaq.',en:'Treatment, food, foster care.'},
+    cat_lost:{ru:'Кот потерялся',az:'Pişik itib',en:'Cat is lost'}, cat_found:{ru:'Кот найден',az:'Pişik tapılıb',en:'Cat found'}, map_cat:{ru:'Кот на карте',az:'Xəritədə pişik',en:'Cat on the map'}, map_note:{ru:'Отметить встреченного кота.',az:'Gördüyünüz pişiyi xəritədə qeyd edin.',en:'Mark a cat you spotted.'}, feed_point:{ru:'Точка кормления',az:'Yemləmə nöqtəsi',en:'Feeding point'},
+    add_baku_cat:{ru:'Добавить кота Баку',az:'Bakı pişiyi əlavə et',en:'Add a Baku cat'}, cat_name:{ru:'Имя кота',az:'Pişiyin adı',en:'Cat name'}, area:{ru:'Район',az:'Rayon',en:'Area'}, about_cat:{ru:'О коте',az:'Pişik haqqında',en:'About the cat'}, your_name:{ru:'Ваше имя',az:'Adınız',en:'Your name'}, phone:{ru:'Телефон',az:'Telefon',en:'Phone'}, photo:{ru:'📷 Фото',az:'📷 Foto',en:'📷 Photo'}, submit_cat:{ru:'Отправить кота',az:'Pişiyi göndər',en:'Submit cat'},
+    age:{ru:'Возраст',az:'Yaş',en:'Age'}, gender:{ru:'Пол',az:'Cins',en:'Gender'}, description:{ru:'Описание',az:'Təsvir',en:'Description'}, contact:{ru:'Контакт',az:'Əlaqə',en:'Contact'}, submit:{ru:'Отправить',az:'Göndər',en:'Submit'},
+    help_type:{ru:'Тип помощи',az:'Kömək növü',en:'Help type'}, urgency:{ru:'Срочность',az:'Təcillik',en:'Urgency'}, urgent:{ru:'Срочно',az:'Təcili',en:'Urgent'}, sterilization:{ru:'Стерилизация',az:'Sterilizasiya',en:'Sterilization'}, transport:{ru:'Транспорт',az:'Nəqliyyat',en:'Transport'}, what_happened:{ru:'Что произошло?',az:'Nə baş verdi?',en:'What happened?'},
+    date:{ru:'Дата',az:'Tarix',en:'Date'}, title:{ru:'Название',az:'Ad',en:'Title'}, type:{ru:'Тип',az:'Növ',en:'Type'}, status:{ru:'Статус',az:'Status',en:'Status'}, water:{ru:'Вода',az:'Su',en:'Water'}, colony:{ru:'Колония',az:'Koloniya',en:'Colony'}, add_point_title:{ru:'Добавить точку',az:'Nöqtə əlavə et',en:'Add point'},
+    area_street:{ru:'Район / улица',az:'Rayon / küçə',en:'Area / street'}, choose_map:{ru:'📍 Выберите место кота на карте',az:'📍 Pişiyin yerini xəritədə seçin',en:'📍 Choose the cat location on the map'}, use_location:{ru:'📍 Использовать моё местоположение',az:'📍 Mənim yerimi istifadə et',en:'📍 Use my location'}, no_point:{ru:'Точка не выбрана.',az:'Nöqtə seçilməyib.',en:'No point selected.'},
+    checkout:{ru:'Оформить заказ',az:'Sifarişi rəsmiləşdir',en:'Place order'}, product:{ru:'Товар',az:'Məhsul',en:'Product'}, size:{ru:'Размер',az:'Ölçü',en:'Size'}, design:{ru:'Дизайн',az:'Dizayn',en:'Design'}, quantity:{ru:'Количество',az:'Say',en:'Quantity'}, phone_whatsapp:{ru:'Телефон / WhatsApp',az:'Telefon / WhatsApp',en:'Phone / WhatsApp'}, comment:{ru:'Комментарий',az:'Şərh',en:'Comment'}, own_cat_photo:{ru:'Фото моего кота',az:'Mənim pişiyimin fotosu',en:'Photo of my cat'}, place_order:{ru:'🛍 Оформить заказ',az:'🛍 Sifariş et',en:'🛍 Place order'},
+    more_than_cats:{ru:'🐾 BakuCats · больше, чем просто коты',az:'🐾 BakuCats · sadəcə pişiklərdən daha çox',en:'🐾 BakuCats · more than just cats'}
+  };
+
+  const exactMap = {
+    'Коты':'nav_cats','Пристройство':'adoption','Помощь':'help','Карта':'nav_map','Магазин':'nav_shop','Добавить':'nav_add','Главная':'home',
+    'Баку — тоже дом ♥':'hero_title','Коты, люди и добрые истории одного города.':'hero_sub','🐱 Разместить кота':'hero_adopt','Узнать больше':'hero_more',
+    'Коты, которые ищут новый дом.':'adoption_sub','Коты, которым нужна помощь.':'help_sub','Потерялись / найдены':'lost_found','Объявления по Баку.':'lost_found_sub','Ветеринары':'vets','Ветеринарные клиники Баку.':'vets_sub','Точки кормления':'feed_points','Корм и вода для уличных котов.':'feed_sub','Футболки, худи и носки с котами Баку.':'shop_sub',
+    'Коты, которые ищут дом':'adoption_title','Здесь появляются только реальные объявления, одобренные после модерации.':'adoption_real','Ищут дом':'looking_home','Загрузка...':'loading','Bakı pişikləri':'cats_baku','Коты Баку':'cats_baku',
+    'Коты, которым нужна помощь':'help_title','Лечение, корм, передержка и другая помощь.':'help_desc','❤️ Коту нужна помощь':'need_help_btn','Лечение':'treatment','Медицинская помощь.':'medical_help','Корм':'food','Корм и вода.':'food_water','Передержка':'foster','Временный дом.':'temporary_home','Активная помощь':'active_help',
+    'Потеряли или нашли кота?':'lost_question','Объявления о потерянных и найденных котах Баку.':'lost_desc','😿 Потерялся кот':'lost_btn','👀 Нашёл кота':'found_btn','Активные объявления':'active_listings','Кот месяца':'cat_month','Голосуй сердцем':'vote_heart',
+    'Коты рядом с вами':'map_title','Добавляйте встреченных котов на карту Баку.':'map_sub','📍 Добавить кота на карту':'map_add','Язык карты':'site_language','Язык сайта':'site_language','🐱 Обычный кот':'marker_cat','❤️ Нужна помощь':'marker_help','🥣 Точка кормления':'marker_feed','📍 Моё местоположение':'my_location','Ветеринарные клиники Баку':'vet_title','Корм и вода для котов Баку':'feed_title','🥣 Добавить точку':'add_point',
+    'Истории города':'stories','Коты Старого города':'old_city_cats','Коты Каспия':'caspian_cats','Истории спасения':'rescue_stories','Ваш любимый кот — на футболке':'shop_title','Футболки, худи и носки с котами Баку. Выберите дизайн BakuCats или создайте принт со своим любимым котом 🐱':'shop_desc','Футболка':'tshirt','👕 Футболка':'tshirt','Худи':'hoodie','🧥 Худи':'hoodie','Носки':'socks','🧦 Носки':'socks','Заказать':'order','Город для людей. Город для котов.':'city_people',
+    'Что вы хотите добавить?':'add_what','Кот Баку':'baku_cat','Добавить кота в галерею CatsBaku.':'gallery_add','Кот ищет новую семью.':'cat_new_family','Лечение, корм, передержка.':'help_types','Кот потерялся':'cat_lost','Кот найден':'cat_found','Кот на карте':'map_cat','Отметить встреченного кота.':'map_note','Точка кормления':'feed_point',
+    'Добавить кота Баку':'add_baku_cat','Имя кота':'cat_name','Район':'area','О коте':'about_cat','Ваше имя':'your_name','Телефон':'phone','📷 Фото':'photo','Отправить кота':'submit_cat','Возраст':'age','Пол':'gender','Описание':'description','Контакт':'contact','Отправить':'submit',
+    'Тип помощи':'help_type','Срочность':'urgency','Срочно':'urgent','Стерилизация':'sterilization','Транспорт':'transport','Что произошло?':'what_happened','Дата':'date','Название':'title','Тип':'type','Статус':'status','Вода':'water','Колония':'colony','Добавить точку':'add_point_title',
+    'Район / улица':'area_street','📍 Выберите место кота на карте':'choose_map','📍 Использовать моё местоположение':'use_location','Точка не выбрана.':'no_point','Оформить заказ':'checkout','Товар':'product','Размер':'size','Дизайн':'design','Количество':'quantity','Телефон / WhatsApp':'phone_whatsapp','Комментарий':'comment','Фото моего кота':'own_cat_photo','🛍 Оформить заказ':'place_order','🐾 BakuCats · больше, чем просто коты':'more_than_cats'
+  };
+
+  const attrMap = {
+    'Разместить кота':'hero_adopt','Узнать больше':'hero_more','Имя':'your_name','Имя кота':'cat_name','Комментарий':'comment','Например: чёрная футболка, белый принт...':'comment'
+  };
+
+  function getLang(){
+    const v=(localStorage.getItem('cb-lang-static')||localStorage.getItem('catsbaku-lang')||'ru').toLowerCase();
+    return ['az','ru','en'].includes(v)?v:'ru';
+  }
+
+  function remember(el,key){ if(key && !el.dataset.cbKey) el.dataset.cbKey=key; }
+
+  function scan(root=document){
+    const elements=(root.querySelectorAll?root.querySelectorAll('*'):[]);
+    elements.forEach(el=>{
+      if(['SCRIPT','STYLE','NOSCRIPT'].includes(el.tagName)) return;
+      if(el.children.length===0){
+        const t=(el.textContent||'').replace(/\s+/g,' ').trim();
+        if(exactMap[t]) remember(el,exactMap[t]);
+      }
+      ['placeholder','aria-label','title'].forEach(attr=>{
+        const val=el.getAttribute&&el.getAttribute(attr);
+        if(val && attrMap[val] && !el.dataset['cb'+attr.replace('-','')+'Key']){
+          el.dataset['cb'+attr.replace('-','')+'Key']=attrMap[val];
+        }
+      });
+    });
+  }
+
+  function apply(lang){
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-cb-key]').forEach(el=>{
+      const d=translations[el.dataset.cbKey]; if(d&&d[lang]!=null) el.textContent=d[lang];
+    });
+    document.querySelectorAll('*').forEach(el=>{
+      ['placeholder','aria-label','title'].forEach(attr=>{
+        const dk='cb'+attr.replace('-','')+'Key'; const key=el.dataset&&el.dataset[dk];
+        if(key&&translations[key]&&translations[key][lang]!=null) el.setAttribute(attr,translations[key][lang]);
+      });
+    });
+    document.querySelectorAll('[data-lang]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.lang===lang)));
+    const ml=document.getElementById('mapLanguageLabel'); if(ml) ml.textContent=translations.site_language[lang];
+    localStorage.setItem('cb-lang-static',lang); localStorage.setItem('catsbaku-lang',lang);
+    window.dispatchEvent(new CustomEvent('catsbaku:language',{detail:{lang}}));
+  }
+
+  function setLang(lang){ scan(document); apply(lang); setTimeout(()=>{scan(document);apply(lang)},60); }
+
+  document.addEventListener('click',e=>{
+    const btn=e.target.closest&&e.target.closest('[data-lang]');
+    if(!btn) return;
+    const lang=btn.dataset.lang;
+    if(['az','ru','en'].includes(lang)) setLang(lang);
+  },true);
+
+  const observer=new MutationObserver(muts=>{
+    let changed=false;
+    muts.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===1){scan(n);changed=true;}}));
+    if(changed) apply(getLang());
+  });
+
+  function init(){
+    scan(document);
+    apply(getLang());
+    observer.observe(document.body,{childList:true,subtree:true});
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
 
 </body>
 </html>
