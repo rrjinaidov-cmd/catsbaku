@@ -1,0 +1,5482 @@
+<!DOCTYPE html>
+<html lang="az">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
+>
+
+<title>
+CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku
+</title>
+
+<meta
+  name="description"
+  content="CatsBaku — cats, adoption, lost & found, veterinary clinics, help requests, Baku cat map and BakuCats shop."
+>
+
+<meta name="theme-color" content="#102B3B">
+
+<link
+  rel="icon"
+  href="img/favicon.svg"
+  type="image/svg+xml"
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Manrope:wght@500;600;700;800&display=swap"
+>
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+>
+
+<link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+
+
+<body class="baku-v3">
+
+
+<!-- HEADER -->
+
+<header class="topbar">
+
+<div class="wrap topbar__in">
+
+<a class="logo" href="#top">
+
+<img
+  src="img/logo.svg"
+  width="26"
+  height="31"
+  alt=""
+>
+
+Cats<b>Baku</b>
+
+</a>
+
+
+<nav class="topnav">
+
+<a href="#cats">Коты</a>
+
+<a href="#adoption">Пристройство</a>
+
+<a href="#help">Помощь</a>
+
+<a href="#map">Карта</a>
+
+<a href="#shop">Магазин</a>
+
+<button
+  class="btn btn--pom"
+  type="button"
+  data-open-add-menu
+>
+
++
+
+<span>Добавить</span>
+
+</button>
+
+</nav>
+
+
+<div class="langs">
+
+<button type="button" data-lang="az">
+AZ
+</button>
+
+<button type="button" data-lang="ru">
+RU
+</button>
+
+<button type="button" data-lang="en">
+EN
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="baku-hero" id="top">
+  <img class="baku-hero__art" src="img/baku-hero-v3.jpg" alt="Баку — тоже дом. Коты, люди и добрые истории одного города.">
+  <a class="hero-hotspot hero-hotspot--adopt" href="#adoption" aria-label="Разместить кота"></a>
+  <a class="hero-hotspot hero-hotspot--more" href="#explore" aria-label="Узнать больше"></a>
+  <div class="hero__actions hero__compat" aria-hidden="true">
+    <button class="like" type="button" data-like-id="rijik">♡ <span>24</span></button>
+  </div>
+</section>
+
+<!-- EXPLORE -->
+
+<section class="explore baku-services" id="explore">
+  <div class="wrap">
+    <img class="baku-services__skyline" src="img/baku-line.svg" alt="" aria-hidden="true">
+    <div class="explore__grid">
+      <a class="explore-card" href="#adoption"><div class="explore-card__icon">🏠</div><h3>Пристройство</h3><p>Коты, которые ищут новый дом.</p></a>
+      <a class="explore-card" href="#help"><div class="explore-card__icon">❤️</div><h3>Помощь</h3><p>Коты, которым нужна помощь.</p></a>
+      <a class="explore-card" href="#lost"><div class="explore-card__icon">🔎</div><h3>Потерялись / найдены</h3><p>Объявления по Баку.</p></a>
+      <a class="explore-card" href="#vets"><div class="explore-card__icon">🩺</div><h3>Ветеринары</h3><p>Ветеринарные клиники Баку.</p></a>
+      <a class="explore-card" href="#feed"><div class="explore-card__icon">🥣</div><h3>Точки кормления</h3><p>Корм и вода для уличных котов.</p></a>
+      <a class="explore-card" href="#shop"><div class="explore-card__icon">🛍️</div><h3>BakuCats Shop</h3><p>Футболки, худи и носки с котами Баку.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- ADOPTION -->
+
+<section class="feature-section" id="adoption">
+
+<div class="wrap">
+
+<div class="feature-head">
+
+<div class="eyebrow">
+ADOPTION
+</div>
+
+<h2 class="h2">
+Коты, которые ищут дом
+</h2>
+
+<p class="sub">
+Помогите бакинскому коту найти семью.
+</p>
+
+
+<div class="action-row">
+
+<button
+  class="big-action-btn"
+  type="button"
+  id="openAdoptionForm"
+>
+🐱 Разместить кота
+</button>
+
+</div>
+
+</div>
+
+
+<div class="adoption-showcase">
+  <article class="adoption-showcase__card"><div class="adoption-showcase__photo"><img src="img/hero-cat.jpg" alt="Rijik"><span>♡</span></div><div class="adoption-showcase__body"><h3>Rijik</h3><p>📍 Баку</p></div></article>
+  <article class="adoption-showcase__card"><div class="adoption-showcase__photo"><img src="img/rijik-01.jpg" alt="Sultan"><span>♡</span></div><div class="adoption-showcase__body"><h3>Sultan</h3><p>📍 Ичеришехер</p></div></article>
+  <article class="adoption-showcase__card"><div class="adoption-showcase__photo"><img src="img/rijik-02.jpg" alt="Sunny"><span>♡</span></div><div class="adoption-showcase__body"><h3>Sunny</h3><p>📍 Бульвар</p></div></article>
+  <article class="adoption-showcase__card"><div class="adoption-showcase__photo"><img src="img/rijik-04.jpg" alt="Bala"><span>♡</span></div><div class="adoption-showcase__body"><h3>Bala</h3><p>📍 Нариманов</p></div></article>
+</div>
+
+<div class="data-list">
+
+<div class="head">
+
+<h2 class="h2">
+Ищут дом
+</h2>
+
+<span
+  class="count"
+  id="adoptionCount"
+></span>
+
+</div>
+
+
+<div
+  class="grid"
+  id="adoptionGrid"
+>
+
+<div class="data-empty">
+
+<div class="data-empty__icon">
+🐾
+</div>
+
+Загрузка...
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CATS -->
+
+<section class="section" id="cats">
+
+<div class="wrap">
+
+<div class="head">
+
+<div>
+
+<div class="eyebrow">
+CatsBaku
+</div>
+
+<h2 class="h2" data-i18n="cats.title">
+Bakı pişikləri
+</h2>
+
+</div>
+
+<span class="count" id="catsCount">
+5 pişik
+</span>
+
+</div>
+
+
+<div class="chips" id="filters"></div>
+
+
+<div class="grid" id="grid">
+
+<article class="card">
+
+<div class="card__photo">
+<img src="img/hero-cat.jpg" alt="Rijik">
+</div>
+
+<div class="card__body">
+
+<div class="card__name">
+Rijik
+</div>
+
+<div class="card__district">
+📍 Bakı
+</div>
+
+</div>
+
+</article>
+
+
+<article class="card">
+
+<div class="card__photo">
+<img src="img/rijik-01.jpg" alt="Sultan">
+</div>
+
+<div class="card__body">
+
+<div class="card__name">
+Sultan
+</div>
+
+<div class="card__district">
+📍 İçərişəhər
+</div>
+
+</div>
+
+</article>
+
+
+<article class="card">
+
+<div class="card__photo">
+<img src="img/rijik-02.jpg" alt="Sunny">
+</div>
+
+<div class="card__body">
+
+<div class="card__name">
+Sunny
+</div>
+
+<div class="card__district">
+📍 Bulvar
+</div>
+
+</div>
+
+</article>
+
+
+<article class="card">
+
+<div class="card__photo">
+<img src="img/rijik-03.jpg" alt="Mango">
+</div>
+
+<div class="card__body">
+
+<div class="card__name">
+Mango
+</div>
+
+<div class="card__district">
+📍 Yasamal
+</div>
+
+</div>
+
+</article>
+
+
+<article class="card">
+
+<div class="card__photo">
+<img src="img/rijik-04.jpg" alt="Bala">
+</div>
+
+<div class="card__body">
+
+<div class="card__name">
+Bala
+</div>
+
+<div class="card__district">
+📍 Nərimanov
+</div>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- HELP -->
+
+<section class="feature-section" id="help">
+
+<div class="wrap">
+
+<div class="feature-head">
+
+<div class="eyebrow">
+HELP
+</div>
+
+<h2 class="h2">
+Коты, которым нужна помощь
+</h2>
+
+<p class="sub">
+Лечение, корм, передержка и другая помощь.
+</p>
+
+
+<div class="action-row">
+
+<button
+  class="big-action-btn"
+  type="button"
+  id="openHelpForm"
+>
+❤️ Коту нужна помощь
+</button>
+
+</div>
+
+</div>
+
+
+<div class="help-types">
+
+<div class="help-type-card">
+
+<div class="help-type-card__icon">
+🏥
+</div>
+
+<h3>
+Лечение
+</h3>
+
+<p>
+Медицинская помощь.
+</p>
+
+</div>
+
+
+<div class="help-type-card">
+
+<div class="help-type-card__icon">
+🥣
+</div>
+
+<h3>
+Корм
+</h3>
+
+<p>
+Корм и вода.
+</p>
+
+</div>
+
+
+<div class="help-type-card">
+
+<div class="help-type-card__icon">
+🏠
+</div>
+
+<h3>
+Передержка
+</h3>
+
+<p>
+Временный дом.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="data-list">
+
+<div class="head">
+
+<h2 class="h2">
+Активная помощь
+</h2>
+
+<span
+  class="count"
+  id="helpCount"
+></span>
+
+</div>
+
+
+<div
+  class="grid"
+  id="helpGrid"
+>
+
+<div class="data-empty">
+
+<div class="data-empty__icon">
+❤️
+</div>
+
+Загрузка...
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LOST FOUND -->
+
+<section class="feature-section" id="lost">
+
+<div class="wrap">
+
+<div class="feature-head">
+
+<div class="eyebrow">
+LOST & FOUND
+</div>
+
+<h2 class="h2">
+Потеряли или нашли кота?
+</h2>
+
+<p class="sub">
+Объявления о потерянных и найденных котах Баку.
+</p>
+
+
+<div class="action-row">
+
+<button
+  class="big-action-btn"
+  type="button"
+  id="openLostForm"
+>
+😿 Потерялся кот
+</button>
+
+
+<button
+  class="big-action-btn big-action-btn--caspian"
+  type="button"
+  id="openFoundForm"
+>
+👀 Нашёл кота
+</button>
+
+</div>
+
+</div>
+
+
+<div class="data-list">
+
+<div class="head">
+
+<h2 class="h2">
+Активные объявления
+</h2>
+
+<span
+  class="count"
+  id="lostFoundCount"
+></span>
+
+</div>
+
+
+<div
+  class="grid"
+  id="lostFoundGrid"
+>
+
+<div class="data-empty">
+
+<div class="data-empty__icon">
+🔎
+</div>
+
+Загрузка...
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MONTH -->
+
+<section class="section" id="month">
+
+<div class="wrap month-wrap">
+
+<div class="month">
+
+<div class="eyebrow">
+Кот месяца
+</div>
+
+<h2 class="h2">
+Голосуй сердцем
+</h2>
+
+<div
+  class="podium"
+  id="podium"
+></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MAP -->
+
+<section class="section" id="map">
+
+<div class="wrap">
+
+<div class="head">
+
+<div>
+
+<div class="eyebrow">
+BAKU CAT MAP
+</div>
+
+<h2 class="h2">
+Коты рядом с вами
+</h2>
+
+<p class="sub">
+Добавляйте встреченных котов на карту Баку.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="map-actions">
+
+<button
+  class="big-action-btn"
+  type="button"
+  id="openMapCatForm"
+>
+📍 Добавить кота на карту
+</button>
+
+</div>
+
+
+<div class="map-box">
+
+<div
+  class="map"
+  id="catMap"
+></div>
+
+<button
+  class="btn"
+  id="locate"
+  type="button"
+>
+📍 Моё местоположение
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VETS -->
+
+<section class="feature-section" id="vets">
+
+<div class="wrap">
+
+<div class="feature-head">
+
+<div class="eyebrow">
+VET MAP
+</div>
+
+<h2 class="h2">
+Ветеринарные клиники Баку
+</h2>
+
+</div>
+
+
+<div
+  class="vet-grid"
+  id="vetGrid"
+>
+
+<div class="data-empty">
+
+<div class="data-empty__icon">
+🩺
+</div>
+
+Загрузка...
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEED -->
+
+<section class="feature-section" id="feed">
+
+<div class="wrap">
+
+<div class="feature-head">
+
+<div class="eyebrow">
+FEED POINTS
+</div>
+
+<h2 class="h2">
+Корм и вода для котов Баку
+</h2>
+
+
+<div class="action-row">
+
+<button
+  class="big-action-btn big-action-btn--caspian"
+  type="button"
+  id="openFeedForm"
+>
+🥣 Добавить точку
+</button>
+
+</div>
+
+</div>
+
+
+<div
+  class="grid"
+  id="feedGrid"
+>
+
+<div class="data-empty">
+
+<div class="data-empty__icon">
+🥣
+</div>
+
+Загрузка...
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STORIES -->
+
+<section
+  class="feature-section"
+  id="catstories"
+>
+
+<div class="wrap">
+
+<div class="feature-head">
+
+<div class="eyebrow">
+CATSBAKU STORIES
+</div>
+
+<h2 class="h2">
+Истории города
+</h2>
+
+</div>
+
+
+<div class="feature-grid">
+
+<div class="feature-box">
+
+<div class="feature-box__emoji">
+🏰
+</div>
+
+<h3>
+Коты Старого города
+</h3>
+
+</div>
+
+
+<div class="feature-box">
+
+<div class="feature-box__emoji">
+🌊
+</div>
+
+<h3>
+Коты Каспия
+</h3>
+
+</div>
+
+
+<div class="feature-box">
+
+<div class="feature-box__emoji">
+❤️
+</div>
+
+<h3>
+Истории спасения
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     BAKUCATS SHOP
+===================================================== -->
+
+<section
+  class="section shop"
+  id="shop"
+>
+
+<div class="wrap">
+
+<div class="eyebrow">
+BAKUCATS SHOP
+</div>
+
+
+<h2 class="h2">
+Ваш любимый кот — на футболке
+</h2>
+
+
+<p
+  class="sub"
+  style="max-width:800px;"
+>
+Футболки, худи и носки с котами Баку.
+Выберите дизайн BakuCats или создайте принт
+со своим любимым котом 🐱
+</p>
+
+
+<div class="shop-hero">
+
+<img
+  src="bakucats_old_city.png"
+  alt="BakuCats — футболки, худи и носки"
+>
+
+</div>
+
+
+<div class="shop-products">
+
+
+<!-- T-SHIRT -->
+
+<article class="shop-product">
+
+<div class="shop-product__icon">
+👕
+</div>
+
+<h3>
+Футболка
+</h3>
+
+<p>
+BakuCats с вашим котом или дизайном,
+вдохновлённым Баку.
+</p>
+
+<button
+  type="button"
+  class="big-action-btn shop-order-button"
+  data-product="Футболка"
+>
+Заказать
+</button>
+
+</article>
+
+
+<!-- HOODIE -->
+
+<article class="shop-product">
+
+<div class="shop-product__icon">
+🧥
+</div>
+
+<h3>
+Худи
+</h3>
+
+<p>
+Тёплое худи с котами, Ичеришехер,
+бутой и атмосферой Баку.
+</p>
+
+<button
+  type="button"
+  class="big-action-btn shop-order-button"
+  data-product="Худи"
+>
+Заказать
+</button>
+
+</article>
+
+
+<!-- SOCKS -->
+
+<article class="shop-product">
+
+<div class="shop-product__icon">
+🧦
+</div>
+
+<h3>
+Носки
+</h3>
+
+<p>
+Носки BakuCats с котами и
+бакинскими мотивами.
+</p>
+
+<button
+  type="button"
+  class="big-action-btn shop-order-button"
+  data-product="Носки"
+>
+Заказать
+</button>
+
+</article>
+
+
+</div>
+
+
+<p class="shop-note">
+🐾 BakuCats · больше, чем просто коты
+</p>
+
+
+<!-- hidden compatibility for static.js -->
+
+<div
+  id="products"
+  style="display:none;"
+></div>
+
+</div>
+
+</section>
+
+
+<div class="carpet"></div>
+
+
+<section class="wrap about">
+
+<img
+  src="img/logo.svg"
+  alt="CatsBaku"
+>
+
+<h2 class="h2">
+Город для людей. Город для котов.
+</h2>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<b>
+CatsBaku
+</b>
+
+· ©
+
+<span id="year">
+2026
+</span>
+
+· BAKI · AZƏRBAYCAN
+
+
+<div class="footer-baku">
+BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
+</div>
+
+</footer>
+
+
+<!-- MOBILE NAV -->
+
+<nav class="bottomnav">
+
+<ul>
+
+<li>
+
+<a
+  href="#top"
+  class="is-active"
+>
+
+<svg viewBox="0 0 24 24">
+<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>
+</svg>
+
+<span>
+Главная
+</span>
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="#map">
+
+<svg viewBox="0 0 24 24">
+<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/>
+<path d="M9 4v14M15 6v14"/>
+</svg>
+
+<span>
+Карта
+</span>
+
+</a>
+
+</li>
+
+
+<li>
+
+<button
+  type="button"
+  class="add"
+  data-open-add-menu
+>
+
+<span class="plus">
+
+<svg viewBox="0 0 24 24">
+<path d="M12 5v14M5 12h14"/>
+</svg>
+
+</span>
+
+<span>
+Добавить
+</span>
+
+</button>
+
+</li>
+
+
+<li>
+
+<a href="#help">
+
+<svg viewBox="0 0 24 24">
+<path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.4 2.9 4.5 6.6 4.5c2.1 0 3.7 1.2 5.4 3.2 1.7-2 3.3-3.2 5.4-3.2 3.7 0 5.7 3.9 4.2 7.2C19.5 16.4 12 21 12 21z"/>
+</svg>
+
+<span>
+Помощь
+</span>
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="#shop">
+
+<svg viewBox="0 0 24 24">
+<path d="M5 8h14l-1 12H6z"/>
+<path d="M9 8a3 3 0 0 1 6 0"/>
+</svg>
+
+<span>
+Магазин
+</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+
+<!-- =====================================================
+     ADD MENU
+===================================================== -->
+
+<dialog
+  class="form-modal"
+  id="addMenuDialog"
+>
+
+<div class="form-modal__inner">
+
+<div class="form-modal__head">
+
+<div>
+
+<div class="eyebrow">
+CATSBAKU
+</div>
+
+<h2>
+Что вы хотите добавить?
+</h2>
+
+</div>
+
+
+<button
+  class="form-close"
+  type="button"
+  id="closeAddMenu"
+>
+×
+</button>
+
+</div>
+
+
+<div class="add-choice-grid">
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="citycat"
+>
+
+<span class="add-choice__icon">
+🐱
+</span>
+
+<span>
+
+<strong>
+Кот Баку
+</strong>
+
+<small>
+Добавить кота в галерею CatsBaku.
+</small>
+
+</span>
+
+</button>
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="adoption"
+>
+
+<span class="add-choice__icon">
+🏠
+</span>
+
+<span>
+
+<strong>
+Пристройство
+</strong>
+
+<small>
+Кот ищет новую семью.
+</small>
+
+</span>
+
+</button>
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="help"
+>
+
+<span class="add-choice__icon">
+❤️
+</span>
+
+<span>
+
+<strong>
+Нужна помощь
+</strong>
+
+<small>
+Лечение, корм, передержка.
+</small>
+
+</span>
+
+</button>
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="lost"
+>
+
+<span class="add-choice__icon">
+😿
+</span>
+
+<span>
+
+<strong>
+Кот потерялся
+</strong>
+
+</span>
+
+</button>
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="found"
+>
+
+<span class="add-choice__icon">
+👀
+</span>
+
+<span>
+
+<strong>
+Кот найден
+</strong>
+
+</span>
+
+</button>
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="map"
+>
+
+<span class="add-choice__icon">
+📍
+</span>
+
+<span>
+
+<strong>
+Кот на карте
+</strong>
+
+<small>
+Отметить встреченного кота.
+</small>
+
+</span>
+
+</button>
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="feed"
+>
+
+<span class="add-choice__icon">
+🥣
+</span>
+
+<span>
+
+<strong>
+Точка кормления
+</strong>
+
+</span>
+
+</button>
+
+</div>
+
+</div>
+
+</dialog>
+
+
+<!-- CITY CAT -->
+
+<dialog
+  class="form-modal"
+  id="cityCatDialog"
+>
+
+<div class="form-modal__inner">
+
+<div class="form-modal__head">
+
+<div>
+
+<div class="eyebrow">
+CATSBAKU
+</div>
+
+<h2>
+Добавить кота Баку
+</h2>
+
+</div>
+
+
+<button
+  class="form-close"
+  type="button"
+  id="closeCityCatForm"
+>
+×
+</button>
+
+</div>
+
+
+<form
+  class="data-form"
+  id="cityCatForm"
+>
+
+<div class="form-field">
+
+<label>
+Имя кота
+</label>
+
+<input
+  id="cityCatName"
+  type="text"
+>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Район
+</label>
+
+<input
+  id="cityCatArea"
+  type="text"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label>
+О коте
+</label>
+
+<textarea
+  id="cityCatDescription"
+  required
+></textarea>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Ваше имя
+</label>
+
+<input
+  id="cityCatReporter"
+  type="text"
+>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Телефон
+</label>
+
+<input
+  id="cityCatPhone"
+  type="tel"
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<div class="photo-box">
+
+<label>
+📷 Фото
+</label>
+
+<input
+  id="cityCatPhoto"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+  required
+>
+
+<img
+  id="cityCatPreview"
+  class="photo-preview"
+  alt=""
+>
+
+</div>
+
+</div>
+
+
+<div
+  id="cityCatMessage"
+  class="form-message"
+></div>
+
+
+<button
+  type="submit"
+  class="form-submit"
+  id="cityCatSubmit"
+>
+Отправить кота
+</button>
+
+</form>
+
+</div>
+
+</dialog>
+
+
+<!-- ADOPTION -->
+
+<dialog
+  class="form-modal"
+  id="adoptionDialog"
+>
+
+<div class="form-modal__inner">
+
+<div class="form-modal__head">
+
+<h2>
+Пристройство
+</h2>
+
+<button
+  class="form-close"
+  id="closeAdoptionForm"
+  type="button"
+>
+×
+</button>
+
+</div>
+
+
+<form
+  class="data-form"
+  id="adoptionForm"
+>
+
+<div class="form-field">
+
+<label>
+Имя
+</label>
+
+<input
+  id="adoptName"
+  required
+>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Возраст
+</label>
+
+<input id="adoptAge">
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Пол
+</label>
+
+<select id="adoptGender">
+
+<option value="">
+—
+</option>
+
+<option value="male">
+Male
+</option>
+
+<option value="female">
+Female
+</option>
+
+<option value="unknown">
+Unknown
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Район
+</label>
+
+<input
+  id="adoptArea"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label>
+Описание
+</label>
+
+<textarea
+  id="adoptDescription"
+  required
+></textarea>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Контакт
+</label>
+
+<input id="adoptContact">
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Телефон
+</label>
+
+<input
+  id="adoptPhone"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<div class="photo-box">
+
+<label>
+📷 Фото
+</label>
+
+<input
+  id="adoptPhoto"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+  required
+>
+
+<img
+  id="adoptPreview"
+  class="photo-preview"
+  alt=""
+>
+
+</div>
+
+</div>
+
+
+<div
+  id="adoptionMessage"
+  class="form-message"
+></div>
+
+
+<button
+  id="adoptionSubmit"
+  type="submit"
+  class="form-submit"
+>
+Отправить
+</button>
+
+</form>
+
+</div>
+
+</dialog>
+
+
+<!-- HELP -->
+
+<dialog
+  class="form-modal"
+  id="helpDialog"
+>
+
+<div class="form-modal__inner">
+
+<div class="form-modal__head">
+
+<h2>
+Коту нужна помощь
+</h2>
+
+<button
+  class="form-close"
+  id="closeHelpForm"
+  type="button"
+>
+×
+</button>
+
+</div>
+
+
+<form
+  class="data-form"
+  id="helpForm"
+>
+
+<div class="form-field">
+
+<label>
+Тип помощи
+</label>
+
+<select
+  id="helpType"
+  required
+>
+
+<option value="medical">
+Лечение
+</option>
+
+<option value="food">
+Корм
+</option>
+
+<option value="foster">
+Передержка
+</option>
+
+<option value="transport">
+Транспорт
+</option>
+
+<option value="sterilization">
+Стерилизация
+</option>
+
+<option value="urgent">
+Срочно
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Срочность
+</label>
+
+<select id="helpUrgency">
+
+<option value="normal">
+Normal
+</option>
+
+<option value="high">
+High
+</option>
+
+<option value="critical">
+Critical
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Имя кота
+</label>
+
+<input id="helpName">
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Район
+</label>
+
+<input
+  id="helpArea"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label>
+Что произошло?
+</label>
+
+<textarea
+  id="helpDescription"
+  required
+></textarea>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Контакт
+</label>
+
+<input id="helpContact">
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Телефон
+</label>
+
+<input
+  id="helpPhone"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<div class="photo-box">
+
+<input
+  id="helpPhoto"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+  required
+>
+
+<img
+  id="helpPreview"
+  class="photo-preview"
+  alt=""
+>
+
+</div>
+
+</div>
+
+
+<div
+  id="helpMessage"
+  class="form-message"
+></div>
+
+
+<button
+  id="helpSubmit"
+  class="form-submit"
+  type="submit"
+>
+Отправить
+</button>
+
+</form>
+
+</div>
+
+</dialog>
+
+
+<!-- LOST FOUND -->
+
+<dialog
+  class="form-modal"
+  id="lostFoundDialog"
+>
+
+<div class="form-modal__inner">
+
+<div class="form-modal__head">
+
+<h2 id="lostFoundFormTitle">
+Lost & Found
+</h2>
+
+<button
+  class="form-close"
+  id="closeLostFoundForm"
+  type="button"
+>
+×
+</button>
+
+</div>
+
+
+<form
+  class="data-form"
+  id="lostFoundForm"
+>
+
+<input
+  id="lostFoundType"
+  type="hidden"
+>
+
+
+<div class="form-field">
+
+<label>
+Имя кота
+</label>
+
+<input id="lostFoundName">
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Дата
+</label>
+
+<input
+  id="lostFoundDate"
+  type="date"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label>
+Район
+</label>
+
+<input
+  id="lostFoundArea"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label>
+Описание
+</label>
+
+<textarea
+  id="lostFoundDescription"
+  required
+></textarea>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Контакт
+</label>
+
+<input id="lostFoundContact">
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Телефон
+</label>
+
+<input
+  id="lostFoundPhone"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<input
+  id="lostFoundPhoto"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+  required
+>
+
+<img
+  id="lostFoundPreview"
+  class="photo-preview"
+  alt=""
+>
+
+</div>
+
+
+<div
+  id="lostFoundMessage"
+  class="form-message"
+></div>
+
+
+<button
+  id="lostFoundSubmit"
+  type="submit"
+  class="form-submit"
+>
+Отправить
+</button>
+
+</form>
+
+</div>
+
+</dialog>
+
+
+<!-- FEED -->
+
+<dialog
+  class="form-modal"
+  id="feedDialog"
+>
+
+<div class="form-modal__inner">
+
+<div class="form-modal__head">
+
+<h2>
+Добавить точку
+</h2>
+
+<button
+  class="form-close"
+  id="closeFeedForm"
+  type="button"
+>
+×
+</button>
+
+</div>
+
+
+<form
+  class="data-form"
+  id="feedForm"
+>
+
+<div class="form-field">
+
+<label>
+Тип
+</label>
+
+<select
+  id="feedType"
+  required
+>
+
+<option value="food">
+Корм
+</option>
+
+<option value="water">
+Вода
+</option>
+
+<option value="colony">
+Колония
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Статус
+</label>
+
+<select id="feedStatus">
+
+<option value="active">
+Active
+</option>
+
+<option value="needs_refill">
+Needs refill
+</option>
+
+<option value="inactive">
+Inactive
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Название
+</label>
+
+<input id="feedTitle">
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Район
+</label>
+
+<input
+  id="feedArea"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label>
+Описание
+</label>
+
+<textarea id="feedDescription"></textarea>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Контакт
+</label>
+
+<input id="feedContact">
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Телефон
+</label>
+
+<input id="feedPhone">
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<input
+  id="feedPhoto"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+  required
+>
+
+<img
+  id="feedPreview"
+  class="photo-preview"
+  alt=""
+>
+
+</div>
+
+
+<div
+  id="feedMessage"
+  class="form-message"
+></div>
+
+
+<button
+  id="feedSubmit"
+  type="submit"
+  class="form-submit"
+>
+Отправить
+</button>
+
+</form>
+
+</div>
+
+</dialog>
+
+
+<!-- MAP CAT -->
+
+<dialog
+  class="form-modal form-modal--map"
+  id="mapCatDialog"
+>
+
+<div class="form-modal__inner">
+
+<div class="form-modal__head">
+
+<h2>
+Добавить кота на карту
+</h2>
+
+<button
+  class="form-close"
+  id="closeMapCatForm"
+  type="button"
+>
+×
+</button>
+
+</div>
+
+
+<form
+  class="data-form"
+  id="mapCatForm"
+>
+
+<div class="form-field">
+
+<label>
+Имя
+</label>
+
+<input id="mapCatName">
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Статус
+</label>
+
+<select id="mapCatStatus">
+
+<option value="spotted">
+Spotted
+</option>
+
+<option value="regular">
+Regular
+</option>
+
+<option value="needs_help">
+Needs help
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label>
+Район / улица
+</label>
+
+<input
+  id="mapCatArea"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label>
+Описание
+</label>
+
+<textarea
+  id="mapCatDescription"
+  required
+></textarea>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Ваше имя
+</label>
+
+<input id="mapCatReporter">
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Телефон
+</label>
+
+<input id="mapCatPhone">
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<input
+  id="mapCatPhoto"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+  required
+>
+
+<img
+  id="mapCatPreview"
+  class="photo-preview"
+  alt=""
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label>
+📍 Выберите место кота на карте
+</label>
+
+<div id="spotMap"></div>
+
+
+<button
+  class="big-action-btn big-action-btn--caspian"
+  type="button"
+  id="useMyLocationForCat"
+  style="margin-top:12px;"
+>
+📍 Использовать моё местоположение
+</button>
+
+
+<div
+  id="mapCatLocationText"
+  class="selected-location is-empty"
+>
+Точка не выбрана.
+</div>
+
+</div>
+
+
+<input
+  id="mapCatLat"
+  type="hidden"
+>
+
+<input
+  id="mapCatLng"
+  type="hidden"
+>
+
+
+<div
+  id="mapCatMessage"
+  class="form-message"
+></div>
+
+
+<button
+  id="mapCatSubmit"
+  type="submit"
+  class="form-submit"
+>
+Отправить кота
+</button>
+
+</form>
+
+</div>
+
+</dialog>
+
+
+<!-- =====================================================
+     SHOP ORDER
+===================================================== -->
+
+<dialog
+  class="form-modal"
+  id="shopOrderDialog"
+>
+
+<div class="form-modal__inner">
+
+<div class="form-modal__head">
+
+<div>
+
+<div class="eyebrow">
+BAKUCATS SHOP
+</div>
+
+<h2>
+Оформить заказ
+</h2>
+
+</div>
+
+
+<button
+  class="form-close"
+  type="button"
+  id="closeShopOrder"
+>
+×
+</button>
+
+</div>
+
+
+<form
+  id="shopOrderForm"
+  class="data-form"
+>
+
+
+<div class="form-field">
+
+<label>
+Товар
+</label>
+
+<select
+  id="shopProduct"
+  required
+>
+
+<option value="Футболка">
+👕 Футболка
+</option>
+
+<option value="Худи">
+🧥 Худи
+</option>
+
+<option value="Носки">
+🧦 Носки
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Размер
+</label>
+
+<select
+  id="shopSize"
+  required
+>
+
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L">L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label>
+Дизайн
+</label>
+
+<select
+  id="shopDesign"
+  required
+>
+
+<option value="BakuCats Old City">
+BakuCats · Old City
+</option>
+
+<option value="BakuCats Caspian">
+BakuCats · Caspian
+</option>
+
+<option value="BakuCats Buta">
+BakuCats · Buta
+</option>
+
+<option value="Фото моего кота">
+Фото моего кота
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Количество
+</label>
+
+<select id="shopQuantity">
+
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+Ваше имя
+</label>
+
+<input
+  id="shopCustomerName"
+  type="text"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label>
+Телефон / WhatsApp
+</label>
+
+<input
+  id="shopCustomerPhone"
+  type="tel"
+  placeholder="+994..."
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label>
+Комментарий
+</label>
+
+<textarea
+  id="shopComment"
+  placeholder="Например: чёрная футболка, белый принт..."
+></textarea>
+
+</div>
+
+
+<div
+  id="shopOrderMessage"
+  class="form-message"
+></div>
+
+
+<button
+  type="submit"
+  class="form-submit"
+>
+🛍 Оформить заказ
+</button>
+
+</form>
+
+</div>
+
+</dialog>
+
+
+<!-- MUSIC -->
+
+<audio
+  id="bgMusic"
+  loop
+  preload="auto"
+>
+
+<source
+  src="Atlas Baku.mp3"
+  type="audio/mpeg"
+>
+
+</audio>
+
+
+<button
+  id="musicToggle"
+  type="button"
+>
+🐱
+</button>
+
+
+<!-- OLD STATIC.JS COMPATIBILITY -->
+
+<dialog
+  id="demoSheet"
+  style="display:none;"
+>
+
+<div id="demoTitle"></div>
+<div id="demoHeading"></div>
+<div id="demoText"></div>
+
+</dialog>
+
+
+<!-- LIBRARIES -->
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/i18n.js"></script>
+
+
+<!-- CAPTURE MAP -->
+
+<script>
+
+window.catsBakuMainMap = null;
+
+if(window.L){
+
+  const originalMapFunction =
+    L.map.bind(L);
+
+  L.map =
+    function(target,options){
+
+      const createdMap =
+        originalMapFunction(
+          target,
+          options
+        );
+
+      const targetId =
+        typeof target === 'string'
+        ?
+        target
+        :
+        target?.id;
+
+      if(targetId === 'catMap'){
+
+        window.catsBakuMainMap =
+          createdMap;
+
+      }
+
+      return createdMap;
+
+    };
+
+}
+
+</script>
+
+
+<script src="js/static.js"></script>
+
+
+<script>
+
+/* =====================================================
+   SUPABASE
+===================================================== */
+
+const SUPABASE_URL =
+'https://lmtjmuldretsqcusayqa.supabase.co';
+
+const SUPABASE_KEY =
+'sb_publishable_TuYGmDx1Xgq85GY6yCwezQ_zq-lh_uA';
+
+const db =
+window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+
+function lang(){
+
+  return (
+    localStorage.getItem('cb-lang-static')
+    ||
+    'az'
+  );
+
+}
+
+
+function esc(value){
+
+  return String(value ?? '')
+    .replaceAll('&','&amp;')
+    .replaceAll('<','&lt;')
+    .replaceAll('>','&gt;')
+    .replaceAll('"','&quot;')
+    .replaceAll("'","&#039;");
+
+}
+
+
+function safePhone(value){
+
+  return String(value || '')
+    .replace(/[^0-9+]/g,'');
+
+}
+
+
+function safePhoto(url){
+
+  const value =
+    String(url || '');
+
+  const allowed =
+    SUPABASE_URL
+    +
+    '/storage/v1/object/public/cat-photos/';
+
+  return value.startsWith(allowed)
+    ?
+    value
+    :
+    'img/hero-cat.jpg';
+
+}
+
+
+function photoPreview(input,preview){
+
+  input.addEventListener(
+    'change',
+    function(){
+
+      const file =
+        input.files[0];
+
+      if(!file){
+
+        preview.style.display =
+          'none';
+
+        return;
+
+      }
+
+      preview.src =
+        URL.createObjectURL(file);
+
+      preview.style.display =
+        'block';
+
+    }
+  );
+
+}
+
+
+function validatePhoto(file){
+
+  if(!file){
+    return false;
+  }
+
+  const valid =
+    [
+      'image/jpeg',
+      'image/png',
+      'image/webp'
+    ];
+
+  return (
+    valid.includes(file.type)
+    &&
+    file.size <= 5 * 1024 * 1024
+  );
+
+}
+
+
+/* =====================================================
+   ADD MENU
+===================================================== */
+
+const addMenuDialog =
+document.getElementById('addMenuDialog');
+
+
+document
+.querySelectorAll('[data-open-add-menu]')
+.forEach(
+  button => {
+
+    button.addEventListener(
+      'click',
+      ()=>addMenuDialog.showModal()
+    );
+
+  }
+);
+
+
+document
+.getElementById('closeAddMenu')
+.addEventListener(
+  'click',
+  ()=>addMenuDialog.close()
+);
+
+
+document
+.querySelectorAll('[data-add-action]')
+.forEach(
+  button => {
+
+    button.addEventListener(
+      'click',
+      function(){
+
+        const action =
+          button.dataset.addAction;
+
+        addMenuDialog.close();
+
+        if(action === 'citycat'){
+          cityCatDialog.showModal();
+        }
+
+        if(action === 'adoption'){
+          adoptionDialog.showModal();
+        }
+
+        if(action === 'help'){
+          helpDialog.showModal();
+        }
+
+        if(action === 'lost'){
+          openLostFound('lost');
+        }
+
+        if(action === 'found'){
+          openLostFound('found');
+        }
+
+        if(action === 'map'){
+          openMapCatDialog();
+        }
+
+        if(action === 'feed'){
+          feedDialog.showModal();
+        }
+
+      }
+    );
+
+  }
+);
+
+
+/* =====================================================
+   CITY CAT
+===================================================== */
+
+const cityCatDialog =
+document.getElementById('cityCatDialog');
+
+const cityCatForm =
+document.getElementById('cityCatForm');
+
+const cityCatPhoto =
+document.getElementById('cityCatPhoto');
+
+const cityCatPreview =
+document.getElementById('cityCatPreview');
+
+const cityCatMessage =
+document.getElementById('cityCatMessage');
+
+const cityCatSubmit =
+document.getElementById('cityCatSubmit');
+
+
+photoPreview(
+  cityCatPhoto,
+  cityCatPreview
+);
+
+
+document
+.getElementById('closeCityCatForm')
+.addEventListener(
+  'click',
+  ()=>cityCatDialog.close()
+);
+
+
+cityCatForm.addEventListener(
+'submit',
+async function(event){
+
+  event.preventDefault();
+
+  const file =
+    cityCatPhoto.files[0];
+
+
+  if(!validatePhoto(file)){
+
+    cityCatMessage.textContent =
+      'Выберите JPG, PNG или WebP до 5 MB.';
+
+    cityCatMessage.className =
+      'form-message error';
+
+    return;
+
+  }
+
+
+  cityCatSubmit.disabled =
+    true;
+
+
+  try{
+
+    const ext =
+      file.name
+      .split('.')
+      .pop()
+      .toLowerCase();
+
+
+    const path =
+      'cats/'
+      +
+      Date.now()
+      +
+      '-'
+      +
+      crypto.randomUUID()
+      +
+      '.'
+      +
+      ext;
+
+
+    const upload =
+      await db.storage
+      .from('cat-photos')
+      .upload(
+        path,
+        file,
+        {
+          contentType:file.type
+        }
+      );
+
+
+    if(upload.error){
+      throw upload.error;
+    }
+
+
+    const photoUrl =
+      db.storage
+      .from('cat-photos')
+      .getPublicUrl(path)
+      .data
+      .publicUrl;
+
+
+    const result =
+      await db
+      .from('cats')
+      .insert({
+
+        name:
+        document
+        .getElementById('cityCatName')
+        .value
+        .trim()
+        ||
+        null,
+
+        category:
+        'city',
+
+        area:
+        document
+        .getElementById('cityCatArea')
+        .value
+        .trim(),
+
+        description:
+        document
+        .getElementById('cityCatDescription')
+        .value
+        .trim(),
+
+        photo_url:
+        photoUrl,
+
+        lat:null,
+        lng:null,
+
+        status:
+        'regular',
+
+        seen_at:
+        new Date().toISOString(),
+
+        reported_by:
+        document
+        .getElementById('cityCatReporter')
+        .value
+        .trim()
+        ||
+        null,
+
+        contact_phone:
+        document
+        .getElementById('cityCatPhone')
+        .value
+        .trim()
+        ||
+        null,
+
+        approved:false
+
+      });
+
+
+    if(result.error){
+      throw result.error;
+    }
+
+
+    cityCatMessage.textContent =
+      '✅ Кот отправлен на модерацию.';
+
+    cityCatMessage.className =
+      'form-message success';
+
+    cityCatForm.reset();
+
+    cityCatPreview.style.display =
+      'none';
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    cityCatMessage.textContent =
+      'Ошибка. Попробуйте ещё раз.';
+
+    cityCatMessage.className =
+      'form-message error';
+
+  }
+
+  finally{
+
+    cityCatSubmit.disabled =
+      false;
+
+  }
+
+}
+);
+
+
+/* LOAD CITY CATS */
+
+async function loadCityCats(){
+
+  const grid =
+    document.getElementById('grid');
+
+  grid
+    .querySelectorAll('.db-cat-card')
+    .forEach(
+      card=>card.remove()
+    );
+
+
+  const result =
+    await db
+    .from('cats')
+    .select('*')
+    .eq('approved',true)
+    .eq('status','regular')
+    .is('lat',null)
+    .is('lng',null)
+    .order(
+      'created_at',
+      {
+        ascending:false
+      }
+    );
+
+
+  if(result.error){
+
+    console.error(result.error);
+
+    return;
+
+  }
+
+
+  const rows =
+    result.data || [];
+
+
+  rows.forEach(
+    cat => {
+
+      const name =
+        cat.name
+        ||
+        'Бакинский кот';
+
+
+      grid.insertAdjacentHTML(
+        'beforeend',
+        `
+        <article class="card db-cat-card">
+
+          <div class="card__photo">
+
+            <img
+              src="${esc(safePhoto(cat.photo_url))}"
+              alt="${esc(name)}"
+            >
+
+          </div>
+
+          <div class="card__body">
+
+            <div class="card__name">
+              ${esc(name)}
+            </div>
+
+            <div class="card__district">
+              📍 ${esc(cat.area || 'Baku')}
+            </div>
+
+            ${
+              cat.description
+              ?
+              `
+              <p class="data-description">
+                ${esc(cat.description)}
+              </p>
+              `
+              :
+              ''
+            }
+
+          </div>
+
+        </article>
+        `
+      );
+
+    }
+  );
+
+
+  document
+  .getElementById('catsCount')
+  .textContent =
+    `${5 + rows.length} котов`;
+
+}
+
+
+/* =====================================================
+   ADOPTION
+===================================================== */
+
+const adoptionDialog =
+document.getElementById('adoptionDialog');
+
+const adoptionForm =
+document.getElementById('adoptionForm');
+
+const adoptionMessage =
+document.getElementById('adoptionMessage');
+
+const adoptionSubmit =
+document.getElementById('adoptionSubmit');
+
+const adoptPhoto =
+document.getElementById('adoptPhoto');
+
+const adoptPreview =
+document.getElementById('adoptPreview');
+
+
+photoPreview(
+  adoptPhoto,
+  adoptPreview
+);
+
+
+document
+.getElementById('openAdoptionForm')
+.addEventListener(
+  'click',
+  ()=>adoptionDialog.showModal()
+);
+
+
+document
+.getElementById('closeAdoptionForm')
+.addEventListener(
+  'click',
+  ()=>adoptionDialog.close()
+);
+
+
+adoptionForm.addEventListener(
+'submit',
+async function(event){
+
+  event.preventDefault();
+
+  const file =
+    adoptPhoto.files[0];
+
+  if(!validatePhoto(file)){
+
+    adoptionMessage.textContent =
+      'Выберите фото до 5 MB.';
+
+    adoptionMessage.className =
+      'form-message error';
+
+    return;
+
+  }
+
+
+  adoptionSubmit.disabled =
+    true;
+
+
+  try{
+
+    const ext =
+      file.name
+      .split('.')
+      .pop()
+      .toLowerCase();
+
+
+    const path =
+      `adoptions/${Date.now()}-${crypto.randomUUID()}.${ext}`;
+
+
+    const upload =
+      await db.storage
+      .from('cat-photos')
+      .upload(
+        path,
+        file,
+        {
+          contentType:file.type
+        }
+      );
+
+
+    if(upload.error){
+      throw upload.error;
+    }
+
+
+    const photoUrl =
+      db.storage
+      .from('cat-photos')
+      .getPublicUrl(path)
+      .data
+      .publicUrl;
+
+
+    const result =
+      await db
+      .from('adoptions')
+      .insert({
+
+        name:
+        document
+        .getElementById('adoptName')
+        .value
+        .trim(),
+
+        age:
+        document
+        .getElementById('adoptAge')
+        .value
+        .trim()
+        ||
+        null,
+
+        gender:
+        document
+        .getElementById('adoptGender')
+        .value
+        ||
+        null,
+
+        area:
+        document
+        .getElementById('adoptArea')
+        .value
+        .trim(),
+
+        description:
+        document
+        .getElementById('adoptDescription')
+        .value
+        .trim(),
+
+        contact_name:
+        document
+        .getElementById('adoptContact')
+        .value
+        .trim()
+        ||
+        null,
+
+        contact_phone:
+        document
+        .getElementById('adoptPhone')
+        .value
+        .trim(),
+
+        photo_url:
+        photoUrl,
+
+        status:
+        'looking',
+
+        approved:false
+
+      });
+
+
+    if(result.error){
+      throw result.error;
+    }
+
+
+    adoptionMessage.textContent =
+      '✅ Отправлено на модерацию.';
+
+    adoptionMessage.className =
+      'form-message success';
+
+    adoptionForm.reset();
+
+    adoptPreview.style.display =
+      'none';
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    adoptionMessage.textContent =
+      'Ошибка.';
+
+    adoptionMessage.className =
+      'form-message error';
+
+  }
+
+  finally{
+
+    adoptionSubmit.disabled =
+      false;
+
+  }
+
+}
+);
+
+
+async function loadAdoptions(){
+
+  const result =
+    await db
+    .from('adoptions')
+    .select('*')
+    .eq('approved',true)
+    .eq('status','looking')
+    .order(
+      'created_at',
+      {
+        ascending:false
+      }
+    );
+
+
+  if(result.error){
+    return;
+  }
+
+
+  const rows =
+    result.data || [];
+
+  const grid =
+    document.getElementById('adoptionGrid');
+
+  document
+  .getElementById('adoptionCount')
+  .textContent =
+    rows.length;
+
+
+  if(!rows.length){
+
+    grid.innerHTML =
+      `
+      <div class="data-empty">
+      <div class="data-empty__icon">🐾</div>
+      Пока нет объявлений.
+      </div>
+      `;
+
+    return;
+
+  }
+
+
+  grid.innerHTML =
+    rows.map(
+      item => `
+      <article class="card">
+
+        <div class="card__photo">
+
+          <img
+            src="${esc(safePhoto(item.photo_url))}"
+            alt="${esc(item.name || '')}"
+          >
+
+        </div>
+
+        <div class="card__body">
+
+          <div class="card__name">
+          ${esc(item.name || '')}
+          </div>
+
+          <div class="data-meta">
+          📍 ${esc(item.area || 'Baku')}
+          </div>
+
+          <p class="data-description">
+          ${esc(item.description || '')}
+          </p>
+
+          ${
+            item.contact_phone
+            ?
+            `
+            <a
+              class="data-contact"
+              href="tel:${safePhone(item.contact_phone)}"
+            >
+            📞 Связаться
+            </a>
+            `
+            :
+            ''
+          }
+
+        </div>
+
+      </article>
+      `
+    )
+    .join('');
+
+}
+
+
+/* =====================================================
+   HELP
+===================================================== */
+
+const helpDialog =
+document.getElementById('helpDialog');
+
+const helpForm =
+document.getElementById('helpForm');
+
+const helpPhoto =
+document.getElementById('helpPhoto');
+
+const helpPreview =
+document.getElementById('helpPreview');
+
+const helpMessage =
+document.getElementById('helpMessage');
+
+const helpSubmit =
+document.getElementById('helpSubmit');
+
+
+photoPreview(
+  helpPhoto,
+  helpPreview
+);
+
+
+document
+.getElementById('openHelpForm')
+.addEventListener(
+  'click',
+  ()=>helpDialog.showModal()
+);
+
+
+document
+.getElementById('closeHelpForm')
+.addEventListener(
+  'click',
+  ()=>helpDialog.close()
+);
+
+
+helpForm.addEventListener(
+'submit',
+async function(event){
+
+  event.preventDefault();
+
+  const file =
+    helpPhoto.files[0];
+
+  if(!validatePhoto(file)){
+    return;
+  }
+
+  helpSubmit.disabled =
+    true;
+
+
+  try{
+
+    const ext =
+      file.name
+      .split('.')
+      .pop()
+      .toLowerCase();
+
+
+    const path =
+      `help/${Date.now()}-${crypto.randomUUID()}.${ext}`;
+
+
+    const upload =
+      await db.storage
+      .from('cat-photos')
+      .upload(
+        path,
+        file,
+        {
+          contentType:file.type
+        }
+      );
+
+
+    if(upload.error){
+      throw upload.error;
+    }
+
+
+    const photoUrl =
+      db.storage
+      .from('cat-photos')
+      .getPublicUrl(path)
+      .data
+      .publicUrl;
+
+
+    const result =
+      await db
+      .from('help_requests')
+      .insert({
+
+        help_type:
+        document
+        .getElementById('helpType')
+        .value,
+
+        urgency:
+        document
+        .getElementById('helpUrgency')
+        .value,
+
+        name:
+        document
+        .getElementById('helpName')
+        .value
+        ||
+        null,
+
+        area:
+        document
+        .getElementById('helpArea')
+        .value,
+
+        description:
+        document
+        .getElementById('helpDescription')
+        .value,
+
+        contact_name:
+        document
+        .getElementById('helpContact')
+        .value
+        ||
+        null,
+
+        contact_phone:
+        document
+        .getElementById('helpPhone')
+        .value,
+
+        photo_url:
+        photoUrl,
+
+        status:
+        'active',
+
+        approved:false
+
+      });
+
+
+    if(result.error){
+      throw result.error;
+    }
+
+
+    helpMessage.textContent =
+      '✅ Отправлено на модерацию.';
+
+    helpMessage.className =
+      'form-message success';
+
+    helpForm.reset();
+
+    helpPreview.style.display =
+      'none';
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    helpMessage.textContent =
+      'Ошибка.';
+
+    helpMessage.className =
+      'form-message error';
+
+  }
+
+  finally{
+
+    helpSubmit.disabled =
+      false;
+
+  }
+
+}
+);
+
+
+async function loadHelpRequests(){
+
+  const result =
+    await db
+    .from('help_requests')
+    .select('*')
+    .eq('approved',true)
+    .order(
+      'created_at',
+      {
+        ascending:false
+      }
+    );
+
+
+  if(result.error){
+    return;
+  }
+
+
+  const rows =
+    result.data || [];
+
+  const grid =
+    document.getElementById('helpGrid');
+
+  document
+  .getElementById('helpCount')
+  .textContent =
+    rows.length;
+
+
+  if(!rows.length){
+
+    grid.innerHTML =
+      `
+      <div class="data-empty">
+      <div class="data-empty__icon">❤️</div>
+      Пока нет активных просьб.
+      </div>
+      `;
+
+    return;
+
+  }
+
+
+  grid.innerHTML =
+    rows.map(
+      item => `
+      <article class="card">
+
+        <div class="card__photo">
+
+          <img
+            src="${esc(safePhoto(item.photo_url))}"
+            alt=""
+          >
+
+        </div>
+
+        <div class="card__body">
+
+          <div class="card__name">
+          ${esc(item.name || 'Кот')}
+          </div>
+
+          <div class="data-meta">
+          📍 ${esc(item.area || 'Baku')}
+          </div>
+
+          <p class="data-description">
+          ${esc(item.description || '')}
+          </p>
+
+          ${
+            item.contact_phone
+            ?
+            `
+            <a
+              class="data-contact"
+              href="tel:${safePhone(item.contact_phone)}"
+            >
+            ❤️ Помочь
+            </a>
+            `
+            :
+            ''
+          }
+
+        </div>
+
+      </article>
+      `
+    )
+    .join('');
+
+}
+
+
+/* =====================================================
+   LOST FOUND
+===================================================== */
+
+const lostFoundDialog =
+document.getElementById('lostFoundDialog');
+
+const lostFoundForm =
+document.getElementById('lostFoundForm');
+
+const lostFoundType =
+document.getElementById('lostFoundType');
+
+const lostFoundPhoto =
+document.getElementById('lostFoundPhoto');
+
+const lostFoundPreview =
+document.getElementById('lostFoundPreview');
+
+const lostFoundMessage =
+document.getElementById('lostFoundMessage');
+
+const lostFoundSubmit =
+document.getElementById('lostFoundSubmit');
+
+
+photoPreview(
+  lostFoundPhoto,
+  lostFoundPreview
+);
+
+
+function openLostFound(type){
+
+  lostFoundType.value =
+    type;
+
+  document
+  .getElementById('lostFoundFormTitle')
+  .textContent =
+    type === 'lost'
+    ?
+    'Сообщить о пропавшем коте'
+    :
+    'Сообщить о найденном коте';
+
+  lostFoundDialog.showModal();
+
+}
+
+
+document
+.getElementById('openLostForm')
+.addEventListener(
+  'click',
+  ()=>openLostFound('lost')
+);
+
+
+document
+.getElementById('openFoundForm')
+.addEventListener(
+  'click',
+  ()=>openLostFound('found')
+);
+
+
+document
+.getElementById('closeLostFoundForm')
+.addEventListener(
+  'click',
+  ()=>lostFoundDialog.close()
+);
+
+
+lostFoundForm.addEventListener(
+'submit',
+async function(event){
+
+  event.preventDefault();
+
+  const file =
+    lostFoundPhoto.files[0];
+
+  if(!validatePhoto(file)){
+    return;
+  }
+
+  lostFoundSubmit.disabled =
+    true;
+
+
+  try{
+
+    const ext =
+      file.name
+      .split('.')
+      .pop()
+      .toLowerCase();
+
+
+    const path =
+      `lost-found/${Date.now()}-${crypto.randomUUID()}.${ext}`;
+
+
+    const upload =
+      await db.storage
+      .from('cat-photos')
+      .upload(
+        path,
+        file,
+        {
+          contentType:file.type
+        }
+      );
+
+
+    if(upload.error){
+      throw upload.error;
+    }
+
+
+    const photoUrl =
+      db.storage
+      .from('cat-photos')
+      .getPublicUrl(path)
+      .data
+      .publicUrl;
+
+
+    const result =
+      await db
+      .from('lost_found')
+      .insert({
+
+        type:
+        lostFoundType.value,
+
+        name:
+        document
+        .getElementById('lostFoundName')
+        .value
+        ||
+        null,
+
+        event_date:
+        document
+        .getElementById('lostFoundDate')
+        .value,
+
+        area:
+        document
+        .getElementById('lostFoundArea')
+        .value,
+
+        description:
+        document
+        .getElementById('lostFoundDescription')
+        .value,
+
+        contact_name:
+        document
+        .getElementById('lostFoundContact')
+        .value
+        ||
+        null,
+
+        contact_phone:
+        document
+        .getElementById('lostFoundPhone')
+        .value,
+
+        photo_url:
+        photoUrl,
+
+        status:
+        'active',
+
+        approved:false
+
+      });
+
+
+    if(result.error){
+      throw result.error;
+    }
+
+
+    lostFoundMessage.textContent =
+      '✅ Отправлено на модерацию.';
+
+    lostFoundMessage.className =
+      'form-message success';
+
+    lostFoundForm.reset();
+
+    lostFoundPreview.style.display =
+      'none';
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    lostFoundMessage.textContent =
+      'Ошибка.';
+
+    lostFoundMessage.className =
+      'form-message error';
+
+  }
+
+  finally{
+
+    lostFoundSubmit.disabled =
+      false;
+
+  }
+
+}
+);
+
+
+async function loadLostFound(){
+
+  const result =
+    await db
+    .from('lost_found')
+    .select('*')
+    .eq('approved',true)
+    .eq('status','active')
+    .order(
+      'created_at',
+      {
+        ascending:false
+      }
+    );
+
+
+  if(result.error){
+    return;
+  }
+
+
+  const rows =
+    result.data || [];
+
+  const grid =
+    document.getElementById('lostFoundGrid');
+
+  document
+  .getElementById('lostFoundCount')
+  .textContent =
+    rows.length;
+
+
+  if(!rows.length){
+
+    grid.innerHTML =
+      `
+      <div class="data-empty">
+      <div class="data-empty__icon">🔎</div>
+      Пока нет объявлений.
+      </div>
+      `;
+
+    return;
+
+  }
+
+
+  grid.innerHTML =
+    rows.map(
+      item => {
+
+        const lost =
+          item.type === 'lost';
+
+        return `
+        <article class="card">
+
+          <div class="card__photo">
+
+          <img
+            src="${esc(safePhoto(item.photo_url))}"
+            alt=""
+          >
+
+          </div>
+
+          <div class="card__body">
+
+            <div
+              class="
+              status-badge
+              ${
+                lost
+                ?
+                'status-badge--lost'
+                :
+                'status-badge--found'
+              }
+              "
+            >
+            ${
+              lost
+              ?
+              '😿 Потерялся'
+              :
+              '👀 Найден'
+            }
+            </div>
+
+            <div class="card__name">
+            ${esc(item.name || 'Кот')}
+            </div>
+
+            <div class="data-meta">
+            📍 ${esc(item.area || 'Baku')}
+            </div>
+
+            <p class="data-description">
+            ${esc(item.description || '')}
+            </p>
+
+          </div>
+
+        </article>
+        `;
+
+      }
+    )
+    .join('');
+
+}
+
+
+/* =====================================================
+   VETS
+===================================================== */
+
+async function loadVets(){
+
+  const result =
+    await db
+    .from('vet_clinics')
+    .select('*')
+    .eq('approved',true)
+    .order(
+      'name',
+      {
+        ascending:true
+      }
+    );
+
+
+  if(result.error){
+    return;
+  }
+
+
+  const rows =
+    result.data || [];
+
+  const grid =
+    document.getElementById('vetGrid');
+
+
+  if(!rows.length){
+
+    grid.innerHTML =
+      '<div class="data-empty">Клиник пока нет.</div>';
+
+    return;
+
+  }
+
+
+  grid.innerHTML =
+    rows.map(
+      clinic => {
+
+        const query =
+          encodeURIComponent(
+            [
+              clinic.name,
+              clinic.address,
+              'Baku'
+            ]
+            .filter(Boolean)
+            .join(' ')
+          );
+
+
+        return `
+        <article class="vet-card">
+
+          <div class="vet-card__icon">
+          🩺
+          </div>
+
+          ${
+            clinic.emergency_24h
+            ?
+            `
+            <div class="status-badge status-badge--24">
+            24/7
+            </div>
+            `
+            :
+            ''
+          }
+
+          <div class="vet-card__name">
+          ${esc(clinic.name)}
+          </div>
+
+          <div class="vet-card__info">
+
+          ${
+            clinic.address
+            ?
+            `<div>📍 ${esc(clinic.address)}</div>`
+            :
+            ''
+          }
+
+          ${
+            clinic.opening_hours
+            ?
+            `<div>🕐 ${esc(clinic.opening_hours)}</div>`
+            :
+            ''
+          }
+
+          </div>
+
+          <div class="vet-card__actions">
+
+            <a
+              class="vet-link vet-link--light"
+              href="https://www.google.com/maps/search/?api=1&query=${query}"
+              target="_blank"
+              rel="noopener"
+            >
+            📍 Карта
+            </a>
+
+          </div>
+
+        </article>
+        `;
+
+      }
+    )
+    .join('');
+
+}
+
+
+/* =====================================================
+   FEED
+===================================================== */
+
+const feedDialog =
+document.getElementById('feedDialog');
+
+const feedForm =
+document.getElementById('feedForm');
+
+const feedPhoto =
+document.getElementById('feedPhoto');
+
+const feedPreview =
+document.getElementById('feedPreview');
+
+const feedMessage =
+document.getElementById('feedMessage');
+
+const feedSubmit =
+document.getElementById('feedSubmit');
+
+
+photoPreview(
+  feedPhoto,
+  feedPreview
+);
+
+
+document
+.getElementById('openFeedForm')
+.addEventListener(
+  'click',
+  ()=>feedDialog.showModal()
+);
+
+
+document
+.getElementById('closeFeedForm')
+.addEventListener(
+  'click',
+  ()=>feedDialog.close()
+);
+
+
+feedForm.addEventListener(
+'submit',
+async function(event){
+
+  event.preventDefault();
+
+  const file =
+    feedPhoto.files[0];
+
+  if(!validatePhoto(file)){
+    return;
+  }
+
+  feedSubmit.disabled =
+    true;
+
+
+  try{
+
+    const ext =
+      file.name
+      .split('.')
+      .pop()
+      .toLowerCase();
+
+
+    const path =
+      `feed/${Date.now()}-${crypto.randomUUID()}.${ext}`;
+
+
+    const upload =
+      await db.storage
+      .from('cat-photos')
+      .upload(
+        path,
+        file,
+        {
+          contentType:file.type
+        }
+      );
+
+
+    if(upload.error){
+      throw upload.error;
+    }
+
+
+    const photoUrl =
+      db.storage
+      .from('cat-photos')
+      .getPublicUrl(path)
+      .data
+      .publicUrl;
+
+
+    const result =
+      await db
+      .from('feed_points')
+      .insert({
+
+        point_type:
+        document
+        .getElementById('feedType')
+        .value,
+
+        title:
+        document
+        .getElementById('feedTitle')
+        .value
+        ||
+        null,
+
+        area:
+        document
+        .getElementById('feedArea')
+        .value,
+
+        description:
+        document
+        .getElementById('feedDescription')
+        .value
+        ||
+        null,
+
+        contact_name:
+        document
+        .getElementById('feedContact')
+        .value
+        ||
+        null,
+
+        contact_phone:
+        document
+        .getElementById('feedPhone')
+        .value
+        ||
+        null,
+
+        photo_url:
+        photoUrl,
+
+        status:
+        document
+        .getElementById('feedStatus')
+        .value,
+
+        last_confirmed_at:
+        new Date().toISOString(),
+
+        approved:false
+
+      });
+
+
+    if(result.error){
+      throw result.error;
+    }
+
+
+    feedMessage.textContent =
+      '✅ Отправлено на модерацию.';
+
+    feedMessage.className =
+      'form-message success';
+
+    feedForm.reset();
+
+    feedPreview.style.display =
+      'none';
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    feedMessage.textContent =
+      'Ошибка.';
+
+    feedMessage.className =
+      'form-message error';
+
+  }
+
+  finally{
+
+    feedSubmit.disabled =
+      false;
+
+  }
+
+}
+);
+
+
+async function loadFeedPoints(){
+
+  const result =
+    await db
+    .from('feed_points')
+    .select('*')
+    .eq('approved',true)
+    .order(
+      'created_at',
+      {
+        ascending:false
+      }
+    );
+
+
+  if(result.error){
+    return;
+  }
+
+
+  const rows =
+    result.data || [];
+
+  const grid =
+    document.getElementById('feedGrid');
+
+
+  if(!rows.length){
+
+    grid.innerHTML =
+      `
+      <div class="data-empty">
+      <div class="data-empty__icon">🥣</div>
+      Пока нет точек.
+      </div>
+      `;
+
+    return;
+
+  }
+
+
+  grid.innerHTML =
+    rows.map(
+      item => `
+      <article class="card">
+
+        <div class="card__photo">
+
+          <img
+            src="${esc(safePhoto(item.photo_url))}"
+            alt=""
+          >
+
+        </div>
+
+        <div class="card__body">
+
+          <div class="card__name">
+          ${
+            esc(
+              item.title
+              ||
+              'Точка кормления'
+            )
+          }
+          </div>
+
+          <div class="data-meta">
+          📍 ${esc(item.area)}
+          </div>
+
+          ${
+            item.description
+            ?
+            `
+            <p class="data-description">
+            ${esc(item.description)}
+            </p>
+            `
+            :
+            ''
+          }
+
+        </div>
+
+      </article>
+      `
+    )
+    .join('');
+
+}
+
+
+/* =====================================================
+   MAP
+===================================================== */
+
+const mapCatDialog =
+document.getElementById('mapCatDialog');
+
+const mapCatForm =
+document.getElementById('mapCatForm');
+
+const mapCatPhoto =
+document.getElementById('mapCatPhoto');
+
+const mapCatPreview =
+document.getElementById('mapCatPreview');
+
+const mapCatMessage =
+document.getElementById('mapCatMessage');
+
+const mapCatLat =
+document.getElementById('mapCatLat');
+
+const mapCatLng =
+document.getElementById('mapCatLng');
+
+const mapCatLocationText =
+document.getElementById('mapCatLocationText');
+
+const mapCatSubmit =
+document.getElementById('mapCatSubmit');
+
+
+let spotMap = null;
+
+let spotMarker = null;
+
+
+photoPreview(
+  mapCatPhoto,
+  mapCatPreview
+);
+
+
+function chooseSpot(lat,lng){
+
+  mapCatLat.value =
+    lat;
+
+  mapCatLng.value =
+    lng;
+
+
+  if(spotMarker){
+
+    spotMarker.setLatLng(
+      [
+        lat,
+        lng
+      ]
+    );
+
+  }
+  else{
+
+    spotMarker =
+      L.marker(
+        [
+          lat,
+          lng
+        ]
+      )
+      .addTo(
+        spotMap
+      );
+
+  }
+
+
+  mapCatLocationText.classList.remove(
+    'is-empty'
+  );
+
+
+  mapCatLocationText.textContent =
+    `✅ Точка выбрана: ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+
+}
+
+
+function initSpotMap(){
+
+  if(spotMap){
+
+    spotMap.invalidateSize();
+
+    return;
+
+  }
+
+
+  spotMap =
+    L.map('spotMap')
+    .setView(
+      [
+        40.4093,
+        49.8671
+      ],
+      13
+    );
+
+
+  L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+      maxZoom:19,
+      attribution:'&copy; OpenStreetMap'
+    }
+  )
+  .addTo(
+    spotMap
+  );
+
+
+  spotMap.on(
+    'click',
+    event => {
+
+      chooseSpot(
+        event.latlng.lat,
+        event.latlng.lng
+      );
+
+    }
+  );
+
+}
+
+
+function openMapCatDialog(){
+
+  mapCatDialog.showModal();
+
+  setTimeout(
+    function(){
+
+      initSpotMap();
+
+      spotMap.invalidateSize();
+
+    },
+    180
+  );
+
+}
+
+
+document
+.getElementById('openMapCatForm')
+.addEventListener(
+  'click',
+  openMapCatDialog
+);
+
+
+document
+.getElementById('closeMapCatForm')
+.addEventListener(
+  'click',
+  ()=>mapCatDialog.close()
+);
+
+
+document
+.getElementById('useMyLocationForCat')
+.addEventListener(
+'click',
+function(){
+
+  navigator.geolocation.getCurrentPosition(
+
+    function(position){
+
+      const lat =
+        position.coords.latitude;
+
+      const lng =
+        position.coords.longitude;
+
+      initSpotMap();
+
+      spotMap.setView(
+        [
+          lat,
+          lng
+        ],
+        17
+      );
+
+      chooseSpot(
+        lat,
+        lng
+      );
+
+    },
+
+    function(){
+
+      alert(
+        'Не удалось получить местоположение.'
+      );
+
+    }
+
+  );
+
+}
+);
+
+
+mapCatForm.addEventListener(
+'submit',
+async function(event){
+
+  event.preventDefault();
+
+
+  const file =
+    mapCatPhoto.files[0];
+
+  const lat =
+    Number(
+      mapCatLat.value
+    );
+
+  const lng =
+    Number(
+      mapCatLng.value
+    );
+
+
+  if(
+    !Number.isFinite(lat)
+    ||
+    !Number.isFinite(lng)
+  ){
+
+    mapCatMessage.textContent =
+      'Сначала выберите точку на карте.';
+
+    mapCatMessage.className =
+      'form-message error';
+
+    return;
+
+  }
+
+
+  if(!validatePhoto(file)){
+    return;
+  }
+
+
+  mapCatSubmit.disabled =
+    true;
+
+
+  try{
+
+    const ext =
+      file.name
+      .split('.')
+      .pop()
+      .toLowerCase();
+
+
+    const path =
+      `cats/${Date.now()}-${crypto.randomUUID()}.${ext}`;
+
+
+    const upload =
+      await db.storage
+      .from('cat-photos')
+      .upload(
+        path,
+        file,
+        {
+          contentType:file.type
+        }
+      );
+
+
+    if(upload.error){
+      throw upload.error;
+    }
+
+
+    const photoUrl =
+      db.storage
+      .from('cat-photos')
+      .getPublicUrl(path)
+      .data
+      .publicUrl;
+
+
+    const result =
+      await db
+      .from('cats')
+      .insert({
+
+        name:
+        document
+        .getElementById('mapCatName')
+        .value
+        ||
+        null,
+
+        category:
+        'map',
+
+        area:
+        document
+        .getElementById('mapCatArea')
+        .value,
+
+        description:
+        document
+        .getElementById('mapCatDescription')
+        .value,
+
+        photo_url:
+        photoUrl,
+
+        lat:
+        lat,
+
+        lng:
+        lng,
+
+        status:
+        document
+        .getElementById('mapCatStatus')
+        .value,
+
+        seen_at:
+        new Date().toISOString(),
+
+        reported_by:
+        document
+        .getElementById('mapCatReporter')
+        .value
+        ||
+        null,
+
+        contact_phone:
+        document
+        .getElementById('mapCatPhone')
+        .value
+        ||
+        null,
+
+        approved:false
+
+      });
+
+
+    if(result.error){
+      throw result.error;
+    }
+
+
+    mapCatMessage.textContent =
+      '✅ Кот отправлен на модерацию.';
+
+    mapCatMessage.className =
+      'form-message success';
+
+  }
+
+  catch(error){
+
+    console.error(error);
+
+    mapCatMessage.textContent =
+      'Ошибка. Попробуйте ещё раз.';
+
+    mapCatMessage.className =
+      'form-message error';
+
+  }
+
+  finally{
+
+    mapCatSubmit.disabled =
+      false;
+
+  }
+
+}
+);
+
+
+/* MAP MARKERS */
+
+let communityCatLayer =
+  null;
+
+
+function catMarkerIcon(status){
+
+  const emoji =
+    status === 'needs_help'
+    ?
+    '❤️'
+    :
+    '🐱';
+
+
+  return L.divIcon({
+
+    className:'',
+
+    html:
+      `<div class="cat-map-marker">${emoji}</div>`,
+
+    iconSize:[
+      42,
+      42
+    ],
+
+    iconAnchor:[
+      21,
+      21
+    ]
+
+  });
+
+}
+
+
+async function loadMapCats(){
+
+  const result =
+    await db
+    .from('cats')
+    .select(
+      'id,name,area,description,photo_url,lat,lng,status'
+    )
+    .eq('approved',true);
+
+
+  if(result.error){
+    return;
+  }
+
+
+  const cats =
+    (result.data || [])
+    .filter(
+      cat => {
+
+        return (
+          cat.lat !== null
+          &&
+          cat.lng !== null
+        );
+
+      }
+    );
+
+
+  function draw(){
+
+    const map =
+      window.catsBakuMainMap;
+
+
+    if(!map){
+
+      setTimeout(
+        draw,
+        300
+      );
+
+      return;
+
+    }
+
+
+    if(communityCatLayer){
+
+      map.removeLayer(
+        communityCatLayer
+      );
+
+    }
+
+
+    communityCatLayer =
+      L.layerGroup()
+      .addTo(
+        map
+      );
+
+
+    cats.forEach(
+      cat => {
+
+        const name =
+          cat.name
+          ||
+          'Уличный кот';
+
+
+        L.marker(
+          [
+            Number(cat.lat),
+            Number(cat.lng)
+          ],
+          {
+            icon:
+            catMarkerIcon(
+              cat.status
+            )
+          }
+        )
+        .addTo(
+          communityCatLayer
+        )
+        .bindPopup(
+          `
+          <div class="cat-popup">
+
+          <img
+            src="${esc(safePhoto(cat.photo_url))}"
+            alt=""
+          >
+
+          <strong>
+          ${esc(name)}
+          </strong>
+
+          <p>
+          📍 ${esc(cat.area || 'Baku')}
+          </p>
+
+          <p>
+          ${esc(cat.description || '')}
+          </p>
+
+          </div>
+          `
+        );
+
+      }
+    );
+
+  }
+
+
+  draw();
+
+}
+
+
+/* =====================================================
+   SHOP
+===================================================== */
+
+const shopOrderDialog =
+document.getElementById('shopOrderDialog');
+
+const shopProduct =
+document.getElementById('shopProduct');
+
+const shopSize =
+document.getElementById('shopSize');
+
+const shopOrderForm =
+document.getElementById('shopOrderForm');
+
+const shopOrderMessage =
+document.getElementById('shopOrderMessage');
+
+
+function updateShopSizes(){
+
+  if(shopProduct.value === 'Носки'){
+
+    shopSize.innerHTML =
+      `
+      <option value="36-39">
+      36–39
+      </option>
+
+      <option value="40-43">
+      40–43
+      </option>
+
+      <option value="44-46">
+      44–46
+      </option>
+      `;
+
+  }
+
+  else{
+
+    shopSize.innerHTML =
+      `
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+      <option value="XXL">XXL</option>
+      `;
+
+  }
+
+}
+
+
+document
+.querySelectorAll('.shop-order-button')
+.forEach(
+  button => {
+
+    button.addEventListener(
+      'click',
+      function(){
+
+        shopProduct.value =
+          button.dataset.product;
+
+        updateShopSizes();
+
+        shopOrderMessage.className =
+          'form-message';
+
+        shopOrderMessage.textContent =
+          '';
+
+        shopOrderDialog.showModal();
+
+      }
+    );
+
+  }
+);
+
+
+document
+.getElementById('closeShopOrder')
+.addEventListener(
+  'click',
+  ()=>shopOrderDialog.close()
+);
+
+
+shopProduct.addEventListener(
+  'change',
+  updateShopSizes
+);
+
+
+shopOrderForm.addEventListener(
+'submit',
+function(event){
+
+  event.preventDefault();
+
+
+  const product =
+    shopProduct.value;
+
+  const size =
+    shopSize.value;
+
+  const design =
+    document
+    .getElementById('shopDesign')
+    .value;
+
+  const quantity =
+    document
+    .getElementById('shopQuantity')
+    .value;
+
+  const name =
+    document
+    .getElementById('shopCustomerName')
+    .value
+    .trim();
+
+  const phone =
+    document
+    .getElementById('shopCustomerPhone')
+    .value
+    .trim();
+
+  const comment =
+    document
+    .getElementById('shopComment')
+    .value
+    .trim();
+
+
+  shopOrderMessage.innerHTML =
+    `
+    ✅ <strong>Заказ подготовлен!</strong>
+
+    <br><br>
+
+    👕 ${esc(product)}
+
+    <br>
+
+    📏 Размер:
+    ${esc(size)}
+
+    <br>
+
+    🎨 Дизайн:
+    ${esc(design)}
+
+    <br>
+
+    📦 Количество:
+    ${esc(quantity)}
+
+    <br>
+
+    👤 ${esc(name)}
+
+    <br>
+
+    📱 ${esc(phone)}
+
+    ${
+      comment
+      ?
+      `<br>💬 ${esc(comment)}`
+      :
+      ''
+    }
+    `;
+
+
+  shopOrderMessage.className =
+    'form-message success';
+
+}
+);
+
+
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
+
+loadCityCats();
+
+loadAdoptions();
+
+loadHelpRequests();
+
+loadLostFound();
+
+loadVets();
+
+loadFeedPoints();
+
+loadMapCats();
+
+</script>
+
+
+<!-- MUSIC -->
+
+<script>
+
+(function(){
+
+const music =
+document.getElementById('bgMusic');
+
+const toggle =
+document.getElementById('musicToggle');
+
+if(!music || !toggle){
+  return;
+}
+
+music.volume =
+0.35;
+
+
+async function start(){
+
+  try{
+
+    await music.play();
+
+    toggle.textContent =
+      '😺';
+
+  }
+
+  catch(e){}
+
+}
+
+
+document.addEventListener(
+  'click',
+  function(){
+
+    if(music.paused){
+      start();
+    }
+
+  },
+  {
+    once:true
+  }
+);
+
+
+toggle.addEventListener(
+  'click',
+  async function(event){
+
+    event.stopPropagation();
+
+    if(music.paused){
+
+      await start();
+
+    }
+
+    else{
+
+      music.pause();
+
+      toggle.textContent =
+        '🐱';
+
+    }
+
+  }
+);
+
+})();
+
+</script>
+
+
+</body>
+</html>
