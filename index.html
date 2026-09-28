@@ -16,7 +16,7 @@ CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku
 
 <meta
   name="description"
-  content="CatsBaku — cats, adoption, lost & found, veterinary clinics, help requests and feed points in Baku."
+  content="CatsBaku — cats, adoption, lost & found, veterinary clinics, help requests and cat map in Baku."
 >
 
 <meta name="theme-color" content="#F5EBDD">
@@ -27,7 +27,11 @@ CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku
 <meta property="og:url" content="https://catsbaku.com/">
 <meta property="og:image" content="https://catsbaku.com/img/og-cover.jpg">
 
-<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link
+  rel="icon"
+  href="img/favicon.svg"
+  type="image/svg+xml"
+>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -48,6 +52,7 @@ CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku
 >
 
 <link rel="stylesheet" href="css/style.css">
+
 
 <style>
 
@@ -79,6 +84,9 @@ body{
   letter-spacing:.16em;
 }
 
+
+/* TOP */
+
 .topbar{
   background:rgba(248,242,232,.95);
   backdrop-filter:blur(16px);
@@ -93,6 +101,9 @@ body{
   color:var(--pom);
 }
 
+
+/* HERO */
+
 .hero{
   position:relative;
   overflow:hidden;
@@ -106,6 +117,7 @@ body{
   inset:0;
   z-index:2;
   pointer-events:none;
+
   background:
     linear-gradient(
       180deg,
@@ -119,11 +131,15 @@ body{
   content:"";
   position:absolute;
   z-index:2;
+
   width:650px;
   height:650px;
+
   right:-300px;
   bottom:-370px;
+
   border-radius:50%;
+
   background:
     radial-gradient(
       circle,
@@ -141,10 +157,14 @@ body{
 
 .hero__body::before{
   content:"";
+
   display:block;
+
   width:65px;
   height:65px;
+
   margin-bottom:10px;
+
   background:
     url("img/buta-shine.svg")
     center / contain
@@ -157,8 +177,12 @@ body{
   font-style:italic;
 }
 
+
+/* CARPET */
+
 .carpet{
   height:23px;
+
   background:
     linear-gradient(
       rgba(143,48,64,.10),
@@ -166,13 +190,18 @@ body{
     ),
     url("img/carpet.jpg")
     center / 360px auto;
+
   border-top:3px solid var(--gold);
   border-bottom:3px solid var(--pom);
 }
 
+
+/* BAKU */
+
 .baku-intro{
   text-align:center;
   padding:30px 20px;
+
   background:
     linear-gradient(
       90deg,
@@ -191,6 +220,7 @@ body{
 
 .baku-intro__title{
   margin-top:7px;
+
   font-family:"Cormorant Garamond",serif;
   font-size:clamp(27px,4vw,42px);
   font-weight:700;
@@ -201,6 +231,9 @@ body{
   color:var(--caspian);
   font-size:13px;
 }
+
+
+/* PHOTOS */
 
 #grid .card__photo,
 #adoptionGrid .card__photo,
@@ -221,8 +254,12 @@ body{
   object-fit:cover;
 }
 
+
+/* EXPLORE */
+
 .explore{
   padding:75px 0;
+
   background:
     linear-gradient(
       180deg,
@@ -245,28 +282,37 @@ body{
 
 .explore-card{
   display:block;
+
   padding:27px;
+
   color:inherit;
   text-decoration:none;
+
   border:1px solid rgba(128,93,54,.13);
   border-radius:35px 35px 22px 22px;
+
   background:
     linear-gradient(
       145deg,
       #fff,
       #f8f0e2
     );
+
   box-shadow:0 14px 36px rgba(70,52,31,.075);
 }
 
 .explore-card__icon{
   width:60px;
   height:60px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   margin-bottom:18px;
+
   border-radius:19px;
+
   background:#f3dfbf;
   font-size:30px;
 }
@@ -283,6 +329,9 @@ body{
   opacity:.72;
   font-size:14px;
 }
+
+
+/* FEATURES */
 
 .feature-section{
   position:relative;
@@ -304,15 +353,19 @@ body{
 
 .feature-box{
   padding:26px;
+
   color:#222;
+
   border:1px solid rgba(128,93,54,.12);
   border-radius:28px 28px 20px 20px;
+
   background:
     linear-gradient(
       145deg,
       #fff,
       #faf3e8
     );
+
   box-shadow:0 13px 34px rgba(70,52,31,.07);
 }
 
@@ -332,6 +385,9 @@ body{
   opacity:.72;
 }
 
+
+/* ACTIONS */
+
 .action-row{
   display:flex;
   flex-wrap:wrap;
@@ -343,14 +399,20 @@ body{
   display:inline-flex;
   align-items:center;
   gap:9px;
+
   padding:15px 22px;
+
   border:0;
   border-radius:999px;
+
   background:var(--pom);
   color:#fff;
+
   font:inherit;
   font-weight:800;
+
   cursor:pointer;
+
   box-shadow:0 10px 30px rgba(143,48,64,.22);
 }
 
@@ -358,6 +420,9 @@ body{
   background:var(--caspian);
   box-shadow:0 10px 30px rgba(39,107,120,.22);
 }
+
+
+/* DATA */
 
 .data-list{
   margin-top:55px;
@@ -369,7 +434,9 @@ body{
   display:flex;
   flex-wrap:wrap;
   gap:7px 13px;
+
   margin-top:8px;
+
   color:#75695d;
   font-size:13px;
 }
@@ -383,13 +450,19 @@ body{
   display:inline-flex;
   align-items:center;
   gap:7px;
+
   margin-top:14px;
+
   padding:10px 16px;
+
   border-radius:999px;
+
   background:var(--pom);
   color:#fff;
+
   font-size:13px;
   font-weight:800;
+
   text-decoration:none;
 }
 
@@ -399,10 +472,14 @@ body{
 
 .data-empty{
   grid-column:1/-1;
+
   padding:42px;
+
   text-align:center;
+
   border:1px dashed rgba(198,154,77,.45);
   border-radius:24px;
+
   background:#fffaf2;
 }
 
@@ -411,13 +488,20 @@ body{
   font-size:45px;
 }
 
+
+/* BADGES */
+
 .status-badge{
   display:inline-flex;
   align-items:center;
   gap:6px;
+
   margin-bottom:10px;
+
   padding:7px 10px;
+
   border-radius:999px;
+
   font-size:10px;
   font-weight:800;
   letter-spacing:.06em;
@@ -464,6 +548,9 @@ body{
   color:#2d6b3e;
 }
 
+
+/* HELP */
+
 #help{
   background:
     linear-gradient(
@@ -480,8 +567,10 @@ body{
 
 .help-type-card{
   padding:24px;
+
   border:1px solid rgba(143,48,64,.12);
   border-radius:26px;
+
   background:#fffaf3;
 }
 
@@ -503,6 +592,9 @@ body{
   font-size:14px;
 }
 
+
+/* VETS */
+
 #vets{
   background:
     linear-gradient(
@@ -521,9 +613,12 @@ body{
 
 .vet-card{
   padding:25px;
+
   border:1px solid rgba(39,107,120,.14);
   border-radius:28px 28px 20px 20px;
+
   background:#fff;
+
   box-shadow:0 13px 34px rgba(39,107,120,.08);
 }
 
@@ -543,7 +638,9 @@ body{
   display:flex;
   flex-direction:column;
   gap:8px;
+
   margin-top:15px;
+
   color:#665e55;
   font-size:13px;
   line-height:1.5;
@@ -560,11 +657,16 @@ body{
   display:inline-flex;
   align-items:center;
   gap:6px;
+
   padding:9px 13px;
+
   border-radius:999px;
+
   background:var(--caspian);
   color:#fff;
+
   text-decoration:none;
+
   font-size:12px;
   font-weight:800;
 }
@@ -574,15 +676,27 @@ body{
   color:var(--caspian-dark);
 }
 
+
+/* FORMS */
+
 .form-modal{
-  width:min(680px,calc(100% - 24px));
+  width:min(700px,calc(100% - 24px));
   max-height:90vh;
+
   padding:0;
+
   border:0;
   border-radius:28px;
+
   overflow:auto;
+
   background:#fffaf2;
+
   box-shadow:0 30px 100px rgba(0,0,0,.30);
+}
+
+.form-modal--map{
+  width:min(860px,calc(100% - 24px));
 }
 
 .form-modal::backdrop{
@@ -599,11 +713,13 @@ body{
   justify-content:space-between;
   gap:20px;
   align-items:flex-start;
+
   margin-bottom:25px;
 }
 
 .form-modal__head h2{
   margin:3px 0 0;
+
   font-family:"Cormorant Garamond",serif;
   font-size:38px;
 }
@@ -611,9 +727,14 @@ body{
 .form-close{
   width:42px;
   height:42px;
+
+  flex:0 0 auto;
+
   border:0;
   border-radius:50%;
+
   background:#eee5d7;
+
   font-size:25px;
   cursor:pointer;
 }
@@ -645,11 +766,15 @@ body{
 .form-field textarea{
   width:100%;
   box-sizing:border-box;
+
   padding:13px 14px;
+
   border:1px solid #d9cbb8;
   border-radius:14px;
+
   background:#fff;
   color:#222;
+
   font:inherit;
 }
 
@@ -660,8 +785,10 @@ body{
 
 .photo-box{
   padding:20px;
+
   border:1px dashed var(--gold);
   border-radius:18px;
+
   background:#f7ecdc;
 }
 
@@ -673,22 +800,31 @@ body{
 
 .photo-preview{
   display:none;
+
   width:100%;
   max-height:330px;
+
   margin-top:15px;
+
   object-fit:cover;
+
   border-radius:18px;
 }
 
 .form-submit{
   grid-column:1/-1;
+
   padding:16px 22px;
+
   border:0;
   border-radius:999px;
+
   background:var(--pom);
   color:#fff;
+
   font:inherit;
   font-weight:800;
+
   cursor:pointer;
 }
 
@@ -699,7 +835,9 @@ body{
 .form-message{
   grid-column:1/-1;
   display:none;
+
   padding:14px 16px;
+
   border-radius:15px;
   line-height:1.55;
 }
@@ -715,6 +853,109 @@ body{
   background:#f8e6e6;
   color:#8d2d37;
 }
+
+
+/* MAP */
+
+.map-box{
+  border:5px solid #fff;
+  border-radius:28px;
+
+  box-shadow:0 18px 48px rgba(57,49,37,.13);
+}
+
+.map{
+  border-radius:22px;
+}
+
+.map-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:22px;
+}
+
+.map-note{
+  margin-top:12px;
+  color:#74685c;
+  font-size:13px;
+  line-height:1.6;
+}
+
+#spotMap{
+  width:100%;
+  height:390px;
+
+  border:4px solid #fff;
+  border-radius:20px;
+
+  overflow:hidden;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.selected-location{
+  margin-top:10px;
+  padding:12px 14px;
+
+  border-radius:13px;
+
+  background:#edf4f2;
+  color:var(--caspian-dark);
+
+  font-size:12px;
+  font-weight:700;
+}
+
+.selected-location.is-empty{
+  background:#f3ece1;
+  color:#736658;
+}
+
+.cat-map-marker{
+  width:42px;
+  height:42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:3px solid #fff;
+  border-radius:50%;
+
+  background:#8f3040;
+
+  font-size:23px;
+
+  box-shadow:0 5px 15px rgba(0,0,0,.25);
+}
+
+.cat-popup{
+  width:190px;
+}
+
+.cat-popup img{
+  width:100%;
+  height:115px;
+
+  object-fit:cover;
+
+  border-radius:10px;
+  margin-bottom:8px;
+}
+
+.cat-popup strong{
+  font-size:16px;
+}
+
+.cat-popup p{
+  margin:6px 0 0;
+  line-height:1.4;
+  font-size:12px;
+}
+
+
+/* OTHER */
 
 #feed{
   background:
@@ -733,6 +974,7 @@ body{
   content:"";
   position:absolute;
   inset:0;
+
   background:
     linear-gradient(
       rgba(22,24,22,.87),
@@ -752,20 +994,16 @@ body{
   background:rgba(255,250,242,.95);
 }
 
-.map-box{
-  border:5px solid #fff;
-  border-radius:28px;
-  box-shadow:0 18px 48px rgba(57,49,37,.13);
-}
 
-.map{
-  border-radius:22px;
-}
+/* FOOTER */
 
 .footer{
   position:relative;
+
   padding-top:65px;
+
   color:#d9cdb9;
+
   background:
     linear-gradient(
       #20201d,
@@ -775,11 +1013,15 @@ body{
 
 .footer::before{
   content:"";
+
   position:absolute;
+
   left:0;
   right:0;
   top:0;
+
   height:11px;
+
   background:
     repeating-linear-gradient(
       45deg,
@@ -792,26 +1034,41 @@ body{
 
 .footer-baku{
   margin-top:14px;
+
   color:#bea878;
+
   font-size:10px;
   font-weight:700;
   letter-spacing:.22em;
 }
 
+
+/* MUSIC */
+
 #musicToggle{
   position:fixed;
+
   right:18px;
   bottom:86px;
+
   width:58px;
   height:58px;
+
   border:2px solid var(--gold);
   border-radius:50%;
+
   background:#fffaf0;
+
   font-size:28px;
   cursor:pointer;
+
   z-index:10000;
+
   box-shadow:0 8px 24px rgba(0,0,0,.22);
 }
+
+
+/* RESPONSIVE */
 
 @media(max-width:900px){
 
@@ -845,6 +1102,10 @@ body{
 
   .form-modal__inner{
     padding:22px;
+  }
+
+  #spotMap{
+    height:320px;
   }
 
 }
@@ -935,6 +1196,8 @@ Mağaza
 <main>
 
 
+<!-- HERO -->
+
 <section class="hero" id="top">
 
 <img
@@ -1024,6 +1287,8 @@ CATS OF BAKU
 ></nav>
 
 
+<!-- CATS -->
+
 <section class="section" id="cats">
 
 <div class="wrap">
@@ -1109,6 +1374,8 @@ Bakı pişikləri
 
 </section>
 
+
+<!-- EXPLORE -->
 
 <section class="explore">
 
@@ -1469,6 +1736,8 @@ Elanlar yüklənir...
 </section>
 
 
+<!-- MONTH -->
+
 <section class="section" id="month">
 
 <div class="wrap month-wrap">
@@ -1494,6 +1763,8 @@ Ayın pişiyi
 </section>
 
 
+<!-- MAIN CAT MAP -->
+
 <section class="section" id="map">
 
 <div class="wrap">
@@ -1510,18 +1781,48 @@ BAKU CAT MAP
 Yanınızdakı pişiklər
 </h2>
 
-<p class="sub" data-i18n="map.sub"></p>
+<p class="sub" data-i18n="map.sub">
+Xəritədə pişiyə toxunaraq onunla tanış olun.
+</p>
 
 </div>
 
 </div>
+
+
+<div class="map-actions">
+
+<button
+  class="big-action-btn"
+  type="button"
+  id="openMapCatForm"
+>
+📍
+<span data-i18n="map.addCat">
+Xəritəyə pişik əlavə et
+</span>
+</button>
+
+</div>
+
+
+<p class="map-note" data-i18n="map.addHint">
+Küçədə pişik gördünüz? Şəkil çəkin, xəritədə yeri seçin və CatsBaku icması ilə paylaşın.
+</p>
 
 
 <div class="map-box">
 
-<div class="map" id="catMap"></div>
+<div
+  class="map"
+  id="catMap"
+></div>
 
-<button class="btn" id="locate" type="button">
+<button
+  class="btn"
+  id="locate"
+  type="button"
+>
 📍
 <span data-i18n="map.locate">
 Mənim yerim
@@ -1577,7 +1878,7 @@ Klinikalar yüklənir...
 </section>
 
 
-<!-- FEED POINTS -->
+<!-- FEED -->
 
 <section class="feature-section" id="feed">
 
@@ -1618,53 +1919,21 @@ Nöqtə əlavə et
 <div class="feature-grid">
 
 <div class="feature-box">
-
-<div class="feature-box__emoji">
-🥣
+<div class="feature-box__emoji">🥣</div>
+<h3 data-i18n="feed.food">Yem nöqtələri</h3>
+<p data-i18n="feed.foodText">Pişiklər üçün müntəzəm yem qoyulan yerlər.</p>
 </div>
-
-<h3 data-i18n="feed.food">
-Yem nöqtələri
-</h3>
-
-<p data-i18n="feed.foodText">
-Pişiklər üçün müntəzəm yem qoyulan yerlər.
-</p>
-
-</div>
-
 
 <div class="feature-box">
-
-<div class="feature-box__emoji">
-💧
+<div class="feature-box__emoji">💧</div>
+<h3 data-i18n="feed.water">Su nöqtələri</h3>
+<p data-i18n="feed.waterText">Su qablarının olduğu yerlər.</p>
 </div>
-
-<h3 data-i18n="feed.water">
-Su nöqtələri
-</h3>
-
-<p data-i18n="feed.waterText">
-Su qablarının olduğu yerlər.
-</p>
-
-</div>
-
 
 <div class="feature-box">
-
-<div class="feature-box__emoji">
-🐈
-</div>
-
-<h3 data-i18n="feed.colonies">
-Pişik koloniyaları
-</h3>
-
-<p data-i18n="feed.coloniesText">
-Bir neçə pişiyin daimi yaşadığı ərazilər.
-</p>
-
+<div class="feature-box__emoji">🐈</div>
+<h3 data-i18n="feed.colonies">Pişik koloniyaları</h3>
+<p data-i18n="feed.coloniesText">Bir neçə pişiyin daimi yaşadığı ərazilər.</p>
 </div>
 
 </div>
@@ -1721,6 +1990,8 @@ Nöqtələr yüklənir...
 </section>
 
 
+<!-- STORIES -->
+
 <section class="feature-section" id="catstories">
 
 <div class="wrap">
@@ -1736,6 +2007,7 @@ CATSBAKU HEKAYƏLƏRİ
 </h2>
 
 </div>
+
 
 <div class="feature-grid">
 
@@ -1760,6 +2032,8 @@ CATSBAKU HEKAYƏLƏRİ
 
 </section>
 
+
+<!-- SHOP -->
 
 <section class="section shop" id="shop">
 
@@ -1819,6 +2093,8 @@ BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
 </footer>
 
 
+<!-- MOBILE NAV -->
+
 <nav class="bottomnav">
 
 <ul>
@@ -1876,6 +2152,8 @@ BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
 
 </nav>
 
+
+<!-- OLD DEMO -->
 
 <dialog class="sheet" id="demoSheet">
 
@@ -1963,7 +2241,12 @@ Pişik üçün ailə tap
 Pişiyin adı
 </label>
 
-<input id="adoptName" type="text" maxlength="80" required>
+<input
+  id="adoptName"
+  type="text"
+  maxlength="80"
+  required
+>
 
 </div>
 
@@ -1974,7 +2257,11 @@ Pişiyin adı
 Yaşı
 </label>
 
-<input id="adoptAge" type="text" maxlength="50">
+<input
+  id="adoptAge"
+  type="text"
+  maxlength="50"
+>
 
 </div>
 
@@ -2003,7 +2290,11 @@ Cinsi
 Rayon / ərazi
 </label>
 
-<input id="adoptArea" type="text" required>
+<input
+  id="adoptArea"
+  type="text"
+  required
+>
 
 </div>
 
@@ -2014,7 +2305,10 @@ Rayon / ərazi
 Pişik haqqında
 </label>
 
-<textarea id="adoptDescription" required></textarea>
+<textarea
+  id="adoptDescription"
+  required
+></textarea>
 
 </div>
 
@@ -2025,7 +2319,10 @@ Pişik haqqında
 Əlaqə üçün ad
 </label>
 
-<input id="adoptContact" type="text">
+<input
+  id="adoptContact"
+  type="text"
+>
 
 </div>
 
@@ -2072,7 +2369,10 @@ Telefon / WhatsApp
 </div>
 
 
-<div id="adoptionMessage" class="form-message"></div>
+<div
+  id="adoptionMessage"
+  class="form-message"
+></div>
 
 
 <button
@@ -2463,10 +2763,7 @@ Elanı göndər
 
 <!-- FEED MODAL -->
 
-<dialog
-  class="form-modal"
-  id="feedDialog"
->
+<dialog class="form-modal" id="feedDialog">
 
 <div class="form-modal__inner">
 
@@ -2495,10 +2792,7 @@ Yeni nöqtə əlavə et
 </div>
 
 
-<form
-  class="data-form"
-  id="feedForm"
->
+<form class="data-form" id="feedForm">
 
 
 <div class="form-field">
@@ -2512,21 +2806,10 @@ Nöqtə növü
   required
 >
 
-<option value="">
-—
-</option>
-
-<option value="food">
-Food
-</option>
-
-<option value="water">
-Water
-</option>
-
-<option value="colony">
-Colony
-</option>
+<option value="">—</option>
+<option value="food">Food</option>
+<option value="water">Water</option>
+<option value="colony">Colony</option>
 
 </select>
 
@@ -2544,17 +2827,9 @@ Status
   required
 >
 
-<option value="active">
-Active
-</option>
-
-<option value="needs_refill">
-Needs refill
-</option>
-
-<option value="inactive">
-Inactive
-</option>
+<option value="active">Active</option>
+<option value="needs_refill">Needs refill</option>
+<option value="inactive">Inactive</option>
 
 </select>
 
@@ -2597,9 +2872,7 @@ Rayon / ərazi
 Təsvir
 </label>
 
-<textarea
-  id="feedDescription"
-></textarea>
+<textarea id="feedDescription"></textarea>
 
 </div>
 
@@ -2681,6 +2954,232 @@ Göndər
 </dialog>
 
 
+<!-- ADD CAT TO MAP MODAL -->
+
+<dialog
+  class="form-modal form-modal--map"
+  id="mapCatDialog"
+>
+
+<div class="form-modal__inner">
+
+<div class="form-modal__head">
+
+<div>
+
+<div class="eyebrow">
+CATSBAKU · CAT MAP
+</div>
+
+<h2 data-i18n="map.formTitle">
+Xəritəyə pişik əlavə et
+</h2>
+
+</div>
+
+<button
+  class="form-close"
+  type="button"
+  id="closeMapCatForm"
+>
+×
+</button>
+
+</div>
+
+
+<form
+  class="data-form"
+  id="mapCatForm"
+>
+
+
+<div class="form-field">
+
+<label data-i18n="map.catName">
+Pişiyin adı
+</label>
+
+<input
+  id="mapCatName"
+  type="text"
+  maxlength="80"
+>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="map.catStatus">
+Status
+</label>
+
+<select
+  id="mapCatStatus"
+  required
+>
+
+<option value="spotted">
+Spotted
+</option>
+
+<option value="regular">
+Regular
+</option>
+
+<option value="needs_help">
+Needs help
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label data-i18n="map.catArea">
+Rayon / küçə
+</label>
+
+<input
+  id="mapCatArea"
+  type="text"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label data-i18n="map.catDescription">
+Pişik haqqında
+</label>
+
+<textarea
+  id="mapCatDescription"
+  required
+></textarea>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="map.reportedBy">
+Adınız
+</label>
+
+<input
+  id="mapCatReporter"
+  type="text"
+>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="map.contactPhone">
+Telefon / WhatsApp
+</label>
+
+<input
+  id="mapCatPhone"
+  type="tel"
+  placeholder="+994..."
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<div class="photo-box">
+
+<label data-i18n="map.catPhoto">
+📷 Pişiyin fotosunu seçin
+</label>
+
+<input
+  id="mapCatPhoto"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+  required
+>
+
+<img
+  id="mapCatPreview"
+  class="photo-preview"
+  alt=""
+>
+
+</div>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label data-i18n="map.chooseLocation">
+📍 Pişiyi gördüyünüz yeri xəritədə seçin
+</label>
+
+<div id="spotMap"></div>
+
+<button
+  class="big-action-btn big-action-btn--caspian"
+  type="button"
+  id="useMyLocationForCat"
+  style="margin-top:12px; align-self:flex-start;"
+>
+📍
+<span data-i18n="map.useLocation">
+Mənim yerimdən istifadə et
+</span>
+</button>
+
+
+<div
+  id="mapCatLocationText"
+  class="selected-location is-empty"
+>
+Xəritədə nöqtə seçilməyib.
+</div>
+
+</div>
+
+
+<input id="mapCatLat" type="hidden">
+<input id="mapCatLng" type="hidden">
+
+
+<div
+  id="mapCatMessage"
+  class="form-message"
+></div>
+
+
+<button
+  type="submit"
+  class="form-submit"
+  id="mapCatSubmit"
+  data-i18n="map.submitCat"
+>
+Pişiyi göndər
+</button>
+
+</form>
+
+</div>
+
+</dialog>
+
+
+<!-- MUSIC -->
+
 <audio
   id="bgMusic"
   loop
@@ -2702,12 +3201,61 @@ Göndər
 </button>
 
 
+<!-- LIBRARIES -->
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="js/i18n.js"></script>
 
+
+<!-- CAPTURE MAIN MAP CREATED BY STATIC.JS -->
+
+<script>
+
+window.catsBakuMainMap = null;
+
+if(window.L){
+
+  const originalMapFunction =
+    L.map.bind(L);
+
+  L.map =
+    function(target, options){
+
+      const createdMap =
+        originalMapFunction(
+          target,
+          options
+        );
+
+
+      const targetId =
+        typeof target === 'string'
+        ?
+        target
+        :
+        target?.id;
+
+
+      if(targetId === 'catMap'){
+
+        window.catsBakuMainMap =
+          createdMap;
+
+      }
+
+      return createdMap;
+
+    };
+
+}
+
+</script>
+
+
+<!-- TRANSLATIONS -->
 
 <script>
 
@@ -2832,6 +3380,20 @@ Object.assign(window.CB_I18N.az,{
 'feed.formPhone':'Telefon / WhatsApp',
 'feed.formPhoto':'📷 Foto seçin',
 'feed.formSubmit':'Göndər',
+
+'map.addCat':'Xəritəyə pişik əlavə et',
+'map.addHint':'Küçədə pişik gördünüz? Şəkil çəkin, xəritədə yeri seçin və CatsBaku icması ilə paylaşın.',
+'map.formTitle':'Xəritəyə pişik əlavə et',
+'map.catName':'Pişiyin adı (bilirsinizsə)',
+'map.catStatus':'Status',
+'map.catArea':'Rayon / küçə',
+'map.catDescription':'Pişik haqqında',
+'map.reportedBy':'Adınız',
+'map.contactPhone':'Telefon / WhatsApp',
+'map.catPhoto':'📷 Pişiyin fotosunu seçin',
+'map.chooseLocation':'📍 Pişiyi gördüyünüz yeri xəritədə seçin',
+'map.useLocation':'Mənim yerimdən istifadə et',
+'map.submitCat':'Pişiyi göndər',
 
 'stories.eyebrow':'CATSBAKU HEKAYƏLƏRİ',
 'stories.title':'Şəhərdən hekayələr',
@@ -2962,6 +3524,20 @@ Object.assign(window.CB_I18N.ru,{
 'feed.formPhoto':'📷 Выберите фото',
 'feed.formSubmit':'Отправить',
 
+'map.addCat':'Добавить кота на карту',
+'map.addHint':'Увидели кота на улице? Сфотографируйте его, выберите место на карте и поделитесь с CatsBaku.',
+'map.formTitle':'Добавить кота на карту',
+'map.catName':'Имя кота, если знаете',
+'map.catStatus':'Статус',
+'map.catArea':'Район / улица',
+'map.catDescription':'О коте',
+'map.reportedBy':'Ваше имя',
+'map.contactPhone':'Телефон / WhatsApp',
+'map.catPhoto':'📷 Выберите фото кота',
+'map.chooseLocation':'📍 Выберите на карте место, где вы увидели кота',
+'map.useLocation':'Использовать моё местоположение',
+'map.submitCat':'Отправить кота',
+
 'stories.eyebrow':'ИСТОРИИ CATSBAKU',
 'stories.title':'Истории нашего города',
 'stories.oldcity':'Коты Старого города',
@@ -3091,6 +3667,20 @@ Object.assign(window.CB_I18N.en,{
 'feed.formPhoto':'📷 Choose a photo',
 'feed.formSubmit':'Submit',
 
+'map.addCat':'Add a cat to the map',
+'map.addHint':'Spotted a cat on the street? Take a photo, select the location on the map and share it with CatsBaku.',
+'map.formTitle':'Add a cat to the map',
+'map.catName':'Cat name, if known',
+'map.catStatus':'Status',
+'map.catArea':'Area / street',
+'map.catDescription':'About the cat',
+'map.reportedBy':'Your name',
+'map.contactPhone':'Phone / WhatsApp',
+'map.catPhoto':'📷 Choose a cat photo',
+'map.chooseLocation':'📍 Select where you saw the cat on the map',
+'map.useLocation':'Use my location',
+'map.submitCat':'Submit cat',
+
 'stories.eyebrow':'CATSBAKU STORIES',
 'stories.title':'Stories from the city',
 'stories.oldcity':'Old City cats',
@@ -3106,6 +3696,8 @@ Object.assign(window.CB_I18N.en,{
 
 <script src="js/static.js"></script>
 
+
+<!-- SUPABASE / APPLICATION -->
 
 <script>
 
@@ -3256,6 +3848,7 @@ async function(event){
     return;
   }
 
+
   if(file.size > 5 * 1024 * 1024){
 
     adoptionMessage.textContent =
@@ -3268,17 +3861,19 @@ async function(event){
 
   }
 
+
   adoptionSubmit.disabled =
     true;
 
 
   try{
 
+
     const ext =
       file.name
-        .split('.')
-        .pop()
-        .toLowerCase();
+      .split('.')
+      .pop()
+      .toLowerCase();
 
 
     const path =
@@ -3297,15 +3892,15 @@ async function(event){
 
     const upload =
       await db.storage
-        .from('cat-photos')
-        .upload(
-          path,
-          file,
-          {
-            upsert:false,
-            contentType:file.type
-          }
-        );
+      .from('cat-photos')
+      .upload(
+        path,
+        file,
+        {
+          upsert:false,
+          contentType:file.type
+        }
+      );
 
 
     if(upload.error){
@@ -3315,74 +3910,74 @@ async function(event){
 
     const publicUrl =
       db.storage
-        .from('cat-photos')
-        .getPublicUrl(path)
-        .data
-        .publicUrl;
+      .from('cat-photos')
+      .getPublicUrl(path)
+      .data
+      .publicUrl;
 
 
     const result =
       await db
-        .from('adoptions')
-        .insert({
+      .from('adoptions')
+      .insert({
 
-          name:
-          document
-            .getElementById('adoptName')
-            .value
-            .trim(),
+        name:
+        document
+        .getElementById('adoptName')
+        .value
+        .trim(),
 
-          age:
-          document
-            .getElementById('adoptAge')
-            .value
-            .trim()
-            ||
-            null,
+        age:
+        document
+        .getElementById('adoptAge')
+        .value
+        .trim()
+        ||
+        null,
 
-          gender:
-          document
-            .getElementById('adoptGender')
-            .value
-            ||
-            null,
+        gender:
+        document
+        .getElementById('adoptGender')
+        .value
+        ||
+        null,
 
-          area:
-          document
-            .getElementById('adoptArea')
-            .value
-            .trim(),
+        area:
+        document
+        .getElementById('adoptArea')
+        .value
+        .trim(),
 
-          description:
-          document
-            .getElementById('adoptDescription')
-            .value
-            .trim(),
+        description:
+        document
+        .getElementById('adoptDescription')
+        .value
+        .trim(),
 
-          contact_name:
-          document
-            .getElementById('adoptContact')
-            .value
-            .trim()
-            ||
-            null,
+        contact_name:
+        document
+        .getElementById('adoptContact')
+        .value
+        .trim()
+        ||
+        null,
 
-          contact_phone:
-          document
-            .getElementById('adoptPhone')
-            .value
-            .trim(),
+        contact_phone:
+        document
+        .getElementById('adoptPhone')
+        .value
+        .trim(),
 
-          photo_url:
-          publicUrl,
+        photo_url:
+        publicUrl,
 
-          status:
-          'looking',
+        status:
+        'looking',
 
-          approved:
-          false
+        approved:
+        false
 
-        });
+      });
 
 
     if(result.error){
@@ -3436,10 +4031,6 @@ async function(event){
 );
 
 
-/* =====================================================
-   LOAD ADOPTIONS
-===================================================== */
-
 async function loadAdoptions(){
 
   const grid =
@@ -3451,22 +4042,21 @@ async function loadAdoptions(){
 
   const result =
     await db
-      .from('adoptions')
-      .select('*')
-      .eq('approved',true)
-      .eq('status','looking')
-      .order(
-        'created_at',
-        {
-          ascending:false
-        }
-      );
+    .from('adoptions')
+    .select('*')
+    .eq('approved',true)
+    .eq('status','looking')
+    .order(
+      'created_at',
+      {
+        ascending:false
+      }
+    );
 
 
   if(result.error){
 
     console.error(result.error);
-
     return;
 
   }
@@ -3511,92 +4101,92 @@ async function loadAdoptions(){
 
 
   grid.innerHTML =
-    rows
-      .map(
-        item => {
+    rows.map(
 
-          const phone =
-            safePhone(
-              item.contact_phone
-            );
+      item => {
 
-          return `
-          <article class="card">
+        const phone =
+          safePhone(
+            item.contact_phone
+          );
 
-          <div class="card__photo">
+        return `
+        <article class="card">
 
-          <img
-            src="${esc(safePhoto(item.photo_url))}"
-            alt="${esc(item.name || '')}"
-          >
+        <div class="card__photo">
 
-          </div>
+        <img
+          src="${esc(safePhoto(item.photo_url))}"
+          alt="${esc(item.name || '')}"
+        >
 
-          <div class="card__body">
+        </div>
 
-          <div class="card__name">
-          ${esc(item.name || '')}
-          </div>
+        <div class="card__body">
 
-          <div class="data-meta">
+        <div class="card__name">
+        ${esc(item.name || '')}
+        </div>
 
-          <span>
-          📍 ${esc(item.area || 'Baku')}
-          </span>
+        <div class="data-meta">
 
-          ${
-            item.age
-            ?
-            `<span>🎂 ${esc(item.age)}</span>`
-            :
-            ''
-          }
+        <span>
+        📍 ${esc(item.area || 'Baku')}
+        </span>
 
-          </div>
-
-          <p class="data-description">
-          ${esc(item.description || '')}
-          </p>
-
-          ${
-            phone
-            ?
-            `
-            <a
-              class="data-contact"
-              href="tel:${phone}"
-            >
-            📞 ${
-              lang() === 'ru'
-              ?
-              'Связаться'
-              :
-              lang() === 'en'
-              ?
-              'Contact'
-              :
-              'Əlaqə saxla'
-            }
-            </a>
-            `
-            :
-            ''
-          }
-
-          </div>
-
-          </article>
-          `;
-
+        ${
+          item.age
+          ?
+          `<span>🎂 ${esc(item.age)}</span>`
+          :
+          ''
         }
-      )
-      .join('');
+
+        </div>
+
+        <p class="data-description">
+        ${esc(item.description || '')}
+        </p>
+
+        ${
+          phone
+          ?
+          `
+          <a
+            class="data-contact"
+            href="tel:${phone}"
+          >
+          📞 ${
+            lang() === 'ru'
+            ?
+            'Связаться'
+            :
+            lang() === 'en'
+            ?
+            'Contact'
+            :
+            'Əlaqə saxla'
+          }
+          </a>
+          `
+          :
+          ''
+        }
+
+        </div>
+
+        </article>
+        `;
+
+      }
+
+    ).join('');
 
 }
 
 
 /* =====================================================
-   HELP REQUESTS
+   HELP
 ===================================================== */
 
 const helpDialog =
@@ -3678,9 +4268,9 @@ async function(event){
 
     const ext =
       file.name
-        .split('.')
-        .pop()
-        .toLowerCase();
+      .split('.')
+      .pop()
+      .toLowerCase();
 
 
     const path =
@@ -3699,15 +4289,15 @@ async function(event){
 
     const upload =
       await db.storage
-        .from('cat-photos')
-        .upload(
-          path,
-          file,
-          {
-            upsert:false,
-            contentType:file.type
-          }
-        );
+      .from('cat-photos')
+      .upload(
+        path,
+        file,
+        {
+          upsert:false,
+          contentType:file.type
+        }
+      );
 
 
     if(upload.error){
@@ -3717,71 +4307,71 @@ async function(event){
 
     const publicUrl =
       db.storage
-        .from('cat-photos')
-        .getPublicUrl(path)
-        .data
-        .publicUrl;
+      .from('cat-photos')
+      .getPublicUrl(path)
+      .data
+      .publicUrl;
 
 
     const result =
       await db
-        .from('help_requests')
-        .insert({
+      .from('help_requests')
+      .insert({
 
-          help_type:
-          document
-            .getElementById('helpType')
-            .value,
+        help_type:
+        document
+        .getElementById('helpType')
+        .value,
 
-          urgency:
-          document
-            .getElementById('helpUrgency')
-            .value,
+        urgency:
+        document
+        .getElementById('helpUrgency')
+        .value,
 
-          name:
-          document
-            .getElementById('helpName')
-            .value
-            .trim()
-            ||
-            null,
+        name:
+        document
+        .getElementById('helpName')
+        .value
+        .trim()
+        ||
+        null,
 
-          area:
-          document
-            .getElementById('helpArea')
-            .value
-            .trim(),
+        area:
+        document
+        .getElementById('helpArea')
+        .value
+        .trim(),
 
-          description:
-          document
-            .getElementById('helpDescription')
-            .value
-            .trim(),
+        description:
+        document
+        .getElementById('helpDescription')
+        .value
+        .trim(),
 
-          contact_name:
-          document
-            .getElementById('helpContact')
-            .value
-            .trim()
-            ||
-            null,
+        contact_name:
+        document
+        .getElementById('helpContact')
+        .value
+        .trim()
+        ||
+        null,
 
-          contact_phone:
-          document
-            .getElementById('helpPhone')
-            .value
-            .trim(),
+        contact_phone:
+        document
+        .getElementById('helpPhone')
+        .value
+        .trim(),
 
-          photo_url:
-          publicUrl,
+        photo_url:
+        publicUrl,
 
-          status:
-          'active',
+        status:
+        'active',
 
-          approved:
-          false
+        approved:
+        false
 
-        });
+      });
 
 
     if(result.error){
@@ -3814,11 +4404,7 @@ async function(event){
 
   catch(error){
 
-    console.error(
-      'Help request error:',
-      error
-    );
-
+    console.error(error);
 
     helpMessage.textContent =
       'Ошибка. Попробуйте ещё раз.';
@@ -3840,9 +4426,6 @@ async function(event){
 
 
 function helpTypeLabel(type){
-
-  const current =
-    lang();
 
   const labels = {
 
@@ -3884,7 +4467,8 @@ function helpTypeLabel(type){
 
   };
 
-  return labels[type]?.[current]
+
+  return labels[type]?.[lang()]
     ||
     labels[type]?.az
     ||
@@ -3909,78 +4493,6 @@ function helpTypeIcon(type){
 }
 
 
-function urgencyLabel(value){
-
-  const current =
-    lang();
-
-  const labels = {
-
-    normal:{
-      az:'Normal',
-      ru:'Обычная',
-      en:'Normal'
-    },
-
-    high:{
-      az:'Vacib',
-      ru:'Высокая',
-      en:'High'
-    },
-
-    critical:{
-      az:'Təcili',
-      ru:'Критическая',
-      en:'Critical'
-    }
-
-  };
-
-  return labels[value]?.[current]
-    ||
-    labels[value]?.az
-    ||
-    value;
-
-}
-
-
-function statusLabel(value){
-
-  const current =
-    lang();
-
-  const labels = {
-
-    active:{
-      az:'Yardım lazımdır',
-      ru:'Нужна помощь',
-      en:'Help needed'
-    },
-
-    in_progress:{
-      az:'Yardım edilir',
-      ru:'Помощь оказывается',
-      en:'In progress'
-    },
-
-    resolved:{
-      az:'Həll olunub',
-      ru:'Помощь найдена',
-      en:'Resolved'
-    }
-
-  };
-
-  return labels[value]?.[current]
-    ||
-    labels[value]?.az
-    ||
-    value;
-
-}
-
-
 async function loadHelpRequests(){
 
   const grid =
@@ -3992,24 +4504,20 @@ async function loadHelpRequests(){
 
   const result =
     await db
-      .from('help_requests')
-      .select('*')
-      .eq('approved',true)
-      .order(
-        'created_at',
-        {
-          ascending:false
-        }
-      );
+    .from('help_requests')
+    .select('*')
+    .eq('approved',true)
+    .order(
+      'created_at',
+      {
+        ascending:false
+      }
+    );
 
 
   if(result.error){
 
-    console.error(
-      'Help load error:',
-      result.error
-    );
-
+    console.error(result.error);
     return;
 
   }
@@ -4054,206 +4562,154 @@ async function loadHelpRequests(){
 
 
   grid.innerHTML =
-    rows
-      .map(
-        item => {
+    rows.map(
+
+      item => {
+
+        const phone =
+          safePhone(
+            item.contact_phone
+          );
 
 
-          const phone =
-            safePhone(
-              item.contact_phone
-            );
+        const urgencyClass =
+          item.urgency === 'critical'
+          ?
+          'status-badge--critical'
+          :
+          item.urgency === 'high'
+          ?
+          'status-badge--high'
+          :
+          'status-badge--normal';
 
 
-          const urgencyClass =
-            item.urgency === 'critical'
-            ?
-            'status-badge--critical'
-            :
-            item.urgency === 'high'
-            ?
-            'status-badge--high'
-            :
-            'status-badge--normal';
+        return `
+        <article class="card">
+
+        <div class="card__photo">
+
+        <img
+          src="${esc(safePhoto(item.photo_url))}"
+          alt="${esc(item.name || '')}"
+        >
+
+        </div>
 
 
-          const statusClass =
-            item.status === 'resolved'
-            ?
-            'status-badge--resolved'
-            :
-            item.status === 'in_progress'
-            ?
-            'status-badge--progress'
-            :
-            '';
+        <div class="card__body">
+
+        <div class="status-badge ${urgencyClass}">
+
+        ${
+          item.urgency === 'critical'
+          ?
+          '🆘'
+          :
+          item.urgency === 'high'
+          ?
+          '⚠️'
+          :
+          '❤️'
+        }
+
+        ${esc(item.urgency || '')}
+
+        </div>
 
 
-          return `
-          <article class="card">
+        <div class="card__name">
 
-          <div class="card__photo">
-
-          <img
-            src="${esc(safePhoto(item.photo_url))}"
-            alt="${esc(item.name || helpTypeLabel(item.help_type))}"
-          >
-
-          </div>
-
-
-          <div class="card__body">
-
-
-          <div class="status-badge ${urgencyClass}">
-
-          ${
-            item.urgency === 'critical'
-            ?
-            '🆘'
-            :
-            item.urgency === 'high'
-            ?
-            '⚠️'
-            :
-            '❤️'
-          }
-
-          ${esc(urgencyLabel(item.urgency))}
-          </div>
-
-
-          ${
-            item.status !== 'active'
-            ?
-            `
-            <div class="status-badge ${statusClass}">
-            ${
-              item.status === 'resolved'
-              ?
-              '✅'
-              :
-              '🤝'
-            }
-            ${esc(statusLabel(item.status))}
-            </div>
-            `
-            :
-            ''
-          }
-
-
-          <div class="card__name">
-
-          ${
-            esc(
-              item.name
-              ||
-              (
-                lang() === 'ru'
-                ?
-                'Кот'
-                :
-                lang() === 'en'
-                ?
-                'Cat'
-                :
-                'Pişik'
-              )
-            )
-          }
-
-          </div>
-
-
-          <div class="data-meta">
-
-          <span>
-          ${helpTypeIcon(item.help_type)}
-          ${esc(helpTypeLabel(item.help_type))}
-          </span>
-
-          ${
-            item.area
-            ?
-            `
-            <span>
-            📍 ${esc(item.area)}
-            </span>
-            `
-            :
-            ''
-          }
-
-          </div>
-
-
-          <p class="data-description">
-          ${esc(item.description || '')}
-          </p>
-
-
-          ${
-            item.contact_name
-            ?
-            `
-            <div
-              style="
-                margin-top:9px;
-                font-size:12px;
-                opacity:.7;
-              "
-            >
-            👤 ${esc(item.contact_name)}
-            </div>
-            `
-            :
-            ''
-          }
-
-
-          ${
-            phone
-            &&
-            item.status !== 'resolved'
-            ?
-            `
-            <a
-              class="data-contact"
-              href="tel:${phone}"
-            >
-            📞 ${
+        ${
+          esc(
+            item.name
+            ||
+            (
               lang() === 'ru'
               ?
-              'Помочь / связаться'
+              'Кот'
               :
               lang() === 'en'
               ?
-              'Help / contact'
+              'Cat'
               :
-              'Kömək et / əlaqə'
-            }
-            </a>
-            `
-            :
-            ''
-          }
-
-
-          </div>
-
-          </article>
-          `;
-
+              'Pişik'
+            )
+          )
         }
-      )
-      .join('');
+
+        </div>
+
+
+        <div class="data-meta">
+
+        <span>
+        ${helpTypeIcon(item.help_type)}
+        ${esc(helpTypeLabel(item.help_type))}
+        </span>
+
+        ${
+          item.area
+          ?
+          `
+          <span>
+          📍 ${esc(item.area)}
+          </span>
+          `
+          :
+          ''
+        }
+
+        </div>
+
+
+        <p class="data-description">
+        ${esc(item.description || '')}
+        </p>
+
+
+        ${
+          phone
+          &&
+          item.status !== 'resolved'
+          ?
+          `
+          <a
+            class="data-contact"
+            href="tel:${phone}"
+          >
+          📞 ${
+            lang() === 'ru'
+            ?
+            'Помочь / связаться'
+            :
+            lang() === 'en'
+            ?
+            'Help / contact'
+            :
+            'Kömək et / əlaqə'
+          }
+          </a>
+          `
+          :
+          ''
+        }
+
+
+        </div>
+
+        </article>
+        `;
+
+      }
+
+    ).join('');
 
 }
 
 
 /* =====================================================
-   LOST FOUND
+   LOST & FOUND
 ===================================================== */
 
 const lostFoundDialog =
@@ -4287,34 +4743,34 @@ function openLostFound(type){
     type;
 
 
-  if(type === 'lost'){
-
-    lostFoundFormTitle.textContent =
-      lang() === 'ru'
+  lostFoundFormTitle.textContent =
+    lang() === 'ru'
+    ?
+    (
+      type === 'lost'
       ?
       'Сообщить о пропавшем коте'
       :
-      lang() === 'en'
+      'Сообщить о найденном коте'
+    )
+    :
+    lang() === 'en'
+    ?
+    (
+      type === 'lost'
       ?
       'Report a lost cat'
       :
-      'İtmiş pişik haqqında elan';
-
-  }
-  else{
-
-    lostFoundFormTitle.textContent =
-      lang() === 'ru'
-      ?
-      'Сообщить о найденном коте'
-      :
-      lang() === 'en'
-      ?
       'Report a found cat'
+    )
+    :
+    (
+      type === 'lost'
+      ?
+      'İtmiş pişik haqqında elan'
       :
-      'Tapılmış pişik haqqında elan';
-
-  }
+      'Tapılmış pişik haqqında elan'
+    );
 
 
   lostFoundMessage.className =
@@ -4396,9 +4852,9 @@ async function(event){
 
     const ext =
       file.name
-        .split('.')
-        .pop()
-        .toLowerCase();
+      .split('.')
+      .pop()
+      .toLowerCase();
 
 
     const path =
@@ -4417,15 +4873,15 @@ async function(event){
 
     const upload =
       await db.storage
-        .from('cat-photos')
-        .upload(
-          path,
-          file,
-          {
-            upsert:false,
-            contentType:file.type
-          }
-        );
+      .from('cat-photos')
+      .upload(
+        path,
+        file,
+        {
+          upsert:false,
+          contentType:file.type
+        }
+      );
 
 
     if(upload.error){
@@ -4435,69 +4891,69 @@ async function(event){
 
     const publicUrl =
       db.storage
-        .from('cat-photos')
-        .getPublicUrl(path)
-        .data
-        .publicUrl;
+      .from('cat-photos')
+      .getPublicUrl(path)
+      .data
+      .publicUrl;
 
 
     const result =
       await db
-        .from('lost_found')
-        .insert({
+      .from('lost_found')
+      .insert({
 
-          type:
-          lostFoundType.value,
+        type:
+        lostFoundType.value,
 
-          name:
-          document
-            .getElementById('lostFoundName')
-            .value
-            .trim()
-            ||
-            null,
+        name:
+        document
+        .getElementById('lostFoundName')
+        .value
+        .trim()
+        ||
+        null,
 
-          event_date:
-          document
-            .getElementById('lostFoundDate')
-            .value,
+        event_date:
+        document
+        .getElementById('lostFoundDate')
+        .value,
 
-          area:
-          document
-            .getElementById('lostFoundArea')
-            .value
-            .trim(),
+        area:
+        document
+        .getElementById('lostFoundArea')
+        .value
+        .trim(),
 
-          description:
-          document
-            .getElementById('lostFoundDescription')
-            .value
-            .trim(),
+        description:
+        document
+        .getElementById('lostFoundDescription')
+        .value
+        .trim(),
 
-          contact_name:
-          document
-            .getElementById('lostFoundContact')
-            .value
-            .trim()
-            ||
-            null,
+        contact_name:
+        document
+        .getElementById('lostFoundContact')
+        .value
+        .trim()
+        ||
+        null,
 
-          contact_phone:
-          document
-            .getElementById('lostFoundPhone')
-            .value
-            .trim(),
+        contact_phone:
+        document
+        .getElementById('lostFoundPhone')
+        .value
+        .trim(),
 
-          photo_url:
-          publicUrl,
+        photo_url:
+        publicUrl,
 
-          status:
-          'active',
+        status:
+        'active',
 
-          approved:
-          false
+        approved:
+        false
 
-        });
+      });
 
 
     if(result.error){
@@ -4562,22 +5018,21 @@ async function loadLostFound(){
 
   const result =
     await db
-      .from('lost_found')
-      .select('*')
-      .eq('approved',true)
-      .eq('status','active')
-      .order(
-        'created_at',
-        {
-          ascending:false
-        }
-      );
+    .from('lost_found')
+    .select('*')
+    .eq('approved',true)
+    .eq('status','active')
+    .order(
+      'created_at',
+      {
+        ascending:false
+      }
+    );
 
 
   if(result.error){
 
     console.error(result.error);
-
     return;
 
   }
@@ -4622,153 +5077,152 @@ async function loadLostFound(){
 
 
   grid.innerHTML =
-    rows
-      .map(
-        item => {
+    rows.map(
+
+      item => {
+
+        const isLost =
+          item.type === 'lost';
 
 
-          const isLost =
-            item.type === 'lost';
-
-
-          const statusText =
-            lang() === 'ru'
+        const statusText =
+          lang() === 'ru'
+          ?
+          (
+            isLost
             ?
-            (
+            'Потерялся'
+            :
+            'Найден'
+          )
+          :
+          lang() === 'en'
+          ?
+          (
+            isLost
+            ?
+            'Lost'
+            :
+            'Found'
+          )
+          :
+          (
+            isLost
+            ?
+            'İtib'
+            :
+            'Tapılıb'
+          );
+
+
+        const phone =
+          safePhone(
+            item.contact_phone
+          );
+
+
+        return `
+        <article class="card">
+
+        <div class="card__photo">
+
+        <img
+          src="${esc(safePhoto(item.photo_url))}"
+          alt="${esc(item.name || statusText)}"
+        >
+
+        </div>
+
+
+        <div class="card__body">
+
+
+        <div
+          class="
+            status-badge
+            ${
               isLost
               ?
-              'Потерялся'
+              'status-badge--lost'
               :
-              'Найден'
-            )
+              'status-badge--found'
+            }
+          "
+        >
+
+        ${
+          isLost
+          ?
+          '😿'
+          :
+          '👀'
+        }
+
+        ${esc(statusText)}
+
+        </div>
+
+
+        <div class="card__name">
+        ${esc(item.name || '')}
+        </div>
+
+
+        <div class="data-meta">
+
+        <span>
+        📍 ${esc(item.area || 'Baku')}
+        </span>
+
+        ${
+          item.event_date
+          ?
+          `<span>📅 ${esc(item.event_date)}</span>`
+          :
+          ''
+        }
+
+        </div>
+
+
+        <p class="data-description">
+        ${esc(item.description || '')}
+        </p>
+
+
+        ${
+          phone
+          ?
+          `
+          <a
+            class="data-contact"
+            href="tel:${phone}"
+          >
+          📞 ${
+            lang() === 'ru'
+            ?
+            'Связаться'
             :
             lang() === 'en'
             ?
-            (
-              isLost
-              ?
-              'Lost'
-              :
-              'Found'
-            )
+            'Contact'
             :
-            (
-              isLost
-              ?
-              'İtib'
-              :
-              'Tapılıb'
-            );
-
-
-          const phone =
-            safePhone(
-              item.contact_phone
-            );
-
-
-          return `
-          <article class="card">
-
-          <div class="card__photo">
-
-          <img
-            src="${esc(safePhoto(item.photo_url))}"
-            alt="${esc(item.name || statusText)}"
-          >
-
-          </div>
-
-
-          <div class="card__body">
-
-
-          <div
-            class="
-              status-badge
-              ${
-                isLost
-                ?
-                'status-badge--lost'
-                :
-                'status-badge--found'
-              }
-            "
-          >
-
-          ${
-            isLost
-            ?
-            '😿'
-            :
-            '👀'
+            'Əlaqə saxla'
           }
-
-          ${esc(statusText)}
-
-          </div>
-
-
-          <div class="card__name">
-          ${esc(item.name || '')}
-          </div>
-
-
-          <div class="data-meta">
-
-          <span>
-          📍 ${esc(item.area || 'Baku')}
-          </span>
-
-          ${
-            item.event_date
-            ?
-            `<span>📅 ${esc(item.event_date)}</span>`
-            :
-            ''
-          }
-
-          </div>
-
-
-          <p class="data-description">
-          ${esc(item.description || '')}
-          </p>
-
-
-          ${
-            phone
-            ?
-            `
-            <a
-              class="data-contact"
-              href="tel:${phone}"
-            >
-            📞 ${
-              lang() === 'ru'
-              ?
-              'Связаться'
-              :
-              lang() === 'en'
-              ?
-              'Contact'
-              :
-              'Əlaqə saxla'
-            }
-            </a>
-            `
-            :
-            ''
-          }
-
-          </div>
-
-          </article>
-          `;
-
+          </a>
+          `
+          :
+          ''
         }
-      )
-      .join('');
+
+        </div>
+
+        </article>
+        `;
+
+      }
+
+    ).join('');
 
 }
 
@@ -4785,21 +5239,20 @@ async function loadVets(){
 
   const result =
     await db
-      .from('vet_clinics')
-      .select('*')
-      .eq('approved',true)
-      .order(
-        'name',
-        {
-          ascending:true
-        }
-      );
+    .from('vet_clinics')
+    .select('*')
+    .eq('approved',true)
+    .order(
+      'name',
+      {
+        ascending:true
+      }
+    );
 
 
   if(result.error){
 
     console.error(result.error);
-
     return;
 
   }
@@ -4840,170 +5293,164 @@ async function loadVets(){
 
 
   grid.innerHTML =
-    rows
-      .map(
-        clinic => {
+    rows.map(
 
+      clinic => {
 
-          const phone =
-            safePhone(
-              clinic.phone
-            );
-
-
-          const mapsQuery =
-            encodeURIComponent(
-              [
-                clinic.name,
-                clinic.address,
-                'Baku'
-              ]
-              .filter(Boolean)
-              .join(' ')
-            );
-
-
-          return `
-          <article class="vet-card">
-
-          <div class="vet-card__icon">
-          🩺
-          </div>
-
-
-          ${
-            clinic.emergency_24h
-            ?
-            `
-            <div class="status-badge status-badge--24">
-            🕐 24/7
-            </div>
-            `
-            :
-            ''
-          }
-
-
-          <div class="vet-card__name">
-          ${esc(clinic.name)}
-          </div>
-
-
-          <div class="vet-card__info">
-
-
-          ${
-            clinic.address
-            ?
-            `
-            <div>
-            📍 ${esc(clinic.address)}
-            </div>
-            `
-            :
-            ''
-          }
-
-
-          ${
-            clinic.area
-            ?
-            `
-            <div>
-            🏙️ ${esc(clinic.area)}
-            </div>
-            `
-            :
-            ''
-          }
-
-
-          ${
-            clinic.opening_hours
-            ?
-            `
-            <div>
-            🕐 ${esc(clinic.opening_hours)}
-            </div>
-            `
-            :
-            ''
-          }
-
-
-          ${
+        const phone =
+          safePhone(
             clinic.phone
-            ?
-            `
-            <div>
-            ☎️ ${esc(clinic.phone)}
-            </div>
-            `
-            :
-            ''
-          }
+          );
 
 
+        const mapsQuery =
+          encodeURIComponent(
+            [
+              clinic.name,
+              clinic.address,
+              'Baku'
+            ]
+            .filter(Boolean)
+            .join(' ')
+          );
+
+
+        return `
+        <article class="vet-card">
+
+        <div class="vet-card__icon">
+        🩺
+        </div>
+
+
+        ${
+          clinic.emergency_24h
+          ?
+          `
+          <div class="status-badge status-badge--24">
+          🕐 24/7
           </div>
+          `
+          :
+          ''
+        }
 
 
-          <div class="vet-card__actions">
+        <div class="vet-card__name">
+        ${esc(clinic.name)}
+        </div>
 
 
-          ${
-            phone
-            ?
-            `
-            <a
-              class="vet-link"
-              href="tel:${phone}"
-            >
-            📞 ${
-              lang() === 'ru'
-              ?
-              'Позвонить'
-              :
-              lang() === 'en'
-              ?
-              'Call'
-              :
-              'Zəng et'
-            }
-            </a>
-            `
-            :
-            ''
-          }
+        <div class="vet-card__info">
+
+        ${
+          clinic.address
+          ?
+          `
+          <div>
+          📍 ${esc(clinic.address)}
+          </div>
+          `
+          :
+          ''
+        }
+
+        ${
+          clinic.area
+          ?
+          `
+          <div>
+          🏙️ ${esc(clinic.area)}
+          </div>
+          `
+          :
+          ''
+        }
+
+        ${
+          clinic.opening_hours
+          ?
+          `
+          <div>
+          🕐 ${esc(clinic.opening_hours)}
+          </div>
+          `
+          :
+          ''
+        }
+
+        ${
+          clinic.phone
+          ?
+          `
+          <div>
+          ☎️ ${esc(clinic.phone)}
+          </div>
+          `
+          :
+          ''
+        }
+
+        </div>
 
 
+        <div class="vet-card__actions">
+
+
+        ${
+          phone
+          ?
+          `
           <a
-            class="vet-link vet-link--light"
-            href="https://www.google.com/maps/search/?api=1&query=${mapsQuery}"
-            target="_blank"
-            rel="noopener"
+            class="vet-link"
+            href="tel:${phone}"
           >
-          📍 ${
+          📞 ${
             lang() === 'ru'
             ?
-            'На карте'
+            'Позвонить'
             :
             lang() === 'en'
             ?
-            'Map'
+            'Call'
             :
-            'Xəritə'
+            'Zəng et'
           }
           </a>
-
-
-          </div>
-
-          </article>
-          `;
-
+          `
+          :
+          ''
         }
-      )
-      .join('');
+
+
+        <a
+          class="vet-link vet-link--light"
+          href="https://www.google.com/maps/search/?api=1&query=${mapsQuery}"
+          target="_blank"
+          rel="noopener"
+        >
+        📍 ${
+          lang() === 'ru'
+          ?
+          'На карте'
+          :
+          lang() === 'en'
+          ?
+          'Map'
+          :
+          'Xəritə'
+        }
+        </a>
+
+
+        </div>
+
+        </article>
+        `;
+
+      }
+
+    ).join('');
 
 }
 
@@ -5072,15 +5519,7 @@ async function(event){
   if(file.size > 5 * 1024 * 1024){
 
     feedMessage.textContent =
-      lang() === 'ru'
-      ?
-      'Фото должно быть меньше 5 MB.'
-      :
-      lang() === 'en'
-      ?
-      'The photo must be smaller than 5 MB.'
-      :
-      'Foto 5 MB-dan kiçik olmalıdır.';
+      'Фото должно быть меньше 5 MB.';
 
     feedMessage.className =
       'form-message error';
@@ -5099,9 +5538,9 @@ async function(event){
 
     const ext =
       file.name
-        .split('.')
-        .pop()
-        .toLowerCase();
+      .split('.')
+      .pop()
+      .toLowerCase();
 
 
     const path =
@@ -5120,15 +5559,15 @@ async function(event){
 
     const upload =
       await db.storage
-        .from('cat-photos')
-        .upload(
-          path,
-          file,
-          {
-            upsert:false,
-            contentType:file.type
-          }
-        );
+      .from('cat-photos')
+      .upload(
+        path,
+        file,
+        {
+          upsert:false,
+          contentType:file.type
+        }
+      );
 
 
     if(upload.error){
@@ -5138,75 +5577,75 @@ async function(event){
 
     const publicUrl =
       db.storage
-        .from('cat-photos')
-        .getPublicUrl(path)
-        .data
-        .publicUrl;
+      .from('cat-photos')
+      .getPublicUrl(path)
+      .data
+      .publicUrl;
 
 
     const result =
       await db
-        .from('feed_points')
-        .insert({
+      .from('feed_points')
+      .insert({
 
-          point_type:
-          document
-            .getElementById('feedType')
-            .value,
+        point_type:
+        document
+        .getElementById('feedType')
+        .value,
 
-          title:
-          document
-            .getElementById('feedTitle')
-            .value
-            .trim()
-            ||
-            null,
+        title:
+        document
+        .getElementById('feedTitle')
+        .value
+        .trim()
+        ||
+        null,
 
-          area:
-          document
-            .getElementById('feedArea')
-            .value
-            .trim(),
+        area:
+        document
+        .getElementById('feedArea')
+        .value
+        .trim(),
 
-          description:
-          document
-            .getElementById('feedDescription')
-            .value
-            .trim()
-            ||
-            null,
+        description:
+        document
+        .getElementById('feedDescription')
+        .value
+        .trim()
+        ||
+        null,
 
-          contact_name:
-          document
-            .getElementById('feedContact')
-            .value
-            .trim()
-            ||
-            null,
+        contact_name:
+        document
+        .getElementById('feedContact')
+        .value
+        .trim()
+        ||
+        null,
 
-          contact_phone:
-          document
-            .getElementById('feedPhone')
-            .value
-            .trim()
-            ||
-            null,
+        contact_phone:
+        document
+        .getElementById('feedPhone')
+        .value
+        .trim()
+        ||
+        null,
 
-          photo_url:
-          publicUrl,
+        photo_url:
+        publicUrl,
 
-          status:
-          document
-            .getElementById('feedStatus')
-            .value,
+        status:
+        document
+        .getElementById('feedStatus')
+        .value,
 
-          last_confirmed_at:
-          new Date().toISOString(),
+        last_confirmed_at:
+        new Date().toISOString(),
 
-          approved:
-          false
+        approved:
+        false
 
-        });
+      });
 
 
     if(result.error){
@@ -5239,23 +5678,10 @@ async function(event){
 
   catch(error){
 
-    console.error(
-      'Feed point error:',
-      error
-    );
-
+    console.error(error);
 
     feedMessage.textContent =
-      lang() === 'ru'
-      ?
-      'Ошибка. Попробуйте ещё раз.'
-      :
-      lang() === 'en'
-      ?
-      'Something went wrong. Please try again.'
-      :
-      'Xəta baş verdi. Yenidən cəhd edin.';
-
+      'Ошибка. Попробуйте ещё раз.';
 
     feedMessage.className =
       'form-message error';
@@ -5297,6 +5723,7 @@ function feedTypeLabel(type){
 
   };
 
+
   return labels[type]?.[lang()]
     ||
     labels[type]?.az
@@ -5319,54 +5746,6 @@ function feedTypeIcon(type){
 }
 
 
-function feedStatusLabel(status){
-
-  const labels = {
-
-    active:{
-      az:'Aktiv',
-      ru:'Активна',
-      en:'Active'
-    },
-
-    needs_refill:{
-      az:'Yem / su lazımdır',
-      ru:'Нужно пополнить',
-      en:'Needs refill'
-    },
-
-    inactive:{
-      az:'Aktiv deyil',
-      ru:'Неактивна',
-      en:'Inactive'
-    }
-
-  };
-
-  return labels[status]?.[lang()]
-    ||
-    labels[status]?.az
-    ||
-    status;
-
-}
-
-
-function feedStatusClass(status){
-
-  if(status === 'needs_refill'){
-    return 'status-badge--high';
-  }
-
-  if(status === 'inactive'){
-    return 'status-badge--normal';
-  }
-
-  return 'status-badge--resolved';
-
-}
-
-
 async function loadFeedPoints(){
 
   const grid =
@@ -5378,24 +5757,20 @@ async function loadFeedPoints(){
 
   const result =
     await db
-      .from('feed_points')
-      .select('*')
-      .eq('approved',true)
-      .order(
-        'created_at',
-        {
-          ascending:false
-        }
-      );
+    .from('feed_points')
+    .select('*')
+    .eq('approved',true)
+    .order(
+      'created_at',
+      {
+        ascending:false
+      }
+    );
 
 
   if(result.error){
 
-    console.error(
-      'Feed points load error:',
-      result.error
-    );
-
+    console.error(result.error);
     return;
 
   }
@@ -5415,21 +5790,21 @@ async function loadFeedPoints(){
       `
       <div class="data-empty">
 
-        <div class="data-empty__icon">
-        🥣
-        </div>
+      <div class="data-empty__icon">
+      🥣
+      </div>
 
-        ${
-          lang() === 'ru'
-          ?
-          'Пока нет добавленных точек.'
-          :
-          lang() === 'en'
-          ?
-          'No points added yet.'
-          :
-          'Hələ nöqtə əlavə edilməyib.'
-        }
+      ${
+        lang() === 'ru'
+        ?
+        'Пока нет добавленных точек.'
+        :
+        lang() === 'en'
+        ?
+        'No points added yet.'
+        :
+        'Hələ nöqtə əlavə edilməyib.'
+      }
 
       </div>
       `;
@@ -5440,159 +5815,929 @@ async function loadFeedPoints(){
 
 
   grid.innerHTML =
-    rows
-      .map(
-        item => {
+    rows.map(
+
+      item => {
+
+        const phone =
+          safePhone(
+            item.contact_phone
+          );
 
 
-          const phone =
-            safePhone(
-              item.contact_phone
-            );
+        return `
+        <article class="card">
+
+        <div class="card__photo">
+
+        <img
+          src="${esc(safePhoto(item.photo_url))}"
+          alt="${esc(item.title || feedTypeLabel(item.point_type))}"
+        >
+
+        </div>
 
 
-          return `
-          <article class="card">
+        <div class="card__body">
 
-            <div class="card__photo">
+        <div class="status-badge status-badge--resolved">
 
-              <img
-                src="${esc(safePhoto(item.photo_url))}"
-                alt="${esc(item.title || feedTypeLabel(item.point_type))}"
-              >
+        ${feedTypeIcon(item.point_type)}
 
-            </div>
+        ${esc(feedTypeLabel(item.point_type))}
+
+        </div>
 
 
-            <div class="card__body">
+        <div class="card__name">
+
+        ${
+          esc(
+            item.title
+            ||
+            feedTypeLabel(item.point_type)
+          )
+        }
+
+        </div>
 
 
-              <div class="status-badge ${feedStatusClass(item.status)}">
+        <div class="data-meta">
 
-                ${feedTypeIcon(item.point_type)}
+        <span>
+        📍 ${esc(item.area || 'Baku')}
+        </span>
 
-                ${esc(feedTypeLabel(item.point_type))}
-
-              </div>
-
-
-              <div class="status-badge ${feedStatusClass(item.status)}">
-
-                ${
-                  item.status === 'active'
-                  ?
-                  '✅'
-                  :
-                  item.status === 'needs_refill'
-                  ?
-                  '⚠️'
-                  :
-                  '⏸️'
-                }
-
-                ${esc(feedStatusLabel(item.status))}
-
-              </div>
+        </div>
 
 
-              <div class="card__name">
-
-                ${
-                  esc(
-                    item.title
-                    ||
-                    feedTypeLabel(item.point_type)
-                  )
-                }
-
-              </div>
-
-
-              <div class="data-meta">
-
-                <span>
-                📍 ${esc(item.area || 'Baku')}
-                </span>
-
-              </div>
+        ${
+          item.description
+          ?
+          `
+          <p class="data-description">
+          ${esc(item.description)}
+          </p>
+          `
+          :
+          ''
+        }
 
 
-              ${
-                item.description
-                ?
-                `
-                <p class="data-description">
-                ${esc(item.description)}
-                </p>
-                `
-                :
-                ''
-              }
+        ${
+          phone
+          ?
+          `
+          <a
+            class="data-contact data-contact--caspian"
+            href="tel:${phone}"
+          >
+          📞 ${
+            lang() === 'ru'
+            ?
+            'Связаться'
+            :
+            lang() === 'en'
+            ?
+            'Contact'
+            :
+            'Əlaqə saxla'
+          }
+          </a>
+          `
+          :
+          ''
+        }
+
+        </div>
+
+        </article>
+        `;
+
+      }
+
+    ).join('');
+
+}
 
 
-              ${
-                item.last_confirmed_at
-                ?
-                `
-                <div
-                  style="
-                    margin-top:10px;
-                    font-size:12px;
-                    opacity:.65;
-                  "
-                >
-                ✅ ${
-                  lang() === 'ru'
-                  ?
-                  'Подтверждено'
-                  :
-                  lang() === 'en'
-                  ?
-                  'Confirmed'
-                  :
-                  'Təsdiqlənib'
-                }:
-                ${new Date(item.last_confirmed_at).toLocaleDateString()}
-                </div>
-                `
-                :
-                ''
-              }
+/* =====================================================
+   ADD CAT TO MAP
+===================================================== */
+
+const mapCatDialog =
+document.getElementById('mapCatDialog');
+
+const mapCatForm =
+document.getElementById('mapCatForm');
+
+const mapCatMessage =
+document.getElementById('mapCatMessage');
+
+const mapCatSubmit =
+document.getElementById('mapCatSubmit');
+
+const mapCatPhoto =
+document.getElementById('mapCatPhoto');
+
+const mapCatPreview =
+document.getElementById('mapCatPreview');
+
+const mapCatLat =
+document.getElementById('mapCatLat');
+
+const mapCatLng =
+document.getElementById('mapCatLng');
+
+const mapCatLocationText =
+document.getElementById('mapCatLocationText');
 
 
-              ${
-                phone
-                ?
-                `
-                <a
-                  class="data-contact data-contact--caspian"
-                  href="tel:${phone}"
-                >
-                📞 ${
-                  lang() === 'ru'
-                  ?
-                  'Связаться'
-                  :
-                  lang() === 'en'
-                  ?
-                  'Contact'
-                  :
-                  'Əlaqə saxla'
-                }
-                </a>
-                `
-                :
-                ''
-              }
+let spotMap = null;
 
-            </div>
+let spotMarker = null;
 
-          </article>
+
+photoPreview(
+  mapCatPhoto,
+  mapCatPreview
+);
+
+
+function locationText(lat,lng){
+
+  mapCatLocationText.classList.remove(
+    'is-empty'
+  );
+
+
+  mapCatLocationText.textContent =
+    lang() === 'ru'
+    ?
+    `✅ Точка выбрана: ${lat.toFixed(6)}, ${lng.toFixed(6)}`
+    :
+    lang() === 'en'
+    ?
+    `✅ Location selected: ${lat.toFixed(6)}, ${lng.toFixed(6)}`
+    :
+    `✅ Nöqtə seçildi: ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+
+}
+
+
+function chooseSpot(lat,lng){
+
+  mapCatLat.value =
+    lat;
+
+  mapCatLng.value =
+    lng;
+
+
+  if(spotMarker){
+
+    spotMarker.setLatLng(
+      [
+        lat,
+        lng
+      ]
+    );
+
+  }
+  else{
+
+    spotMarker =
+      L.marker(
+        [
+          lat,
+          lng
+        ]
+      )
+      .addTo(
+        spotMap
+      );
+
+  }
+
+
+  locationText(
+    lat,
+    lng
+  );
+
+}
+
+
+function initSpotMap(){
+
+  if(spotMap){
+
+    setTimeout(
+      ()=>{
+        spotMap.invalidateSize();
+      },
+      150
+    );
+
+    return;
+
+  }
+
+
+  spotMap =
+    L.map(
+      'spotMap'
+    )
+    .setView(
+      [
+        40.4093,
+        49.8671
+      ],
+      13
+    );
+
+
+  L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+      maxZoom:19,
+      attribution:'&copy; OpenStreetMap'
+    }
+  )
+  .addTo(
+    spotMap
+  );
+
+
+  spotMap.on(
+    'click',
+    function(event){
+
+      chooseSpot(
+        event.latlng.lat,
+        event.latlng.lng
+      );
+
+    }
+  );
+
+}
+
+
+document
+.getElementById('openMapCatForm')
+.addEventListener(
+  'click',
+  function(){
+
+    mapCatMessage.className =
+      'form-message';
+
+    mapCatMessage.textContent =
+      '';
+
+    mapCatDialog.showModal();
+
+
+    setTimeout(
+      function(){
+
+        initSpotMap();
+
+        spotMap.invalidateSize();
+
+      },
+      200
+    );
+
+  }
+);
+
+
+document
+.getElementById('closeMapCatForm')
+.addEventListener(
+  'click',
+  ()=>mapCatDialog.close()
+);
+
+
+/* USER LOCATION INSIDE CAT FORM */
+
+document
+.getElementById('useMyLocationForCat')
+.addEventListener(
+'click',
+function(){
+
+  if(!navigator.geolocation){
+
+    alert(
+      lang() === 'ru'
+      ?
+      'Геолокация недоступна.'
+      :
+      lang() === 'en'
+      ?
+      'Geolocation is unavailable.'
+      :
+      'Geolokasiya mövcud deyil.'
+    );
+
+    return;
+
+  }
+
+
+  navigator.geolocation.getCurrentPosition(
+
+    function(position){
+
+      const lat =
+        position.coords.latitude;
+
+      const lng =
+        position.coords.longitude;
+
+
+      initSpotMap();
+
+
+      spotMap.setView(
+        [
+          lat,
+          lng
+        ],
+        17
+      );
+
+
+      chooseSpot(
+        lat,
+        lng
+      );
+
+    },
+
+    function(){
+
+      alert(
+        lang() === 'ru'
+        ?
+        'Не удалось получить местоположение.'
+        :
+        lang() === 'en'
+        ?
+        'Could not get your location.'
+        :
+        'Məkanınızı müəyyən etmək mümkün olmadı.'
+      );
+
+    },
+
+    {
+      enableHighAccuracy:true,
+      timeout:10000
+    }
+
+  );
+
+}
+);
+
+
+/* SUBMIT CAT */
+
+mapCatForm.addEventListener(
+'submit',
+async function(event){
+
+  event.preventDefault();
+
+
+  const file =
+    mapCatPhoto.files[0];
+
+
+  const lat =
+    Number(
+      mapCatLat.value
+    );
+
+  const lng =
+    Number(
+      mapCatLng.value
+    );
+
+
+  if(
+    !Number.isFinite(lat)
+    ||
+    !Number.isFinite(lng)
+  ){
+
+    mapCatMessage.textContent =
+      lang() === 'ru'
+      ?
+      '📍 Сначала выберите место кота на карте.'
+      :
+      lang() === 'en'
+      ?
+      '📍 Please select the cat location on the map.'
+      :
+      '📍 Əvvəlcə xəritədə pişiyin yerini seçin.';
+
+
+    mapCatMessage.className =
+      'form-message error';
+
+    return;
+
+  }
+
+
+  if(!file){
+    return;
+  }
+
+
+  if(file.size > 5 * 1024 * 1024){
+
+    mapCatMessage.textContent =
+      lang() === 'ru'
+      ?
+      'Фото должно быть меньше 5 MB.'
+      :
+      lang() === 'en'
+      ?
+      'The photo must be smaller than 5 MB.'
+      :
+      'Foto 5 MB-dan kiçik olmalıdır.';
+
+
+    mapCatMessage.className =
+      'form-message error';
+
+    return;
+
+  }
+
+
+  mapCatSubmit.disabled =
+    true;
+
+
+  try{
+
+
+    const ext =
+      file.name
+      .split('.')
+      .pop()
+      .toLowerCase();
+
+
+    const path =
+      'cats/'
+      +
+      Date.now()
+      +
+      '-'
+      +
+      crypto.randomUUID()
+      +
+      '.'
+      +
+      ext;
+
+
+    const upload =
+      await db.storage
+      .from('cat-photos')
+      .upload(
+        path,
+        file,
+        {
+          upsert:false,
+          contentType:file.type
+        }
+      );
+
+
+    if(upload.error){
+      throw upload.error;
+    }
+
+
+    const publicUrl =
+      db.storage
+      .from('cat-photos')
+      .getPublicUrl(path)
+      .data
+      .publicUrl;
+
+
+    const catName =
+      document
+      .getElementById('mapCatName')
+      .value
+      .trim();
+
+
+    const result =
+      await db
+      .from('cats')
+      .insert({
+
+        name:
+        catName
+        ||
+        null,
+
+        area:
+        document
+        .getElementById('mapCatArea')
+        .value
+        .trim(),
+
+        description:
+        document
+        .getElementById('mapCatDescription')
+        .value
+        .trim(),
+
+        photo_url:
+        publicUrl,
+
+        lat:
+        lat,
+
+        lng:
+        lng,
+
+        seen_at:
+        new Date().toISOString(),
+
+        reported_by:
+        document
+        .getElementById('mapCatReporter')
+        .value
+        .trim()
+        ||
+        null,
+
+        contact_phone:
+        document
+        .getElementById('mapCatPhone')
+        .value
+        .trim()
+        ||
+        null,
+
+        status:
+        document
+        .getElementById('mapCatStatus')
+        .value,
+
+        approved:
+        false
+
+      });
+
+
+    if(result.error){
+      throw result.error;
+    }
+
+
+    mapCatMessage.textContent =
+      lang() === 'ru'
+      ?
+      '✅ Спасибо! Кот отправлен на модерацию. После проверки он появится на карте.'
+      :
+      lang() === 'en'
+      ?
+      '✅ Thank you! The cat was sent for moderation and will appear on the map after approval.'
+      :
+      '✅ Təşəkkür edirik! Pişik moderasiyaya göndərildi və təsdiqdən sonra xəritədə görünəcək.';
+
+
+    mapCatMessage.className =
+      'form-message success';
+
+
+    mapCatForm.reset();
+
+
+    mapCatPreview.style.display =
+      'none';
+
+
+    mapCatLat.value =
+      '';
+
+    mapCatLng.value =
+      '';
+
+
+    mapCatLocationText.textContent =
+      lang() === 'ru'
+      ?
+      'Точка на карте не выбрана.'
+      :
+      lang() === 'en'
+      ?
+      'No map location selected.'
+      :
+      'Xəritədə nöqtə seçilməyib.';
+
+
+    mapCatLocationText.classList.add(
+      'is-empty'
+    );
+
+
+    if(spotMarker){
+
+      spotMap.removeLayer(
+        spotMarker
+      );
+
+      spotMarker =
+        null;
+
+    }
+
+  }
+
+  catch(error){
+
+    console.error(
+      'Cat map submit error:',
+      error
+    );
+
+
+    mapCatMessage.textContent =
+      lang() === 'ru'
+      ?
+      'Ошибка. Попробуйте ещё раз.'
+      :
+      lang() === 'en'
+      ?
+      'Something went wrong. Please try again.'
+      :
+      'Xəta baş verdi. Yenidən cəhd edin.';
+
+
+    mapCatMessage.className =
+      'form-message error';
+
+  }
+
+  finally{
+
+    mapCatSubmit.disabled =
+      false;
+
+  }
+
+}
+);
+
+
+/* =====================================================
+   LOAD APPROVED CATS ON MAIN MAP
+===================================================== */
+
+let communityCatLayer =
+  null;
+
+
+function catMarkerIcon(status){
+
+  const emoji =
+    status === 'needs_help'
+    ?
+    '❤️'
+    :
+    status === 'regular'
+    ?
+    '🐈'
+    :
+    '🐱';
+
+
+  return L.divIcon({
+
+    className:'',
+
+    html:
+      `<div class="cat-map-marker">${emoji}</div>`,
+
+    iconSize:[
+      42,
+      42
+    ],
+
+    iconAnchor:[
+      21,
+      21
+    ],
+
+    popupAnchor:[
+      0,
+      -22
+    ]
+
+  });
+
+}
+
+
+async function loadMapCats(){
+
+  const result =
+    await db
+    .from('cats')
+    .select(
+      'id,name,area,description,photo_url,lat,lng,status,seen_at'
+    )
+    .eq('approved',true);
+
+
+  if(result.error){
+
+    console.error(
+      'Map cats error:',
+      result.error
+    );
+
+    return;
+
+  }
+
+
+  const cats =
+    (result.data || [])
+    .filter(
+      item => {
+
+        const lat =
+          Number(
+            item.lat
+          );
+
+        const lng =
+          Number(
+            item.lng
+          );
+
+
+        return (
+          Number.isFinite(lat)
+          &&
+          Number.isFinite(lng)
+          &&
+          item.status !== 'inactive'
+        );
+
+      }
+    );
+
+
+  function drawCats(){
+
+    const mainMap =
+      window.catsBakuMainMap;
+
+
+    if(!mainMap){
+
+      setTimeout(
+        drawCats,
+        300
+      );
+
+      return;
+
+    }
+
+
+    if(communityCatLayer){
+
+      mainMap.removeLayer(
+        communityCatLayer
+      );
+
+    }
+
+
+    communityCatLayer =
+      L.layerGroup()
+      .addTo(
+        mainMap
+      );
+
+
+    cats.forEach(
+      cat => {
+
+
+        const lat =
+          Number(
+            cat.lat
+          );
+
+        const lng =
+          Number(
+            cat.lng
+          );
+
+
+        const displayName =
+          cat.name
+          ||
+          (
+            lang() === 'ru'
+            ?
+            'Уличный кот'
+            :
+            lang() === 'en'
+            ?
+            'Street cat'
+            :
+            'Küçə pişiyi'
+          );
+
+
+        const popup =
+          `
+          <div class="cat-popup">
+
+          <img
+            src="${esc(safePhoto(cat.photo_url))}"
+            alt="${esc(displayName)}"
+          >
+
+          <strong>
+          ${esc(displayName)}
+          </strong>
+
+          ${
+            cat.area
+            ?
+            `
+            <p>
+            📍 ${esc(cat.area)}
+            </p>
+            `
+            :
+            ''
+          }
+
+          ${
+            cat.description
+            ?
+            `
+            <p>
+            ${esc(cat.description)}
+            </p>
+            `
+            :
+            ''
+          }
+
+          </div>
           `;
 
-        }
-      )
-      .join('');
+
+        L.marker(
+          [
+            lat,
+            lng
+          ],
+          {
+            icon:
+            catMarkerIcon(
+              cat.status
+            )
+          }
+        )
+        .addTo(
+          communityCatLayer
+        )
+        .bindPopup(
+          popup
+        );
+
+      }
+    );
+
+  }
+
+
+  drawCats();
 
 }
 
@@ -5611,6 +6756,10 @@ loadVets();
 
 loadFeedPoints();
 
+loadMapCats();
+
+
+/* RELOAD TRANSLATED CONTENT */
 
 document
 .querySelectorAll(
@@ -5636,8 +6785,10 @@ document
 
             loadFeedPoints();
 
+            loadMapCats();
+
           },
-          100
+          120
         );
 
       }
@@ -5648,6 +6799,8 @@ document
 
 </script>
 
+
+<!-- MUSIC -->
 
 <script>
 
