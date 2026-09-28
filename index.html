@@ -2498,6 +2498,146 @@ body.baku-v3 .footer{
 }
 </style>
 
+
+<style>
+/* =====================================================
+   CATSBAKU V3.4 — RESPONSIVE DESKTOP / TABLET / MOBILE
+   ===================================================== */
+
+/* universal responsive safety */
+*,*::before,*::after{box-sizing:border-box;}
+html,body{max-width:100%;overflow-x:hidden;}
+img,svg,video,canvas{max-width:100%;height:auto;}
+body.baku-v3 .wrap{width:min(100% - 32px, 1400px);margin-inline:auto;}
+
+/* DESKTOP: wide composition */
+@media (min-width: 1180px){
+  body.baku-v3 .topbar__in{min-height:72px;}
+  body.baku-v3 main,
+  body.baku-v3 .topbar,
+  body.baku-v3 .footer{width:min(1680px,100%);margin-inline:auto;}
+
+  .baku-hero{height:clamp(540px,39vw,670px);aspect-ratio:auto;}
+  .baku-hero__art{object-fit:cover;object-position:center center;}
+
+  body.baku-v3 .explore__grid{grid-template-columns:repeat(6,minmax(0,1fr));}
+  body.baku-v3 #adoption #adoptionGrid{grid-template-columns:repeat(4,minmax(0,1fr));}
+  body.baku-v3 #cats .grid{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .vet-grid,.feature-grid,.help-types,.shop-products{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1179px){
+  body.baku-v3 .wrap{width:min(100% - 36px, 1040px);}
+  body.baku-v3 .topnav{gap:18px;}
+  body.baku-v3 .topnav a{font-size:14px;}
+
+  .baku-hero{height:clamp(390px,46vw,500px);aspect-ratio:auto;}
+  .baku-hero__art{object-fit:cover;object-position:center center;}
+
+  body.baku-v3 .explore__grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+  body.baku-v3 .explore-card:nth-child(3n){border-right:0!important;}
+  body.baku-v3 .explore-card:nth-child(-n+3){border-bottom:1px solid rgba(23,20,17,.10)!important;}
+
+  body.baku-v3 #adoption #adoptionGrid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  body.baku-v3 #cats .grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .vet-grid,.feature-grid,.help-types,.shop-products{grid-template-columns:repeat(2,minmax(0,1fr));}
+
+  body.baku-v3 #adoption .h2{font-size:clamp(38px,5vw,52px);}
+  .baku-services__skyline{width:94%;}
+}
+
+/* MOBILE */
+@media (max-width: 767px){
+  body.baku-v3{padding-bottom:88px;}
+  body.baku-v3 .wrap{width:min(100% - 24px, 680px);}
+
+  /* compact sticky header */
+  body.baku-v3 .topbar{position:sticky;top:0;z-index:9000;background:rgba(255,249,240,.96);backdrop-filter:blur(16px);}
+  body.baku-v3 .topbar__in{height:64px;padding-inline:14px;gap:10px;}
+  body.baku-v3 .logo{font-size:24px;white-space:nowrap;}
+  body.baku-v3 .logo img{width:24px;height:29px;}
+  body.baku-v3 .topnav{display:none!important;}
+  body.baku-v3 .langs{display:flex!important;margin-left:auto;transform:scale(.92);transform-origin:right center;}
+
+  /* mobile hero: keep the complete artwork visible instead of cropping it */
+  .baku-hero{height:auto!important;aspect-ratio:1536/393!important;background:#c7d8dc;}
+  .baku-hero__art{position:relative!important;inset:auto!important;display:block;width:100%!important;height:auto!important;object-fit:contain!important;}
+  .hero-hotspot{display:none!important;}
+
+  /* services */
+  .baku-services{padding-bottom:14px;}
+  .baku-services::before,.baku-services::after{display:none;}
+  .baku-services__skyline{width:100%;margin:10px auto 4px;padding-inline:4px;}
+  body.baku-v3 .explore__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;border:0;padding:8px 0 12px;}
+  body.baku-v3 .explore-card,
+  body.baku-v3 .explore-card:nth-child(odd),
+  body.baku-v3 .explore-card:nth-child(-n+4),
+  body.baku-v3 .explore-card:not(:nth-child(3n)){
+    min-height:150px;
+    padding:18px 14px;
+    display:block;
+    border:1px solid rgba(23,20,17,.08)!important;
+    border-radius:20px;
+    background:rgba(255,255,255,.58);
+    box-shadow:0 8px 24px rgba(65,47,30,.06);
+  }
+  body.baku-v3 .explore-card__icon{font-size:32px;margin-bottom:10px;}
+  body.baku-v3 .explore-card h3{font-size:16px;margin-bottom:5px;}
+  body.baku-v3 .explore-card p{font-size:12.5px;line-height:1.42;}
+
+  /* adoption */
+  body.baku-v3 #adoption{padding:52px 0 34px;}
+  body.baku-v3 #adoption::before{top:-18px;height:38px;}
+  body.baku-v3 #adoption .feature-head{margin-bottom:18px;}
+  body.baku-v3 #adoption .h2{font-size:clamp(34px,10vw,46px);line-height:.98;}
+  body.baku-v3 #adoption .sub{font-size:15px;}
+  body.baku-v3 #adoption .action-row{position:static;margin-top:16px;}
+  body.baku-v3 #adoption #adoptionGrid{grid-template-columns:1fr!important;gap:14px;}
+  body.baku-v3 #adoption #adoptionGrid .card__photo{aspect-ratio:1.55/1;}
+
+  /* general lower sections */
+  body.baku-v3 #cats .grid,
+  .vet-grid,
+  .feature-grid,
+  .help-types,
+  .shop-products{grid-template-columns:1fr!important;gap:14px;}
+  .feature-section,.section{padding-block:48px;}
+  .h2{font-size:clamp(34px,10vw,48px);}
+  .sub{font-size:15px;line-height:1.6;}
+  .action-row{gap:10px;}
+  .big-action-btn{width:100%;min-height:50px;}
+
+  /* forms/dialogs */
+  .form-modal,.form-modal--map{width:calc(100% - 18px);max-height:90dvh;border-radius:22px;}
+  .form-modal__inner{padding:20px 16px;}
+  .form-modal__head h2{font-size:32px;}
+  .data-form{grid-template-columns:1fr!important;gap:14px;}
+  .form-field--full,.form-submit,.form-message{grid-column:1!important;}
+  #spotMap{height:300px;}
+
+  /* bottom navigation */
+  body.baku-v3 .bottomnav{display:block!important;position:fixed;left:0;right:0;bottom:0;z-index:9500;background:rgba(255,249,240,.97);backdrop-filter:blur(14px);padding-bottom:env(safe-area-inset-bottom);}
+  .bottomnav ul{height:72px;}
+  .bottomnav a,.bottomnav button{font-size:11px;gap:4px;}
+  .bottomnav svg{width:22px;height:22px;}
+  .bottomnav .add span.plus{width:56px;height:56px;margin-top:-25px;}
+
+  #musicToggle{right:12px;bottom:92px;width:52px;height:52px;font-size:24px;}
+}
+
+/* SMALL MOBILE */
+@media (max-width: 420px){
+  body.baku-v3 .wrap{width:min(100% - 18px, 400px);}
+  body.baku-v3 .logo{font-size:22px;}
+  body.baku-v3 .langs{transform:scale(.86);}
+  body.baku-v3 .explore__grid{gap:8px;}
+  body.baku-v3 .explore-card{min-height:142px;padding:15px 12px;}
+  body.baku-v3 .explore-card h3{font-size:15px;}
+  body.baku-v3 .explore-card p{font-size:12px;}
+}
+</style>
+
 </head>
 
 
