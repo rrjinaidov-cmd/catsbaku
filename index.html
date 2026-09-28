@@ -27,11 +27,7 @@ CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku
 <meta property="og:url" content="https://catsbaku.com/">
 <meta property="og:image" content="https://catsbaku.com/img/og-cover.jpg">
 
-<link
-  rel="icon"
-  href="img/favicon.svg"
-  type="image/svg+xml"
->
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -84,9 +80,6 @@ body{
   letter-spacing:.16em;
 }
 
-
-/* TOP */
-
 .topbar{
   background:rgba(248,242,232,.95);
   backdrop-filter:blur(16px);
@@ -131,13 +124,10 @@ body{
   content:"";
   position:absolute;
   z-index:2;
-
   width:650px;
   height:650px;
-
   right:-300px;
   bottom:-370px;
-
   border-radius:50%;
 
   background:
@@ -157,12 +147,9 @@ body{
 
 .hero__body::before{
   content:"";
-
   display:block;
-
   width:65px;
   height:65px;
-
   margin-bottom:10px;
 
   background:
@@ -220,7 +207,6 @@ body{
 
 .baku-intro__title{
   margin-top:7px;
-
   font-family:"Cormorant Garamond",serif;
   font-size:clamp(27px,4vw,42px);
   font-weight:700;
@@ -233,7 +219,7 @@ body{
 }
 
 
-/* PHOTOS */
+/* CARD PHOTOS */
 
 #grid .card__photo,
 #adoptionGrid .card__photo,
@@ -282,12 +268,9 @@ body{
 
 .explore-card{
   display:block;
-
   padding:27px;
-
   color:inherit;
   text-decoration:none;
-
   border:1px solid rgba(128,93,54,.13);
   border-radius:35px 35px 22px 22px;
 
@@ -304,15 +287,11 @@ body{
 .explore-card__icon{
   width:60px;
   height:60px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   margin-bottom:18px;
-
   border-radius:19px;
-
   background:#f3dfbf;
   font-size:30px;
 }
@@ -331,7 +310,7 @@ body{
 }
 
 
-/* FEATURES */
+/* GENERAL SECTIONS */
 
 .feature-section{
   position:relative;
@@ -353,9 +332,7 @@ body{
 
 .feature-box{
   padding:26px;
-
   color:#222;
-
   border:1px solid rgba(128,93,54,.12);
   border-radius:28px 28px 20px 20px;
 
@@ -386,7 +363,7 @@ body{
 }
 
 
-/* ACTIONS */
+/* BUTTONS */
 
 .action-row{
   display:flex;
@@ -399,20 +376,14 @@ body{
   display:inline-flex;
   align-items:center;
   gap:9px;
-
   padding:15px 22px;
-
   border:0;
   border-radius:999px;
-
   background:var(--pom);
   color:#fff;
-
   font:inherit;
   font-weight:800;
-
   cursor:pointer;
-
   box-shadow:0 10px 30px rgba(143,48,64,.22);
 }
 
@@ -434,9 +405,7 @@ body{
   display:flex;
   flex-wrap:wrap;
   gap:7px 13px;
-
   margin-top:8px;
-
   color:#75695d;
   font-size:13px;
 }
@@ -450,19 +419,13 @@ body{
   display:inline-flex;
   align-items:center;
   gap:7px;
-
   margin-top:14px;
-
   padding:10px 16px;
-
   border-radius:999px;
-
   background:var(--pom);
   color:#fff;
-
   font-size:13px;
   font-weight:800;
-
   text-decoration:none;
 }
 
@@ -472,14 +435,10 @@ body{
 
 .data-empty{
   grid-column:1/-1;
-
   padding:42px;
-
   text-align:center;
-
   border:1px dashed rgba(198,154,77,.45);
   border-radius:24px;
-
   background:#fffaf2;
 }
 
@@ -489,19 +448,15 @@ body{
 }
 
 
-/* BADGES */
+/* STATUS */
 
 .status-badge{
   display:inline-flex;
   align-items:center;
   gap:6px;
-
   margin-bottom:10px;
-
   padding:7px 10px;
-
   border-radius:999px;
-
   font-size:10px;
   font-weight:800;
   letter-spacing:.06em;
@@ -538,11 +493,6 @@ body{
   color:#a22d38;
 }
 
-.status-badge--progress{
-  background:#dfeaec;
-  color:#245e67;
-}
-
 .status-badge--resolved{
   background:#e2f0e4;
   color:#2d6b3e;
@@ -567,10 +517,8 @@ body{
 
 .help-type-card{
   padding:24px;
-
   border:1px solid rgba(143,48,64,.12);
   border-radius:26px;
-
   background:#fffaf3;
 }
 
@@ -613,12 +561,9 @@ body{
 
 .vet-card{
   padding:25px;
-
   border:1px solid rgba(39,107,120,.14);
   border-radius:28px 28px 20px 20px;
-
   background:#fff;
-
   box-shadow:0 13px 34px rgba(39,107,120,.08);
 }
 
@@ -638,9 +583,7 @@ body{
   display:flex;
   flex-direction:column;
   gap:8px;
-
   margin-top:15px;
-
   color:#665e55;
   font-size:13px;
   line-height:1.5;
@@ -657,16 +600,11 @@ body{
   display:inline-flex;
   align-items:center;
   gap:6px;
-
   padding:9px 13px;
-
   border-radius:999px;
-
   background:var(--caspian);
   color:#fff;
-
   text-decoration:none;
-
   font-size:12px;
   font-weight:800;
 }
@@ -677,21 +615,16 @@ body{
 }
 
 
-/* FORMS */
+/* MODALS */
 
 .form-modal{
   width:min(700px,calc(100% - 24px));
   max-height:90vh;
-
   padding:0;
-
   border:0;
   border-radius:28px;
-
   overflow:auto;
-
   background:#fffaf2;
-
   box-shadow:0 30px 100px rgba(0,0,0,.30);
 }
 
@@ -713,13 +646,11 @@ body{
   justify-content:space-between;
   gap:20px;
   align-items:flex-start;
-
   margin-bottom:25px;
 }
 
 .form-modal__head h2{
   margin:3px 0 0;
-
   font-family:"Cormorant Garamond",serif;
   font-size:38px;
 }
@@ -727,14 +658,10 @@ body{
 .form-close{
   width:42px;
   height:42px;
-
   flex:0 0 auto;
-
   border:0;
   border-radius:50%;
-
   background:#eee5d7;
-
   font-size:25px;
   cursor:pointer;
 }
@@ -766,15 +693,11 @@ body{
 .form-field textarea{
   width:100%;
   box-sizing:border-box;
-
   padding:13px 14px;
-
   border:1px solid #d9cbb8;
   border-radius:14px;
-
   background:#fff;
   color:#222;
-
   font:inherit;
 }
 
@@ -785,10 +708,8 @@ body{
 
 .photo-box{
   padding:20px;
-
   border:1px dashed var(--gold);
   border-radius:18px;
-
   background:#f7ecdc;
 }
 
@@ -800,31 +721,22 @@ body{
 
 .photo-preview{
   display:none;
-
   width:100%;
   max-height:330px;
-
   margin-top:15px;
-
   object-fit:cover;
-
   border-radius:18px;
 }
 
 .form-submit{
   grid-column:1/-1;
-
   padding:16px 22px;
-
   border:0;
   border-radius:999px;
-
   background:var(--pom);
   color:#fff;
-
   font:inherit;
   font-weight:800;
-
   cursor:pointer;
 }
 
@@ -835,9 +747,7 @@ body{
 .form-message{
   grid-column:1/-1;
   display:none;
-
   padding:14px 16px;
-
   border-radius:15px;
   line-height:1.55;
 }
@@ -855,12 +765,65 @@ body{
 }
 
 
+/* ADD MENU */
+
+.add-choice-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:13px;
+}
+
+.add-choice{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  width:100%;
+  padding:19px;
+  border:1px solid rgba(128,93,54,.13);
+  border-radius:22px;
+  background:#fff;
+  text-align:left;
+  cursor:pointer;
+  font:inherit;
+  transition:.15s ease;
+}
+
+.add-choice:hover{
+  transform:translateY(-2px);
+  border-color:rgba(143,48,64,.30);
+  box-shadow:0 10px 25px rgba(70,52,31,.08);
+}
+
+.add-choice__icon{
+  width:52px;
+  height:52px;
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:17px;
+  background:#f6ead8;
+  font-size:27px;
+}
+
+.add-choice strong{
+  display:block;
+  font-size:15px;
+}
+
+.add-choice small{
+  display:block;
+  margin-top:4px;
+  color:#766c60;
+  line-height:1.4;
+}
+
+
 /* MAP */
 
 .map-box{
   border:5px solid #fff;
   border-radius:28px;
-
   box-shadow:0 18px 48px rgba(57,49,37,.13);
 }
 
@@ -885,24 +848,18 @@ body{
 #spotMap{
   width:100%;
   height:390px;
-
   border:4px solid #fff;
   border-radius:20px;
-
   overflow:hidden;
-
   box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 .selected-location{
   margin-top:10px;
   padding:12px 14px;
-
   border-radius:13px;
-
   background:#edf4f2;
   color:var(--caspian-dark);
-
   font-size:12px;
   font-weight:700;
 }
@@ -915,18 +872,13 @@ body{
 .cat-map-marker{
   width:42px;
   height:42px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   border:3px solid #fff;
   border-radius:50%;
-
   background:#8f3040;
-
   font-size:23px;
-
   box-shadow:0 5px 15px rgba(0,0,0,.25);
 }
 
@@ -937,9 +889,7 @@ body{
 .cat-popup img{
   width:100%;
   height:115px;
-
   object-fit:cover;
-
   border-radius:10px;
   margin-bottom:8px;
 }
@@ -994,14 +944,9 @@ body{
   background:rgba(255,250,242,.95);
 }
 
-
-/* FOOTER */
-
 .footer{
   position:relative;
-
   padding-top:65px;
-
   color:#d9cdb9;
 
   background:
@@ -1013,13 +958,10 @@ body{
 
 .footer::before{
   content:"";
-
   position:absolute;
-
   left:0;
   right:0;
   top:0;
-
   height:11px;
 
   background:
@@ -1034,41 +976,27 @@ body{
 
 .footer-baku{
   margin-top:14px;
-
   color:#bea878;
-
   font-size:10px;
   font-weight:700;
   letter-spacing:.22em;
 }
 
-
-/* MUSIC */
-
 #musicToggle{
   position:fixed;
-
   right:18px;
   bottom:86px;
-
   width:58px;
   height:58px;
-
   border:2px solid var(--gold);
   border-radius:50%;
-
   background:#fffaf0;
-
   font-size:28px;
   cursor:pointer;
-
   z-index:10000;
-
   box-shadow:0 8px 24px rgba(0,0,0,.22);
 }
 
-
-/* RESPONSIVE */
 
 @media(max-width:900px){
 
@@ -1086,7 +1014,8 @@ body{
   .explore__grid,
   .feature-grid,
   .help-types,
-  .vet-grid{
+  .vet-grid,
+  .add-choice-grid{
     grid-template-columns:1fr;
   }
 
@@ -1169,7 +1098,7 @@ Mağaza
 <button
   class="btn btn--pom"
   type="button"
-  data-demo-add
+  data-open-add-menu
 >
 +
 <span data-i18n="nav.add">
@@ -1195,8 +1124,6 @@ Mağaza
 
 <main>
 
-
-<!-- HERO -->
 
 <section class="hero" id="top">
 
@@ -1266,10 +1193,7 @@ Bütün pişiklər
 CATS OF BAKU
 </div>
 
-<div
-  class="baku-intro__title"
-  data-i18n="baku.intro"
->
+<div class="baku-intro__title" data-i18n="baku.intro">
 İçərişəhərdən Xəzər sahilinə
 </div>
 
@@ -1318,54 +1242,75 @@ Bakı pişikləri
 
 <div class="grid" id="grid">
 
+<!-- Static CatsBaku cats stay here -->
+
 <article class="card">
+
 <div class="card__photo">
 <img src="img/hero-cat.jpg" alt="Rijik">
 </div>
+
 <div class="card__body">
 <div class="card__name">Rijik</div>
 <div class="card__district">📍 Bakı</div>
 </div>
+
 </article>
 
+
 <article class="card">
+
 <div class="card__photo">
 <img src="img/rijik-01.jpg" alt="Sultan">
 </div>
+
 <div class="card__body">
 <div class="card__name">Sultan</div>
 <div class="card__district">📍 İçərişəhər</div>
 </div>
+
 </article>
 
+
 <article class="card">
+
 <div class="card__photo">
 <img src="img/rijik-02.jpg" alt="Sunny">
 </div>
+
 <div class="card__body">
 <div class="card__name">Sunny</div>
 <div class="card__district">📍 Bulvar</div>
 </div>
+
 </article>
 
+
 <article class="card">
+
 <div class="card__photo">
 <img src="img/rijik-03.jpg" alt="Mango">
 </div>
+
 <div class="card__body">
 <div class="card__name">Mango</div>
 <div class="card__district">📍 Yasamal</div>
 </div>
+
 </article>
 
+
 <article class="card">
+
 <div class="card__photo">
 <img src="img/rijik-04.jpg" alt="Bala">
 </div>
+
 <div class="card__body">
 <div class="card__name">Bala</div>
 <div class="card__district">📍 Nərimanov</div>
 </div>
+
 </article>
 
 </div>
@@ -1541,7 +1486,6 @@ Köməyə ehtiyacı olan pişiklər
 Müalicə, yemək, müvəqqəti ev və digər yardım.
 </p>
 
-
 <div class="action-row">
 
 <button
@@ -1625,13 +1569,8 @@ Aktiv yardım elanları
 <div class="grid" id="helpGrid">
 
 <div class="data-empty">
-
-<div class="data-empty__icon">
-❤️
-</div>
-
+<div class="data-empty__icon">❤️</div>
 Elanlar yüklənir...
-
 </div>
 
 </div>
@@ -1718,13 +1657,8 @@ Aktiv elanlar
 <div class="grid" id="lostFoundGrid">
 
 <div class="data-empty">
-
-<div class="data-empty__icon">
-🔎
-</div>
-
+<div class="data-empty__icon">🔎</div>
 Elanlar yüklənir...
-
 </div>
 
 </div>
@@ -1763,7 +1697,7 @@ Ayın pişiyi
 </section>
 
 
-<!-- MAIN CAT MAP -->
+<!-- MAP -->
 
 <section class="section" id="map">
 
@@ -1813,16 +1747,9 @@ Küçədə pişik gördünüz? Şəkil çəkin, xəritədə yeri seçin və Cats
 
 <div class="map-box">
 
-<div
-  class="map"
-  id="catMap"
-></div>
+<div class="map" id="catMap"></div>
 
-<button
-  class="btn"
-  id="locate"
-  type="button"
->
+<button class="btn" id="locate" type="button">
 📍
 <span data-i18n="map.locate">
 Mənim yerim
@@ -1862,13 +1789,8 @@ Bakıda baytar klinikaları.
 <div class="vet-grid" id="vetGrid">
 
 <div class="data-empty">
-
-<div class="data-empty__icon">
-🩺
-</div>
-
+<div class="data-empty__icon">🩺</div>
 Klinikalar yüklənir...
-
 </div>
 
 </div>
@@ -1949,36 +1871,22 @@ Nöqtə əlavə et
 FEED POINTS
 </div>
 
-<h2
-  class="h2"
-  data-i18n="feed.activeTitle"
->
+<h2 class="h2" data-i18n="feed.activeTitle">
 Aktiv nöqtələr
 </h2>
 
 </div>
 
-<span
-  class="count"
-  id="feedCount"
-></span>
+<span class="count" id="feedCount"></span>
 
 </div>
 
 
-<div
-  class="grid"
-  id="feedGrid"
->
+<div class="grid" id="feedGrid">
 
 <div class="data-empty">
-
-<div class="data-empty__icon">
-🥣
-</div>
-
+<div class="data-empty__icon">🥣</div>
 Nöqtələr yüklənir...
-
 </div>
 
 </div>
@@ -2119,14 +2027,27 @@ BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
 </li>
 
 <li>
-<button type="button" class="add" data-demo-add>
+
+<button
+  type="button"
+  class="add"
+  data-open-add-menu
+>
+
 <span class="plus">
+
 <svg viewBox="0 0 24 24">
 <path d="M12 5v14M5 12h14"/>
 </svg>
+
 </span>
-<span data-i18n="nav.add">Əlavə et</span>
+
+<span data-i18n="nav.add">
+Əlavə et
+</span>
+
 </button>
+
 </li>
 
 <li>
@@ -2153,49 +2074,384 @@ BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
 </nav>
 
 
-<!-- OLD DEMO -->
+<!-- =====================================================
+     ADD MENU
+===================================================== -->
 
-<dialog class="sheet" id="demoSheet">
+<dialog
+  class="form-modal"
+  id="addMenuDialog"
+>
 
-<div class="sheet__in">
+<div class="form-modal__inner">
 
-<div class="sheet__grip"></div>
+<div class="form-modal__head">
 
-<div class="sheet__head">
+<div>
 
-<h2 id="demoTitle">
-Pişik əlavə et
+<div class="eyebrow">
+CATSBAKU
+</div>
+
+<h2 data-i18n="addMenu.title">
+Nə əlavə etmək istəyirsiniz?
 </h2>
 
-<button class="sheet__close" type="button" data-close>
+</div>
+
+<button
+  class="form-close"
+  type="button"
+  id="closeAddMenu"
+>
 ×
 </button>
 
 </div>
 
-<div class="sheet__body">
 
-<div class="empty">
+<div class="add-choice-grid">
 
-<div style="font-size:52px">
-🐾
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="citycat"
+>
+
+<span class="add-choice__icon">
+🐱
+</span>
+
+<span>
+
+<strong data-i18n="addMenu.cat">
+Bakı pişiyi
+</strong>
+
+<small data-i18n="addMenu.catSub">
+Pişiyi CatsBaku qalereyasına əlavə edin.
+</small>
+
+</span>
+
+</button>
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="adoption"
+>
+
+<span class="add-choice__icon">
+🏠
+</span>
+
+<span>
+
+<strong data-i18n="addMenu.adoption">
+Sahibləndirmə
+</strong>
+
+<small data-i18n="addMenu.adoptionSub">
+Yeni ailə axtaran pişik.
+</small>
+
+</span>
+
+</button>
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="help"
+>
+
+<span class="add-choice__icon">
+❤️
+</span>
+
+<span>
+
+<strong data-i18n="addMenu.help">
+Kömək lazımdır
+</strong>
+
+<small data-i18n="addMenu.helpSub">
+Müalicə, yemək, müvəqqəti ev və s.
+</small>
+
+</span>
+
+</button>
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="lost"
+>
+
+<span class="add-choice__icon">
+😿
+</span>
+
+<span>
+
+<strong data-i18n="addMenu.lost">
+Pişik itib
+</strong>
+
+<small data-i18n="addMenu.lostSub">
+İtmiş pişik haqqında elan.
+</small>
+
+</span>
+
+</button>
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="found"
+>
+
+<span class="add-choice__icon">
+👀
+</span>
+
+<span>
+
+<strong data-i18n="addMenu.found">
+Pişik tapılıb
+</strong>
+
+<small data-i18n="addMenu.foundSub">
+Tapdığınız pişik haqqında elan.
+</small>
+
+</span>
+
+</button>
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="map"
+>
+
+<span class="add-choice__icon">
+📍
+</span>
+
+<span>
+
+<strong data-i18n="addMenu.map">
+Xəritəyə pişik
+</strong>
+
+<small data-i18n="addMenu.mapSub">
+Küçədə gördüyünüz pişiyi xəritədə qeyd edin.
+</small>
+
+</span>
+
+</button>
+
+
+<button
+  class="add-choice"
+  type="button"
+  data-add-action="feed"
+>
+
+<span class="add-choice__icon">
+🥣
+</span>
+
+<span>
+
+<strong data-i18n="addMenu.feed">
+Yemləmə nöqtəsi
+</strong>
+
+<small data-i18n="addMenu.feedSub">
+Yem, su və ya pişik koloniyası.
+</small>
+
+</span>
+
+</button>
+
+
 </div>
 
-<h3 id="demoHeading">
-Tezliklə
-</h3>
+</div>
 
-<p id="demoText" class="sub">
-CatsBaku
-</p>
+</dialog>
 
-<button class="btn btn--pom" type="button" data-close>
-OK
+
+<!-- =====================================================
+     CITY CAT MODAL
+===================================================== -->
+
+<dialog
+  class="form-modal"
+  id="cityCatDialog"
+>
+
+<div class="form-modal__inner">
+
+<div class="form-modal__head">
+
+<div>
+
+<div class="eyebrow">
+CATSBAKU · BAKU CAT
+</div>
+
+<h2 data-i18n="citycat.formTitle">
+Bakı pişiyi əlavə et
+</h2>
+
+</div>
+
+<button
+  class="form-close"
+  type="button"
+  id="closeCityCatForm"
+>
+×
 </button>
 
 </div>
 
+
+<form
+  class="data-form"
+  id="cityCatForm"
+>
+
+
+<div class="form-field">
+
+<label data-i18n="citycat.name">
+Pişiyin adı
+</label>
+
+<input
+  id="cityCatName"
+  type="text"
+  maxlength="80"
+>
+
 </div>
+
+
+<div class="form-field">
+
+<label data-i18n="citycat.area">
+Rayon / ərazi
+</label>
+
+<input
+  id="cityCatArea"
+  type="text"
+  required
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<label data-i18n="citycat.description">
+Pişik haqqında
+</label>
+
+<textarea
+  id="cityCatDescription"
+  required
+></textarea>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="citycat.reporter">
+Adınız
+</label>
+
+<input
+  id="cityCatReporter"
+  type="text"
+>
+
+</div>
+
+
+<div class="form-field">
+
+<label data-i18n="citycat.phone">
+Telefon / WhatsApp
+</label>
+
+<input
+  id="cityCatPhone"
+  type="tel"
+  placeholder="+994..."
+>
+
+</div>
+
+
+<div class="form-field form-field--full">
+
+<div class="photo-box">
+
+<label data-i18n="citycat.photo">
+📷 Pişiyin fotosunu seçin
+</label>
+
+<input
+  id="cityCatPhoto"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+  required
+>
+
+<img
+  id="cityCatPreview"
+  class="photo-preview"
+  alt=""
+>
+
+</div>
+
+</div>
+
+
+<div
+  id="cityCatMessage"
+  class="form-message"
+></div>
+
+
+<button
+  type="submit"
+  class="form-submit"
+  id="cityCatSubmit"
+  data-i18n="citycat.submit"
+>
+Pişiyi göndər
+</button>
+
+</form>
 
 </div>
 
@@ -2236,112 +2492,46 @@ Pişik üçün ailə tap
 <form class="data-form" id="adoptionForm">
 
 <div class="form-field">
-
-<label data-i18n="adoption.name">
-Pişiyin adı
-</label>
-
-<input
-  id="adoptName"
-  type="text"
-  maxlength="80"
-  required
->
-
+<label data-i18n="adoption.name">Pişiyin adı</label>
+<input id="adoptName" type="text" maxlength="80" required>
 </div>
 
-
 <div class="form-field">
-
-<label data-i18n="adoption.age">
-Yaşı
-</label>
-
-<input
-  id="adoptAge"
-  type="text"
-  maxlength="50"
->
-
+<label data-i18n="adoption.age">Yaşı</label>
+<input id="adoptAge" type="text" maxlength="50">
 </div>
 
-
 <div class="form-field">
-
-<label data-i18n="adoption.gender">
-Cinsi
-</label>
+<label data-i18n="adoption.gender">Cinsi</label>
 
 <select id="adoptGender">
-
 <option value="">—</option>
 <option value="male">Male</option>
 <option value="female">Female</option>
 <option value="unknown">Unknown</option>
-
 </select>
 
 </div>
 
-
 <div class="form-field">
-
-<label data-i18n="adoption.area">
-Rayon / ərazi
-</label>
-
-<input
-  id="adoptArea"
-  type="text"
-  required
->
-
+<label data-i18n="adoption.area">Rayon / ərazi</label>
+<input id="adoptArea" type="text" required>
 </div>
-
 
 <div class="form-field form-field--full">
-
-<label data-i18n="adoption.description">
-Pişik haqqında
-</label>
-
-<textarea
-  id="adoptDescription"
-  required
-></textarea>
-
+<label data-i18n="adoption.description">Pişik haqqında</label>
+<textarea id="adoptDescription" required></textarea>
 </div>
-
 
 <div class="form-field">
-
-<label data-i18n="adoption.contact">
-Əlaqə üçün ad
-</label>
-
-<input
-  id="adoptContact"
-  type="text"
->
-
+<label data-i18n="adoption.contact">Əlaqə üçün ad</label>
+<input id="adoptContact" type="text">
 </div>
-
 
 <div class="form-field">
-
-<label data-i18n="adoption.phone">
-Telefon / WhatsApp
-</label>
-
-<input
-  id="adoptPhone"
-  type="tel"
-  placeholder="+994..."
-  required
->
-
+<label data-i18n="adoption.phone">Telefon / WhatsApp</label>
+<input id="adoptPhone" type="tel" placeholder="+994..." required>
 </div>
-
 
 <div class="form-field form-field--full">
 
@@ -2368,12 +2558,7 @@ Telefon / WhatsApp
 
 </div>
 
-
-<div
-  id="adoptionMessage"
-  class="form-message"
-></div>
-
+<div id="adoptionMessage" class="form-message"></div>
 
 <button
   type="submit"
@@ -2400,30 +2585,16 @@ Elanı göndər
 <div class="form-modal__head">
 
 <div>
-
-<div class="eyebrow">
-CATSBAKU · HELP
+<div class="eyebrow">CATSBAKU · HELP</div>
+<h2 data-i18n="help.formTitle">Pişiyə kömək lazımdır</h2>
 </div>
 
-<h2 data-i18n="help.formTitle">
-Pişiyə kömək lazımdır
-</h2>
-
-</div>
-
-<button
-  class="form-close"
-  type="button"
-  id="closeHelpForm"
->
-×
-</button>
+<button class="form-close" type="button" id="closeHelpForm">×</button>
 
 </div>
 
 
 <form class="data-form" id="helpForm">
-
 
 <div class="form-field">
 
@@ -2464,76 +2635,32 @@ Təcililik
 
 
 <div class="form-field">
-
-<label data-i18n="help.formName">
-Pişiyin adı
-</label>
-
-<input
-  id="helpName"
-  type="text"
-  maxlength="80"
->
-
+<label data-i18n="help.formName">Pişiyin adı</label>
+<input id="helpName" type="text" maxlength="80">
 </div>
 
 
 <div class="form-field">
-
-<label data-i18n="help.formArea">
-Rayon / ərazi
-</label>
-
-<input
-  id="helpArea"
-  type="text"
-  required
->
-
+<label data-i18n="help.formArea">Rayon / ərazi</label>
+<input id="helpArea" type="text" required>
 </div>
 
 
 <div class="form-field form-field--full">
-
-<label data-i18n="help.formDescription">
-Nə baş verib?
-</label>
-
-<textarea
-  id="helpDescription"
-  required
-></textarea>
-
+<label data-i18n="help.formDescription">Nə baş verib?</label>
+<textarea id="helpDescription" required></textarea>
 </div>
 
 
 <div class="form-field">
-
-<label data-i18n="help.formContact">
-Əlaqə üçün ad
-</label>
-
-<input
-  id="helpContact"
-  type="text"
->
-
+<label data-i18n="help.formContact">Əlaqə üçün ad</label>
+<input id="helpContact" type="text">
 </div>
 
 
 <div class="form-field">
-
-<label data-i18n="help.formPhone">
-Telefon / WhatsApp
-</label>
-
-<input
-  id="helpPhone"
-  type="tel"
-  placeholder="+994..."
-  required
->
-
+<label data-i18n="help.formPhone">Telefon / WhatsApp</label>
+<input id="helpPhone" type="tel" placeholder="+994..." required>
 </div>
 
 
@@ -2563,10 +2690,7 @@ Telefon / WhatsApp
 </div>
 
 
-<div
-  id="helpMessage"
-  class="form-message"
-></div>
+<div id="helpMessage" class="form-message"></div>
 
 
 <button
@@ -2618,99 +2742,42 @@ Pişik itib
 
 <form class="data-form" id="lostFoundForm">
 
-<input
-  id="lostFoundType"
-  type="hidden"
-  value="lost"
->
+<input id="lostFoundType" type="hidden" value="lost">
 
 
 <div class="form-field">
-
-<label data-i18n="lost.formName">
-Pişiyin adı
-</label>
-
-<input
-  id="lostFoundName"
-  type="text"
-  maxlength="80"
->
-
+<label data-i18n="lost.formName">Pişiyin adı</label>
+<input id="lostFoundName" type="text" maxlength="80">
 </div>
 
 
 <div class="form-field">
-
-<label data-i18n="lost.formDate">
-Tarix
-</label>
-
-<input
-  id="lostFoundDate"
-  type="date"
-  required
->
-
+<label data-i18n="lost.formDate">Tarix</label>
+<input id="lostFoundDate" type="date" required>
 </div>
 
 
 <div class="form-field form-field--full">
-
-<label data-i18n="lost.formArea">
-Rayon / ərazi
-</label>
-
-<input
-  id="lostFoundArea"
-  type="text"
-  required
->
-
+<label data-i18n="lost.formArea">Rayon / ərazi</label>
+<input id="lostFoundArea" type="text" required>
 </div>
 
 
 <div class="form-field form-field--full">
-
-<label data-i18n="lost.formDescription">
-Ətraflı məlumat
-</label>
-
-<textarea
-  id="lostFoundDescription"
-  required
-></textarea>
-
+<label data-i18n="lost.formDescription">Ətraflı məlumat</label>
+<textarea id="lostFoundDescription" required></textarea>
 </div>
 
 
 <div class="form-field">
-
-<label data-i18n="lost.formContact">
-Əlaqə üçün ad
-</label>
-
-<input
-  id="lostFoundContact"
-  type="text"
->
-
+<label data-i18n="lost.formContact">Əlaqə üçün ad</label>
+<input id="lostFoundContact" type="text">
 </div>
 
 
 <div class="form-field">
-
-<label data-i18n="lost.formPhone">
-Telefon / WhatsApp
-</label>
-
-<input
-  id="lostFoundPhone"
-  type="tel"
-  placeholder="+994..."
-  required
->
-
+<label data-i18n="lost.formPhone">Telefon / WhatsApp</label>
+<input id="lostFoundPhone" type="tel" placeholder="+994..." required>
 </div>
 
 
@@ -2740,10 +2807,7 @@ Telefon / WhatsApp
 </div>
 
 
-<div
-  id="lostFoundMessage"
-  class="form-message"
-></div>
+<div id="lostFoundMessage" class="form-message"></div>
 
 
 <button
@@ -2770,15 +2834,8 @@ Elanı göndər
 <div class="form-modal__head">
 
 <div>
-
-<div class="eyebrow">
-CATSBAKU · FEED POINT
-</div>
-
-<h2 data-i18n="feed.formTitle">
-Yeni nöqtə əlavə et
-</h2>
-
+<div class="eyebrow">CATSBAKU · FEED POINT</div>
+<h2 data-i18n="feed.formTitle">Yeni nöqtə əlavə et</h2>
 </div>
 
 <button
@@ -2794,17 +2851,13 @@ Yeni nöqtə əlavə et
 
 <form class="data-form" id="feedForm">
 
-
 <div class="form-field">
 
 <label data-i18n="feed.formType">
 Nöqtə növü
 </label>
 
-<select
-  id="feedType"
-  required
->
+<select id="feedType" required>
 
 <option value="">—</option>
 <option value="food">Food</option>
@@ -2822,10 +2875,7 @@ Nöqtə növü
 Status
 </label>
 
-<select
-  id="feedStatus"
-  required
->
+<select id="feedStatus" required>
 
 <option value="active">Active</option>
 <option value="needs_refill">Needs refill</option>
@@ -2837,72 +2887,32 @@ Status
 
 
 <div class="form-field">
-
-<label data-i18n="feed.formTitleField">
-Başlıq
-</label>
-
-<input
-  id="feedTitle"
-  type="text"
-  maxlength="100"
->
-
+<label data-i18n="feed.formTitleField">Başlıq</label>
+<input id="feedTitle" type="text" maxlength="100">
 </div>
 
 
 <div class="form-field">
-
-<label data-i18n="feed.formArea">
-Rayon / ərazi
-</label>
-
-<input
-  id="feedArea"
-  type="text"
-  required
->
-
+<label data-i18n="feed.formArea">Rayon / ərazi</label>
+<input id="feedArea" type="text" required>
 </div>
 
 
 <div class="form-field form-field--full">
-
-<label data-i18n="feed.formDescription">
-Təsvir
-</label>
-
+<label data-i18n="feed.formDescription">Təsvir</label>
 <textarea id="feedDescription"></textarea>
-
 </div>
 
 
 <div class="form-field">
-
-<label data-i18n="feed.formContact">
-Əlaqə üçün ad
-</label>
-
-<input
-  id="feedContact"
-  type="text"
->
-
+<label data-i18n="feed.formContact">Əlaqə üçün ad</label>
+<input id="feedContact" type="text">
 </div>
 
 
 <div class="form-field">
-
-<label data-i18n="feed.formPhone">
-Telefon / WhatsApp
-</label>
-
-<input
-  id="feedPhone"
-  type="tel"
-  placeholder="+994..."
->
-
+<label data-i18n="feed.formPhone">Telefon / WhatsApp</label>
+<input id="feedPhone" type="tel" placeholder="+994...">
 </div>
 
 
@@ -2932,10 +2942,7 @@ Telefon / WhatsApp
 </div>
 
 
-<div
-  id="feedMessage"
-  class="form-message"
-></div>
+<div id="feedMessage" class="form-message"></div>
 
 
 <button
@@ -2954,7 +2961,7 @@ Göndər
 </dialog>
 
 
-<!-- ADD CAT TO MAP MODAL -->
+<!-- MAP CAT MODAL -->
 
 <dialog
   class="form-modal form-modal--map"
@@ -2988,10 +2995,7 @@ Xəritəyə pişik əlavə et
 </div>
 
 
-<form
-  class="data-form"
-  id="mapCatForm"
->
+<form class="data-form" id="mapCatForm">
 
 
 <div class="form-field">
@@ -3015,10 +3019,7 @@ Pişiyin adı
 Status
 </label>
 
-<select
-  id="mapCatStatus"
-  required
->
+<select id="mapCatStatus" required>
 
 <option value="spotted">
 Spotted
@@ -3129,16 +3130,20 @@ Telefon / WhatsApp
 
 <div id="spotMap"></div>
 
+
 <button
   class="big-action-btn big-action-btn--caspian"
   type="button"
   id="useMyLocationForCat"
-  style="margin-top:12px; align-self:flex-start;"
+  style="margin-top:12px;align-self:flex-start;"
 >
+
 📍
+
 <span data-i18n="map.useLocation">
 Mənim yerimdən istifadə et
 </span>
+
 </button>
 
 
@@ -3156,10 +3161,7 @@ Xəritədə nöqtə seçilməyib.
 <input id="mapCatLng" type="hidden">
 
 
-<div
-  id="mapCatMessage"
-  class="form-message"
-></div>
+<div id="mapCatMessage" class="form-message"></div>
 
 
 <button
@@ -3201,8 +3203,6 @@ Pişiyi göndər
 </button>
 
 
-<!-- LIBRARIES -->
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -3210,7 +3210,7 @@ Pişiyi göndər
 <script src="js/i18n.js"></script>
 
 
-<!-- CAPTURE MAIN MAP CREATED BY STATIC.JS -->
+<!-- Capture main map created in static.js -->
 
 <script>
 
@@ -3221,17 +3221,18 @@ if(window.L){
   const originalMapFunction =
     L.map.bind(L);
 
-  L.map =
-    function(target, options){
 
-      const createdMap =
+  L.map =
+    function(target,options){
+
+      const map =
         originalMapFunction(
           target,
           options
         );
 
 
-      const targetId =
+      const id =
         typeof target === 'string'
         ?
         target
@@ -3239,14 +3240,15 @@ if(window.L){
         target?.id;
 
 
-      if(targetId === 'catMap'){
+      if(id === 'catMap'){
 
         window.catsBakuMainMap =
-          createdMap;
+          map;
 
       }
 
-      return createdMap;
+
+      return map;
 
     };
 
@@ -3255,11 +3257,12 @@ if(window.L){
 </script>
 
 
-<!-- TRANSLATIONS -->
+<!-- EXTRA TRANSLATIONS -->
 
 <script>
 
 if(window.CB_I18N){
+
 
 Object.assign(window.CB_I18N.az,{
 
@@ -3274,21 +3277,41 @@ Object.assign(window.CB_I18N.az,{
 
 'explore.adoption':'Sahibləndir',
 'explore.adoptionText':'Ev axtaran pişiklər.',
-
 'explore.help':'Kömək',
 'explore.helpText':'Yardıma ehtiyacı olan pişiklər.',
-
 'explore.lost':'İtmiş və tapılmış',
 'explore.lostText':'İtmiş və tapılmış pişiklər.',
-
 'explore.vets':'Baytar xəritəsi',
 'explore.vetsText':'Bakıda baytar klinikaları.',
-
 'explore.feed':'Yemləmə nöqtələri',
 'explore.feedText':'Yem və su nöqtələri.',
-
 'explore.stories':'Hekayələr',
 'explore.storiesText':'Bakı pişiklərinin hekayələri.',
+
+'addMenu.title':'Nə əlavə etmək istəyirsiniz?',
+'addMenu.cat':'Bakı pişiyi',
+'addMenu.catSub':'Pişiyi CatsBaku qalereyasına əlavə edin.',
+'addMenu.adoption':'Sahibləndirmə',
+'addMenu.adoptionSub':'Yeni ailə axtaran pişik.',
+'addMenu.help':'Kömək lazımdır',
+'addMenu.helpSub':'Müalicə, yemək, müvəqqəti ev və s.',
+'addMenu.lost':'Pişik itib',
+'addMenu.lostSub':'İtmiş pişik haqqında elan.',
+'addMenu.found':'Pişik tapılıb',
+'addMenu.foundSub':'Tapdığınız pişik haqqında elan.',
+'addMenu.map':'Xəritəyə pişik',
+'addMenu.mapSub':'Küçədə gördüyünüz pişiyi xəritədə qeyd edin.',
+'addMenu.feed':'Yemləmə nöqtəsi',
+'addMenu.feedSub':'Yem, su və ya pişik koloniyası.',
+
+'citycat.formTitle':'Bakı pişiyi əlavə et',
+'citycat.name':'Pişiyin adı (bilirsinizsə)',
+'citycat.area':'Rayon / ərazi',
+'citycat.description':'Pişik haqqında',
+'citycat.reporter':'Adınız',
+'citycat.phone':'Telefon / WhatsApp',
+'citycat.photo':'📷 Pişiyin fotosunu seçin',
+'citycat.submit':'Pişiyi göndər',
 
 'adoption.eyebrow':'SAHİBLƏNDİR',
 'adoption.title':'Ev axtaran pişiklər',
@@ -3311,25 +3334,18 @@ Object.assign(window.CB_I18N.az,{
 'help.sub':'Müalicə, yemək, müvəqqəti ev və digər yardım.',
 'help.add':'Pişiyə kömək lazımdır',
 'help.activeTitle':'Aktiv yardım elanları',
-
 'help.medical':'Tibbi yardım',
 'help.medicalText':'Müalicə, əməliyyat və dərmanlar.',
-
 'help.food':'Yemək',
 'help.foodText':'Yemək və su dəstəyi.',
-
 'help.foster':'Müvəqqəti ev',
 'help.fosterText':'Pişik üçün təhlükəsiz müvəqqəti ev.',
-
 'help.transport':'Nəqliyyat',
 'help.transportText':'Klinikaya və ya evə çatdırılma.',
-
 'help.sterilization':'Sterilizasiya',
 'help.sterilizationText':'Sterilizasiya və kastrasiya üçün yardım.',
-
 'help.urgent':'Təcili yardım',
 'help.urgentText':'Təcili müdaxilə tələb edən hallar.',
-
 'help.formTitle':'Pişiyə kömək lazımdır',
 'help.formType':'Yardım növü',
 'help.formUrgency':'Təcililik',
@@ -3417,21 +3433,41 @@ Object.assign(window.CB_I18N.ru,{
 
 'explore.adoption':'Пристройство',
 'explore.adoptionText':'Коты, которые ищут дом.',
-
 'explore.help':'Помощь',
 'explore.helpText':'Коты, которым нужна помощь.',
-
 'explore.lost':'Потерялись / найдены',
 'explore.lostText':'Объявления о пропавших и найденных котах.',
-
 'explore.vets':'Карта ветеринаров',
 'explore.vetsText':'Ветеринарные клиники Баку.',
-
 'explore.feed':'Точки кормления',
 'explore.feedText':'Корм и вода для уличных котов.',
-
 'explore.stories':'Истории',
 'explore.storiesText':'Истории бакинских котов.',
+
+'addMenu.title':'Что вы хотите добавить?',
+'addMenu.cat':'Кот Баку',
+'addMenu.catSub':'Добавить кота в галерею CatsBaku.',
+'addMenu.adoption':'Пристройство',
+'addMenu.adoptionSub':'Кот ищет новую семью.',
+'addMenu.help':'Нужна помощь',
+'addMenu.helpSub':'Лечение, корм, передержка и другое.',
+'addMenu.lost':'Кот потерялся',
+'addMenu.lostSub':'Объявление о пропавшем коте.',
+'addMenu.found':'Кот найден',
+'addMenu.foundSub':'Объявление о найденном коте.',
+'addMenu.map':'Кот на карте',
+'addMenu.mapSub':'Отметить встреченного на улице кота.',
+'addMenu.feed':'Точка кормления',
+'addMenu.feedSub':'Корм, вода или колония котов.',
+
+'citycat.formTitle':'Добавить кота Баку',
+'citycat.name':'Имя кота, если знаете',
+'citycat.area':'Район / местоположение',
+'citycat.description':'О коте',
+'citycat.reporter':'Ваше имя',
+'citycat.phone':'Телефон / WhatsApp',
+'citycat.photo':'📷 Выберите фото кота',
+'citycat.submit':'Отправить кота',
 
 'adoption.eyebrow':'ПРИСТРОЙСТВО',
 'adoption.title':'Коты, которые ищут дом',
@@ -3454,25 +3490,18 @@ Object.assign(window.CB_I18N.ru,{
 'help.sub':'Лечение, корм, передержка и другая помощь.',
 'help.add':'Коту нужна помощь',
 'help.activeTitle':'Активные просьбы о помощи',
-
 'help.medical':'Медицинская помощь',
 'help.medicalText':'Лечение, операция и лекарства.',
-
 'help.food':'Корм',
 'help.foodText':'Помощь с кормом и водой.',
-
 'help.foster':'Передержка',
 'help.fosterText':'Временный безопасный дом.',
-
 'help.transport':'Транспорт',
 'help.transportText':'Доставка кота в клинику или на передержку.',
-
 'help.sterilization':'Стерилизация',
 'help.sterilizationText':'Помощь со стерилизацией или кастрацией.',
-
 'help.urgent':'Срочная помощь',
 'help.urgentText':'Ситуации, требующие срочного вмешательства.',
-
 'help.formTitle':'Коту нужна помощь',
 'help.formType':'Вид помощи',
 'help.formUrgency':'Срочность',
@@ -3560,21 +3589,41 @@ Object.assign(window.CB_I18N.en,{
 
 'explore.adoption':'Adoption',
 'explore.adoptionText':'Cats looking for a home.',
-
 'explore.help':'Help',
 'explore.helpText':'Cats that need assistance.',
-
 'explore.lost':'Lost & Found',
 'explore.lostText':'Lost and found cat reports.',
-
 'explore.vets':'Vet Map',
 'explore.vetsText':'Veterinary clinics around Baku.',
-
 'explore.feed':'Feed Points',
 'explore.feedText':'Food and water for street cats.',
-
 'explore.stories':'Stories',
 'explore.storiesText':'Stories about Baku cats.',
+
+'addMenu.title':'What would you like to add?',
+'addMenu.cat':'Baku cat',
+'addMenu.catSub':'Add a cat to the CatsBaku gallery.',
+'addMenu.adoption':'Adoption',
+'addMenu.adoptionSub':'A cat looking for a new family.',
+'addMenu.help':'Needs help',
+'addMenu.helpSub':'Medical care, food, foster and more.',
+'addMenu.lost':'Lost cat',
+'addMenu.lostSub':'Report a missing cat.',
+'addMenu.found':'Found cat',
+'addMenu.foundSub':'Report a cat you found.',
+'addMenu.map':'Cat on map',
+'addMenu.mapSub':'Mark a street cat you spotted.',
+'addMenu.feed':'Feed point',
+'addMenu.feedSub':'Food, water or a cat colony.',
+
+'citycat.formTitle':'Add a Baku cat',
+'citycat.name':'Cat name, if known',
+'citycat.area':'Area / location',
+'citycat.description':'About the cat',
+'citycat.reporter':'Your name',
+'citycat.phone':'Phone / WhatsApp',
+'citycat.photo':'📷 Choose a cat photo',
+'citycat.submit':'Submit cat',
 
 'adoption.eyebrow':'ADOPTION',
 'adoption.title':'Cats looking for a home',
@@ -3597,25 +3646,18 @@ Object.assign(window.CB_I18N.en,{
 'help.sub':'Medical care, food, foster care and other assistance.',
 'help.add':'A cat needs help',
 'help.activeTitle':'Active help requests',
-
 'help.medical':'Medical help',
 'help.medicalText':'Treatment, surgery and medication.',
-
 'help.food':'Food',
 'help.foodText':'Food and water support.',
-
 'help.foster':'Foster',
 'help.fosterText':'A temporary safe home.',
-
 'help.transport':'Transport',
 'help.transportText':'Transport to a clinic or foster home.',
-
 'help.sterilization':'Sterilization',
 'help.sterilizationText':'Help with sterilization or neutering.',
-
 'help.urgent':'Emergency help',
 'help.urgentText':'Cases requiring urgent intervention.',
-
 'help.formTitle':'A cat needs help',
 'help.formType':'Help type',
 'help.formUrgency':'Urgency',
@@ -3668,7 +3710,7 @@ Object.assign(window.CB_I18N.en,{
 'feed.formSubmit':'Submit',
 
 'map.addCat':'Add a cat to the map',
-'map.addHint':'Spotted a cat on the street? Take a photo, select the location on the map and share it with CatsBaku.',
+'map.addHint':'Spotted a cat on the street? Take a photo, select its location on the map and share it with CatsBaku.',
 'map.formTitle':'Add a cat to the map',
 'map.catName':'Cat name, if known',
 'map.catStatus':'Status',
@@ -3697,9 +3739,11 @@ Object.assign(window.CB_I18N.en,{
 <script src="js/static.js"></script>
 
 
-<!-- SUPABASE / APPLICATION -->
-
 <script>
+
+/* =====================================================
+   SUPABASE
+===================================================== */
 
 const SUPABASE_URL =
 'https://lmtjmuldretsqcusayqa.supabase.co';
@@ -3754,13 +3798,15 @@ function safePhoto(url){
     'https://lmtjmuldretsqcusayqa.supabase.co/storage/v1/object/public/cat-photos/';
 
   return value.startsWith(allowed)
-    ? value
-    : 'img/hero-cat.jpg';
+    ?
+    value
+    :
+    'img/hero-cat.jpg';
 
 }
 
 
-function photoPreview(input, preview){
+function photoPreview(input,preview){
 
   input.addEventListener(
     'change',
@@ -3768,6 +3814,7 @@ function photoPreview(input, preview){
 
       const file =
         input.files[0];
+
 
       if(!file){
 
@@ -3778,6 +3825,7 @@ function photoPreview(input, preview){
 
       }
 
+
       preview.src =
         URL.createObjectURL(file);
 
@@ -3786,6 +3834,539 @@ function photoPreview(input, preview){
 
     }
   );
+
+}
+
+
+function validatePhoto(file){
+
+  if(!file){
+    return false;
+  }
+
+  const validTypes = [
+    'image/jpeg',
+    'image/png',
+    'image/webp'
+  ];
+
+  return (
+    validTypes.includes(file.type)
+    &&
+    file.size <= 5 * 1024 * 1024
+  );
+
+}
+
+
+/* =====================================================
+   ADD MENU
+===================================================== */
+
+const addMenuDialog =
+document.getElementById('addMenuDialog');
+
+
+document
+.querySelectorAll('[data-open-add-menu]')
+.forEach(
+  button => {
+
+    button.addEventListener(
+      'click',
+      function(){
+
+        addMenuDialog.showModal();
+
+      }
+    );
+
+  }
+);
+
+
+document
+.getElementById('closeAddMenu')
+.addEventListener(
+  'click',
+  ()=>addMenuDialog.close()
+);
+
+
+document
+.querySelectorAll('[data-add-action]')
+.forEach(
+  button => {
+
+    button.addEventListener(
+      'click',
+      function(){
+
+        const action =
+          button.dataset.addAction;
+
+
+        addMenuDialog.close();
+
+
+        if(action === 'citycat'){
+
+          document
+          .getElementById('cityCatDialog')
+          .showModal();
+
+        }
+
+
+        if(action === 'adoption'){
+
+          document
+          .getElementById('adoptionDialog')
+          .showModal();
+
+        }
+
+
+        if(action === 'help'){
+
+          document
+          .getElementById('helpDialog')
+          .showModal();
+
+        }
+
+
+        if(action === 'lost'){
+
+          openLostFound('lost');
+
+        }
+
+
+        if(action === 'found'){
+
+          openLostFound('found');
+
+        }
+
+
+        if(action === 'map'){
+
+          openMapCatDialog();
+
+        }
+
+
+        if(action === 'feed'){
+
+          document
+          .getElementById('feedDialog')
+          .showModal();
+
+        }
+
+      }
+    );
+
+  }
+);
+
+
+/* =====================================================
+   NORMAL CATSBAKU CAT
+===================================================== */
+
+const cityCatDialog =
+document.getElementById('cityCatDialog');
+
+const cityCatForm =
+document.getElementById('cityCatForm');
+
+const cityCatMessage =
+document.getElementById('cityCatMessage');
+
+const cityCatSubmit =
+document.getElementById('cityCatSubmit');
+
+const cityCatPhoto =
+document.getElementById('cityCatPhoto');
+
+const cityCatPreview =
+document.getElementById('cityCatPreview');
+
+
+photoPreview(
+  cityCatPhoto,
+  cityCatPreview
+);
+
+
+document
+.getElementById('closeCityCatForm')
+.addEventListener(
+  'click',
+  ()=>cityCatDialog.close()
+);
+
+
+cityCatForm.addEventListener(
+'submit',
+async function(event){
+
+  event.preventDefault();
+
+
+  const file =
+    cityCatPhoto.files[0];
+
+
+  if(!validatePhoto(file)){
+
+    cityCatMessage.textContent =
+      lang() === 'ru'
+      ?
+      'Выберите JPG, PNG или WebP до 5 MB.'
+      :
+      lang() === 'en'
+      ?
+      'Choose a JPG, PNG or WebP image under 5 MB.'
+      :
+      '5 MB-dan kiçik JPG, PNG və ya WebP şəkli seçin.';
+
+
+    cityCatMessage.className =
+      'form-message error';
+
+    return;
+
+  }
+
+
+  cityCatSubmit.disabled =
+    true;
+
+
+  try{
+
+
+    const ext =
+      file.name
+      .split('.')
+      .pop()
+      .toLowerCase();
+
+
+    const path =
+      'cats/'
+      +
+      Date.now()
+      +
+      '-'
+      +
+      crypto.randomUUID()
+      +
+      '.'
+      +
+      ext;
+
+
+    const upload =
+      await db.storage
+      .from('cat-photos')
+      .upload(
+        path,
+        file,
+        {
+          upsert:false,
+          contentType:file.type
+        }
+      );
+
+
+    if(upload.error){
+      throw upload.error;
+    }
+
+
+    const photoUrl =
+      db.storage
+      .from('cat-photos')
+      .getPublicUrl(path)
+      .data
+      .publicUrl;
+
+
+    const result =
+      await db
+      .from('cats')
+      .insert({
+
+        name:
+        document
+        .getElementById('cityCatName')
+        .value
+        .trim()
+        ||
+        null,
+
+        category:
+        'city',
+
+        area:
+        document
+        .getElementById('cityCatArea')
+        .value
+        .trim(),
+
+        description:
+        document
+        .getElementById('cityCatDescription')
+        .value
+        .trim(),
+
+        photo_url:
+        photoUrl,
+
+        lat:
+        null,
+
+        lng:
+        null,
+
+        status:
+        'regular',
+
+        seen_at:
+        new Date().toISOString(),
+
+        reported_by:
+        document
+        .getElementById('cityCatReporter')
+        .value
+        .trim()
+        ||
+        null,
+
+        contact_phone:
+        document
+        .getElementById('cityCatPhone')
+        .value
+        .trim()
+        ||
+        null,
+
+        approved:
+        false
+
+      });
+
+
+    if(result.error){
+      throw result.error;
+    }
+
+
+    cityCatMessage.textContent =
+      lang() === 'ru'
+      ?
+      '✅ Спасибо! Кот отправлен на модерацию. После проверки он появится в разделе «Коты Баку».'
+      :
+      lang() === 'en'
+      ?
+      '✅ Thank you! The cat was sent for moderation and will appear in Cats of Baku after approval.'
+      :
+      '✅ Təşəkkür edirik! Pişik moderasiyaya göndərildi və təsdiqdən sonra Bakı pişikləri bölməsində görünəcək.';
+
+
+    cityCatMessage.className =
+      'form-message success';
+
+
+    cityCatForm.reset();
+
+    cityCatPreview.style.display =
+      'none';
+
+  }
+
+  catch(error){
+
+    console.error(
+      'City cat error:',
+      error
+    );
+
+
+    cityCatMessage.textContent =
+      lang() === 'ru'
+      ?
+      'Ошибка. Попробуйте ещё раз.'
+      :
+      lang() === 'en'
+      ?
+      'Something went wrong. Please try again.'
+      :
+      'Xəta baş verdi. Yenidən cəhd edin.';
+
+
+    cityCatMessage.className =
+      'form-message error';
+
+  }
+
+  finally{
+
+    cityCatSubmit.disabled =
+      false;
+
+  }
+
+}
+);
+
+
+/* =====================================================
+   LOAD APPROVED NORMAL CATS
+===================================================== */
+
+async function loadCityCats(){
+
+  const grid =
+    document.getElementById('grid');
+
+
+  const existingDbCards =
+    grid.querySelectorAll('.db-cat-card');
+
+
+  existingDbCards.forEach(
+    item=>item.remove()
+  );
+
+
+  const result =
+    await db
+    .from('cats')
+    .select(
+      'id,name,area,description,photo_url,status,category,lat,lng'
+    )
+    .eq('approved',true)
+    .eq('status','regular')
+    .is('lat',null)
+    .is('lng',null)
+    .order(
+      'created_at',
+      {
+        ascending:false
+      }
+    );
+
+
+  if(result.error){
+
+    console.error(
+      'CatsBaku cats load error:',
+      result.error
+    );
+
+    return;
+
+  }
+
+
+  const rows =
+    result.data || [];
+
+
+  rows.forEach(
+    cat => {
+
+
+      const name =
+        cat.name
+        ||
+        (
+          lang() === 'ru'
+          ?
+          'Бакинский кот'
+          :
+          lang() === 'en'
+          ?
+          'Baku cat'
+          :
+          'Bakı pişiyi'
+        );
+
+
+      grid.insertAdjacentHTML(
+        'beforeend',
+        `
+        <article class="card db-cat-card">
+
+          <div class="card__photo">
+
+            <img
+              src="${esc(safePhoto(cat.photo_url))}"
+              alt="${esc(name)}"
+            >
+
+          </div>
+
+
+          <div class="card__body">
+
+            <div class="card__name">
+            ${esc(name)}
+            </div>
+
+            <div class="card__district">
+            📍 ${esc(cat.area || 'Baku')}
+            </div>
+
+            ${
+              cat.description
+              ?
+              `
+              <p class="data-description">
+              ${esc(cat.description)}
+              </p>
+              `
+              :
+              ''
+            }
+
+          </div>
+
+        </article>
+        `
+      );
+
+    }
+  );
+
+
+  const count =
+    document.getElementById('catsCount');
+
+
+  if(count){
+
+    const total =
+      5 + rows.length;
+
+
+    count.textContent =
+      lang() === 'ru'
+      ?
+      `${total} котов`
+      :
+      lang() === 'en'
+      ?
+      `${total} cats`
+      :
+      `${total} pişik`;
+
+  }
 
 }
 
@@ -3841,15 +4422,12 @@ async function(event){
 
   event.preventDefault();
 
+
   const file =
     adoptPhoto.files[0];
 
-  if(!file){
-    return;
-  }
 
-
-  if(file.size > 5 * 1024 * 1024){
+  if(!validatePhoto(file)){
 
     adoptionMessage.textContent =
       'Фото должно быть меньше 5 MB.';
@@ -4012,8 +4590,10 @@ async function(event){
 
     console.error(error);
 
+
     adoptionMessage.textContent =
       'Ошибка. Попробуйте ещё раз.';
+
 
     adoptionMessage.className =
       'form-message error';
@@ -4055,10 +4635,8 @@ async function loadAdoptions(){
 
 
   if(result.error){
-
     console.error(result.error);
     return;
-
   }
 
 
@@ -4102,7 +4680,6 @@ async function loadAdoptions(){
 
   grid.innerHTML =
     rows.map(
-
       item => {
 
         const phone =
@@ -4110,77 +4687,79 @@ async function loadAdoptions(){
             item.contact_phone
           );
 
+
         return `
         <article class="card">
 
-        <div class="card__photo">
+          <div class="card__photo">
 
-        <img
-          src="${esc(safePhoto(item.photo_url))}"
-          alt="${esc(item.name || '')}"
-        >
+            <img
+              src="${esc(safePhoto(item.photo_url))}"
+              alt="${esc(item.name || '')}"
+            >
 
-        </div>
+          </div>
 
-        <div class="card__body">
 
-        <div class="card__name">
-        ${esc(item.name || '')}
-        </div>
+          <div class="card__body">
 
-        <div class="data-meta">
+            <div class="card__name">
+            ${esc(item.name || '')}
+            </div>
 
-        <span>
-        📍 ${esc(item.area || 'Baku')}
-        </span>
+            <div class="data-meta">
 
-        ${
-          item.age
-          ?
-          `<span>🎂 ${esc(item.age)}</span>`
-          :
-          ''
-        }
+              <span>
+              📍 ${esc(item.area || 'Baku')}
+              </span>
 
-        </div>
+              ${
+                item.age
+                ?
+                `<span>🎂 ${esc(item.age)}</span>`
+                :
+                ''
+              }
 
-        <p class="data-description">
-        ${esc(item.description || '')}
-        </p>
+            </div>
 
-        ${
-          phone
-          ?
-          `
-          <a
-            class="data-contact"
-            href="tel:${phone}"
-          >
-          📞 ${
-            lang() === 'ru'
-            ?
-            'Связаться'
-            :
-            lang() === 'en'
-            ?
-            'Contact'
-            :
-            'Əlaqə saxla'
-          }
-          </a>
-          `
-          :
-          ''
-        }
+            <p class="data-description">
+            ${esc(item.description || '')}
+            </p>
 
-        </div>
+            ${
+              phone
+              ?
+              `
+              <a
+                class="data-contact"
+                href="tel:${phone}"
+              >
+              📞 ${
+                lang() === 'ru'
+                ?
+                'Связаться'
+                :
+                lang() === 'en'
+                ?
+                'Contact'
+                :
+                'Əlaqə saxla'
+              }
+              </a>
+              `
+              :
+              ''
+            }
+
+          </div>
 
         </article>
         `;
 
       }
-
-    ).join('');
+    )
+    .join('');
 
 }
 
@@ -4241,12 +4820,7 @@ async function(event){
     helpPhoto.files[0];
 
 
-  if(!file){
-    return;
-  }
-
-
-  if(file.size > 5 * 1024 * 1024){
+  if(!validatePhoto(file)){
 
     helpMessage.textContent =
       'Фото должно быть меньше 5 MB.';
@@ -4516,10 +5090,8 @@ async function loadHelpRequests(){
 
 
   if(result.error){
-
     console.error(result.error);
     return;
-
   }
 
 
@@ -4563,7 +5135,6 @@ async function loadHelpRequests(){
 
   grid.innerHTML =
     rows.map(
-
       item => {
 
         const phone =
@@ -4587,129 +5158,128 @@ async function loadHelpRequests(){
         return `
         <article class="card">
 
-        <div class="card__photo">
+          <div class="card__photo">
 
-        <img
-          src="${esc(safePhoto(item.photo_url))}"
-          alt="${esc(item.name || '')}"
-        >
+            <img
+              src="${esc(safePhoto(item.photo_url))}"
+              alt="${esc(item.name || '')}"
+            >
 
-        </div>
-
-
-        <div class="card__body">
-
-        <div class="status-badge ${urgencyClass}">
-
-        ${
-          item.urgency === 'critical'
-          ?
-          '🆘'
-          :
-          item.urgency === 'high'
-          ?
-          '⚠️'
-          :
-          '❤️'
-        }
-
-        ${esc(item.urgency || '')}
-
-        </div>
+          </div>
 
 
-        <div class="card__name">
+          <div class="card__body">
 
-        ${
-          esc(
-            item.name
-            ||
-            (
-              lang() === 'ru'
+            <div class="status-badge ${urgencyClass}">
+
+            ${
+              item.urgency === 'critical'
               ?
-              'Кот'
+              '🆘'
               :
-              lang() === 'en'
+              item.urgency === 'high'
               ?
-              'Cat'
+              '⚠️'
               :
-              'Pişik'
-            )
-          )
-        }
+              '❤️'
+            }
 
-        </div>
+            ${esc(item.urgency || '')}
 
-
-        <div class="data-meta">
-
-        <span>
-        ${helpTypeIcon(item.help_type)}
-        ${esc(helpTypeLabel(item.help_type))}
-        </span>
-
-        ${
-          item.area
-          ?
-          `
-          <span>
-          📍 ${esc(item.area)}
-          </span>
-          `
-          :
-          ''
-        }
-
-        </div>
+            </div>
 
 
-        <p class="data-description">
-        ${esc(item.description || '')}
-        </p>
+            <div class="card__name">
+
+            ${
+              esc(
+                item.name
+                ||
+                (
+                  lang() === 'ru'
+                  ?
+                  'Кот'
+                  :
+                  lang() === 'en'
+                  ?
+                  'Cat'
+                  :
+                  'Pişik'
+                )
+              )
+            }
+
+            </div>
 
 
-        ${
-          phone
-          &&
-          item.status !== 'resolved'
-          ?
-          `
-          <a
-            class="data-contact"
-            href="tel:${phone}"
-          >
-          📞 ${
-            lang() === 'ru'
-            ?
-            'Помочь / связаться'
-            :
-            lang() === 'en'
-            ?
-            'Help / contact'
-            :
-            'Kömək et / əlaqə'
-          }
-          </a>
-          `
-          :
-          ''
-        }
+            <div class="data-meta">
+
+              <span>
+              ${helpTypeIcon(item.help_type)}
+              ${esc(helpTypeLabel(item.help_type))}
+              </span>
+
+              ${
+                item.area
+                ?
+                `
+                <span>
+                📍 ${esc(item.area)}
+                </span>
+                `
+                :
+                ''
+              }
+
+            </div>
 
 
-        </div>
+            <p class="data-description">
+            ${esc(item.description || '')}
+            </p>
+
+
+            ${
+              phone
+              &&
+              item.status !== 'resolved'
+              ?
+              `
+              <a
+                class="data-contact"
+                href="tel:${phone}"
+              >
+              📞 ${
+                lang() === 'ru'
+                ?
+                'Помочь / связаться'
+                :
+                lang() === 'en'
+                ?
+                'Help / contact'
+                :
+                'Kömək et / əlaqə'
+              }
+              </a>
+              `
+              :
+              ''
+            }
+
+          </div>
 
         </article>
         `;
 
       }
-
-    ).join('');
+    )
+    .join('');
 
 }
 
 
 /* =====================================================
-   LOST & FOUND
+   LOST FOUND
 ===================================================== */
 
 const lostFoundDialog =
@@ -4779,6 +5349,7 @@ function openLostFound(type){
   lostFoundMessage.textContent =
     '';
 
+
   lostFoundDialog.showModal();
 
 }
@@ -4825,12 +5396,7 @@ async function(event){
     lostFoundPhoto.files[0];
 
 
-  if(!file){
-    return;
-  }
-
-
-  if(file.size > 5 * 1024 * 1024){
+  if(!validatePhoto(file)){
 
     lostFoundMessage.textContent =
       'Фото должно быть меньше 5 MB.';
@@ -5031,10 +5597,8 @@ async function loadLostFound(){
 
 
   if(result.error){
-
     console.error(result.error);
     return;
-
   }
 
 
@@ -5078,14 +5642,13 @@ async function loadLostFound(){
 
   grid.innerHTML =
     rows.map(
-
       item => {
 
         const isLost =
           item.type === 'lost';
 
 
-        const statusText =
+        const text =
           lang() === 'ru'
           ?
           (
@@ -5124,105 +5687,104 @@ async function loadLostFound(){
         return `
         <article class="card">
 
-        <div class="card__photo">
+          <div class="card__photo">
 
-        <img
-          src="${esc(safePhoto(item.photo_url))}"
-          alt="${esc(item.name || statusText)}"
-        >
+            <img
+              src="${esc(safePhoto(item.photo_url))}"
+              alt="${esc(item.name || text)}"
+            >
 
-        </div>
-
-
-        <div class="card__body">
+          </div>
 
 
-        <div
-          class="
-            status-badge
+          <div class="card__body">
+
+            <div
+              class="
+                status-badge
+                ${
+                  isLost
+                  ?
+                  'status-badge--lost'
+                  :
+                  'status-badge--found'
+                }
+              "
+            >
+
             ${
               isLost
               ?
-              'status-badge--lost'
+              '😿'
               :
-              'status-badge--found'
+              '👀'
             }
-          "
-        >
 
-        ${
-          isLost
-          ?
-          '😿'
-          :
-          '👀'
-        }
+            ${esc(text)}
 
-        ${esc(statusText)}
-
-        </div>
+            </div>
 
 
-        <div class="card__name">
-        ${esc(item.name || '')}
-        </div>
+            <div class="card__name">
+            ${esc(item.name || '')}
+            </div>
 
 
-        <div class="data-meta">
+            <div class="data-meta">
 
-        <span>
-        📍 ${esc(item.area || 'Baku')}
-        </span>
+              <span>
+              📍 ${esc(item.area || 'Baku')}
+              </span>
 
-        ${
-          item.event_date
-          ?
-          `<span>📅 ${esc(item.event_date)}</span>`
-          :
-          ''
-        }
+              ${
+                item.event_date
+                ?
+                `<span>📅 ${esc(item.event_date)}</span>`
+                :
+                ''
+              }
 
-        </div>
-
-
-        <p class="data-description">
-        ${esc(item.description || '')}
-        </p>
+            </div>
 
 
-        ${
-          phone
-          ?
-          `
-          <a
-            class="data-contact"
-            href="tel:${phone}"
-          >
-          📞 ${
-            lang() === 'ru'
-            ?
-            'Связаться'
-            :
-            lang() === 'en'
-            ?
-            'Contact'
-            :
-            'Əlaqə saxla'
-          }
-          </a>
-          `
-          :
-          ''
-        }
+            <p class="data-description">
+            ${esc(item.description || '')}
+            </p>
 
-        </div>
+
+            ${
+              phone
+              ?
+              `
+              <a
+                class="data-contact"
+                href="tel:${phone}"
+              >
+              📞 ${
+                lang() === 'ru'
+                ?
+                'Связаться'
+                :
+                lang() === 'en'
+                ?
+                'Contact'
+                :
+                'Əlaqə saxla'
+              }
+              </a>
+              `
+              :
+              ''
+            }
+
+          </div>
 
         </article>
         `;
 
       }
-
-    ).join('');
+    )
+    .join('');
 
 }
 
@@ -5267,11 +5829,7 @@ async function loadVets(){
     grid.innerHTML =
       `
       <div class="data-empty">
-
-      <div class="data-empty__icon">
-      🩺
-      </div>
-
+      <div class="data-empty__icon">🩺</div>
       ${
         lang() === 'ru'
         ?
@@ -5283,7 +5841,6 @@ async function loadVets(){
         :
         'Hələ klinika yoxdur.'
       }
-
       </div>
       `;
 
@@ -5294,7 +5851,6 @@ async function loadVets(){
 
   grid.innerHTML =
     rows.map(
-
       clinic => {
 
         const phone =
@@ -5318,145 +5874,125 @@ async function loadVets(){
         return `
         <article class="vet-card">
 
-        <div class="vet-card__icon">
-        🩺
-        </div>
-
-
-        ${
-          clinic.emergency_24h
-          ?
-          `
-          <div class="status-badge status-badge--24">
-          🕐 24/7
+          <div class="vet-card__icon">
+          🩺
           </div>
-          `
-          :
-          ''
-        }
 
+          ${
+            clinic.emergency_24h
+            ?
+            `
+            <div class="status-badge status-badge--24">
+            🕐 24/7
+            </div>
+            `
+            :
+            ''
+          }
 
-        <div class="vet-card__name">
-        ${esc(clinic.name)}
-        </div>
-
-
-        <div class="vet-card__info">
-
-        ${
-          clinic.address
-          ?
-          `
-          <div>
-          📍 ${esc(clinic.address)}
+          <div class="vet-card__name">
+          ${esc(clinic.name)}
           </div>
-          `
-          :
-          ''
-        }
 
-        ${
-          clinic.area
-          ?
-          `
-          <div>
-          🏙️ ${esc(clinic.area)}
+
+          <div class="vet-card__info">
+
+          ${
+            clinic.address
+            ?
+            `<div>📍 ${esc(clinic.address)}</div>`
+            :
+            ''
+          }
+
+          ${
+            clinic.area
+            ?
+            `<div>🏙️ ${esc(clinic.area)}</div>`
+            :
+            ''
+          }
+
+          ${
+            clinic.opening_hours
+            ?
+            `<div>🕐 ${esc(clinic.opening_hours)}</div>`
+            :
+            ''
+          }
+
+          ${
+            clinic.phone
+            ?
+            `<div>☎️ ${esc(clinic.phone)}</div>`
+            :
+            ''
+          }
+
           </div>
-          `
-          :
-          ''
-        }
-
-        ${
-          clinic.opening_hours
-          ?
-          `
-          <div>
-          🕐 ${esc(clinic.opening_hours)}
-          </div>
-          `
-          :
-          ''
-        }
-
-        ${
-          clinic.phone
-          ?
-          `
-          <div>
-          ☎️ ${esc(clinic.phone)}
-          </div>
-          `
-          :
-          ''
-        }
-
-        </div>
 
 
-        <div class="vet-card__actions">
+          <div class="vet-card__actions">
+
+          ${
+            phone
+            ?
+            `
+            <a
+              class="vet-link"
+              href="tel:${phone}"
+            >
+            📞 ${
+              lang() === 'ru'
+              ?
+              'Позвонить'
+              :
+              lang() === 'en'
+              ?
+              'Call'
+              :
+              'Zəng et'
+            }
+            </a>
+            `
+            :
+            ''
+          }
 
 
-        ${
-          phone
-          ?
-          `
           <a
-            class="vet-link"
-            href="tel:${phone}"
+            class="vet-link vet-link--light"
+            href="https://www.google.com/maps/search/?api=1&query=${mapsQuery}"
+            target="_blank"
+            rel="noopener"
           >
-          📞 ${
+          📍 ${
             lang() === 'ru'
             ?
-            'Позвонить'
+            'На карте'
             :
             lang() === 'en'
             ?
-            'Call'
+            'Map'
             :
-            'Zəng et'
+            'Xəritə'
           }
           </a>
-          `
-          :
-          ''
-        }
 
-
-        <a
-          class="vet-link vet-link--light"
-          href="https://www.google.com/maps/search/?api=1&query=${mapsQuery}"
-          target="_blank"
-          rel="noopener"
-        >
-        📍 ${
-          lang() === 'ru'
-          ?
-          'На карте'
-          :
-          lang() === 'en'
-          ?
-          'Map'
-          :
-          'Xəritə'
-        }
-        </a>
-
-
-        </div>
+          </div>
 
         </article>
         `;
 
       }
-
-    ).join('');
+    )
+    .join('');
 
 }
 
 
 /* =====================================================
-   FEED POINTS
+   FEED
 ===================================================== */
 
 const feedDialog =
@@ -5511,12 +6047,7 @@ async function(event){
     feedPhoto.files[0];
 
 
-  if(!file){
-    return;
-  }
-
-
-  if(file.size > 5 * 1024 * 1024){
+  if(!validatePhoto(file)){
 
     feedMessage.textContent =
       'Фото должно быть меньше 5 MB.';
@@ -5575,7 +6106,7 @@ async function(event){
     }
 
 
-    const publicUrl =
+    const photoUrl =
       db.storage
       .from('cat-photos')
       .getPublicUrl(path)
@@ -5632,7 +6163,7 @@ async function(event){
         null,
 
         photo_url:
-        publicUrl,
+        photoUrl,
 
         status:
         document
@@ -5769,10 +6300,8 @@ async function loadFeedPoints(){
 
 
   if(result.error){
-
     console.error(result.error);
     return;
-
   }
 
 
@@ -5789,11 +6318,7 @@ async function loadFeedPoints(){
     grid.innerHTML =
       `
       <div class="data-empty">
-
-      <div class="data-empty__icon">
-      🥣
-      </div>
-
+      <div class="data-empty__icon">🥣</div>
       ${
         lang() === 'ru'
         ?
@@ -5805,7 +6330,6 @@ async function loadFeedPoints(){
         :
         'Hələ nöqtə əlavə edilməyib.'
       }
-
       </div>
       `;
 
@@ -5816,7 +6340,6 @@ async function loadFeedPoints(){
 
   grid.innerHTML =
     rows.map(
-
       item => {
 
         const phone =
@@ -5828,101 +6351,101 @@ async function loadFeedPoints(){
         return `
         <article class="card">
 
-        <div class="card__photo">
+          <div class="card__photo">
 
-        <img
-          src="${esc(safePhoto(item.photo_url))}"
-          alt="${esc(item.title || feedTypeLabel(item.point_type))}"
-        >
-
-        </div>
-
-
-        <div class="card__body">
-
-        <div class="status-badge status-badge--resolved">
-
-        ${feedTypeIcon(item.point_type)}
-
-        ${esc(feedTypeLabel(item.point_type))}
-
-        </div>
-
-
-        <div class="card__name">
-
-        ${
-          esc(
-            item.title
-            ||
-            feedTypeLabel(item.point_type)
-          )
-        }
-
-        </div>
-
-
-        <div class="data-meta">
-
-        <span>
-        📍 ${esc(item.area || 'Baku')}
-        </span>
-
-        </div>
-
-
-        ${
-          item.description
-          ?
-          `
-          <p class="data-description">
-          ${esc(item.description)}
-          </p>
-          `
-          :
-          ''
-        }
-
-
-        ${
-          phone
-          ?
-          `
-          <a
-            class="data-contact data-contact--caspian"
-            href="tel:${phone}"
+          <img
+            src="${esc(safePhoto(item.photo_url))}"
+            alt="${esc(item.title || feedTypeLabel(item.point_type))}"
           >
-          📞 ${
-            lang() === 'ru'
-            ?
-            'Связаться'
-            :
-            lang() === 'en'
-            ?
-            'Contact'
-            :
-            'Əlaqə saxla'
-          }
-          </a>
-          `
-          :
-          ''
-        }
 
-        </div>
+          </div>
+
+
+          <div class="card__body">
+
+            <div class="status-badge status-badge--resolved">
+
+            ${feedTypeIcon(item.point_type)}
+
+            ${esc(feedTypeLabel(item.point_type))}
+
+            </div>
+
+
+            <div class="card__name">
+
+            ${
+              esc(
+                item.title
+                ||
+                feedTypeLabel(item.point_type)
+              )
+            }
+
+            </div>
+
+
+            <div class="data-meta">
+
+            <span>
+            📍 ${esc(item.area || 'Baku')}
+            </span>
+
+            </div>
+
+
+            ${
+              item.description
+              ?
+              `
+              <p class="data-description">
+              ${esc(item.description)}
+              </p>
+              `
+              :
+              ''
+            }
+
+
+            ${
+              phone
+              ?
+              `
+              <a
+                class="data-contact data-contact--caspian"
+                href="tel:${phone}"
+              >
+              📞 ${
+                lang() === 'ru'
+                ?
+                'Связаться'
+                :
+                lang() === 'en'
+                ?
+                'Contact'
+                :
+                'Əlaqə saxla'
+              }
+              </a>
+              `
+              :
+              ''
+            }
+
+          </div>
 
         </article>
         `;
 
       }
-
-    ).join('');
+    )
+    .join('');
 
 }
 
 
 /* =====================================================
-   ADD CAT TO MAP
+   MAP CAT
 ===================================================== */
 
 const mapCatDialog =
@@ -6033,10 +6556,8 @@ function initSpotMap(){
   if(spotMap){
 
     setTimeout(
-      ()=>{
-        spotMap.invalidateSize();
-      },
-      150
+      ()=>spotMap.invalidateSize(),
+      120
     );
 
     return;
@@ -6084,33 +6605,37 @@ function initSpotMap(){
 }
 
 
+function openMapCatDialog(){
+
+  mapCatMessage.className =
+    'form-message';
+
+  mapCatMessage.textContent =
+    '';
+
+
+  mapCatDialog.showModal();
+
+
+  setTimeout(
+    function(){
+
+      initSpotMap();
+
+      spotMap.invalidateSize();
+
+    },
+    180
+  );
+
+}
+
+
 document
 .getElementById('openMapCatForm')
 .addEventListener(
   'click',
-  function(){
-
-    mapCatMessage.className =
-      'form-message';
-
-    mapCatMessage.textContent =
-      '';
-
-    mapCatDialog.showModal();
-
-
-    setTimeout(
-      function(){
-
-        initSpotMap();
-
-        spotMap.invalidateSize();
-
-      },
-      200
-    );
-
-  }
+  openMapCatDialog
 );
 
 
@@ -6121,8 +6646,6 @@ document
   ()=>mapCatDialog.close()
 );
 
-
-/* USER LOCATION INSIDE CAT FORM */
 
 document
 .getElementById('useMyLocationForCat')
@@ -6206,8 +6729,6 @@ function(){
 );
 
 
-/* SUBMIT CAT */
-
 mapCatForm.addEventListener(
 'submit',
 async function(event){
@@ -6256,23 +6777,18 @@ async function(event){
   }
 
 
-  if(!file){
-    return;
-  }
-
-
-  if(file.size > 5 * 1024 * 1024){
+  if(!validatePhoto(file)){
 
     mapCatMessage.textContent =
       lang() === 'ru'
       ?
-      'Фото должно быть меньше 5 MB.'
+      'Выберите JPG, PNG или WebP до 5 MB.'
       :
       lang() === 'en'
       ?
-      'The photo must be smaller than 5 MB.'
+      'Choose a JPG, PNG or WebP image under 5 MB.'
       :
-      'Foto 5 MB-dan kiçik olmalıdır.';
+      '5 MB-dan kiçik JPG, PNG və ya WebP şəkli seçin.';
 
 
     mapCatMessage.className =
@@ -6329,19 +6845,12 @@ async function(event){
     }
 
 
-    const publicUrl =
+    const photoUrl =
       db.storage
       .from('cat-photos')
       .getPublicUrl(path)
       .data
       .publicUrl;
-
-
-    const catName =
-      document
-      .getElementById('mapCatName')
-      .value
-      .trim();
 
 
     const result =
@@ -6350,9 +6859,15 @@ async function(event){
       .insert({
 
         name:
-        catName
+        document
+        .getElementById('mapCatName')
+        .value
+        .trim()
         ||
         null,
+
+        category:
+        'map',
 
         area:
         document
@@ -6367,7 +6882,7 @@ async function(event){
         .trim(),
 
         photo_url:
-        publicUrl,
+        photoUrl,
 
         lat:
         lat,
@@ -6428,7 +6943,6 @@ async function(event){
 
     mapCatForm.reset();
 
-
     mapCatPreview.style.display =
       'none';
 
@@ -6473,7 +6987,7 @@ async function(event){
   catch(error){
 
     console.error(
-      'Cat map submit error:',
+      'Map cat error:',
       error
     );
 
@@ -6507,7 +7021,7 @@ async function(event){
 
 
 /* =====================================================
-   LOAD APPROVED CATS ON MAIN MAP
+   APPROVED MAP CATS
 ===================================================== */
 
 let communityCatLayer =
@@ -6606,7 +7120,7 @@ async function loadMapCats(){
     );
 
 
-  function drawCats(){
+  function draw(){
 
     const mainMap =
       window.catsBakuMainMap;
@@ -6615,7 +7129,7 @@ async function loadMapCats(){
     if(!mainMap){
 
       setTimeout(
-        drawCats,
+        draw,
         300
       );
 
@@ -6644,18 +7158,7 @@ async function loadMapCats(){
       cat => {
 
 
-        const lat =
-          Number(
-            cat.lat
-          );
-
-        const lng =
-          Number(
-            cat.lng
-          );
-
-
-        const displayName =
+        const name =
           cat.name
           ||
           (
@@ -6677,11 +7180,11 @@ async function loadMapCats(){
 
           <img
             src="${esc(safePhoto(cat.photo_url))}"
-            alt="${esc(displayName)}"
+            alt="${esc(name)}"
           >
 
           <strong>
-          ${esc(displayName)}
+          ${esc(name)}
           </strong>
 
           ${
@@ -6714,8 +7217,8 @@ async function loadMapCats(){
 
         L.marker(
           [
-            lat,
-            lng
+            Number(cat.lat),
+            Number(cat.lng)
           ],
           {
             icon:
@@ -6737,7 +7240,7 @@ async function loadMapCats(){
   }
 
 
-  drawCats();
+  draw();
 
 }
 
@@ -6745,6 +7248,8 @@ async function loadMapCats(){
 /* =====================================================
    INITIAL LOAD
 ===================================================== */
+
+loadCityCats();
 
 loadAdoptions();
 
@@ -6759,7 +7264,7 @@ loadFeedPoints();
 loadMapCats();
 
 
-/* RELOAD TRANSLATED CONTENT */
+/* LANGUAGE */
 
 document
 .querySelectorAll(
@@ -6774,6 +7279,8 @@ document
 
         setTimeout(
           function(){
+
+            loadCityCats();
 
             loadAdoptions();
 
@@ -6812,9 +7319,11 @@ document.getElementById('bgMusic');
 const toggle =
 document.getElementById('musicToggle');
 
+
 if(!music || !toggle){
   return;
 }
+
 
 music.volume =
 0.35;
@@ -6830,6 +7339,7 @@ async function start(){
       '😺';
 
   }
+
   catch(e){}
 
 }
@@ -6855,6 +7365,7 @@ toggle.addEventListener(
   async function(event){
 
     event.stopPropagation();
+
 
     if(music.paused){
 
