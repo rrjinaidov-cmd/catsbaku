@@ -2329,6 +2329,175 @@ body.baku-v3 .footer{
 
 
 
+
+<style>
+/* =====================================================
+   CATSBAKU V3.3 — FULL WIDTH DESKTOP + REAL ADOPTIONS
+   ===================================================== */
+
+@media (min-width: 1100px){
+  body.baku-v3 main,
+  body.baku-v3 .topbar,
+  body.baku-v3 .footer{
+    width:min(1540px, 100%);
+    margin-inline:auto;
+  }
+
+  body.baku-v3 .wrap{
+    max-width:1400px;
+  }
+
+  body.baku-v3 .topbar__in{
+    padding-inline:38px;
+  }
+
+  .baku-hero{
+    aspect-ratio:auto;
+    height:clamp(520px, 38vw, 640px);
+  }
+
+  .baku-hero__art{
+    object-fit:cover;
+    object-position:center center;
+  }
+
+  .baku-services{
+    padding-bottom:20px;
+  }
+
+  .baku-services .wrap{
+    max-width:1400px;
+  }
+
+  .baku-services__skyline{
+    width:84%;
+    max-width:1180px;
+    margin:2px auto 6px;
+  }
+
+  body.baku-v3 .explore__grid{
+    grid-template-columns:repeat(6,1fr);
+    border-top:1px solid rgba(23,20,17,.08);
+  }
+
+  body.baku-v3 .explore-card{
+    min-height:156px;
+    padding:24px 18px 18px;
+    display:block;
+    text-align:left;
+    border-bottom:0 !important;
+  }
+
+  body.baku-v3 .explore-card:not(:last-child){
+    border-right:1px solid rgba(23,20,17,.10) !important;
+  }
+
+  body.baku-v3 .explore-card__icon{
+    width:auto;
+    height:auto;
+    margin:0 0 12px;
+    font-size:37px;
+  }
+
+  body.baku-v3 .explore-card h3{
+    font-size:17px;
+    margin:0 0 6px;
+  }
+
+  body.baku-v3 .explore-card p{
+    font-size:13px;
+    line-height:1.42;
+  }
+
+  body.baku-v3 #adoption{
+    padding:72px 0 64px;
+  }
+
+  body.baku-v3 #adoption .wrap{
+    max-width:1400px;
+  }
+
+  body.baku-v3 #adoption .data-list{
+    margin-top:24px;
+    padding-top:0;
+    border-top:0;
+  }
+
+  body.baku-v3 #adoption .data-list > .head{
+    display:none;
+  }
+
+  body.baku-v3 #adoption #adoptionGrid{
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+  }
+
+  body.baku-v3 #adoption #adoptionGrid .card{
+    overflow:hidden;
+    border:0;
+    border-radius:16px;
+    background:#fff9ef;
+    color:#1b1713;
+    box-shadow:0 10px 28px rgba(83,0,0,.20);
+  }
+
+  body.baku-v3 #adoption #adoptionGrid .card__photo{
+    aspect-ratio:1.5/1;
+    height:auto;
+  }
+
+  body.baku-v3 #adoption #adoptionGrid .card__body{
+    padding:14px 16px 17px;
+  }
+
+  body.baku-v3 #adoption #adoptionGrid .card__name{
+    color:#171411;
+    font-size:20px;
+    font-weight:800;
+  }
+
+  body.baku-v3 #adoption #adoptionGrid .data-meta,
+  body.baku-v3 #adoption #adoptionGrid .data-description{
+    color:#5d554e;
+  }
+
+  body.baku-v3 #adoption #adoptionGrid .data-empty{
+    grid-column:1/-1;
+    min-height:150px;
+    display:grid;
+    place-items:center;
+    align-content:center;
+    background:rgba(255,255,255,.10);
+    border:1px dashed rgba(255,255,255,.34);
+    color:#fff7ef;
+  }
+}
+
+@media (min-width: 1600px){
+  body.baku-v3 main,
+  body.baku-v3 .topbar,
+  body.baku-v3 .footer{
+    width:min(1660px, 96vw);
+  }
+
+  body.baku-v3 .wrap,
+  .baku-services .wrap,
+  body.baku-v3 #adoption .wrap{
+    max-width:1510px;
+  }
+
+  .baku-hero{
+    height:650px;
+  }
+}
+
+@media (max-width: 1099px){
+  body.baku-v3 #adoption .data-list > .head{
+    display:none;
+  }
+}
+</style>
+
 </head>
 
 
@@ -2450,7 +2619,7 @@ ADOPTION
 </h2>
 
 <p class="sub">
-Помогите бакинскому коту найти семью.
+Здесь появляются только реальные объявления, одобренные после модерации.
 </p>
 
 
@@ -2468,13 +2637,6 @@ ADOPTION
 
 </div>
 
-
-<div class="adoption-showcase">
-  <article class="adoption-showcase__card"><div class="adoption-showcase__photo"><img src="img/hero-cat.jpg" alt="Rijik"><span>♡</span></div><div class="adoption-showcase__body"><h3>Rijik</h3><p>📍 Баку</p></div></article>
-  <article class="adoption-showcase__card"><div class="adoption-showcase__photo"><img src="img/rijik-01.jpg" alt="Sultan"><span>♡</span></div><div class="adoption-showcase__body"><h3>Sultan</h3><p>📍 Ичеришехер</p></div></article>
-  <article class="adoption-showcase__card"><div class="adoption-showcase__photo"><img src="img/rijik-02.jpg" alt="Sunny"><span>♡</span></div><div class="adoption-showcase__body"><h3>Sunny</h3><p>📍 Бульвар</p></div></article>
-  <article class="adoption-showcase__card"><div class="adoption-showcase__photo"><img src="img/rijik-04.jpg" alt="Bala"><span>♡</span></div><div class="adoption-showcase__body"><h3>Bala</h3><p>📍 Нариманов</p></div></article>
-</div>
 
 <div class="data-list">
 
