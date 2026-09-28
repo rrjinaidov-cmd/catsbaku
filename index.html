@@ -2325,6 +2325,24 @@ body.baku-v3 .footer{
   body.baku-v3 #cats .grid{grid-template-columns:1fr 1fr;gap:10px;}
 }
 
+
+
+/* ===== V3.6 MAP CONTROLS / MARKERS ===== */
+.map-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:18px 0;}
+.map-toolbar .map-actions{margin:0;}
+.map-language{display:flex;align-items:center;gap:10px;}
+.map-language__label{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+.map-language.langs{padding:4px;background:#fff;border:1px solid rgba(16,43,59,.12);box-shadow:0 8px 24px rgba(16,43,59,.08);}
+.map-language.langs button{cursor:pointer;}
+.map-legend{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 14px;}
+.map-legend__item{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border-radius:999px;background:#fff;border:1px solid rgba(16,43,59,.10);font-size:12px;font-weight:700;color:var(--ink);box-shadow:0 5px 14px rgba(16,43,59,.05);}
+.cat-map-marker,.feed-map-marker{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:3px solid #fff;border-radius:50%;box-shadow:0 7px 18px rgba(0,0,0,.28);font-size:22px;line-height:1;}
+.cat-map-marker{background:#9f2434;}
+.cat-map-marker--normal{background:#1f6670;}
+.cat-map-marker--help{background:#b51f34;}
+.feed-map-marker{background:#d99a27;}
+@media(max-width:700px){.map-toolbar{align-items:stretch}.map-toolbar .map-actions,.map-toolbar .big-action-btn{width:100%}.map-language{width:100%;justify-content:space-between}.map-language.langs{width:auto}.map-legend{gap:7px}.map-legend__item{font-size:11px;padding:7px 9px}}
+
 </style>
 
 
@@ -3220,11 +3238,11 @@ LOST & FOUND
 BAKU CAT MAP
 </div>
 
-<h2 class="h2">
+<h2 class="h2" id="mapSectionTitle">
 Коты рядом с вами
 </h2>
 
-<p class="sub">
+<p class="sub" id="mapSectionSub">
 Добавляйте встреченных котов на карту Баку.
 </p>
 
@@ -3233,18 +3251,34 @@ BAKU CAT MAP
 </div>
 
 
-<div class="map-actions">
+<div class="map-toolbar">
 
-<button
-  class="big-action-btn"
-  type="button"
-  id="openMapCatForm"
->
-📍 Добавить кота на карту
-</button>
+  <div class="map-actions">
+    <button
+      class="big-action-btn"
+      type="button"
+      id="openMapCatForm"
+    >
+    📍 Добавить кота на карту
+    </button>
+  </div>
+
+  <div class="map-language">
+    <span class="map-language__label" id="mapLanguageLabel">Язык карты</span>
+    <div class="langs map-language" aria-label="Map language">
+      <button type="button" data-lang="az">AZ</button>
+      <button type="button" data-lang="ru">RU</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
 
 </div>
 
+<div class="map-legend" id="mapLegend">
+  <span class="map-legend__item" id="legendCat">🐱 Обычный кот</span>
+  <span class="map-legend__item" id="legendHelp">❤️ Нужна помощь</span>
+  <span class="map-legend__item" id="legendFeed">🥣 Точка кормления</span>
+</div>
 
 <div class="map-box">
 
@@ -5251,6 +5285,9 @@ BakuCats · Buta
 </button>
 
 
+<!-- STATIC.JS COMPATIBILITY: hidden district stories container -->
+<div id="stories" hidden aria-hidden="true"></div>
+
 <!-- OLD STATIC.JS COMPATIBILITY -->
 
 <dialog
@@ -6886,9 +6923,25 @@ async function loadVets(){
             ''
           }
 
+          ${
+            clinic.phone
+            ?
+            `<div>📞 ${esc(clinic.phone)}</div>`
+            :
+            ''
+          }
+
           </div>
 
           <div class="vet-card__actions">
+
+            ${
+              clinic.phone
+              ?
+              `<a class="vet-link" href="tel:${safePhone(clinic.phone)}">📞 Позвонить</a>`
+              :
+              ''
+            }
 
             <a
               class="vet-link vet-link--light"
@@ -7614,33 +7667,28 @@ let communityCatLayer =
 
 function catMarkerIcon(status){
 
-  const emoji =
-    status === 'needs_help'
-    ?
-    '❤️'
-    :
-    '🐱';
-
+  const needsHelp = status === 'needs_help';
+  const emoji = needsHelp ? '❤️' : '🐱';
+  const kindClass = needsHelp ? 'cat-map-marker--help' : 'cat-map-marker--normal';
 
   return L.divIcon({
-
     className:'',
-
-    html:
-      `<div class="cat-map-marker">${emoji}</div>`,
-
-    iconSize:[
-      42,
-      42
-    ],
-
-    iconAnchor:[
-      21,
-      21
-    ]
-
+    html:`<div class="cat-map-marker ${kindClass}">${emoji}</div>`,
+    iconSize:[44,44],
+    iconAnchor:[22,22],
+    popupAnchor:[0,-20]
   });
 
+}
+
+function feedMarkerIcon(){
+  return L.divIcon({
+    className:'',
+    html:'<div class="feed-map-marker">🥣</div>',
+    iconSize:[44,44],
+    iconAnchor:[22,22],
+    popupAnchor:[0,-20]
+  });
 }
 
 
@@ -7669,6 +7717,10 @@ async function loadMapCats(){
           cat.lat !== null
           &&
           cat.lng !== null
+          &&
+          Number.isFinite(Number(cat.lat))
+          &&
+          Number.isFinite(Number(cat.lng))
         );
 
       }
@@ -7715,7 +7767,7 @@ async function loadMapCats(){
         const name =
           cat.name
           ||
-          'Уличный кот';
+          mapText('streetCat');
 
 
         L.marker(
@@ -7767,6 +7819,83 @@ async function loadMapCats(){
   draw();
 
 }
+
+
+let communityFeedLayer = null;
+
+async function loadMapFeedPoints(){
+  const result = await db
+    .from('feed_points')
+    .select('id,title,area,description,lat,lng,status')
+    .eq('approved',true)
+    .neq('status','inactive');
+
+  if(result.error){
+    console.error('Feed map:', result.error);
+    return;
+  }
+
+  const points = (result.data || []).filter(point =>
+    point.lat !== null && point.lng !== null &&
+    Number.isFinite(Number(point.lat)) && Number.isFinite(Number(point.lng))
+  );
+
+  function draw(){
+    const map = window.catsBakuMainMap;
+    if(!map){ setTimeout(draw,300); return; }
+
+    if(communityFeedLayer){ map.removeLayer(communityFeedLayer); }
+    communityFeedLayer = L.layerGroup().addTo(map);
+
+    points.forEach(point => {
+      L.marker([Number(point.lat),Number(point.lng)],{icon:feedMarkerIcon()})
+        .addTo(communityFeedLayer)
+        .bindPopup(`
+          <div class="cat-popup">
+            <strong>🥣 ${esc(point.title || mapText('feedPoint'))}</strong>
+            <p>📍 ${esc(point.area || 'Baku')}</p>
+            ${point.description ? `<p>${esc(point.description)}</p>` : ''}
+          </div>
+        `);
+    });
+  }
+
+  draw();
+}
+
+const MAP_I18N = {
+  az:{title:'Yanınızdakı pişiklər',sub:'Bakıda gördüyünüz pişikləri xəritəyə əlavə edin.',add:'📍 Pişiyi xəritəyə əlavə et',locate:'📍 Mənim yerim',language:'Xəritə dili',cat:'🐱 Adi pişik',help:'❤️ Kömək lazımdır',feed:'🥣 Yemləmə nöqtəsi',streetCat:'Küçə pişiyi',feedPoint:'Yemləmə nöqtəsi'},
+  ru:{title:'Коты рядом с вами',sub:'Добавляйте встреченных котов на карту Баку.',add:'📍 Добавить кота на карту',locate:'📍 Моё местоположение',language:'Язык карты',cat:'🐱 Обычный кот',help:'❤️ Нужна помощь',feed:'🥣 Точка кормления',streetCat:'Уличный кот',feedPoint:'Точка кормления'},
+  en:{title:'Cats near you',sub:'Add cats you meet around Baku to the map.',add:'📍 Add a cat to the map',locate:'📍 My location',language:'Map language',cat:'🐱 Regular cat',help:'❤️ Needs help',feed:'🥣 Feeding point',streetCat:'Street cat',feedPoint:'Feeding point'}
+};
+
+function currentMapLang(){
+  const value = localStorage.getItem('cb-lang-static') || 'az';
+  return MAP_I18N[value] ? value : 'az';
+}
+function mapText(key){ return MAP_I18N[currentMapLang()][key] || key; }
+function applyMapLanguage(){
+  const set=(id,text)=>{const el=document.getElementById(id);if(el)el.textContent=text;};
+  set('mapSectionTitle',mapText('title'));
+  set('mapSectionSub',mapText('sub'));
+  set('openMapCatForm',mapText('add'));
+  set('locate',mapText('locate'));
+  set('mapLanguageLabel',mapText('language'));
+  set('legendCat',mapText('cat'));
+  set('legendHelp',mapText('help'));
+  set('legendFeed',mapText('feed'));
+}
+
+document.addEventListener('click',function(e){
+  if(e.target.closest('[data-lang]')){
+    setTimeout(function(){
+      applyMapLanguage();
+      loadMapCats();
+      loadMapFeedPoints();
+    },0);
+  }
+});
+
 
 
 /* =====================================================
@@ -7976,6 +8105,8 @@ loadVets();
 loadFeedPoints();
 
 loadMapCats();
+loadMapFeedPoints();
+applyMapLanguage();
 
 </script>
 
