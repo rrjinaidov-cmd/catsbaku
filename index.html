@@ -27,7 +27,11 @@ CatsBaku — Bakı pişikləri · Коты Баку · Cats of Baku
 <meta property="og:url" content="https://catsbaku.com/">
 <meta property="og:image" content="https://catsbaku.com/img/og-cover.jpg">
 
-<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link
+  rel="icon"
+  href="img/favicon.svg"
+  type="image/svg+xml"
+>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -79,7 +83,10 @@ body{
   letter-spacing:.16em;
 }
 
-/* TOP */
+
+/* =========================
+   TOP
+========================= */
 
 .topbar{
   background:rgba(248,242,232,.95);
@@ -95,7 +102,10 @@ body{
   color:var(--pom);
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
   position:relative;
@@ -150,9 +160,12 @@ body{
 
 .hero__body::before{
   content:"";
+
   display:block;
+
   width:65px;
   height:65px;
+
   margin-bottom:10px;
 
   background:
@@ -167,7 +180,10 @@ body{
   font-style:italic;
 }
 
-/* CARPET */
+
+/* =========================
+   CARPET
+========================= */
 
 .carpet{
   height:23px;
@@ -184,11 +200,12 @@ body{
   border-bottom:3px solid var(--pom);
 }
 
-/* BAKU */
+
+/* =========================
+   BAKU INTRO
+========================= */
 
 .baku-intro{
-  position:relative;
-  overflow:hidden;
   text-align:center;
   padding:30px 20px;
 
@@ -210,6 +227,7 @@ body{
 
 .baku-intro__title{
   margin-top:7px;
+
   font-family:"Cormorant Garamond",serif;
   font-size:clamp(27px,4vw,42px);
   font-weight:700;
@@ -221,12 +239,14 @@ body{
   font-size:13px;
 }
 
-/* IMAGES */
+
+/* =========================
+   PHOTOS
+========================= */
 
 #grid .card__photo,
 #adoptionGrid .card__photo,
 #lostFoundGrid .card__photo{
-  position:relative;
   overflow:hidden;
 }
 
@@ -235,11 +255,14 @@ body{
 #lostFoundGrid .card__photo img{
   width:100%;
   height:100%;
-  display:block;
   object-fit:cover;
+  display:block;
 }
 
-/* EXPLORE */
+
+/* =========================
+   EXPLORE
+========================= */
 
 .explore{
   padding:75px 0;
@@ -266,6 +289,7 @@ body{
 
 .explore-card{
   display:block;
+
   padding:27px;
 
   color:inherit;
@@ -281,7 +305,9 @@ body{
       #f8f0e2
     );
 
-  box-shadow:0 14px 36px rgba(70,52,31,.075);
+  box-shadow:
+    0 14px 36px
+    rgba(70,52,31,.075);
 }
 
 .explore-card__icon{
@@ -313,7 +339,10 @@ body{
   font-size:14px;
 }
 
-/* FEATURES */
+
+/* =========================
+   FEATURES
+========================= */
 
 .feature-section{
   position:relative;
@@ -348,7 +377,9 @@ body{
       #faf3e8
     );
 
-  box-shadow:0 13px 34px rgba(70,52,31,.07);
+  box-shadow:
+    0 13px 34px
+    rgba(70,52,31,.07);
 }
 
 .feature-box__emoji{
@@ -358,6 +389,7 @@ body{
 
 .feature-box h3{
   margin:0 0 8px;
+
   font-family:"Cormorant Garamond",serif;
   font-size:29px;
 }
@@ -367,7 +399,10 @@ body{
   opacity:.72;
 }
 
-/* BUTTONS */
+
+/* =========================
+   ACTIONS
+========================= */
 
 .action-row{
   display:flex;
@@ -393,16 +428,16 @@ body{
   font-weight:800;
 
   cursor:pointer;
-
-  box-shadow:0 10px 30px rgba(143,48,64,.22);
 }
 
 .big-action-btn--caspian{
   background:var(--caspian);
-  box-shadow:0 10px 30px rgba(39,107,120,.22);
 }
 
-/* LISTS */
+
+/* =========================
+   DATA LISTS
+========================= */
 
 .data-list{
   margin-top:55px;
@@ -449,6 +484,10 @@ body{
   text-decoration:none;
 }
 
+.data-contact--caspian{
+  background:var(--caspian);
+}
+
 .data-empty{
   grid-column:1/-1;
 
@@ -470,7 +509,10 @@ body{
   font-size:45px;
 }
 
-/* BADGES */
+
+/* =========================
+   STATUS
+========================= */
 
 .status-badge{
   display:inline-flex;
@@ -499,7 +541,108 @@ body{
   color:#276b78;
 }
 
-/* MODALS */
+.status-badge--24{
+  background:#dfeee5;
+  color:#28643d;
+}
+
+
+/* =========================
+   VETS
+========================= */
+
+#vets{
+  background:
+    linear-gradient(
+      180deg,
+      #e8f0ee,
+      #f8f3e9
+    );
+}
+
+.vet-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:30px;
+}
+
+.vet-card{
+  padding:25px;
+
+  border:
+    1px solid
+    rgba(39,107,120,.14);
+
+  border-radius:
+    28px 28px 20px 20px;
+
+  background:#fff;
+
+  box-shadow:
+    0 13px 34px
+    rgba(39,107,120,.08);
+}
+
+.vet-card__icon{
+  font-size:34px;
+  margin-bottom:13px;
+}
+
+.vet-card__name{
+  font-family:"Cormorant Garamond",serif;
+  font-size:28px;
+  font-weight:700;
+  line-height:1.05;
+}
+
+.vet-card__info{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+
+  margin-top:15px;
+
+  color:#665e55;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.vet-card__actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+
+  margin-top:16px;
+}
+
+.vet-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+
+  padding:9px 13px;
+
+  border-radius:999px;
+
+  background:var(--caspian);
+  color:#fff;
+
+  text-decoration:none;
+
+  font-size:12px;
+  font-weight:800;
+}
+
+.vet-link--light{
+  background:#edf3f1;
+  color:var(--caspian-dark);
+}
+
+
+/* =========================
+   MODALS
+========================= */
 
 .form-modal{
   width:min(680px,calc(100% - 24px));
@@ -531,6 +674,7 @@ body{
   justify-content:space-between;
   gap:20px;
   align-items:flex-start;
+
   margin-bottom:25px;
 }
 
@@ -635,7 +779,7 @@ body{
   border-radius:999px;
 
   background:var(--pom);
-  color:white;
+  color:#fff;
 
   font:inherit;
   font-weight:800;
@@ -669,18 +813,25 @@ body{
   color:#8d2d37;
 }
 
-/* OTHER */
+
+/* =========================
+   OTHER
+========================= */
 
 #help{
-  background:linear-gradient(#f1e2cd,#faf6ef);
-}
-
-#vets{
-  background:linear-gradient(#e8f0ee,#f8f3e9);
+  background:
+    linear-gradient(
+      #f1e2cd,
+      #faf6ef
+    );
 }
 
 #feed{
-  background:linear-gradient(#faf6ee,#e6f0f0);
+  background:
+    linear-gradient(
+      #faf6ee,
+      #e6f0f0
+    );
 }
 
 #catstories{
@@ -712,21 +863,34 @@ body{
   background:rgba(255,250,242,.95);
 }
 
+
+/* =========================
+   MAP
+========================= */
+
 .map-box{
   border:5px solid #fff;
   border-radius:28px;
-  box-shadow:0 18px 48px rgba(57,49,37,.13);
+
+  box-shadow:
+    0 18px 48px
+    rgba(57,49,37,.13);
 }
 
 .map{
   border-radius:22px;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer{
   position:relative;
+
   padding-top:65px;
+
   color:#d9cdb9;
 
   background:
@@ -738,10 +902,13 @@ body{
 
 .footer::before{
   content:"";
+
   position:absolute;
+
   left:0;
   right:0;
   top:0;
+
   height:11px;
 
   background:
@@ -756,16 +923,22 @@ body{
 
 .footer-baku{
   margin-top:14px;
+
   color:#bea878;
+
   font-size:10px;
   font-weight:700;
   letter-spacing:.22em;
 }
 
-/* MUSIC */
+
+/* =========================
+   MUSIC
+========================= */
 
 #musicToggle{
   position:fixed;
+
   right:18px;
   bottom:86px;
 
@@ -782,13 +955,21 @@ body{
 
   z-index:10000;
 
-  box-shadow:0 8px 24px rgba(0,0,0,.22);
+  box-shadow:
+    0 8px 24px
+    rgba(0,0,0,.22);
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:900px){
 
   .explore__grid,
-  .feature-grid{
+  .feature-grid,
+  .vet-grid{
     grid-template-columns:repeat(2,1fr);
   }
 
@@ -797,7 +978,8 @@ body{
 @media(max-width:650px){
 
   .explore__grid,
-  .feature-grid{
+  .feature-grid,
+  .vet-grid{
     grid-template-columns:1fr;
   }
 
@@ -1004,10 +1186,7 @@ CATS OF BAKU
 
 <!-- CATS -->
 
-<section
-  class="section"
-  id="cats"
->
+<section class="section" id="cats">
 
 <div class="wrap">
 
@@ -1019,70 +1198,137 @@ CATS OF BAKU
 CatsBaku
 </div>
 
-<h2 class="h2" data-i18n="cats.title">
+<h2
+  class="h2"
+  data-i18n="cats.title"
+>
 Bakı pişikləri
 </h2>
 
 </div>
 
-<span class="count" id="catsCount">
+<span
+  class="count"
+  id="catsCount"
+>
 5 pişik
 </span>
 
 </div>
 
-<div class="chips" id="filters"></div>
+<div
+  class="chips"
+  id="filters"
+></div>
 
-<div class="grid" id="grid">
+
+<div
+  class="grid"
+  id="grid"
+>
 
 <article class="card">
+
 <div class="card__photo">
 <img src="img/hero-cat.jpg" alt="Rijik">
 </div>
+
 <div class="card__body">
-<div class="card__name">Rijik</div>
-<div class="card__district">📍 Bakı</div>
+
+<div class="card__name">
+Rijik
 </div>
+
+<div class="card__district">
+📍 Bakı
+</div>
+
+</div>
+
 </article>
 
+
 <article class="card">
+
 <div class="card__photo">
 <img src="img/rijik-01.jpg" alt="Sultan">
 </div>
+
 <div class="card__body">
-<div class="card__name">Sultan</div>
-<div class="card__district">📍 İçərişəhər</div>
+
+<div class="card__name">
+Sultan
 </div>
+
+<div class="card__district">
+📍 İçərişəhər
+</div>
+
+</div>
+
 </article>
 
+
 <article class="card">
+
 <div class="card__photo">
 <img src="img/rijik-02.jpg" alt="Sunny">
 </div>
+
 <div class="card__body">
-<div class="card__name">Sunny</div>
-<div class="card__district">📍 Bulvar</div>
+
+<div class="card__name">
+Sunny
 </div>
+
+<div class="card__district">
+📍 Bulvar
+</div>
+
+</div>
+
 </article>
 
+
 <article class="card">
+
 <div class="card__photo">
 <img src="img/rijik-03.jpg" alt="Mango">
 </div>
+
 <div class="card__body">
-<div class="card__name">Mango</div>
-<div class="card__district">📍 Yasamal</div>
+
+<div class="card__name">
+Mango
 </div>
+
+<div class="card__district">
+📍 Yasamal
+</div>
+
+</div>
+
 </article>
 
+
 <article class="card">
+
 <div class="card__photo">
 <img src="img/rijik-04.jpg" alt="Bala">
 </div>
+
 <div class="card__body">
-<div class="card__name">Bala</div>
-<div class="card__district">📍 Nərimanov</div>
+
+<div class="card__name">
+Bala
 </div>
+
+<div class="card__district">
+📍 Nərimanov
+</div>
+
+</div>
+
 </article>
 
 </div>
@@ -1100,15 +1346,24 @@ Bakı pişikləri
 
 <div class="explore__head">
 
-<div class="eyebrow" data-i18n="explore.eyebrow">
+<div
+  class="eyebrow"
+  data-i18n="explore.eyebrow"
+>
 CATSBAKU İCMASI
 </div>
 
-<h2 class="h2" data-i18n="explore.title">
+<h2
+  class="h2"
+  data-i18n="explore.title"
+>
 CatsBaku-nu kəşf et
 </h2>
 
-<p class="sub" data-i18n="explore.sub">
+<p
+  class="sub"
+  data-i18n="explore.sub"
+>
 CatsBaku sadəcə pişik qalereyası deyil.
 </p>
 
@@ -1165,22 +1420,34 @@ CatsBaku sadəcə pişik qalereyası deyil.
 
 <!-- ADOPTION -->
 
-<section class="feature-section" id="adoption">
+<section
+  class="feature-section"
+  id="adoption"
+>
 
 <div class="wrap">
 
 <div class="feature-head">
 
-<div class="eyebrow" data-i18n="adoption.eyebrow">
+<div
+  class="eyebrow"
+  data-i18n="adoption.eyebrow"
+>
 SAHİBLƏNDİR
 </div>
 
-<h2 class="h2" data-i18n="adoption.title">
+<h2
+  class="h2"
+  data-i18n="adoption.title"
+>
 Ev axtaran pişiklər
 </h2>
 
-<p class="sub" data-i18n="adoption.sub">
-Bakı pişiyinin öz ailəsini tapmasına kömək edin.
+<p
+  class="sub"
+  data-i18n="adoption.sub"
+>
+Bakı pişiyinin ailə tapmasına kömək edin.
 </p>
 
 <div class="action-row">
@@ -1190,10 +1457,13 @@ Bakı pişiyinin öz ailəsini tapmasına kömək edin.
   type="button"
   id="openAdoptionForm"
 >
+
 🐱
+
 <span data-i18n="adoption.add">
 Pişik yerləşdir
 </span>
+
 </button>
 
 </div>
@@ -1211,27 +1481,31 @@ Pişik yerləşdir
 CATSBAKU
 </div>
 
-<h2 class="h2" data-i18n="adoption.availableTitle">
+<h2
+  class="h2"
+  data-i18n="adoption.availableTitle"
+>
 Ev axtaran pişiklər
 </h2>
 
 </div>
 
-<span class="count" id="adoptionCount"></span>
+<span
+  class="count"
+  id="adoptionCount"
+></span>
 
 </div>
 
 
-<div class="grid" id="adoptionGrid">
+<div
+  class="grid"
+  id="adoptionGrid"
+>
 
 <div class="data-empty">
-
-<div class="data-empty__icon">
-🐾
-</div>
-
+<div class="data-empty__icon">🐾</div>
 Elanlar yüklənir...
-
 </div>
 
 </div>
@@ -1245,21 +1519,31 @@ Elanlar yüklənir...
 
 <!-- HELP -->
 
-<section class="feature-section" id="help">
+<section
+  class="feature-section"
+  id="help"
+>
 
 <div class="wrap">
 
 <div class="feature-head">
 
-<div class="eyebrow" data-i18n="help.eyebrow">
+<div
+  class="eyebrow"
+  data-i18n="help.eyebrow"
+>
 KÖMƏK
 </div>
 
-<h2 class="h2" data-i18n="help.title">
+<h2
+  class="h2"
+  data-i18n="help.title"
+>
 Köməyə ehtiyacı olan pişiklər
 </h2>
 
 </div>
+
 
 <div class="feature-grid">
 
@@ -1290,21 +1574,33 @@ Köməyə ehtiyacı olan pişiklər
 
 <!-- LOST FOUND -->
 
-<section class="feature-section" id="lost">
+<section
+  class="feature-section"
+  id="lost"
+>
 
 <div class="wrap">
 
 <div class="feature-head">
 
-<div class="eyebrow" data-i18n="lost.eyebrow">
+<div
+  class="eyebrow"
+  data-i18n="lost.eyebrow"
+>
 İTMİŞ VƏ TAPILMIŞ
 </div>
 
-<h2 class="h2" data-i18n="lost.title">
+<h2
+  class="h2"
+  data-i18n="lost.title"
+>
 Pişik itirmisiniz və ya tapmısınız?
 </h2>
 
-<p class="sub" data-i18n="lost.sub">
+<p
+  class="sub"
+  data-i18n="lost.sub"
+>
 Bakıda itmiş və tapılmış pişik elanları.
 </p>
 
@@ -1339,31 +1635,6 @@ Pişik tapmışam
 </div>
 
 
-<div class="feature-grid">
-
-<div class="feature-box">
-<div class="feature-box__emoji">😿</div>
-<h3 data-i18n="lost.lost">İtib</h3>
-<p data-i18n="lost.lostText">İtmiş pişik haqqında məlumat paylaşın.</p>
-</div>
-
-<div class="feature-box">
-<div class="feature-box__emoji">👀</div>
-<h3 data-i18n="lost.found">Tapılıb</h3>
-<p data-i18n="lost.foundText">Tapılmış pişiyin sahibini axtarın.</p>
-</div>
-
-<div class="feature-box">
-<div class="feature-box__emoji">📍</div>
-<h3 data-i18n="lost.area">Ərazi üzrə axtarış</h3>
-<p data-i18n="lost.areaText">Rayon və xəritə üzrə.</p>
-</div>
-
-</div>
-
-
-<!-- APPROVED LOST FOUND -->
-
 <div class="data-list">
 
 <div class="head">
@@ -1374,7 +1645,10 @@ Pişik tapmışam
 LOST & FOUND
 </div>
 
-<h2 class="h2" data-i18n="lost.activeTitle">
+<h2
+  class="h2"
+  data-i18n="lost.activeTitle"
+>
 Aktiv elanlar
 </h2>
 
@@ -1394,19 +1668,13 @@ Aktiv elanlar
 >
 
 <div class="data-empty">
-
-<div class="data-empty__icon">
-🔎
-</div>
-
+<div class="data-empty__icon">🔎</div>
 Elanlar yüklənir...
-
 </div>
 
 </div>
 
 </div>
-
 
 </div>
 
@@ -1421,17 +1689,29 @@ Elanlar yüklənir...
 
 <div class="month">
 
-<div class="eyebrow" data-i18n="month.eyebrow">
+<div
+  class="eyebrow"
+  data-i18n="month.eyebrow"
+>
 Ayın pişiyi
 </div>
 
-<h2 class="h2" data-i18n="month.title">
+<h2
+  class="h2"
+  data-i18n="month.title"
+>
 Ürəklə səs ver
 </h2>
 
-<p class="sub" data-i18n="month.sub"></p>
+<p
+  class="sub"
+  data-i18n="month.sub"
+></p>
 
-<div class="podium" id="podium"></div>
+<div
+  class="podium"
+  id="podium"
+></div>
 
 </div>
 
@@ -1454,11 +1734,17 @@ Ayın pişiyi
 BAKU CAT MAP
 </div>
 
-<h2 class="h2" data-i18n="map.title">
+<h2
+  class="h2"
+  data-i18n="map.title"
+>
 Yanınızdakı pişiklər
 </h2>
 
-<p class="sub" data-i18n="map.sub"></p>
+<p
+  class="sub"
+  data-i18n="map.sub"
+></p>
 
 </div>
 
@@ -1467,9 +1753,16 @@ Yanınızdakı pişiklər
 
 <div class="map-box">
 
-<div class="map" id="catMap"></div>
+<div
+  class="map"
+  id="catMap"
+></div>
 
-<button class="btn" id="locate" type="button">
+<button
+  class="btn"
+  id="locate"
+  type="button"
+>
 📍
 <span data-i18n="map.locate">
 Mənim yerim
@@ -1485,40 +1778,49 @@ Mənim yerim
 
 <!-- VETS -->
 
-<section class="feature-section" id="vets">
+<section
+  class="feature-section"
+  id="vets"
+>
 
 <div class="wrap">
 
 <div class="feature-head">
 
-<div class="eyebrow" data-i18n="vets.eyebrow">
+<div
+  class="eyebrow"
+  data-i18n="vets.eyebrow"
+>
 BAYTAR XƏRİTƏSİ
 </div>
 
-<h2 class="h2" data-i18n="vets.title">
+<h2
+  class="h2"
+  data-i18n="vets.title"
+>
 Bakıda baytar xidməti
 </h2>
 
+<p
+  class="sub"
+  data-i18n="vets.sub"
+>
+Bakıda yoxlanılmış baytar klinikaları.
+</p>
+
 </div>
 
-<div class="feature-grid">
 
-<div class="feature-box">
-<div class="feature-box__emoji">🩺</div>
-<h3 data-i18n="vets.clinics">Baytar klinikaları</h3>
-<p data-i18n="vets.clinicsText">Bakıda klinikaları tapın.</p>
+<div class="vet-grid" id="vetGrid">
+
+<div class="data-empty">
+
+<div class="data-empty__icon">
+🩺
 </div>
 
-<div class="feature-box">
-<div class="feature-box__emoji">🚑</div>
-<h3 data-i18n="vets.emergency">Təcili yardım</h3>
-<p data-i18n="vets.emergencyText">Təcili klinikalar.</p>
-</div>
+Klinikalar yüklənir...
 
-<div class="feature-box">
-<div class="feature-box__emoji">⭐</div>
-<h3 data-i18n="vets.community">Tövsiyələr</h3>
-<p data-i18n="vets.communityText">CatsBaku icmasının tövsiyələri.</p>
 </div>
 
 </div>
@@ -1530,21 +1832,31 @@ Bakıda baytar xidməti
 
 <!-- FEED -->
 
-<section class="feature-section" id="feed">
+<section
+  class="feature-section"
+  id="feed"
+>
 
 <div class="wrap">
 
 <div class="feature-head">
 
-<div class="eyebrow" data-i18n="feed.eyebrow">
+<div
+  class="eyebrow"
+  data-i18n="feed.eyebrow"
+>
 YEMLƏMƏ NÖQTƏLƏRİ
 </div>
 
-<h2 class="h2" data-i18n="feed.title">
+<h2
+  class="h2"
+  data-i18n="feed.title"
+>
 Bakı pişikləri üçün yem və su
 </h2>
 
 </div>
+
 
 <div class="feature-grid">
 
@@ -1572,21 +1884,31 @@ Bakı pişikləri üçün yem və su
 
 <!-- STORIES -->
 
-<section class="feature-section" id="catstories">
+<section
+  class="feature-section"
+  id="catstories"
+>
 
 <div class="wrap">
 
 <div class="feature-head">
 
-<div class="eyebrow" data-i18n="stories.eyebrow">
+<div
+  class="eyebrow"
+  data-i18n="stories.eyebrow"
+>
 CATSBAKU HEKAYƏLƏRİ
 </div>
 
-<h2 class="h2" data-i18n="stories.title">
+<h2
+  class="h2"
+  data-i18n="stories.title"
+>
 Şəhərdən hekayələr
 </h2>
 
 </div>
+
 
 <div class="feature-grid">
 
@@ -1614,21 +1936,36 @@ CATSBAKU HEKAYƏLƏRİ
 
 <!-- SHOP -->
 
-<section class="section shop" id="shop">
+<section
+  class="section shop"
+  id="shop"
+>
 
 <div class="wrap">
 
-<div class="eyebrow" data-i18n="shop.eyebrow">
+<div
+  class="eyebrow"
+  data-i18n="shop.eyebrow"
+>
 Tezliklə
 </div>
 
-<h2 class="h2" data-i18n="shop.title">
+<h2
+  class="h2"
+  data-i18n="shop.title"
+>
 Sevimli pişiyiniz futbolkada
 </h2>
 
-<p class="sub" data-i18n="shop.sub"></p>
+<p
+  class="sub"
+  data-i18n="shop.sub"
+></p>
 
-<div class="products" id="products"></div>
+<div
+  class="products"
+  id="products"
+></div>
 
 </div>
 
@@ -1640,13 +1977,22 @@ Sevimli pişiyiniz futbolkada
 
 <section class="wrap about">
 
-<img src="img/logo.svg" alt="CatsBaku">
+<img
+  src="img/logo.svg"
+  alt="CatsBaku"
+>
 
-<h2 class="h2" data-i18n="about.title">
+<h2
+  class="h2"
+  data-i18n="about.title"
+>
 İnsanlar üçün şəhər. Pişiklər üçün şəhər.
 </h2>
 
-<p class="sub" data-i18n="about.text"></p>
+<p
+  class="sub"
+  data-i18n="about.text"
+></p>
 
 </section>
 
@@ -1658,9 +2004,7 @@ Sevimli pişiyiniz futbolkada
 
 <b>CatsBaku</b>
 · ©
-
 <span id="year">2026</span>
-
 ·
 
 <span data-i18n="footer.city">
@@ -1700,7 +2044,11 @@ BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
 </li>
 
 <li>
-<button type="button" class="add" data-demo-add>
+<button
+  type="button"
+  class="add"
+  data-demo-add
+>
 <span class="plus">
 <svg viewBox="0 0 24 24">
 <path d="M12 5v14M5 12h14"/>
@@ -1736,7 +2084,10 @@ BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
 
 <!-- OLD DEMO -->
 
-<dialog class="sheet" id="demoSheet">
+<dialog
+  class="sheet"
+  id="demoSheet"
+>
 
 <div class="sheet__in">
 
@@ -1748,7 +2099,11 @@ BAKI · XƏZƏR · İÇƏRİŞƏHƏR · CATSBAKU
 Pişik əlavə et
 </h2>
 
-<button class="sheet__close" type="button" data-close>
+<button
+  class="sheet__close"
+  type="button"
+  data-close
+>
 ×
 </button>
 
@@ -1770,7 +2125,11 @@ Tezliklə
 CatsBaku
 </p>
 
-<button class="btn btn--pom" type="button" data-close>
+<button
+  class="btn btn--pom"
+  type="button"
+  data-close
+>
 OK
 </button>
 
@@ -1783,7 +2142,7 @@ OK
 </dialog>
 
 
-<!-- ADOPTION MODAL -->
+<!-- ADOPTION DIALOG -->
 
 <dialog
   class="form-modal"
@@ -1861,9 +2220,7 @@ Cinsi
 
 <select id="adoptGender">
 
-<option value="">
-—
-</option>
+<option value="">—</option>
 
 <option value="male">
 Male
@@ -1989,7 +2346,7 @@ Elanı göndər
 </dialog>
 
 
-<!-- LOST FOUND MODAL -->
+<!-- LOST FOUND DIALOG -->
 
 <dialog
   class="form-modal"
@@ -2194,8 +2551,6 @@ Elanı göndər
 </button>
 
 
-<!-- LIBRARIES -->
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -2266,12 +2621,6 @@ Object.assign(window.CB_I18N.az,{
 'lost.eyebrow':'İTMİŞ VƏ TAPILMIŞ',
 'lost.title':'Pişik itirmisiniz və ya tapmısınız?',
 'lost.sub':'Bakıda itmiş və tapılmış pişik elanları.',
-'lost.lost':'İtib',
-'lost.lostText':'İtmiş pişik haqqında məlumat paylaşın.',
-'lost.found':'Tapılıb',
-'lost.foundText':'Tapılmış pişiyin sahibini axtarın.',
-'lost.area':'Ərazi üzrə axtarış',
-'lost.areaText':'Rayon və xəritə üzrə.',
 'lost.addLost':'Pişik itib',
 'lost.addFound':'Pişik tapmışam',
 'lost.activeTitle':'Aktiv elanlar',
@@ -2285,12 +2634,7 @@ Object.assign(window.CB_I18N.az,{
 
 'vets.eyebrow':'BAYTAR XƏRİTƏSİ',
 'vets.title':'Bakıda baytar xidməti',
-'vets.clinics':'Baytar klinikaları',
-'vets.clinicsText':'Bakıda klinikaları tapın.',
-'vets.emergency':'Təcili yardım',
-'vets.emergencyText':'Təcili klinikalar.',
-'vets.community':'Tövsiyələr',
-'vets.communityText':'CatsBaku icmasının tövsiyələri.',
+'vets.sub':'Bakıda yoxlanılmış baytar klinikaları.',
 
 'feed.eyebrow':'YEMLƏMƏ NÖQTƏLƏRİ',
 'feed.title':'Bakı pişikləri üçün yem və su',
@@ -2364,12 +2708,6 @@ Object.assign(window.CB_I18N.ru,{
 'lost.eyebrow':'ПОТЕРЯЛИСЬ / НАЙДЕНЫ',
 'lost.title':'Потеряли или нашли кота?',
 'lost.sub':'Объявления о потерянных и найденных котах Баку.',
-'lost.lost':'Потерялся',
-'lost.lostText':'Разместите информацию о пропавшем коте.',
-'lost.found':'Найден',
-'lost.foundText':'Помогите найти хозяина.',
-'lost.area':'Поиск по району',
-'lost.areaText':'По району и карте.',
 'lost.addLost':'Потерялся кот',
 'lost.addFound':'Нашёл кота',
 'lost.activeTitle':'Активные объявления',
@@ -2383,12 +2721,7 @@ Object.assign(window.CB_I18N.ru,{
 
 'vets.eyebrow':'КАРТА ВЕТЕРИНАРОВ',
 'vets.title':'Ветеринарная помощь в Баку',
-'vets.clinics':'Ветеринарные клиники',
-'vets.clinicsText':'Клиники Баку.',
-'vets.emergency':'Срочная помощь',
-'vets.emergencyText':'Клиники с экстренной помощью.',
-'vets.community':'Рекомендации',
-'vets.communityText':'Рекомендации сообщества CatsBaku.',
+'vets.sub':'Проверенные ветеринарные клиники Баку.',
 
 'feed.eyebrow':'ТОЧКИ КОРМЛЕНИЯ',
 'feed.title':'Корм и вода для котов Баку',
@@ -2462,12 +2795,6 @@ Object.assign(window.CB_I18N.en,{
 'lost.eyebrow':'LOST & FOUND',
 'lost.title':'Lost or found a cat?',
 'lost.sub':'Lost and found cat reports around Baku.',
-'lost.lost':'Lost',
-'lost.lostText':'Share information about a missing cat.',
-'lost.found':'Found',
-'lost.foundText':'Help reconnect a cat with its owner.',
-'lost.area':'Area search',
-'lost.areaText':'Search by district and map.',
 'lost.addLost':'Lost a cat',
 'lost.addFound':'Found a cat',
 'lost.activeTitle':'Active reports',
@@ -2481,12 +2808,7 @@ Object.assign(window.CB_I18N.en,{
 
 'vets.eyebrow':'VET MAP',
 'vets.title':'Veterinary care in Baku',
-'vets.clinics':'Vet clinics',
-'vets.clinicsText':'Find clinics around Baku.',
-'vets.emergency':'Emergency',
-'vets.emergencyText':'Emergency veterinary clinics.',
-'vets.community':'Recommendations',
-'vets.communityText':'CatsBaku community recommendations.',
+'vets.sub':'Verified veterinary clinics in Baku.',
 
 'feed.eyebrow':'FEED POINTS',
 'feed.title':'Food & water for Baku cats',
@@ -2510,7 +2832,7 @@ Object.assign(window.CB_I18N.en,{
 <script src="js/static.js"></script>
 
 
-<!-- SUPABASE LOGIC -->
+<!-- SUPABASE -->
 
 <script>
 
@@ -2573,11 +2895,10 @@ function safePhoto(url){
 }
 
 
-/* ============================================
-   PHOTO PREVIEW
-============================================ */
-
-function photoPreview(input, preview){
+function photoPreview(
+  input,
+  preview
+){
 
   input.addEventListener(
     'change',
@@ -2607,9 +2928,9 @@ function photoPreview(input, preview){
 }
 
 
-/* ============================================
-   ADOPTION
-============================================ */
+/* =====================================================
+   ADOPTION FORM
+===================================================== */
 
 const adoptionDialog =
 document.getElementById('adoptionDialog');
@@ -2633,16 +2954,16 @@ document.getElementById('adoptPreview');
 document
 .getElementById('openAdoptionForm')
 .addEventListener(
-'click',
-()=>adoptionDialog.showModal()
+  'click',
+  ()=>adoptionDialog.showModal()
 );
 
 
 document
 .getElementById('closeAdoptionForm')
 .addEventListener(
-'click',
-()=>adoptionDialog.close()
+  'click',
+  ()=>adoptionDialog.close()
 );
 
 
@@ -2665,7 +2986,11 @@ async function(event){
     return;
   }
 
-  if(file.size > 5 * 1024 * 1024){
+
+  if(
+    file.size >
+    5 * 1024 * 1024
+  ){
 
     adoptionMessage.textContent =
       'Фото должно быть меньше 5 MB.';
@@ -2674,6 +2999,7 @@ async function(event){
       'form-message error';
 
     return;
+
   }
 
 
@@ -2682,6 +3008,7 @@ async function(event){
 
 
   try{
+
 
     const ext =
       file.name
@@ -2800,10 +3127,20 @@ async function(event){
 
 
     adoptionMessage.textContent =
-      '✅ Спасибо! Объявление отправлено на модерацию.';
+      lang() === 'ru'
+      ?
+      '✅ Спасибо! Объявление отправлено на модерацию.'
+      :
+      lang() === 'en'
+      ?
+      '✅ Thank you! Your listing was sent for moderation.'
+      :
+      '✅ Təşəkkür edirik! Elan moderasiyaya göndərildi.';
+
 
     adoptionMessage.className =
       'form-message success';
+
 
     adoptionForm.reset();
 
@@ -2835,7 +3172,9 @@ async function(event){
 );
 
 
-/* SHOW ADOPTIONS */
+/* =====================================================
+   LOAD ADOPTIONS
+===================================================== */
 
 async function loadAdoptions(){
 
@@ -2852,14 +3191,20 @@ async function loadAdoptions(){
       .select('*')
       .eq('approved',true)
       .eq('status','looking')
-      .order('created_at',{
-        ascending:false
-      });
+      .order(
+        'created_at',
+        {
+          ascending:false
+        }
+      );
 
 
   if(result.error){
+
     console.error(result.error);
+
     return;
+
   }
 
 
@@ -2881,7 +3226,17 @@ async function loadAdoptions(){
       🐾
       </div>
 
-      Пока нет активных объявлений.
+      ${
+        lang() === 'ru'
+        ?
+        'Пока нет активных объявлений.'
+        :
+        lang() === 'en'
+        ?
+        'No active listings yet.'
+        :
+        'Hazırda aktiv elan yoxdur.'
+      }
 
       </div>
       `;
@@ -2947,7 +3302,17 @@ async function loadAdoptions(){
               class="data-contact"
               href="tel:${phone}"
             >
-            📞 Связаться
+            📞 ${
+              lang() === 'ru'
+              ?
+              'Связаться'
+              :
+              lang() === 'en'
+              ?
+              'Contact'
+              :
+              'Əlaqə saxla'
+            }
             </a>
             `
             :
@@ -2966,49 +3331,33 @@ async function loadAdoptions(){
 }
 
 
-/* ============================================
-   LOST & FOUND
-============================================ */
+/* =====================================================
+   LOST FOUND
+===================================================== */
 
 const lostFoundDialog =
-document.getElementById(
-  'lostFoundDialog'
-);
+document.getElementById('lostFoundDialog');
 
 const lostFoundForm =
-document.getElementById(
-  'lostFoundForm'
-);
+document.getElementById('lostFoundForm');
 
 const lostFoundMessage =
-document.getElementById(
-  'lostFoundMessage'
-);
+document.getElementById('lostFoundMessage');
 
 const lostFoundSubmit =
-document.getElementById(
-  'lostFoundSubmit'
-);
+document.getElementById('lostFoundSubmit');
 
 const lostFoundPhoto =
-document.getElementById(
-  'lostFoundPhoto'
-);
+document.getElementById('lostFoundPhoto');
 
 const lostFoundPreview =
-document.getElementById(
-  'lostFoundPreview'
-);
+document.getElementById('lostFoundPreview');
 
 const lostFoundType =
-document.getElementById(
-  'lostFoundType'
-);
+document.getElementById('lostFoundType');
 
 const lostFoundFormTitle =
-document.getElementById(
-  'lostFoundFormTitle'
-);
+document.getElementById('lostFoundFormTitle');
 
 
 function openLostFound(type){
@@ -3016,18 +3365,15 @@ function openLostFound(type){
   lostFoundType.value =
     type;
 
-  const current =
-    lang();
-
 
   if(type === 'lost'){
 
     lostFoundFormTitle.textContent =
-      current === 'ru'
+      lang() === 'ru'
       ?
       'Сообщить о пропавшем коте'
       :
-      current === 'en'
+      lang() === 'en'
       ?
       'Report a lost cat'
       :
@@ -3037,11 +3383,11 @@ function openLostFound(type){
   else{
 
     lostFoundFormTitle.textContent =
-      current === 'ru'
+      lang() === 'ru'
       ?
       'Сообщить о найденном коте'
       :
-      current === 'en'
+      lang() === 'en'
       ?
       'Report a found cat'
       :
@@ -3064,24 +3410,24 @@ function openLostFound(type){
 document
 .getElementById('openLostForm')
 .addEventListener(
-'click',
-()=>openLostFound('lost')
+  'click',
+  ()=>openLostFound('lost')
 );
 
 
 document
 .getElementById('openFoundForm')
 .addEventListener(
-'click',
-()=>openLostFound('found')
+  'click',
+  ()=>openLostFound('found')
 );
 
 
 document
 .getElementById('closeLostFoundForm')
 .addEventListener(
-'click',
-()=>lostFoundDialog.close()
+  'click',
+  ()=>lostFoundDialog.close()
 );
 
 
@@ -3107,7 +3453,10 @@ async function(event){
   }
 
 
-  if(file.size > 5 * 1024 * 1024){
+  if(
+    file.size >
+    5 * 1024 * 1024
+  ){
 
     lostFoundMessage.textContent =
       'Фото должно быть меньше 5 MB.';
@@ -3116,6 +3465,7 @@ async function(event){
       'form-message error';
 
     return;
+
   }
 
 
@@ -3262,11 +3612,7 @@ async function(event){
 
   catch(error){
 
-    console.error(
-      'Lost/Found error:',
-      error
-    );
-
+    console.error(error);
 
     lostFoundMessage.textContent =
       'Ошибка. Попробуйте ещё раз.';
@@ -3287,33 +3633,25 @@ async function(event){
 );
 
 
-/* SHOW LOST FOUND */
+/* =====================================================
+   LOAD LOST FOUND
+===================================================== */
 
 async function loadLostFound(){
 
   const grid =
-    document.getElementById(
-      'lostFoundGrid'
-    );
+    document.getElementById('lostFoundGrid');
 
   const count =
-    document.getElementById(
-      'lostFoundCount'
-    );
+    document.getElementById('lostFoundCount');
 
 
   const result =
     await db
       .from('lost_found')
       .select('*')
-      .eq(
-        'approved',
-        true
-      )
-      .eq(
-        'status',
-        'active'
-      )
+      .eq('approved',true)
+      .eq('status','active')
       .order(
         'created_at',
         {
@@ -3324,9 +3662,7 @@ async function loadLostFound(){
 
   if(result.error){
 
-    console.error(
-      result.error
-    );
+    console.error(result.error);
 
     return;
 
@@ -3334,9 +3670,7 @@ async function loadLostFound(){
 
 
   const rows =
-    result.data
-    ||
-    [];
+    result.data || [];
 
 
   count.textContent =
@@ -3349,11 +3683,21 @@ async function loadLostFound(){
       `
       <div class="data-empty">
 
-        <div class="data-empty__icon">
-        🔎
-        </div>
+      <div class="data-empty__icon">
+      🔎
+      </div>
 
-        Пока нет активных объявлений.
+      ${
+        lang() === 'ru'
+        ?
+        'Пока нет активных объявлений.'
+        :
+        lang() === 'en'
+        ?
+        'No active reports yet.'
+        :
+        'Hazırda aktiv elan yoxdur.'
+      }
 
       </div>
       `;
@@ -3412,139 +3756,96 @@ async function loadLostFound(){
           return `
           <article class="card">
 
-            <div class="card__photo">
+          <div class="card__photo">
 
-              <img
-                src="${esc(safePhoto(item.photo_url))}"
-                alt="${esc(item.name || statusText)}"
-              >
+          <img
+            src="${esc(safePhoto(item.photo_url))}"
+            alt="${esc(item.name || statusText)}"
+          >
 
-            </div>
+          </div>
+
+          <div class="card__body">
 
 
-            <div class="card__body">
-
-
-              <div
-                class="
-                  status-badge
-                  ${
-                    isLost
-                    ?
-                    'status-badge--lost'
-                    :
-                    'status-badge--found'
-                  }
-                "
-              >
+          <div
+            class="
+              status-badge
               ${
                 isLost
                 ?
-                '😿'
+                'status-badge--lost'
                 :
-                '👀'
+                'status-badge--found'
               }
+            "
+          >
+          ${
+            isLost
+            ?
+            '😿'
+            :
+            '👀'
+          }
 
-              ${esc(statusText)}
+          ${esc(statusText)}
 
-              </div>
-
-
-              <div class="card__name">
-
-              ${
-                esc(
-                  item.name
-                  ||
-                  (
-                    lang() === 'ru'
-                    ?
-                    'Без имени'
-                    :
-                    lang() === 'en'
-                    ?
-                    'Unnamed'
-                    :
-                    'Adsız'
-                  )
-                )
-              }
-
-              </div>
+          </div>
 
 
-              <div class="data-meta">
-
-                <span>
-                📍 ${esc(item.area || 'Baku')}
-                </span>
-
-                ${
-                  item.event_date
-                  ?
-                  `
-                  <span>
-                  📅 ${esc(item.event_date)}
-                  </span>
-                  `
-                  :
-                  ''
-                }
-
-              </div>
+          <div class="card__name">
+          ${esc(item.name || '')}
+          </div>
 
 
-              <p class="data-description">
-              ${esc(item.description || '')}
-              </p>
+          <div class="data-meta">
+
+          <span>
+          📍 ${esc(item.area || 'Baku')}
+          </span>
+
+          ${
+            item.event_date
+            ?
+            `<span>📅 ${esc(item.event_date)}</span>`
+            :
+            ''
+          }
+
+          </div>
 
 
-              ${
-                item.contact_name
-                ?
-                `
-                <div
-                  style="
-                    margin-top:9px;
-                    font-size:12px;
-                    opacity:.7;
-                  "
-                >
-                👤 ${esc(item.contact_name)}
-                </div>
-                `
-                :
-                ''
-              }
+          <p class="data-description">
+          ${esc(item.description || '')}
+          </p>
 
 
-              ${
-                phone
-                ?
-                `
-                <a
-                  class="data-contact"
-                  href="tel:${phone}"
-                >
-                📞 ${
-                  lang() === 'ru'
-                  ?
-                  'Связаться'
-                  :
-                  lang() === 'en'
-                  ?
-                  'Contact'
-                  :
-                  'Əlaqə saxla'
-                }
-                </a>
-                `
-                :
-                ''
-              }
+          ${
+            phone
+            ?
+            `
+            <a
+              class="data-contact"
+              href="tel:${phone}"
+            >
+            📞 ${
+              lang() === 'ru'
+              ?
+              'Связаться'
+              :
+              lang() === 'en'
+              ?
+              'Contact'
+              :
+              'Əlaqə saxla'
+            }
+            </a>
+            `
+            :
+            ''
+          }
 
-
-            </div>
+          </div>
 
           </article>
           `;
@@ -3556,41 +3857,459 @@ async function loadLostFound(){
 }
 
 
-/* INITIAL LOAD */
+/* =====================================================
+   VET CLINICS
+===================================================== */
 
-loadAdoptions();
-
-loadLostFound();
+let vetRows = [];
 
 
-/* RELOAD AFTER LANGUAGE CHANGE */
+async function loadVets(){
 
-document
-.querySelectorAll(
-  '.langs [data-lang]'
-)
-.forEach(
-button => {
+  const grid =
+    document.getElementById('vetGrid');
 
-  button.addEventListener(
-    'click',
-    function(){
 
-      setTimeout(
-        function(){
+  const result =
+    await db
+      .from('vet_clinics')
+      .select('*')
+      .eq('approved',true)
+      .order(
+        'name',
+        {
+          ascending:true
+        }
+      );
 
-          loadAdoptions();
 
-          loadLostFound();
+  if(result.error){
 
-        },
-        80
+    console.error(
+      'Vet clinics error:',
+      result.error
+    );
+
+    grid.innerHTML =
+      `
+      <div class="data-empty">
+
+      <div class="data-empty__icon">
+      ⚠️
+      </div>
+
+      ${
+        lang() === 'ru'
+        ?
+        'Не удалось загрузить клиники.'
+        :
+        lang() === 'en'
+        ?
+        'Could not load clinics.'
+        :
+        'Klinikaları yükləmək mümkün olmadı.'
+      }
+
+      </div>
+      `;
+
+    return;
+
+  }
+
+
+  vetRows =
+    result.data || [];
+
+
+  if(!vetRows.length){
+
+    grid.innerHTML =
+      `
+      <div class="data-empty">
+
+      <div class="data-empty__icon">
+      🩺
+      </div>
+
+      ${
+        lang() === 'ru'
+        ?
+        'Пока нет клиник.'
+        :
+        lang() === 'en'
+        ?
+        'No clinics yet.'
+        :
+        'Hələ klinika yoxdur.'
+      }
+
+      </div>
+      `;
+
+    return;
+
+  }
+
+
+  grid.innerHTML =
+    vetRows
+      .map(
+        clinic => {
+
+
+          const phone =
+            safePhone(
+              clinic.phone
+            );
+
+
+          const mapsQuery =
+            encodeURIComponent(
+              [
+                clinic.name,
+                clinic.address,
+                'Baku'
+              ]
+              .filter(Boolean)
+              .join(' ')
+            );
+
+
+          return `
+          <article class="vet-card">
+
+            <div class="vet-card__icon">
+            🩺
+            </div>
+
+
+            ${
+              clinic.emergency_24h
+              ?
+              `
+              <div class="status-badge status-badge--24">
+              🕐 24/7
+              </div>
+              `
+              :
+              ''
+            }
+
+
+            <div class="vet-card__name">
+            ${esc(clinic.name)}
+            </div>
+
+
+            <div class="vet-card__info">
+
+
+              ${
+                clinic.address
+                ?
+                `
+                <div>
+                📍 ${esc(clinic.address)}
+                </div>
+                `
+                :
+                ''
+              }
+
+
+              ${
+                clinic.area
+                ?
+                `
+                <div>
+                🏙️ ${esc(clinic.area)}
+                </div>
+                `
+                :
+                ''
+              }
+
+
+              ${
+                clinic.opening_hours
+                ?
+                `
+                <div>
+                🕐 ${esc(clinic.opening_hours)}
+                </div>
+                `
+                :
+                ''
+              }
+
+
+              ${
+                clinic.phone
+                ?
+                `
+                <div>
+                ☎️ ${esc(clinic.phone)}
+                </div>
+                `
+                :
+                ''
+              }
+
+
+              ${
+                clinic.description
+                ?
+                `
+                <div>
+                ${esc(clinic.description)}
+                </div>
+                `
+                :
+                ''
+              }
+
+
+            </div>
+
+
+            <div class="vet-card__actions">
+
+
+            ${
+              phone
+              ?
+              `
+              <a
+                class="vet-link"
+                href="tel:${phone}"
+              >
+              📞 ${
+                lang() === 'ru'
+                ?
+                'Позвонить'
+                :
+                lang() === 'en'
+                ?
+                'Call'
+                :
+                'Zəng et'
+              }
+              </a>
+              `
+              :
+              ''
+            }
+
+
+            <a
+              class="vet-link vet-link--light"
+              href="https://www.google.com/maps/search/?api=1&query=${mapsQuery}"
+              target="_blank"
+              rel="noopener"
+            >
+            📍 ${
+              lang() === 'ru'
+              ?
+              'На карте'
+              :
+              lang() === 'en'
+              ?
+              'Map'
+              :
+              'Xəritə'
+            }
+            </a>
+
+
+            </div>
+
+          </article>
+          `;
+
+        }
+      )
+      .join('');
+
+
+  addVetMarkers();
+
+}
+
+
+/* =====================================================
+   ADD VETS TO MAP WHEN LAT/LNG EXISTS
+===================================================== */
+
+function addVetMarkers(){
+
+  if(
+    !window.L
+    ||
+    !window.__catsBakuVetMapAttempted
+  ){
+
+    window.__catsBakuVetMapAttempted =
+      true;
+
+  }
+
+
+  const mapElement =
+    document.getElementById('catMap');
+
+
+  if(
+    !mapElement
+    ||
+    !mapElement._leaflet_id
+  ){
+
+    setTimeout(
+      addVetMarkers,
+      800
+    );
+
+    return;
+
+  }
+
+
+  let mapInstance = null;
+
+
+  for(
+    const key in window
+  ){
+
+    try{
+
+      const value =
+        window[key];
+
+      if(
+        value
+        &&
+        value instanceof L.Map
+      ){
+
+        mapInstance =
+          value;
+
+        break;
+
+      }
+
+    }
+    catch(e){}
+
+  }
+
+
+  if(!mapInstance){
+
+    return;
+
+  }
+
+
+  vetRows.forEach(
+    clinic => {
+
+      const lat =
+        Number(
+          clinic.lat
+        );
+
+      const lng =
+        Number(
+          clinic.lng
+        );
+
+
+      if(
+        !Number.isFinite(lat)
+        ||
+        !Number.isFinite(lng)
+      ){
+
+        return;
+
+      }
+
+
+      L.marker(
+        [
+          lat,
+          lng
+        ]
+      )
+      .addTo(
+        mapInstance
+      )
+      .bindPopup(
+        `
+        <strong>
+        ${esc(clinic.name)}
+        </strong>
+        <br>
+        ${esc(clinic.address || '')}
+        <br>
+        🩺 ${
+          clinic.emergency_24h
+          ?
+          '24/7'
+          :
+          esc(clinic.opening_hours || '')
+        }
+        `
       );
 
     }
   );
 
 }
+
+
+/* =====================================================
+   LOAD
+===================================================== */
+
+loadAdoptions();
+
+loadLostFound();
+
+loadVets();
+
+
+document
+.querySelectorAll(
+  '.langs [data-lang]'
+)
+.forEach(
+  button => {
+
+    button.addEventListener(
+      'click',
+      function(){
+
+        setTimeout(
+          function(){
+
+            loadAdoptions();
+
+            loadLostFound();
+
+            loadVets();
+
+          },
+          80
+        );
+
+      }
+    );
+
+  }
 );
 
 </script>
@@ -3603,16 +4322,16 @@ button => {
 (function(){
 
 const music =
-document.getElementById(
-  'bgMusic'
-);
+document.getElementById('bgMusic');
 
 const toggle =
-document.getElementById(
-  'musicToggle'
-);
+document.getElementById('musicToggle');
 
-if(!music || !toggle){
+if(
+  !music
+  ||
+  !toggle
+){
   return;
 }
 
@@ -3636,41 +4355,41 @@ async function start(){
 
 
 document.addEventListener(
-'click',
-function(){
+  'click',
+  function(){
 
-  if(music.paused){
-    start();
+    if(music.paused){
+      start();
+    }
+
+  },
+  {
+    once:true
   }
-
-},
-{
-  once:true
-}
 );
 
 
 toggle.addEventListener(
-'click',
-async function(event){
+  'click',
+  async function(event){
 
-  event.stopPropagation();
+    event.stopPropagation();
 
-  if(music.paused){
+    if(music.paused){
 
-    await start();
+      await start();
+
+    }
+    else{
+
+      music.pause();
+
+      toggle.textContent =
+        '🐱';
+
+    }
 
   }
-  else{
-
-    music.pause();
-
-    toggle.textContent =
-      '🐱';
-
-  }
-
-}
 );
 
 })();
